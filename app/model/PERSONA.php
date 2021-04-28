@@ -2,34 +2,13 @@
 
 class PERSONA
 {
-    private $id_persona;
-    private $nombre;
-    private $app;
-    private $apm;
-    private $telefono;
-    private $sexo;
-    private $estatus;
-
-    /**
-     * PERSONA constructor.
-     * @param $id_persona
-     * @param $nombre
-     * @param $app
-     * @param $apm
-     * @param $telefono
-     * @param $sexo
-     * @param $estatus
-     */
-    public function __construct($id_persona, $nombre, $app, $apm, $telefono, $sexo, $estatus)
-    {
-        $this->id_persona = $id_persona;
-        $this->nombre = $nombre;
-        $this->app = $app;
-        $this->apm = $apm;
-        $this->telefono = $telefono;
-        $this->sexo = $sexo;
-        $this->estatus = $estatus;
-    }
+    protected $id_persona;
+    protected $nombre;
+    protected $app;
+    protected $apm;
+    protected $telefono;
+    protected $sexo;
+    protected $estatus;
 
     /**
      * @return mixed
@@ -141,5 +120,8 @@ class PERSONA
     public function setEstatus($estatus)
     {
         $this->estatus = $estatus;
+    }
+    public function getNombreCompleto(){
+        return $this->nombre." ".$this->app." ".$this->apm;
     }
 }
