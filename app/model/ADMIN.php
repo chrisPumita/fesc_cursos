@@ -1,6 +1,5 @@
 <?php
-
-include_once ("../PERSONA.php");
+ include("PERSONA.php");
 class ADMIN extends PERSONA
 {
     private $id_profesor_admin_fk;
@@ -8,25 +7,6 @@ class ADMIN extends PERSONA
     private $permisos;
     private $clave_confirmacion;
     private $estatus_admin;
-
-    /**
-     * @return mixed
-     */
-    public function getEstatusAdmin()
-    {
-        return $this->estatus_admin;
-    }
-
-    /**
-     * @param mixed $estatus_admin
-     */
-    public function setEstatusAdmin($estatus_admin): void
-    {
-        $this->estatus_admin = $estatus_admin;
-    }
-
-
-
 
     /**
      * @return mixed
@@ -39,7 +19,7 @@ class ADMIN extends PERSONA
     /**
      * @param mixed $id_profesor_admin_fk
      */
-    public function setIdProfesorAdminFk($id_profesor_admin_fk): void
+    public function setIdProfesorAdminFk($id_profesor_admin_fk)
     {
         $this->id_profesor_admin_fk = $id_profesor_admin_fk;
     }
@@ -55,7 +35,7 @@ class ADMIN extends PERSONA
     /**
      * @param mixed $cargo
      */
-    public function setCargo($cargo): void
+    public function setCargo($cargo)
     {
         $this->cargo = $cargo;
     }
@@ -71,7 +51,7 @@ class ADMIN extends PERSONA
     /**
      * @param mixed $permisos
      */
-    public function setPermisos($permisos): void
+    public function setPermisos($permisos)
     {
         $this->permisos = $permisos;
     }
@@ -87,9 +67,25 @@ class ADMIN extends PERSONA
     /**
      * @param mixed $clave_confirmacion
      */
-    public function setClaveConfirmacion($clave_confirmacion): void
+    public function setClaveConfirmacion($clave_confirmacion)
     {
         $this->clave_confirmacion = $clave_confirmacion;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEstatusAdmin()
+    {
+        return $this->estatus_admin;
+    }
+
+    /**
+     * @param mixed $estatus_admin
+     */
+    public function setEstatusAdmin($estatus_admin)
+    {
+        $this->estatus_admin = $estatus_admin;
     }
 
 }

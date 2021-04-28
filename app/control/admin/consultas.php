@@ -1,5 +1,5 @@
 <?php
-    include_once("../../model/admin/ADMIN.php");
+    include_once("../../model/ADMIN.php");
     $a = new ADMIN();
     $a->setNombre("Juan");
     $a->setApp("Contreras");
