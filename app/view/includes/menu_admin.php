@@ -13,7 +13,7 @@
         <ul class="nav-link navbar-nav mr-auto">
             <li class="nav-item">
                 <form class="form-inline position-relative my-2 d-inline-block w-100">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Busca Placa" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar curso" aria-label="Search">
                     <button class="btn btn-search position-absolute " type="submit"><i class="icon ion-md-search"></i></button>
                 </form>
             </li>
@@ -53,19 +53,22 @@
                 <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="index.php"><i class="icon ion-md-apps mr-2 lead"></i>Tablero</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="../admin/cursos.php"><i class="icon ion-md-car mr-2 lead"></i>Cursos</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="../admin/index.php"><i class="icon ion-md-car mr-2 lead"></i>Profesores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="clients.php"><i class="icon ion-md-contacts mr-2 lead"></i>Clientes</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="../admin/cursos.php"><i class="icon ion-md-contacts mr-2 lead"></i>Cursos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="users.php"><i class="icon ion-md-people mr-2 lead"></i>Usuarios</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="users.php"><i class="icon ion-md-people mr-2 lead"></i>Alumnos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="reports.php"><i class="icon ion-md-document mr-2 lead"></i>Reportes</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="reports.php"><i class="icon ion-md-document mr-2 lead"></i>Cuentas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="settings.php"><i class="icon ion-md-settings mr-2 lead"></i>Confuguración</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="settings.php"><i class="icon ion-md-settings mr-2 lead"></i>Reportes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="settings.php"><i class="icon ion-md-settings mr-2 lead"></i>Más</a>
             </li>
         </ul>
     </div>
