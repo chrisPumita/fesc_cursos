@@ -1,52 +1,61 @@
 <!--Encabezado User Name details-->
-<section class="container py-3">
+<section class="container py-3 bg-grey">
     <div class="row">
         <div class="col-lg-9">
-            <h2 class="font-weight-bold mb-0">Bienvenido NOMBRE </h2>
+            <h2 class="font-weight-bold mb-0">Bienvenido Jennifer </h2>
             <p class="lead text-muted">PUESTO estamos listos para comenzar <br>ID Empleado: ID PROFESOR</p>
         </div>
         <div class="col-lg-3">
             <button class="btn btn-primary w-100 aling-self-center">
-                <i class="icon ion-md-cloud-upload mr-2 lead"></i>Subir Archivos
+                <i class="icon ion-md-cloud-upload mr-2 lead"></i>Ver Cursos
             </button>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="callout callout-second">
+                <h4>Bienvenido Administrador </h4>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus voluptatum illum odio quos laudantium enim ratione cupiditate accusantium officia quisquam, similique fuga ipsa consequatur? Sequi, consequuntur unde! Enim, dolor deserunt!
+            </div>
+        </div>
+    </div>
 </section>
-<section class="bg-mix">
+<!--INICIA TABLA DE GRUPOS ACTUAL-->
+<section class="bg-grey">
     <div class="container">
         <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 d-flex stat my-3">
                         <div class="mx-auto">
+                            <i class="icon ion-md-rocket mr-1 position-absolute paleta"></i>
+                            <h6 class="text-muted"></i><STrong>Cursos</STrong></h6>
+                            <h3 class="font-weight-bold">50</h3>
+                            <h6 class="text-success">Cursos activos</h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                        <div class="mx-auto">
                             <i class="icon ion-md-checkmark mr-1 position-absolute paleta"></i>
-                            <h6 class="text-muted"></i>Vehiculos Vendidos</h6>
-                            <h3 class="font-weight-bold">$15,000</h3>
-                            <h6 class="text-success">5 vehiculos</h6>
+                            <h6 class="text-muted"><strong>Constancias</strong></h6>
+                            <h3 class="font-weight-bold">150</h3>
+                            <h6 class="text-warning">Por revisar y acreditar</h6>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 d-flex stat my-3">
                         <div class="mx-auto">
-                            <i class="icon ion-md-time mr-1 position-absolute paleta"></i>
-                            <h6 class="text-muted">Abonos Pendientes</h6>
-                            <h3 class="font-weight-bold">$15,000</h3>
-                            <h6 class="text-success">Total: 5</h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
-                        <div class="mx-auto">
-                            <i class="icon ion-md-car mr-1 position-absolute paleta"></i>
-                            <h6 class="text-muted">Catalogo de Vehiculos</h6>
-                            <h3 class="font-weight-bold">10 </h3>
-                            <h6 class="text-success">Vehiculos en Venta</h6>
+                            <i class="icon ion-md-stats mr-1 position-absolute paleta"></i>
+                            <h6 class="text-muted"><strong>Inscripciones</strong></h6>
+                            <h3 class="font-weight-bold">70</h3>
+                            <h6 class="text-warning">Pendientes de revisión</h6>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 d-flex my-3">
                         <div class="mx-auto">
-                            <i class="icon ion-md-cash mr-1 position-absolute paleta"></i>
-                            <h6 class="text-muted">Abonos del dia</h6>
-                            <h3 class="font-weight-bold">$45,000</h3>
-                            <h6 class="text-success">Total: 5</h6>
+                            <i class="icon ion-md-contacts mr-1 position-absolute paleta"></i>
+                            <h6 class="text-muted"><strong>Alumnos</strong></h6>
+                            <h3 class="font-weight-bold">700</h3>
+                            <h6 class="text-success">Registrados en el sistema</h6>
                         </div>
                     </div>
                 </div>
@@ -54,59 +63,271 @@
         </div>
     </div>
 </section>
-<section class="bg-grey">
+<!--INICIA SECCION CURSOS REGISTRADOS ACTIVOS-->
+    <section class="bg-grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 py-3">
+                    <h3>Grupos actuales</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 overflow-auto">
+                    <table class="table table-striped bg-light">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Grupo</th>
+                            <th scope="col">Curso</th>
+                            <th scope="col">Profesor</th>
+                            <th scope="col">Cupo</th>
+                            <th scope="col">Fecha de inicio</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Notas</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>5110</td>
+                            <td>Curso Diseño UIX</td>
+                            <td>Juan Perez Sanchez</td>
+                            <td>5/30</td>
+                            <td>29 de Junio del 2021</td>
+                            <td>Online</td>
+                            <td>23 solicitudes pendientes</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Opciones
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <button class="dropdown-item" type="button">Ver Horario</button>
+                                        <button class="dropdown-item" type="button">Editar grupo</button>
+                                        <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                        <button class="dropdown-item" type="button">Terminar grupo</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>2603</td>
+                            <td>Curso Excel Avanzado con Macros</td>
+                            <td>Alejandro Navarrete Perez</td>
+                            <td>20/20</td>
+                            <td>27 de Noviembre del 2021</td>
+                            <td>Online</td>
+                            <td>Grupo lleno</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Opciones
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <button class="dropdown-item" type="button">Ver Horario</button>
+                                        <button class="dropdown-item" type="button">Editar grupo</button>
+                                        <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                        <button class="dropdown-item" type="button">Terminar grupo</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 my-2">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--SECCION DOCUMENTOS POR REVISAR-->
+    <section class="bg-grey">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 my-3 overflow-auto">
+            <div class="col-lg-12 py-3">
+                <h3>Grupos actuales</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 overflow-auto">
                 <table class="table table-striped bg-light">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Placa</th>
-                        <th scope="col">Detalles</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Documentacion</th>
+                        <th scope="col">Grupo</th>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Profesor</th>
+                        <th scope="col">Cupo</th>
+                        <th scope="col">Fecha de inicio</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Notas</th>
                         <th scope="col">Acciones</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>MKD4561</td>
-                        <td>Nissan Tiida 4 Puertas</td>
-                        <td>En Venta</td>
-                        <td>5 Documentos 5 Imagenes</td>
+                        <td>5110</td>
+                        <td>Curso Diseño UIX</td>
+                        <td>Juan Perez Sanchez</td>
+                        <td>5/30</td>
+                        <td>29 de Junio del 2021</td>
+                        <td>Online</td>
+                        <td>23 solicitudes pendientes</td>
                         <td>
                             <div class="dropdown">
                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Opciones
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <button class="dropdown-item" type="button">Ver Detalles</button>
-                                    <button class="dropdown-item" type="button">Vender</button>
-                                    <button class="dropdown-item" type="button">Eliminar</button>
-                                </div>
-                            </div>
-                        </td>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>MKD4561</td>
-                        <td>Nissan Tiida 4 Puertas</td>
-                        <td>En Venta</td>
-                        <td>5 Documentos 5 Imagenes</td>
-                        <td>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Opciones
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <button class="dropdown-item" type="button">Ver Detalles</button>
-                                    <button class="dropdown-item" type="button">Vender</button>
-                                    <button class="dropdown-item" type="button">Eliminar</button>
+                                    <button class="dropdown-item" type="button">Ver Horario</button>
+                                    <button class="dropdown-item" type="button">Editar grupo</button>
+                                    <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                    <button class="dropdown-item" type="button">Terminar grupo</button>
                                 </div>
                             </div>
                         </td>
                     </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>2603</td>
+                        <td>Curso Excel Avanzado con Macros</td>
+                        <td>Alejandro Navarrete Perez</td>
+                        <td>20/20</td>
+                        <td>27 de Noviembre del 2021</td>
+                        <td>Online</td>
+                        <td>Grupo lleno</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Opciones
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button">Ver Horario</button>
+                                    <button class="dropdown-item" type="button">Editar grupo</button>
+                                    <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                    <button class="dropdown-item" type="button">Terminar grupo</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 my-2">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Siguiente</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--ACCESOS RAPIDOS-->
+
+
+<section class="bg-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 py-3">
+                <h3>Grupos actuales</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 overflow-auto">
+                <table class="table table-striped bg-light">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Grupo</th>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Profesor</th>
+                        <th scope="col">Cupo</th>
+                        <th scope="col">Fecha de inicio</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Notas</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>5110</td>
+                        <td>Curso Diseño UIX</td>
+                        <td>Juan Perez Sanchez</td>
+                        <td>5/30</td>
+                        <td>29 de Junio del 2021</td>
+                        <td>Online</td>
+                        <td>23 solicitudes pendientes</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Opciones
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button">Ver Horario</button>
+                                    <button class="dropdown-item" type="button">Editar grupo</button>
+                                    <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                    <button class="dropdown-item" type="button">Terminar grupo</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>2603</td>
+                        <td>Curso Excel Avanzado con Macros</td>
+                        <td>Alejandro Navarrete Perez</td>
+                        <td>20/20</td>
+                        <td>27 de Noviembre del 2021</td>
+                        <td>Online</td>
+                        <td>Grupo lleno</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Opciones
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button">Ver Horario</button>
+                                    <button class="dropdown-item" type="button">Editar grupo</button>
+                                    <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                    <button class="dropdown-item" type="button">Terminar grupo</button>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -193,21 +414,21 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="../assets/resources/demo/venta-de-autos.jpg" class="d-block w-100" alt="...">
+                                    <img src="https://periodicoabcrm.blob.core.windows.net.optimalcdn.com/images/2020/09/18/5299733_1-focus-0-0-940-615.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>Second slide label</h5>
                                         <p>Some representative placeholder content for the second slide.</p>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../assets/img/logo.png"  class="d-block w-100" alt="...">
+                                    <img src="https://elsolsaleparatodos.com.mx/wp-content/uploads/2020/08/untitleddesign_1_original-14-3-850x560.jpg"  class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>Second slide label</h5>
                                         <p>Some representative placeholder content for the second slide.</p>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../assets/img/logo.png"  alt="..." class="d-block w-100" alt="...">
+                                    <img src="https://www.hogarmania.com/archivos/201902/cobayas-caracteristicas-668x400x80xX.jpg"  alt="..." class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>Second slide label</h5>
                                         <p>Some representative placeholder content for the second slide.</p>

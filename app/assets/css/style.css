@@ -1,6 +1,6 @@
 :root{
-    --primary:#590995;
-    --second: #03c4a1;
+    --primary: #196398;
+    --second: #CDAC12;
     --ligth : #ffffff;
     --grey: #efefef;
     --alert:  indianred;
@@ -36,6 +36,7 @@ a:hover{
 }
 
 #sidebar-container{
+    min-width: 175px;
     min-height: 100vh;
 }
 
@@ -52,6 +53,21 @@ a:hover{
 
 .avatar{
     max-width: 35px;
+}
+
+.pie{
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    font-size: x-small;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.menu_icons {
+    font-size: 2rem !important;
+}
+
+.bg_second{
+    background-color: var(--second)!important;
 }
 
 #content{
@@ -74,6 +90,11 @@ a:hover{
 .table-content{
     background: var(--ligth);
 }
+
+.menuDesk:hover {
+    background-color: var(--primary);
+    color: var(--ligth) !important;
+  }
 
 @media(max-width: 768px)
 {
@@ -185,7 +206,8 @@ a {
 .callout {
     padding: 20px;
     margin: 20px 0;
-    border: 1px solid #eee;
+    border: 1px solid var(--ligth);
+    background: var(--ligth);
     border-left-width: 5px;
     border-radius: 3px;
   }
@@ -211,12 +233,17 @@ a {
   }
   
   .callout-primary {
-    border-left-color: #428bca;
+    border-left-color: var(--primary);
   }
   .callout-primary h4 {
-    color: #428bca;
+    color: var(--primary);
   }
-  
+  .callout-second {
+    border-left-color: var(--second);
+  }
+  .callout-second h4 {
+    color: var(--second);
+  }
   .callout-success {
     border-left-color: #5cb85c;
   }
