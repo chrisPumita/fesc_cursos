@@ -1,6 +1,6 @@
 <?php
-
-class PERSONA
+include ("CONEXION_M.php");
+class PERSONA extends CONEXION_M
 {
     protected $id_persona;
     protected $nombre;
@@ -123,5 +123,10 @@ class PERSONA
     }
     public function getNombreCompleto(){
         return $this->nombre." ".$this->app." ".$this->apm;
+    }
+
+    public function verificaUsuario()
+    {
+
     }
 }

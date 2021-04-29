@@ -21,4 +21,6 @@ class ALUMNO extends  PERSONA
     {
         $this->matricula = $matricula;
     }
+    
+
 }
