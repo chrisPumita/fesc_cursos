@@ -13,6 +13,10 @@
 
 <div class="container-fluid">
     <h1>Welcome to system</h1>
+    <?php
+        include("./control/admin/consultas.php");
+        echo "<h2>$name</h2>";
+    ?>
     <p>Decide el control del acceso > admin, estudent > prof</p>
 </div>
 
