@@ -21,7 +21,6 @@ include("../includes/header.php");
             <?php include("../includes/footer.php");?>
         </div>
 
-
     </div>
 </div>
 <!-- script_js -->
