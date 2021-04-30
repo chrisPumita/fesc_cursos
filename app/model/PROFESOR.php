@@ -6,6 +6,7 @@ class PROFESOR extends PERSONA
     private $id_profesor;
     private $id_persona_fk;
     private $id_depto_fk;
+    private $nombre_departamento;
     private $no_trabajador;
     private $prefijo;
     private $email;
@@ -62,6 +63,22 @@ class PROFESOR extends PERSONA
     public function setIdDeptoFk($id_depto_fk): void
     {
         $this->id_depto_fk = $id_depto_fk;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNombreDepartamento()
+    {
+        return $this->nombre_departamento;
+    }
+
+    /**
+     * @param mixed $nombre_departamento
+     */
+    public function setNombreDepartamento($nombre_departamento): void
+    {
+        $this->nombre_departamento = $nombre_departamento;
     }
 
     /**
@@ -207,6 +224,7 @@ class PROFESOR extends PERSONA
     {
         $this->estatus_profesor = $estatus_profesor;
     }
+
 
 
 }
