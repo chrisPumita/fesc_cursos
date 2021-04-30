@@ -7,7 +7,6 @@
     $a ->setMatricula("6875469");
     $name = $a->getNombreCompleto();
     echo "Mi nombre es ".$name." y mi matricula es ".$a->getMatricula()."<br>";
-
     $a ->connect();
     $resultado = $a->getData("SELECT * FROM `universidades`");
     $a->close();

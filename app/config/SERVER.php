@@ -7,7 +7,7 @@ const DB = "seltic";
 const USER = "root";
 const PASS = "";
 
-#CONEXION POR PDO
+#CONEXION POR PDO en caso de usar PDO
 
 const SGDB = "mysql:host=".SERVER.";dbname=".DB;
 
