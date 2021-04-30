@@ -42,9 +42,11 @@ a:hover{
 
 #sidebar-container .logo{
     padding: .875rem 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 #sidebar-container .menu{
-    width: 18rem;
+    width: AUTO;
 }
 
 .btn-search{
@@ -285,6 +287,11 @@ a {
       padding: 0;
   }
 
+  .posicion-btn{
+      margin-left: -3em;
+  }
+
+  /*Para version mobile*/
 @media screen and (max-width: 991px) 
 {
     .logo-login {
@@ -313,4 +320,18 @@ a {
     .row-login {
         display: block;
     }
+
+    .posicion-btn{
+        margin-left: auto;
+        position: absolute !important;
+    }
+}
+
+.pt-3, .py-3 {
+    padding-bottom: 0!important;
+    padding-top: 2rem!important;
+}
+
+.h3, h3 {
+    font-size: 1.5rem;
 }

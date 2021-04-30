@@ -26,7 +26,7 @@ RESPONSIVO TELEFONO-->
             </li>
             <li class="d-block p-2 nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="icon ion-md-contact mr-2 menu_icons lead"></i><span class="align-middle" >Nombre Usuario</span> 
+                <i class="icon ion-md-contact mr-2 menu_icons lead align-middle"></i><span class="align-middle" >Nombre Usuario</span> 
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="account.php">Mi Perfil</a>
