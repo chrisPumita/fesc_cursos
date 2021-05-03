@@ -122,6 +122,4 @@ class CONSTANCIA_ALUM
     {
         $this->estatus = $estatus;
     }
-
-
 }
