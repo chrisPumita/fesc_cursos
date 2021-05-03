@@ -9,6 +9,7 @@ class HORARIO_CLASE_P
     private $dia_semana;
     private $hora_inicio;
     private $duracion;
+    /*Composicion*/
     private $aula;
 
     /**
