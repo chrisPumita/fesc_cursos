@@ -9,6 +9,24 @@ class CONSTANCIA_PROF
 	private $sello_digital;
 	private $verificada;
 
+	/*Aspciacion*/
+	private $ACTA;
+
+    /**
+     * @return mixed
+     */
+    public function getACTA()
+    {
+        return $this->ACTA;
+    }
+
+    /**
+     * @param mixed $ACTA
+     */
+    public function setACTA($ACTA): void
+    {
+        $this->ACTA = $ACTA;
+    }
     /**
      * @return mixed
      */

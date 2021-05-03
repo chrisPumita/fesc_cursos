@@ -11,6 +11,25 @@ class ACTA
 	/*Dependencia de uso*/
     private $GRUPO_ASIGNACION;
 
+    /*COMPOSICION  1 ------- 1*   */
+    private $lista_INSCRIPCIONES_ACTA;
+
+    /**
+     * @return mixed
+     */
+    public function getListaINSCRIPCIONESACTA()
+    {
+        return $this->lista_INSCRIPCIONES_ACTA;
+    }
+
+    /**
+     * @param mixed $lista_INSCRIPCIONES_ACTA
+     */
+    public function setListaINSCRIPCIONESACTA($lista_INSCRIPCIONES_ACTA): void
+    {
+        $this->lista_INSCRIPCIONES_ACTA = $lista_INSCRIPCIONES_ACTA;
+    }
+
     /**
      * @return mixed
      */

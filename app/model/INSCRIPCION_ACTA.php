@@ -8,6 +8,7 @@ class INSCRIPCION_ACTA extends INSCRIPCION
     private $fecha_incorpora;
     private $calificacion;
 
+
     /**
      * @return mixed
      */

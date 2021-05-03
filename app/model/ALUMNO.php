@@ -17,6 +17,23 @@ class ALUMNO extends  PERSONA
     private $perfil_image;
     private $estatus_alumno;
 
+    private $cuenta_SERVICIO_SOCIAL;
+
+    /**
+     * @return mixed
+     */
+    public function getCuentaSERVICIOSOCIAL()
+    {
+        return $this->cuenta_SERVICIO_SOCIAL;
+    }
+
+    /**
+     * @param mixed $cuenta_SERVICIO_SOCIAL
+     */
+    public function setCuentaSERVICIOSOCIAL($cuenta_SERVICIO_SOCIAL): void
+    {
+        $this->cuenta_SERVICIO_SOCIAL = $cuenta_SERVICIO_SOCIAL;
+    }
     /**
      * @return mixed
      */

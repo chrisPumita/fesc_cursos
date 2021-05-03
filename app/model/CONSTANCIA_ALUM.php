@@ -11,6 +11,24 @@ class CONSTANCIA_ALUM
 	private $fecha_creacion;
 	private $estatus;
 
+	/*Asociacion*/
+	private $INCRIPCION_ACTA;
+
+    /**
+     * @return mixed
+     */
+    public function getINCRIPCIONACTA()
+    {
+        return $this->INCRIPCION_ACTA;
+    }
+
+    /**
+     * @param mixed $INCRIPCION_ACTA
+     */
+    public function setINCRIPCIONACTA($INCRIPCION_ACTA): void
+    {
+        $this->INCRIPCION_ACTA = $INCRIPCION_ACTA;
+    }
     /**
      * @return mixed
      */

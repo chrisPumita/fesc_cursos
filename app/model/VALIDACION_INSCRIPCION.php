@@ -10,6 +10,7 @@ class VALIDACION_INSCRIPCION
     private $monto_pago_realizado;
     private $descripcion;
     private $nota;
+
     /**
      * @return mixed
      */

@@ -16,6 +16,24 @@ class INSCRIPCION
     /*Composiciones*/
     private $lista_archivos;
 
+    /* ASOCIACION de cla clase VALIDACION_INSCRIPCION*/
+    private $VALIDACION;
+
+    /**
+     * @return mixed
+     */
+    public function getVALIDACION()
+    {
+        return $this->VALIDACION;
+    }
+
+    /**
+     * @param mixed $VALIDACION
+     */
+    public function setVALIDACION($VALIDACION): void
+    {
+        $this->VALIDACION = $VALIDACION;
+    }
     /**
      * @return mixed
      */
