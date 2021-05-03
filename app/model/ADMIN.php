@@ -1,6 +1,8 @@
 <?php
- include("PERSONA.php");
-class ADMIN extends PERSONA
+    include("PERSONA.php");
+    include "I_admin.php";
+
+class ADMIN extends PERSONA implements I_admin
 {
     private $id_profesor_admin_fk;
     private $cargo;
@@ -89,4 +91,24 @@ class ADMIN extends PERSONA
     }
 
 
+///+++++++++++++ FUNCIONES PROPIAS DE LA CLASE ADMINISTRADOR ++++++++++++++++++///
+    public function getListaAdministradores($estado_rep)
+    {
+        //CASE TODO
+        $filtro = $estado_rep > 0 ? " WHERE id_estado_fk = " . $estado_rep : "";
+        $this->connect();
+        $datos = $this-> getData("SELECT * FROM `municipios`  ".$filtro);
+        $this->close();
+        return $datos;
+    }
+
+    public function updateAdmin($admin)
+    {
+        // TODO: Implement updateAdmin() method.
+    }
+
+    public function deleteAdmin($admin)
+    {
+        // TODO: Implement deleteAdmin() method.
+    }
 }
