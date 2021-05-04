@@ -1,10 +1,9 @@
 <?php
+include ("CONEXION_M.php");
+include_once "I_DOCUMENTOS.php";
 
-
-class DOCUMENTO
+class DOCUMENTO extends CONEXION_M implements I_DOCUMENTOS
 {
-
-
     private $id_documento;
     private $nombre_doc;
     private $formato_admitido;
@@ -108,4 +107,11 @@ class DOCUMENTO
     }
 
 
+    function consultaDocumentos()
+    {
+        $this->connect();
+        $datos = $this-> getData("SELECT * FROM `documento` ");
+        $this->close();
+        return $datos;
+    }
 }

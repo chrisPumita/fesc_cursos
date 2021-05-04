@@ -1,7 +1,7 @@
 <?php
 INCLUDE ("DOCS_SOLICITADOS_CURSO.php");
-
-class ARCHIVO extends DOCS_SOLICITADOS_CURSO
+include_once "I_ARCHIVO.php";
+class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
 {
     private $id_archivoid_doc_sol_fk;
     private $id_archivoid_inscripcion_fk;
@@ -14,7 +14,7 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO
     private $id_archivoestado_revision;
     private $estado;
 
-private $id_archivo;
+    private $id_archivo;
 
     /**
      * @return mixed
@@ -193,4 +193,13 @@ private $id_archivo;
     }
 
 
+    function consultaArchivos($id_doc_sol)
+    {
+        $filtro = $id_doc_sol > 0 ? " WHERE `archivo`.`id_doc_sol_fk` =" . $id_doc_sol : "";
+        $this->connect();
+        $datos = $this-> getData("SELECT `archivo`.* 
+                                        FROM `archivo`".$filtro);
+        $this->close();
+        return $datos;
+    }
 }

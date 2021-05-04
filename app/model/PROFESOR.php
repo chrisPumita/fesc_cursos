@@ -1,7 +1,8 @@
 <?php
 
 include ("PERSONA.php");
-class PROFESOR extends PERSONA
+include_once "I_PROFESOR.php";
+class PROFESOR extends PERSONA implements I_PROFESOR
 {
     private $id_profesor;
     private $id_persona_fk;
@@ -224,7 +225,27 @@ class PROFESOR extends PERSONA
     {
         $this->estatus_profesor = $estatus_profesor;
     }
+///+++++++++++++ FUNCIONES PROPIAS DE LA CLASE PROFESOR ++++++++++++++++++///
 
 
+    public function getListaProfesores()
+    {
+        $this->connect();
+        $datos = $this-> getData("SELECT `profesor`.`id_profesor`,`persona`.`*`,`departamentos`.`nombre` as departamento 
+                                               FROM `persona`,`departamentos`,`profesor`
+                                                    WHERE  `persona`.`id_persona` in (SELECT `profesor`.`id_persona_fk` FROM `profesor` )
+                                                    AND `profesor`.`id_depto_fk`=`departamentos`.`id_depto`
+                                                    AND `profesor`.`id_persona_fk`=`persona`.`id_persona`");
+        $this->close();
+        return $datos;
+    }
 
+    function updateEstatusProf($id_profesor, $estatus)
+    {
+        $filtro = $id_profesor > 0 ? " WHERE `profesor`.`id_profesor`=" . $id_profesor : "";
+        $this->connect();
+        $datos = $this-> getData("UPDATE `profesor` SET `profesor`.`estatus`= '$estatus' ".$filtro);
+        $this->close();
+        return $datos;
+    }
 }

@@ -1,7 +1,7 @@
 <?php
 include("DOCUMENTO.php");
-
-class DOCS_SOLICITADOS_CURSO extends  DOCUMENTO
+include_once "I_DOCS_SOLICITADOS.php";
+class DOCS_SOLICITADOS_CURSO extends  DOCUMENTO implements I_DOCS_SOLICITADOS
 {
     private $id_doc_sol;
     private $id_documento_fk;
@@ -74,4 +74,13 @@ class DOCS_SOLICITADOS_CURSO extends  DOCUMENTO
     }
 
 
+    function ListaDocumentos($id_curso)
+    {
+        $filtro = $id_curso > 0 ? " WHERE `docs_solicitados_curso`.`id_curso_fk`=" . $id_curso : "";
+        $this->connect();
+        $datos = $this-> getData("SELECT `documento`.*, `docs_solicitados_curso`.`obligatorio` 
+                                        FROM `documento`, `docs_solicitados_curso`".$filtro);
+        $this->close();
+        return $datos;
+    }
 }

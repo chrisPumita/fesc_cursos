@@ -76,23 +76,36 @@ class ADMIN extends PROFESOR implements I_admin
 
 
 ///+++++++++++++ FUNCIONES PROPIAS DE LA CLASE ADMINISTRADOR ++++++++++++++++++///
-    public function getListaAdministradores($estado_rep)
+    public function getListaAdministradores($estatus_admin)
     {
         //CASE TODO
-        $filtro = $estado_rep > 0 ? " WHERE id_estado_fk = " . $estado_rep : "";
+        $filtro = $estatus_admin > 0 ? " AND `administrador`.`estatus`=" . $estatus_admin : "";
         $this->connect();
-        $datos = $this-> getData("SELECT * FROM `municipios`  ".$filtro);
+        $datos = $this-> getData("SELECT `profesor`.`id_profesor`,`persona`.`nombre`,
+                                              `persona`.`app`,`persona`.`apm`,`departamentos`.`nombre` as departamento 
+                                               FROM `administrador`,`profesor`,`persona`,`departamentos` 
+                                                    WHERE `administrador`.`id_profesor_admin_fk`=`profesor`.`id_profesor` 
+                                                    AND `profesor`.`id_persona_fk`=`persona`.`id_persona` 
+                                                    AND `profesor`.`id_depto_fk`=`departamentos`.`id_depto`".$filtro);
         $this->close();
         return $datos;
     }
 
-    public function updateAdmin($admin)
+    public function updateAdmin($admin,$estatus)
     {
-        // TODO: Implement updateAdmin() method.
+        $filtro = $admin > 0 ? " WHERE `administrador`.`id_profesor_admin_fk`=" . $admin : "";
+        $this->connect();
+        $datos = $this-> getData("UPDATE `administrador` SET `administrador`.`estatus`= '$estatus' ".$filtro);
+        $this->close();
+        return $datos;
     }
 
     public function deleteAdmin($admin)
     {
-        // TODO: Implement deleteAdmin() method.
+        $filtro = $admin > 0 ? " WHERE `administrador`.`id_profesor_admin_fk`=" . $admin : "";
+        $this->connect();
+        $datos = $this-> getData("DELETE * FROM `administrador`".$filtro);
+        $this->close();
+        return $datos;
     }
 }
