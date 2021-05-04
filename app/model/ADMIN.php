@@ -1,30 +1,14 @@
 <?php
-    include("PERSONA.php");
+    include("PROFESOR.php");
     include "I_admin.php";
 
-class ADMIN extends PERSONA implements I_admin
+class ADMIN extends PROFESOR implements I_admin
 {
-    private $id_profesor_admin_fk;
+
     private $cargo;
     private $permisos;
     private $clave_confirmacion;
     private $estatus_admin;
-
-    /**
-     * @return mixed
-     */
-    public function getIdProfesorAdminFk()
-    {
-        return $this->id_profesor_admin_fk;
-    }
-
-    /**
-     * @param mixed $id_profesor_admin_fk
-     */
-    public function setIdProfesorAdminFk($id_profesor_admin_fk)
-    {
-        $this->id_profesor_admin_fk = $id_profesor_admin_fk;
-    }
 
     /**
      * @return mixed
