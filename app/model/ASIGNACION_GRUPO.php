@@ -1,5 +1,8 @@
 <?php
-class ASIGNACION_GRUPO
+include_once "CONEXION_M.php";
+include_once "I_ASIG_GRUPO.php";
+
+class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
 {
 	private $id_asignacion;
 	private $id_grupo_fk;
@@ -19,9 +22,28 @@ class ASIGNACION_GRUPO
     private $nivel_aplicacion_desc;
     private $notas;
     private $modalidad;
-    /* Composiciones*/
+    /* Agregacion*/
     private $lista_horario_presencial;
     private $lista_horario_virtual;
+
+    /*Agregacion*/
+    private $lista_inscripciones;
+
+    /**
+     * @return mixed
+     */
+    public function getListaInscripciones()
+    {
+        return $this->consultaInscripciones($this->getIdAsignacion());
+    }
+
+    /**
+     * @param mixed $lista_inscripciones
+     */
+    public function setListaInscripciones($lista_inscripciones): void
+    {
+        $this->lista_inscripciones = $lista_inscripciones;
+    }
 
     /**
      * @return mixed
@@ -316,7 +338,7 @@ class ASIGNACION_GRUPO
      */
     public function getListaHorarioPresencial()
     {
-        return $this->lista_horario_presencial;
+        return $this->consultaHorarioPresencial($this->id_asignacion);
     }
 
     /**
@@ -332,8 +354,9 @@ class ASIGNACION_GRUPO
      */
     public function getListaHorarioVirtual()
     {
-        return $this->lista_horario_virtual;
+        return consultaHorarioVirtual($this->getIdAsignacion());
     }
+
 
     /**
      * @param mixed $lista_horario_virtual
@@ -343,4 +366,27 @@ class ASIGNACION_GRUPO
         $this->lista_horario_virtual = $lista_horario_virtual;
     }
 
+
+        /*---------Metodos implementados de la interface----------*/
+
+
+    public function consultaGrupo($id_asig)
+    {
+        // TODO: Implement consultaGrupo() method.
+    }
+
+    function consultaHorarioVirtual($id_asig)
+    {
+        // TODO: Implement consultaHorarioVirtual() method.
+    }
+
+    function consultaHorarioPresencial($id_asig)
+    {
+        // TODO: Implement consultaHorarioPresencial() method.
+    }
+
+    public function consultaInscripciones($id_asig)
+    {
+        // TODO: Implement consultaInscripciones() method.
+    }
 }
