@@ -22,8 +22,7 @@
 <!-- FIN ENCABEZADO DETALLES USUARIO BIENVENIDA -->
 
 <!--INICIA ESTADISTICAS-->
-<section class="bg-grey">
-    <div class="container">
+<section class="container bg-grey">
         <div class="card">
             <div class="card-body">
                 <div class="row">
@@ -63,13 +62,11 @@
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <!-- FIN SECCION  ESTADISTICAS-->
 
 <!--INICIA SECCION CURSOS ACTUALES-->
-    <section class="bg-grey">
-        <div class="container">
+    <section class="container bg-grey">
             <div class="row">
                 <div class="col-lg-12 py-3">
                     <h3>Grupos actuales</h3>
@@ -184,13 +181,11 @@
                     </nav>
                 </div>
             </div>
-        </div>
     </section>
 <!-- FIN SECCION CURSOS ACTUALES -->
 
 <!--SECCION CURSOS REGISTRADOS ACTIVOS-->
-    <section class="bg-grey">
-        <div class="container">
+    <section class="container bg-grey">
             <div class="row">
                 <div class="col-lg-12 py-3">
                     <h3>Cursos Registrados activos</h3>
@@ -286,13 +281,11 @@
                     </nav>
                 </div>
             </div>
-        </div>
     </section>
 <!-- FIN SECCION CURSOS REGISTRADOS ACTIVOS -->
 
 <!-- INICIA SECCION DOCS PENDIENTES DE REVISION -->
-<section class="bg-grey">
-        <div class="container">
+<section class="container bg-grey">
             <div class="row">
                 <div class="col-lg-12 py-3">
                     <h3>Documentos pendientes de revisión</h3>
@@ -401,13 +394,11 @@
                     </nav>
                 </div>
             </div>
-        </div>
     </section>
 <!-- FIN SECCION DOC PENDIENTES DE REVISION -->
 
 <!-- SECCION DE ACCESOS RAPIDOS -->
-<section class="bg-grey">
-    <div class="container">
+<section class="container bg-grey">
         <div class="row">
             <div class="col-lg-12 py-3">
                 <h3>Accesos Rápidos</h3>
@@ -456,12 +447,10 @@
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <!-- FIN DE SECCION ACCESOS RAPIDOS -->
 
-<section class="bg-grey">
-    <div class="container">
+<section class="container bg-grey">
         <div class="row">
             <div class="col-lg-8 my-3">
                 <div class="card text-left">
@@ -550,5 +539,4 @@
             </div>
             <!-- FIN SECCION PAGOS RECIENTES  -->
         </div>
-    </div>
 </section>
