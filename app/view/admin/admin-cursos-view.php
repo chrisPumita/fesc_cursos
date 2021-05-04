@@ -15,8 +15,7 @@ include("../includes/header.php");
         <div id="content">
             <!--Inicio contenido dinamico-->
             <div class="componet-dinamico">
-                <h2>Hola</h2>
-                <h3>hola de Mostrando cursos</h3>
+                <?php include ("admin-cursospanel-view.php")?>
             </div>
             <!--FIN contenido dinamico-->
             <?php include("../includes/footer.php");?>
