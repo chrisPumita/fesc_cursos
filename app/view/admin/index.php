@@ -8,20 +8,18 @@ include("../includes/header.php");
 ?>
 <body class="body-home">
 <div class="d-flex">
-    <?php include("../includes/navegation.php"); ?>
+    <?php include("../includes/admin-menupc.php"); ?>
     <div class="w-100">
-        <?php include("../includes/menu_admin.php"); ?>
+        <?php include("../includes/admin-menutel.php"); ?>
 
         <div id="content">
             <!--Inicio contenido dinamico-->
             <div class="componet-dinamico">
-                <?php include ("panel.php")?>
+                <?php include ("admin-principal-view.php")?>
             </div>
             <!--FIN contenido dinamico-->
             <?php include("../includes/footer.php");?>
         </div>
-
-
     </div>
 </div>
 <!-- script_js -->

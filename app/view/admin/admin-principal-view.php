@@ -139,7 +139,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">/th>
+                            <th scope="row">3</th>
                             <td>2603</td>
                             <td>Iniciación al cómputo I</td>
                             <td>Ana Gabriela Guevara Espinoza</td>
@@ -465,6 +465,7 @@
         <div class="row">
             <div class="col-lg-8 my-3">
                 <div class="card text-left">
+                    <!-- INICIO PRESENTACION IMAGENES SLIDER -->
                     <div class="card-body">
                         <h4 class="card-title">Cursos Recientes</h4>
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -505,9 +506,11 @@
                                 <span class="sr-only">Siguiente</span>
                             </a>
                         </div>
-                    </div>
+                    </div> 
+                    <!-- FIN PRESENTACION IMAGENES SLIDER -->
                 </div>
             </div>
+            <!-- INICIO SECCION PAGOS RECIENTES -->
             <div class="col-lg-4 my-3">
                 <div class="card rounded-0">
                     <div class="card-header bg-ligth">
@@ -545,6 +548,7 @@
                     </div>
                 </div>
             </div>
+            <!-- FIN SECCION PAGOS RECIENTES  -->
         </div>
     </div>
 </section>
