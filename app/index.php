@@ -17,7 +17,7 @@
         include("./control/admin/consultas.php");
         echo "<h2>$name</h2>";
     ?>
-    <p>Decide el control del acceso > admin, estudent > prof</p>
+    <p>Decide el control del acceso > admin, student > prof</p>
 </div>
 
 </body>

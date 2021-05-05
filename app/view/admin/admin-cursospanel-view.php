@@ -60,7 +60,9 @@
                                     Opciones
                                 </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <button class="dropdown-item" type="button">Ver Detalles</button>
+                                        <a href="./admin-detcursos-view.php">
+                                            <button class="dropdown-item" type="button">Ver Detalles</button>
+                                        </a>                                        
                                         <button class="dropdown-item" type="button">Editar</button>
                                         <button class="dropdown-item" type="button">Acreditar Curso</button>
                                         <button class="dropdown-item" type="button">Nuevo Grupo</button>
@@ -84,7 +86,9 @@
                                     Opciones
                                 </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <button class="dropdown-item" type="button">Ver Detalles</button>
+                                        <a href="./admin-detcursos-view.php">
+                                            <button class="dropdown-item" type="button">Ver Detalles</button>
+                                        </a>                                        
                                         <button class="dropdown-item" type="button">Editar</button>
                                         <button class="dropdown-item" type="button">Acreditar Curso</button>
                                         <button class="dropdown-item" type="button">Nuevo Grupo</button>
@@ -109,7 +113,9 @@
                                     Opciones
                                 </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <button class="dropdown-item" type="button">Ver Detalles</button>
+                                        <a href="./admin-detcursos-view.php">
+                                            <button class="dropdown-item" type="button">Ver Detalles</button>
+                                        </a>
                                         <button class="dropdown-item" type="button">Editar</button>
                                         <button class="dropdown-item" type="button">Acreditar Curso</button>
                                         <button class="dropdown-item" type="button">Nuevo Grupo</button>

@@ -57,6 +57,10 @@ a:hover{
     max-width: 35px;
 }
 
+.estadisticas{
+    border: 0;
+}
+
 .pie{
     margin-top: -2rem;
     margin-bottom: 1rem;
@@ -335,3 +339,4 @@ a {
 .h3, h3 {
     font-size: 1.5rem;
 }
+
