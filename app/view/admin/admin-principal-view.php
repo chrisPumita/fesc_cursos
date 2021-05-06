@@ -23,10 +23,12 @@
 
 <!--INICIA ESTADISTICAS-->
 <section class="container bg-grey">
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
+<div class="card bg-grey estadisticas">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                    <div class="card-body">
                         <div class="mx-auto">
                             <i class="icon ion-md-rocket mr-1 position-absolute paleta"></i>
                             <h6 class="text-muted"></i><STrong>Cursos</STrong></h6>
@@ -34,7 +36,11 @@
                             <h6 class="text-success">Cursos activos</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                    <div class="card-body">
                         <div class="mx-auto">
                             <i class="icon ion-md-checkmark mr-1 position-absolute paleta"></i>
                             <h6 class="text-muted"><strong>Constancias</strong></h6>
@@ -42,7 +48,11 @@
                             <h6 class="text-warning">Por revisar y acreditar</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                    <div class="card-body">
                         <div class="mx-auto">
                             <i class="icon ion-md-stats mr-1 position-absolute paleta"></i>
                             <h6 class="text-muted"><strong>Inscripciones</strong></h6>
@@ -50,18 +60,23 @@
                             <h6 class="text-warning">Pendientes de revisión</h6>
                         </div>
                     </div>
-                    <!-- PAGINADOR DE TABLA -->
-                    <div class="col-lg-3 col-md-6 d-flex my-3">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                    <div class="card-body">
                         <div class="mx-auto">
                             <i class="icon ion-md-contacts mr-1 position-absolute paleta"></i>
                             <h6 class="text-muted"><strong>Alumnos</strong></h6>
                             <h3 class="font-weight-bold">700</h3>
-                            <h6 class="text-success">Registrados en el sistema</h6>
+                            <h6 class="text-success">Registrados</h6>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 <!-- FIN SECCION  ESTADISTICAS-->
 
