@@ -1,5 +1,6 @@
 <?php
 
+include_once "DOCS_SOLICITADOS_CURSO.php";
 
 class CURSO extends CONEXION_M implements I_CURSO
 {
@@ -399,14 +400,7 @@ class CURSO extends CONEXION_M implements I_CURSO
     {
         $this->obj_profesor_admin_acredita = $obj_profesor_admin_acredita;
     }
-    public function consultaGrupo($id_curso)
-    {
-        $this->connect();
-        $grupos = $this-> getData("SELECT * FROM `grupo` WHERE `id_curso_fk` = ".$id_curso." ORDER BY `grupo`.`id_grupo` ASC ");
-        $this->close();
-        return $grupos;
-        // TODO: Implement consultaGrupo() method.
-    }
+
     public function consultaTemas($id_curso)
     {
         $this->connect();
@@ -423,12 +417,60 @@ class CURSO extends CONEXION_M implements I_CURSO
         return $temas;
         // TODO: Implement consultaGroupKeys() method.
     }
+
     public function consultaDocsSolicitados($id_curso)
     {
-        $this->connect();
-        $docs = $this-> getData("SELECT * FROM `docs_solicitados_curso` WHERE `id_curso_fk` = ".$id_curso." ORDER BY `docs_solicitados_curso`.`id_doc_sol` ASC ");
-        $this->close();
-        return $docs;
-        // TODO: Implement consultaDocsSolicitados() method.
+        $docs = new DOCS_SOLICITADOS_CURSO();
+        return $docs -> consultarListaDocumentos($id_curso);
+    }
+
+    public function consultaGrupos($id_curso)
+    {
+        // TODO: Implement consultaGrupos() method.
+    }
+
+    function registraCurso($curso)
+    {
+        // TODO: Implement registraCurso() method.
+    }
+
+    function actualizaCurso($curso)
+    {
+        // TODO: Implement actualizaCurso() method.
+    }
+
+    function agregaTema($tema)
+    {
+        // TODO: Implement agregaTema() method.
+    }
+
+    function quitarTema($idTema)
+    {
+        // TODO: Implement quitarTema() method.
+    }
+
+    function actualizaTema($tema)
+    {
+        // TODO: Implement actualizaTema() method.
+    }
+
+    function agregaKeywordGrupo($keyword)
+    {
+        // TODO: Implement agregaKeywordGrupo() method.
+    }
+
+    function quitarKerword($id_key, $id_curso)
+    {
+        // TODO: Implement quitarKerword() method.
+    }
+
+    function agregaDocumentoSolicitado($documentoSolicitado)
+    {
+        // TODO: Implement agregaDocumentoSolicitado() method.
+    }
+
+    function quitarDocumetoSolicitado($id_doc_solicitado, $id_curso)
+    {
+        // TODO: Implement quitarDocumetoSolicitado() method.
     }
 }

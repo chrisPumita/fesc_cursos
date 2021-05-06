@@ -26,8 +26,43 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
     private $lista_horario_presencial;
     private $lista_horario_virtual;
 
-    /*Agregacion*/
     private $lista_inscripciones;
+
+    //composicion
+    private $grupo;
+    private $profesor;
+
+    /**
+     * @return mixed
+     */
+    public function getGrupo()
+    {
+        return $this->grupo;
+    }
+
+    /**
+     * @param mixed $grupo
+     */
+    public function setGrupo($grupo): void
+    {
+        $this->grupo = $grupo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProfesor()
+    {
+        return $this->profesor;
+    }
+
+    /**
+     * @param mixed $profesor
+     */
+    public function setProfesor($profesor): void
+    {
+        $this->profesor = $profesor;
+    }
 
     /**
      * @return mixed
@@ -370,11 +405,6 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
         /*---------Metodos implementados de la interface----------*/
 
 
-    public function consultaGrupo($id_asig)
-    {
-        // TODO: Implement consultaGrupo() method.
-    }
-
     function consultaHorarioVirtual($id_asig)
     {
         // TODO: Implement consultaHorarioVirtual() method.
@@ -389,4 +419,7 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
     {
         // TODO: Implement consultaInscripciones() method.
     }
+
+
+
 }

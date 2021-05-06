@@ -207,4 +207,29 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
     {
         // TODO: Implement crearListaDocumentos() method.
     }
+
+    function modificaArchivo($archivo)
+    {
+        // TODO: Implement modificaArchivo() method.
+    }
+
+    function eliminarArchivo($id_archivo)
+    {
+        // TODO: Implement eliminarArchivo() method.
+    }
+
+    function eliminaArchivoPath($path)
+    {
+        // TODO: Implement eliminaArchivoPath() method.
+    }
+
+    function crearArchivo($archivo)
+    {
+        // TODO: Implement crearArchivo() method.
+    }
+
+    function crearArchivoPath($archivo, $objArtchivo)
+    {
+        // TODO: Implement crearArchivoPath() method.
+    }
 }
