@@ -202,4 +202,9 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
         $this->close();
         return $datos;
     }
+
+    function crearListaDocumentos($listaDocs)
+    {
+        // TODO: Implement crearListaDocumentos() method.
+    }
 }

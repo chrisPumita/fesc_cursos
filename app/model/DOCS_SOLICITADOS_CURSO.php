@@ -74,7 +74,7 @@ class DOCS_SOLICITADOS_CURSO extends  DOCUMENTO implements I_DOCS_SOLICITADOS
     }
 
 
-    function ListaDocumentos($id_curso)
+    function consultarListaDocumentos($id_curso)
     {
         $filtro = $id_curso > 0 ? " WHERE `docs_solicitados_curso`.`id_curso_fk`=" . $id_curso : "";
         $this->connect();
@@ -83,4 +83,6 @@ class DOCS_SOLICITADOS_CURSO extends  DOCUMENTO implements I_DOCS_SOLICITADOS
         $this->close();
         return $datos;
     }
+
+
 }

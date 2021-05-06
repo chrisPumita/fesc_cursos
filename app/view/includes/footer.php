@@ -1,9 +1,9 @@
 <footer class="text-center text-white bg-light ">
     <!-- Grid container -->
-    <div class="container py-1 bg_second">
+    <div class=" py-1 bg_second">
      
     </div>
-    <div class="container py-2 bg-primary">
+    <div class=" py-2 bg-primary">
         <!-- Section: Social media -->
         <section class="bg-ligth">
 
@@ -55,12 +55,12 @@
         <!-- Section: Social media -->
     </div>
     <!-- Grid container -->
-    <div class="container py-2 bg-primary">
+    <div class=" py-2 bg-primary">
     Edificio del centro de cómputo, planta baja Km 2.5 Carretera Cuautitlán-Teoloyucan<br> 
     Col. San Sebastián Xhala, Cuautitlán Izcalli,Edo. México C.P. 54714
     </div>
     <!-- Copyright -->
-    <div class="container text-center text-sm-light p-5 bg-secondary" >
+    <div class=" text-center text-sm-light p-5 bg-secondary" >
         <p class="pie">Hecho en México, Universidad Nacional Autónoma de México (UNAM), todos los derechos reservados 2019. Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica. De otra forma, requiere permiso previo por escrito de la institución.</p>
         © <?php echo date("Y")." "; ?> Copyright:
         <a class="text-light" href="https://www.facebook.com/ReCkreaStuDios">SICEP- Centro de Computo</a>
