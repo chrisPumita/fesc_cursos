@@ -114,4 +114,19 @@ class DOCUMENTO extends CONEXION_M implements I_DOCUMENTOS
         $this->close();
         return $datos;
     }
+
+    function modificaDocumento($documento)
+    {
+        // TODO: Implement modificaDocumento() method.
+    }
+
+    function crearDocumento($documento)
+    {
+        // TODO: Implement crearDocumento() method.
+    }
+
+    function borrarDocumento($idDocumento)
+    {
+        // TODO: Implement borrarDocumento() method.
+    }
 }

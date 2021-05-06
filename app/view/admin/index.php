@@ -14,7 +14,7 @@ include("../includes/header.php");
 
         <div id="content">
             <!--Inicio contenido dinamico-->
-            <div class="componet-dinamico">
+            <div class="componet-dinamico bg-grey">
                 <?php include ("admin-principal-view.php")?>
             </div>
             <!--FIN contenido dinamico-->
