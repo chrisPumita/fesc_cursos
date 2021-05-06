@@ -1,7 +1,7 @@
 <?php
 
 
-class CURSO
+class CURSO extends CONEXION_M implements I_CURSO
 {
     private $id_curso;
     private $id_profesor_admin_acredita;
@@ -305,7 +305,8 @@ class CURSO
      */
     public function getListaTemas()
     {
-        return $this->lista_temas;
+        return $this->consultaTemas($this->getIdCurso());
+        //return $this->lista_temas;
     }
 
     /**
@@ -321,7 +322,8 @@ class CURSO
      */
     public function getListaGrupos()
     {
-        return $this->lista_grupos;
+        return $this->consultaGrupo($this->getIdCurso());
+        //return $this->lista_grupos;
     }
 
     /**
@@ -337,7 +339,8 @@ class CURSO
      */
     public function getListaDocsSolicitados()
     {
-        return $this->lista_docs_solicitados;
+        return $this->consultaDocsSolicitados($this->getIdCurso());
+        //return $this->lista_docs_solicitados;
     }
 
     /**
@@ -353,7 +356,8 @@ class CURSO
      */
     public function getListaGroupKeys()
     {
-        return $this->lista_group_keys;
+        return $this->consultaGroupKeys($this->getIdCurso());
+        //return $this->lista_group_keys;
     }
 
     /**
@@ -395,6 +399,36 @@ class CURSO
     {
         $this->obj_profesor_admin_acredita = $obj_profesor_admin_acredita;
     }
-
-
+    public function consultaGrupo($id_curso)
+    {
+        $this->connect();
+        $grupos = $this-> getData("SELECT * FROM `grupo` WHERE `id_curso_fk` = ".$id_curso." ORDER BY `grupo`.`id_grupo` ASC ");
+        $this->close();
+        return $grupos;
+        // TODO: Implement consultaGrupo() method.
+    }
+    public function consultaTemas($id_curso)
+    {
+        $this->connect();
+        $temas = $this-> getData("SELECT * FROM `temas` WHERE `id_curso_fk` = ".$id_curso." ORDER BY `temas`.`id_tema` ASC ");
+        $this->close();
+        return $temas;
+        // TODO: Implement consultaTemas() method.
+    }
+    public function consultaGroupKeys($id_curso)
+    {
+        $this->connect();
+        $temas = $this-> getData("SELECT * FROM `group_key` WHERE `id_curso_fk` = ".$id_curso." ORDER BY `group_key`.`id_curso_fk` ASC ");
+        $this->close();
+        return $temas;
+        // TODO: Implement consultaGroupKeys() method.
+    }
+    public function consultaDocsSolicitados($id_curso)
+    {
+        $this->connect();
+        $docs = $this-> getData("SELECT * FROM `docs_solicitados_curso` WHERE `id_curso_fk` = ".$id_curso." ORDER BY `docs_solicitados_curso`.`id_doc_sol` ASC ");
+        $this->close();
+        return $docs;
+        // TODO: Implement consultaDocsSolicitados() method.
+    }
 }
