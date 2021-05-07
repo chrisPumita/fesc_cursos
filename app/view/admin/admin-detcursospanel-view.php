@@ -93,26 +93,28 @@
                                 <h6><strong>Costo sugerido: </strong> $1,600 MXN</h6>
                                 <h6><strong>Modalidad: </strong> A distancia</h6>
                                 <h6><strong>Cupo: </strong>30</h6>
-                                <h6><strong>Sesiones: </strong> 20</h6>                                                           
-                                <div class="d-grid gap-2 col-6 mx-auto">
-                                    <button class="btn btn-primary" type="button">Button</button>
-                                </div>
+                                <h6><strong>Sesiones: </strong> 20</h6>
+                                <a href=""><button class="btn btn-primary btn-block" type="button">Editar detalles</button></a>
                             </div>
                         </div>
                     </div>                    
                 </div>
                 <!-- TARJETA DE BANNER -->
-                <div class="col-sm-6">
+                <div class="col-sm-6">             
                     <div class="card">
+                        <img src="http://www.rrhhdigital.com/userfiles/CURSO-EXCEL-RRHHDIGITAL.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <div class="mx-auto">
-                            <h6><strong>Creado por </strong>Juan Perez Sanchez</h6>
-                            <h6>15 de Mayo de 2020</h6>
-                            <
+                            <h6 class="card-title"><strong>Imagen del Banner</strong></h6>
+                            <p class="card-text py-1">Debe tener una resolución de 600px por 300px</p>
+                            <div class="col-md-6">
+                                <a href="#" class="btn btn-primary btn-block">Cambiar</a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="#"><button type="button" class="btn btn-outline-secondary btn-sec btn-block">Quitar</button></a>
                             </div>
                         </div>
-                    </div>                    
-                </div>               
+                    </div>
+                </div>
             </div>
         </div>        
     </div>
