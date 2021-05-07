@@ -1,6 +1,8 @@
 <?php
-include ("CONEXION_M.php");
-class PERSONA extends CONEXION_M
+include_once "CONEXION_M.php";
+include_once "I_PERSONA.php";
+
+class PERSONA extends CONEXION_M implements I_PERSONA
 {
     protected $id_persona;
     protected $nombre;
@@ -127,6 +129,40 @@ class PERSONA extends CONEXION_M
 
     public function verificaUsuario()
     {
+        //debe existir dentro de la base de datos
+    }
 
+    function login()
+    {
+        // TODO: Implement login() method.
+    }
+
+    function logout()
+    {
+        // matar la sesion
+
+    }
+
+    function registraPersona()
+    {
+        $query ="INSERT INTO `persona` (`id_persona`, `nombre`, `app`, `apm`, `telefono`, `sexo`, `estatus`) 
+                VALUES ('".$this->getIdPersona()."', '".$this->getNombre()."', '".$this->getApp()."',
+                 '".$this->getApm()."', '".$this->getTelefono()."', '".$this->getSexo()."', 
+                 '".$this->getEstatus()."')";
+
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    }
+
+    function actualizaPersona()
+    {
+        // TODO: Implement actualziaPersona() method.
+    }
+
+    function eliminarPersona()
+    {
+        // TODO: Implement eliminarPersona() method.
     }
 }

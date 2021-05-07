@@ -100,9 +100,7 @@ class ESTADO_REP extends CONEXION_M
         $this->connect();
         $result = $this-> getData($query);
         $this->close();
-        #convertimos el JSON para poder enviarlo /codificarlo
-        $jsonstring = json_encode($result);
-        return $jsonstring;
+        return $result;
     }
 
     public function consultaMunicipios($id_edo){

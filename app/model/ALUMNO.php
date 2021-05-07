@@ -1,8 +1,8 @@
 <?php
 
-include("PERSONA.php");
-
-class ALUMNO extends  PERSONA
+include_once "PERSONA.php";
+include_once "I_ALUMNO.php";
+class ALUMNO extends  PERSONA implements I_ALUMNO
 {
     private $id_alumno;
     private $id_municipio;
@@ -17,6 +17,7 @@ class ALUMNO extends  PERSONA
     private $perfil_image;
     private $estatus_alumno;
 
+        //Asociacion
     private $cuenta_SERVICIO_SOCIAL;
 
     /**
@@ -227,5 +228,81 @@ class ALUMNO extends  PERSONA
     }
 
 
+    /////Implementacion de metodos de la interfaz
 
+    function consultaAlumno()
+    {
+        // TODO: Implement consultaAlumno() method.
+    }
+
+    function consultaAlumnos($filtro)
+    {
+        // TODO: Implement consultaAlumnos() method.
+    }
+
+    function agregaAlumno()
+    {
+        $query ="INSERT INTO `alumno` (
+                      `id_alumno`, 
+                      `id_municipio`, 
+                      `id_universidad`, 
+                      `id_persona`, 
+                      `matricula`, 
+                      `nombre_uni`, 
+                      `tipo_procedencia`, 
+                      `carrera_especialidad`, 
+                      `email`, 
+                      `pw`, 
+                      `fecha_registro`, 
+                      `perfil_image`, 
+                      `estatus`) 
+                      VALUES (NULL, '".$this->getIdMunicipio()."', '".$this->id_universidad."',
+                       '".$this->getIdPersona()."', '".$this->getMatricula()."', '".$this->getNombreUni()."',
+                        '".$this->getTipoProcedencia()."', '".$this->getCarreraEspecialidad()."',
+                         '".$this->getEmail()."', '".$this->getPw()."', '".date('Y-m-d H:i:s')."', '', '".$this->getEstatusAlumno()."')";
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    }
+
+    function modificaAlumno()
+    {
+        // TODO: Implement modificaAlumno() method.
+    }
+
+    function modifcaPw()
+    {
+        // TODO: Implement modifcaPw() method.
+    }
+
+    function eliminaAlumno($id_alumno)
+    {
+        // TODO: Implement eliminaAlumno() method.
+    }
+
+    function consultaCuentaServSoc()
+    {
+        // TODO: Implement consultaCuentaServSoc() method.
+    }
+
+    function crearCuentaServSoc()
+    {
+        // TODO: Implement crearCuentaServSoc() method.
+    }
+
+    function modificarCuentaServSoc()
+    {
+        // TODO: Implement modificarCuentaServSoc() method.
+    }
+
+    function terminarServSoc()
+    {
+        // TODO: Implement terminarServSoc() method.
+    }
+
+    function cambiarClaveServSoc()
+    {
+        // TODO: Implement cambiarClaveServSoc() method.
+    }
 }

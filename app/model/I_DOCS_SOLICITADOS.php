@@ -4,7 +4,7 @@
 interface I_DOCS_SOLICITADOS
 {
     function consultarListaDocumentos($id_curso);
-    function crearListaDocumentos($listaDocs);
+    function crearDocumentos();
     /* 4docs
      * INSERT INTO `documento` (`id_documento`, `nombre_doc`, `formato_admitido`, `tipo`, `peso_max_mb`, `estatus`)
      * VALUES
