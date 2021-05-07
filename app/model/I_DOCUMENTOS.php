@@ -10,6 +10,6 @@ interface I_DOCUMENTOS
     function crearDocumento($documento);
 
     // DELETE, id * -1 , estatus 0;
-    function borrarDocumento($idDocumento);
+    function borrarDocumento($idDocumento,$estatus);
 
 }

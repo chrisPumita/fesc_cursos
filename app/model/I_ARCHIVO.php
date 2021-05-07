@@ -16,6 +16,6 @@ interface I_ARCHIVO
 
     function crearArchivo($archivo);
 
-    function crearArchivoPath($archivo,$objArtchivo);
+    function crearArchivoPath($archivo);
 
 }

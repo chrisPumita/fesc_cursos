@@ -88,21 +88,33 @@ class DOCS_SOLICITADOS_CURSO extends  DOCUMENTO implements I_DOCS_SOLICITADOS
 
     function crearListaDocumentos($listaDocs)
     {
-        /*
-         PENDIENTE
-         */
+        /* PENDIENTE
+        $numeroDocs=count($listaDocs);
+
         $query = "INSERT INTO `docs_solicitados_curso` (`id_doc_sol`, `id_documento_fk`, 
                                       `id_curso_fk`, `obligatorio`) VALUES";
-//(NULL, '1', '2', '0'), (NULL, '2', '3', '1')
+        for ( $i=0; $i=$numeroDocs; $i=$i+4){
+            $query= $query."(NULL,'".$listaDocs[$i]."','".$listaDocs[$i+1]."','".$listaDocs[$i+2]."')";
+            $query= $i=$numeroDocs ? $query.";" : $query.",";
+            }
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;*/
     }
 
     function eliminaDocumentoSolicitado($id_documento_sol)
     {
-        // TODO: Implement eliminaDocumentoSolicitado() method.
+        $this->connect();
+        $datos = $this-> getData("DELETE FROM `docs_solicitados_curso` WHERE `id_doc_sol`= ".$id_documento_sol);
+        $this->close();
+        return $datos;
     }
 
-    function cambiarOblig($id_documento_sol)
+    function cambiarOblig($id_documento_sol, $estatus)
     {
-        // TODO: Implement cambiarOblig() method.
+        $this->connect();
+        $datos = $this-> getData("UPDATE `docs_solicitados_curso` SET  `obligatorio`= ".$estatus."WHERE `id_doc_sol`=".$id_documento_sol);
+        $this->close();
+        return $datos;
     }
 }

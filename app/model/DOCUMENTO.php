@@ -117,16 +117,38 @@ class DOCUMENTO extends CONEXION_M implements I_DOCUMENTOS
 
     function modificaDocumento($documento)
     {
-        // TODO: Implement modificaDocumento() method.
+        /* recibe un array del documento a modificar
+        */
+        $this->connect();
+        $filtro="";
+        $filtro = $documento[2]!= NULL ? $filtro." `formato_admitido`='" . $documento[2]."'," : "";
+        $filtro = $documento[3]!= NULL ? $filtro." `tipo`=" . $documento[3]."," : "";
+        $filtro = $documento[4]!= NULL ? $filtro." `peso_max_mb`=" . $documento[4]."," : "";
+        $filtro = $documento[5]!= NULL ? $filtro." `estatus`=" . $documento[5] : "";
+        $filtro=$filtro."WHERE `id_documento`=".$documento[0];
+        $datos = $this-> getData("UPDATE `documento` SET  ".$filtro);
+        $this->close();
+        return $datos;
     }
 
     function crearDocumento($documento)
     {
-        // TODO: Implement crearDocumento() method.
+        $this->connect();
+        $valores="NULL";
+        for($i=0;$i=4;$i++){
+            $valores=$valores.",'".$documento[$i+1]."'";
+        }
+
+        $datos = $this-> getData("INSERT INTO `documento`(`id_documento`,`nombre_doc`,`formato_admitido`,`tipo`,`peso_max_mb`,`estatus`) VALUES ( ".$valores.");");
+        $this->close();
+        return $datos;
     }
 
-    function borrarDocumento($idDocumento)
+    function borrarDocumento($idDocumento,$estatus)
     {
-        // TODO: Implement borrarDocumento() method.
+        $this->connect();
+        $datos = $this-> getData("UPDATE `documento` SET `estatus`=".$estatus."WHERE `id_documento`=".$idDocumento);
+        $this->close();
+        return $datos;
     }
 }

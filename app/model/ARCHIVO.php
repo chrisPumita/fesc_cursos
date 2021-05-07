@@ -193,9 +193,9 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
     }
 
 
-    function consultaArchivos($id_doc_sol)
+    function consultaArchivos($id_inscripcion)
     {
-        $filtro = $id_doc_sol > 0 ? " WHERE `archivo`.`id_doc_sol_fk` =" . $id_doc_sol : "";
+        $filtro = $id_inscripcion > 0 ? " WHERE `archivo`.`id_inscripcion_fk` =" . $id_inscripcion : "";
         $this->connect();
         $datos = $this-> getData("SELECT `archivo`.* 
                                         FROM `archivo`".$filtro);
@@ -203,33 +203,51 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
         return $datos;
     }
 
-    function crearListaDocumentos($listaDocs)
-    {
-        // TODO: Implement crearListaDocumentos() method.
-    }
 
     function modificaArchivo($archivo)
     {
-        // TODO: Implement modificaArchivo() method.
+        /* recibe un array del documento a modificar
+       */
+        $this->connect();
+        $filtro="";
+        $filtro = archivo[1]!= NULL ? $filtro." `name_archivo`='" . archivo[1]."'," : "";
+        $filtro = archivo[2]!= NULL ? $filtro." `path`=" . archivo[2]."," : "";
+        $filtro = archivo[3]!= NULL ? $filtro." `fecha_creacion`=" . archivo[3]."," : "";
+        $filtro = archivo[4]!= NULL ? $filtro." `estado_revision`=" . $archivo[4] : "";
+        $filtro = archivo[5]!= NULL ? $filtro." `estado`=" . archivo[5] : "";
+        $filtro=$filtro."WHERE `id_archivo`=".archivo[0];
+        $datos = $this-> getData("UPDATE `archivo` SET  ".$filtro);
+        $this->close();
+        return $datos;
     }
+ 
 
     function eliminarArchivo($id_archivo)
     {
-        // TODO: Implement eliminarArchivo() method.
+
+        $this->connect();
+        $datos = $this-> getData("DELETE FROM `archivo` WHERE `id_archivo`=".$id_archivo);
+        $this->close();
+        return $datos;
     }
 
     function eliminaArchivoPath($path)
     {
-        // TODO: Implement eliminaArchivoPath() method.
+        unlink($path);
     }
 
     function crearArchivo($archivo)
     {
-        // TODO: Implement crearArchivo() method.
+        $this->connect();
+        $datos = $this-> getData("INSERT INTO `archivo`(`id_archivo`, `id_doc_sol_fk`, `id_inscripcion_fk`, `codigo_doc`, `name_archivo`, `name_file_md5`, `path`, `fecha_creacion`, `notas`, `estado_revision`, `estado`) 
+                                      VALUES (NULL,'$archivo[0]','$archivo[1]','$archivo[2]','$archivo[3]','$archivo[4]','$archivo[5]','$archivo[6]','$archivo[7]','$archivo[8]','$archivo[9]') ");
+        $this->close();
+        return $datos;
     }
 
-    function crearArchivoPath($archivo, $objArtchivo)
+    function crearArchivoPath($archivo)
     {
-        // TODO: Implement crearArchivoPath() method.
+        $ruta_destino_archivo = "archivos/{$archivo['name']}";
+        $archivo_ok = move_uploaded_file($archivo['tmp_name'], $ruta_destino_archivo);
     }
 }
