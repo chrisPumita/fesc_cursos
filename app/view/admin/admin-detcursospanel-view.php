@@ -81,16 +81,66 @@
     <div class="card bg-grey estadisticas">
         <div class="card-body">
             <div class="row">
+                <div class="col-lg-12">
+                    <div class="callout callout-second">
+                        <h4>Detalles del curso</h4>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus voluptatum illum odio quos laudantium enim ratione cupiditate accusantium officia quisquam, similique fuga ipsa consequatur? Sequi, consequuntur unde! Enim, dolor deserunt!
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <!-- TARJETA DE INFO DEL CURSO -->
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="mx-auto">
-                                <h6><strong>Creado por: </strong>Juan Perez Sanchez</h6>
-                                <h6>15 de Mayo de 2020</h6>
-                                <h6><strong>Aprobado por: </strong>Felipe Moran Suarez</h6>
-                                <h6>Jefe de Departamento de Informática</h6>
-                                <h6><strong>Costo sugerido: </strong> $1,600 MXN</h6>
+                                <h5><strong>Creado por:</strong>Juan Perez Sanchez</h5>
+                                <p>15 de Mayo de 2020</p>
+                                <div id="accordion">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Antecedentes
+                                            </button>
+                                        </h5>
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Objetivo
+                                            </button>
+                                        </h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Collapsible Group Item #3
+                                            </button>
+                                        </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
                                 <h6><strong>Modalidad: </strong> A distancia</h6>
                                 <h6><strong>Cupo: </strong>30</h6>
                                 <h6><strong>Sesiones: </strong> 20</h6>
@@ -100,20 +150,42 @@
                     </div>                    
                 </div>
                 <!-- TARJETA DE BANNER -->
-                <div class="col-sm-6">             
-                    <div class="card">
-                        <img src="http://www.rrhhdigital.com/userfiles/CURSO-EXCEL-RRHHDIGITAL.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title"><strong>Imagen del Banner</strong></h6>
-                            <p class="card-text py-1">Debe tener una resolución de 600px por 300px</p>
-                            <div class="col-md-6">
-                                <a href="#" class="btn btn-primary btn-block">Cambiar</a>
+                <div class="col-sm-6">  
+                    <div class="row">
+                    <div class="container py-2">
+                        <div class="row">
+                            <div class="m-auto">
+                                <i class="icon ion-md-checkmark-circle"></i>
                             </div>
-                            <div class="col-md-6">
-                                <a href="#"><button type="button" class="btn btn-outline-secondary btn-sec btn-block">Quitar</button></a>
+                            <div class="m-auto">
+                                <h5>Aprobado por:</h5>
+                                <h6><strong> Felipe Moran Suarez</strong></h6>
+                                <h6>Jefe de Departamento de Informática</h6>
+                            </div>
+                            <div class="m-auto">
+                                <a href="#" class="btn btn-danger btn-block">Inhabilitar</a>
                             </div>
                         </div>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="card">
+                            <img src="http://www.rrhhdigital.com/userfiles/CURSO-EXCEL-RRHHDIGITAL.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title"><strong>Imagen del Banner</strong></h6>
+                                <p class="card-text py-1">Debe tener una resolución de 600px por 300px</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="#" class="btn btn-primary btn-block">Cambiar</a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="#"><button type="button" class="btn btn-outline-secondary btn-sec btn-block">Quitar</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>           
+
                 </div>
             </div>
         </div>        
