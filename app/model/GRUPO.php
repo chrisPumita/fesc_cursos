@@ -1,7 +1,9 @@
 <?php
 
+include_once "I_GRUPO.php";
+include "CONEXION_M.php";
 
-class GRUPO
+class GRUPO extends CONEXION_M implements I_GRUPO
 {
 private $id_grupo;
 private $id_curso_fk;
@@ -72,5 +74,27 @@ private $estatus;
         $this->estatus = $estatus;
     }
 
+    //// Implemtacion de la interface
 
+    public  function crearGrupo()
+    {
+        $query = "INSERT INTO `grupo` (`id_grupo`, `id_curso_fk`, `grupo`, `estatus`) 
+                    VALUES (NULL, '".$this->getIdCursoFk()."', '".$this->getGrupo()."', '".$this->getEstatus()."')";
+
+    }
+
+    public  function modificaGrupo()
+    {
+        // TODO: Implement modificaGrupo() method.
+    }
+
+    public  function eliminaGrupo($id_grupo)
+    {
+        // TODO: Implement eliminaGrupo() method.
+    }
+
+    public  function consultaGrupos()
+    {
+        // TODO: Implement consultaGrupos() method.
+    }
 }

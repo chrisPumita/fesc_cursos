@@ -86,20 +86,17 @@ class DOCS_SOLICITADOS_CURSO extends  DOCUMENTO implements I_DOCS_SOLICITADOS
         return $datos;
     }
 
-    function crearListaDocumentos($listaDocs)
+    //ejecuta la insctruccion y me regresa true si se efectuo de forma correcta
+    function crearDocumentos()
     {
-        /* PENDIENTE
-        $numeroDocs=count($listaDocs);
-
         $query = "INSERT INTO `docs_solicitados_curso` (`id_doc_sol`, `id_documento_fk`, 
-                                      `id_curso_fk`, `obligatorio`) VALUES";
-        for ( $i=0; $i=$numeroDocs; $i=$i+4){
-            $query= $query."(NULL,'".$listaDocs[$i]."','".$listaDocs[$i+1]."','".$listaDocs[$i+2]."')";
-            $query= $i=$numeroDocs ? $query.";" : $query.",";
-            }
-        $datos = $this-> getData($query);
+                   `id_curso_fk`, `obligatorio`) 
+                  VALUES (NULL,'".$this->getId_documento_fk."','".$this->getIdCursoFk()."','".$this->getObligatorio()."')";
+
+        $this->connect();
+        $result = $this-> executeInstruction($query);
         $this->close();
-        return $datos;*/
+        return $result;
     }
 
     function eliminaDocumentoSolicitado($id_documento_sol)
