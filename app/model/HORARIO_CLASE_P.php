@@ -1,7 +1,8 @@
 <?php
+include ("AULAS.php");
+include_once ("I_HORARIO_CLASE_P.php");
 
-
-class HORARIO_CLASE_P
+class HORARIO_CLASE_P extends AULAS implements I_HORARIO_CLASE_P
 {
     private $id_horario_pres;
     private $id_asignacion_fk;
@@ -122,5 +123,46 @@ class HORARIO_CLASE_P
     public function setDuracion($duracion): void
     {
         $this->duracion = $duracion;
+    }
+
+    function ConsultaAulas()
+    {
+        $this->connect();
+        $datos = $this-> getData("SELECT * FROM `horario_clase_presencial`");
+        $this->close();
+        return $datos;
+    }
+
+    function CrearHorario($horario)
+    {
+        $query="INSERT INTO `horario_clase_presencial`(`id_horario_pres`, `id_asignacion_fk`, `id_aula_fk`, `dia_semana`, `hora_inicio`, `duracion`) 
+                VALUES ('NULL','$horario[0]','$horario[1]','$horario[2]','$horario[3]','$horario[4]');";
+        $this->connect();
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;
+    }
+
+    function updateHorario($id_Asignatura, $horario)
+    {
+
+        $filtro = $horario[0]!= NULL ? "`id_aula_fk`=$horario[0] ," : "";
+        $filtro = $horario[1]!= NULL ? "`dia_semana`=$horario[1]," : "";
+        $filtro = $horario[2]!= NULL ? "`hora_inicio`=$horario[2]," : "";
+        $filtro = $horario[3]!= NULL ? "`duracion`=$horario[3]" : "";
+
+        $query="UPDATE `horario_clase_presencial` SET".$filtro." WHERE `id_asignacion_fk`=".$id_Asignatura;
+        $this->connect();
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;
+    }
+
+    function eliminarhorario($id_Asignatura)
+    {
+        $this->connect();
+        $datos = $this-> getData("DELETE FROM `horario_clase_presencial` WHERE `id_horario_pres`=".$id_Asignatura);
+        $this->close();
+        return $datos;
     }
 }

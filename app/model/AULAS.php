@@ -1,7 +1,7 @@
 <?php
+include_once "CONEXION_M.php";
 
-
-class AULAS
+class AULAS extends CONEXION_M
 {
 	private $id_aula;
 	private $edificio;

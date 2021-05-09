@@ -4,21 +4,21 @@ include_once "I_ASIG_GRUPO.php";
 
 class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
 {
-	private $id_asignacion;
-	private $id_grupo_fk;
-	private $id_profesor_fk;
-	private $generacion;
-	private $semestre;
-	private $campus_cede;
-	private $fecha_creacion;
-	private $fecha_inicio;
-	private $fecha_fin;
-	private $fecha_lim_inscripcion;
-	private $fecha_inicio_actas;
-	private $fecha_fin_actas;
-	private $cupo;
-	private $costo_real;
-	private $descuento;
+    private $id_asignacion;
+    private $id_grupo_fk;
+    private $id_profesor_fk;
+    private $generacion;
+    private $semestre;
+    private $campus_cede;
+    private $fecha_creacion;
+    private $fecha_inicio;
+    private $fecha_fin;
+    private $fecha_lim_inscripcion;
+    private $fecha_inicio_actas;
+    private $fecha_fin_actas;
+    private $cupo;
+    private $costo_real;
+    private $descuento;
     private $nivel_aplicacion_desc;
     private $notas;
     private $modalidad;
@@ -402,24 +402,36 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
     }
 
 
-        /*---------Metodos implementados de la interface----------*/
+    /*---------Metodos implementados de la interface----------*/
 
 
     function consultaHorarioVirtual($id_asig)
     {
-        // TODO: Implement consultaHorarioVirtual() method.
+        $query = "SELECT * FROM `horario_clase_virtual` WHERE `id_asignacion_fk`=" . $id_asig;
+        $this->connect();
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;
     }
 
     function consultaHorarioPresencial($id_asig)
     {
-        // TODO: Implement consultaHorarioPresencial() method.
+        $query = "SELECT * FROM `horario_clase_presencial` WHERE `id_asignacion_fk`=" . $id_asig;
+        $this->connect();
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;
     }
+
 
     public function consultaInscripciones($id_asig)
     {
-        // TODO: Implement consultaInscripciones() method.
+        $query = "SELECT * FROM `inscripcion` WHERE `id_asignacion_fk`=" . $id_asig;
+        $this->connect();
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;
     }
-
 
 
 }

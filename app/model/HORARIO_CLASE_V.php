@@ -1,7 +1,8 @@
 <?php
+include "CONEXION_M.php";
+include_once "I_HORARIO_CLASE_V.php";
 
-
-class HORARIO_CLASE_V
+class HORARIO_CLASE_V extends CONEXION_M implements I_HORARIO_CLASE_V
 {
 	private $id_horario_virtual;
 	private $id_asignacion_fk;
@@ -155,5 +156,42 @@ class HORARIO_CLASE_V
     public function setUrlPlataforma($url_plataforma): void
     {
         $this->url_plataforma = $url_plataforma;
+    }
+
+    function crearHorarioV($horarioV)
+    {
+        $query = "INSERT INTO `horario_clase_virtual`(`id_horario_virtual`, `id_asignacion_fk`, `dia_semana`, `hora_inicio`, `duracion`, `reunion`, `plataforma`, `url_reunion`, `url_plataforma`) 
+                    VALUES (NULL,'$horarioV[2]','$horarioV[3]','$horarioV[4]','$horarioV[5]','$horarioV[6]','$horarioV[7]','$horarioV[8]','$horarioV[9]')";
+        $this->connect();
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;
+    }
+
+    function eliminarHorarioV($id_horario_v)
+    {
+        $query = "DELETE FROM `horario_clase_virtual` WHERE `id_horario_virtual`=" . $id_horario_v;
+        $this->connect();
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;
+    }
+
+    function updateHorarioV($horarioV)
+    {
+        $filtro = $horarioV[1]!= NULL ? "`id_asignacion_fk`='$horarioV[1] '," : "";
+        $filtro = $horarioV[2]!= NULL ? "`dia_semana`='$horarioV[2]'," : "";
+        $filtro = $horarioV[3]!= NULL ? "`hora_inicio`='$horarioV[3]'," : "";
+        $filtro = $horarioV[4]!= NULL ? "`duracion`='$horarioV[4]'," : "";
+        $filtro = $horarioV[5]!= NULL ? "`reunion`='$horarioV[5]'," : "";
+        $filtro = $horarioV[6]!= NULL ? "`plataforma`='$horarioV[6]'," : "";
+        $filtro = $horarioV[7]!= NULL ? "`url_reunion`='$horarioV[7]'," : "";
+        $filtro = $horarioV[8]!= NULL ? "`url_plataforma`='$horarioV[8]'" : "";
+
+        $query = "UPDATE `horario_clase_virtual` SET".$filtro." WHERE `id_horario_virtual`=".$horarioV[0];
+        $this->connect();
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;
     }
 }
