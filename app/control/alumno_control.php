@@ -1,16 +1,17 @@
 <?php
+include_once "../model/ALUMNO.php";
+
+
 
 function crearCuenta(){
-    include_once "../model/ALUMNO.php";
     include_once "../model/CLAVES.php";
-
     //verificar si existe una cuenta
 
     $al = new ALUMNO();
     $clave = date("YmdHis");
     $al->setIdPersona($clave);
-    $al->setNombre("Juan");
-    $al->setApp("Ramirez");
+    $al->setNombre("Filiberto");
+    $al->setApp("Martinez");
     $al->setApm("Casas");
     $al->setTelefono("55986523145");
     $al->setSexo("1");
@@ -35,4 +36,13 @@ function crearCuenta(){
     }
 }
 
+function consultaAlumnos(){
+    $al = new ALUMNO();
+    $result = $al ->consultaAlumnos("0","0");
+    $json_data = json_encode($result);
+    echo $json_data;
+    return $json_data;
+}
+
 crearCuenta();
+consultaAlumnos();

@@ -235,9 +235,69 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
         // TODO: Implement consultaAlumno() method.
     }
 
-    function consultaAlumnos($filtro)
+
+    function consultaAlumnos($tipo_filtro, $valor)
     {
-        // TODO: Implement consultaAlumnos() method.
+        //Defiunir Control de filtro
+        //`al`.`carrera_especialidad`
+        $filtro = "";
+        switch ($tipo_filtro){
+            case "1":
+                //Filtro por sexo
+                $filtro = " AND p.sexo = ".$valor;
+                break;
+            case "2":
+                //Filtro por municipio
+                $filtro = " AND al.id_municipio = ".$valor;
+                break;
+            case "3":
+                //Filtro por por estatus de la cuenta (activa/inactva)
+                $filtro = " AND p.estatus = ".$valor;
+                break;
+            case "4":
+                //Filtro por por Id de iniversidad
+                $filtro = " AND al.id_universidad = ".$valor;
+                break;
+            case "5":
+                //Filtro por tipo de procedenceia
+                $filtro = " AND al.tipo_procedencia = ".$valor;
+                break;
+            case "6":
+                //Filtro por carrera
+                $filtro = " AND al.carrera_especialidad = ".$valor;
+                break;
+            default:
+                $filtro = "";
+                break;
+        }
+        $query = "SELECT 
+           al.id_alumno, 
+           p.nombre, 
+           p.app, 
+           p.apm, 
+           p.telefono, 
+           p.sexo, 
+           p.estatus AS estatus_p, 
+           al.id_municipio, 
+           al.id_universidad, 
+           al.id_persona, 
+           al.matricula, 
+           al.nombre_uni, 
+           al.tipo_procedencia, 
+           al.carrera_especialidad, 
+           al.email, 
+           al.fecha_registro, 
+           al.perfil_image, 
+           al.estatus AS estatus_al 
+        FROM alumno al,persona p 
+        WHERE al.id_persona = p.id_persona  
+        AND p.estatus = 1  ".$filtro." ORDER BY `p`.`nombre` ASC";
+
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+
     }
 
     function agregaAlumno()
@@ -304,5 +364,10 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
     function cambiarClaveServSoc()
     {
         // TODO: Implement cambiarClaveServSoc() method.
+    }
+
+    function editarCuenta($id_lumno, $estatus)
+    {
+        // TODO: Implement editarCuenta() method.
     }
 }
