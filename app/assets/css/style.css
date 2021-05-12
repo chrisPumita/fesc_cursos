@@ -1,0 +1,178 @@
+:root{
+    --primary: #196398;
+    --second: #CDAC12;
+    --ligth : #ffffff;
+    --grey: #efefef;
+    --alert:  indianred;
+}
+
+.body-home{
+    overflow: hidden;
+    font-family: 'Muli',sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+}
+a:hover{
+    text-decoration: none;
+}
+/*@over botstrap styles*/
+.bg-primary{background-color: var(--primary) !important;}
+.bg-light{background-color: var(--ligth) !important;}
+.bg-mix{background: linear-gradient(180deg,var(--ligth)50%,var(--grey));}
+.bg-grey{background-color: var(--grey) !important;}
+.my-5 { margin-top: 0rem!important;}
+.spinner-grow { width: 1rem; height: 1rem;}
+.label_mje{color: var(--alert);}
+
+.btn{
+    border: 2 !important;
+}
+.btn-primary{
+    background-color: var(--primary) !important;
+}
+
+.btn-primary:hover{
+    background-color: var(--second) !important;
+}
+
+#sidebar-container{
+    min-width: 175px;
+    min-height: 100vh;
+}
+
+#sidebar-container .logo{
+    padding: .875rem 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+#sidebar-container .menu{
+    width: AUTO;
+}
+
+.btn-search{
+    right: 5px;
+}
+
+.avatar{
+    max-width: 35px;
+}
+
+.estadisticas{
+    border: 0;
+}
+
+.pie{
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    font-size: x-small;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.menu_icons {
+    font-size: 2rem !important;
+}
+
+.bg_second{
+    background-color: var(--second)!important;
+}
+
+#content{
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom:  5rem;
+}
+
+.stat{
+    border-right: 1px solid var(--grey);
+}
+
+.paleta{
+    color: rgb(233, 233, 233) !important;
+    font-size: 64px !important;
+    bottom: 0;
+    right: 5px;
+    margin-bottom: 2rem;
+}
+
+.table-content{
+    background: var(--ligth);
+}
+
+.menuDesk:hover {
+    background-color: var(--primary);
+    color: var(--ligth) !important;
+  }
+
+@media(max-width: 768px)
+{
+    #sidebar-container, .menu-perfil, .bnt-grid{
+        display: none;
+    }
+    .stat{
+        border:0;
+    }
+    .btn-search {
+        top: 5px;
+        right: 5px;
+    }
+    .mx-auto {
+        margin-left: inherit !important;
+    }
+    .navbar 
+    {
+        overflow-y: auto !important;
+    }
+}
+
+.footer-login {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+
+  /*Para version mobile*/
+@media screen and (max-width: 991px) 
+{
+    .logo-login {
+        width: 250px;
+    }
+    .image-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .border-line {
+        border-right: none;
+    }
+
+    .pb-5, .py-5 {
+        padding-bottom: 0rem!important;
+    }
+    .pt-4, .py-4 {
+        padding-top: 0rem!important;
+    }
+    .card2 {
+        border-top: 1px solid #EEEEEE !important;
+        margin: 0px 15px;
+    }
+
+    .row-login {
+        display: block;
+    }
+
+    .posicion-btn{
+        margin-left: auto;
+        position: absolute !important;
+    }
+}
+
+.pt-3, .py-3 {
+    padding-bottom: 0!important;
+    padding-top: 2rem!important;
+}
+
+.h3, h3 {
+    font-size: 1.5rem;
+}
+

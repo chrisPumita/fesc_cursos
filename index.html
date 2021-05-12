@@ -1,0 +1,249 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html><html lang='en' class=''>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<head>
+  <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
+  <script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'>
+  <meta name="robots" content="soon">
+  <link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+  <link rel="canonical" href="https://codepen.io/ikabot/pen/XgozPE?limit=all&page=9&q=coming+soon" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style class="cp-pen-styles">* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 62.5%; /* 1rem vaut 10px */
+}
+
+body {
+    font-size: 1.4rem; /* 1.4 rem vaut 14px */
+    height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  background-image: url('assets/tmp/back.jfif');
+  background-size: cover;
+  color: rgb(225,225,225);
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+.counterDown {
+  margin: auto;
+}
+
+.counterDown h1 {
+  font-size: 4rem;
+}
+
+hr {
+  background-color: rgba(255,255,255, 0.8);
+}
+
+#demo {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.6rem;
+}
+
+#jours {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 4rem;
+  height: 10rem;
+  margin-right: 1rem;
+  width: 8rem;
+}
+
+#heures {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 4rem;
+  height: 10rem;
+  margin-right: 1rem;
+  width: 8rem;
+}
+
+#minutes {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 4rem;
+  height: 10rem;
+  margin-right: 1rem;
+  width: 8rem;
+}
+
+#secondes {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 4rem;
+  height: 10rem;
+  margin: auto;
+  width: 8rem;
+}
+
+#infos {
+  color: rgba(225,225,225,1);
+  display: flex;
+  flex-direction: row;
+  font-size: 1.6rem;
+}
+
+.infos-jours {
+  font-family: "Roboto Mono", sans-serif;
+  margin-right: 1rem;
+  margin-top: -3rem;
+  width: 8rem;
+}
+
+.infos-heures {
+  font-family: "Roboto Mono", sans-serif;
+  margin-right: 1rem;
+  margin-top: -3rem;
+  width: 8rem;
+}
+
+.infos-minutes {
+  font-family: "Roboto Mono", sans-serif;
+  margin-right: 1rem;
+  margin-top: -3rem;
+  width: 8rem;
+}
+
+.infos-secondes {
+  font-family: "Roboto Mono", sans-serif;
+  margin: auto;
+  margin-top: -3rem;
+  width: 8rem;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid rgba(255,255,255, 0.5);
+  font-size: 1.5rem;
+  padding-top: 0.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.drop 
+  { 
+    filter: drop-shadow(0 2px 5px rgba(225, 225, 225, 0.7)) !important; 
+  }
+</style>
+</head>
+<body>
+<!-- BootStrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+
+<body>
+  <div class="wrapper">
+    <!-- Content -->
+
+    <div class="main-content">
+      <div class="counterDown text-center">
+            <img src="assets/tmp/logo_simple.png" class="rounded mx-auto d-block drop" width="200" height="auto">
+        <h1>PRÓXIMAMENTE</h1>
+        <hr>
+        <div id="demo">
+          <div id="jours" class="text-center"></div>
+          <div id="heures" class="text-center"></div>
+          <div id="minutes" class="text-center"></div>
+          <div id="secondes" class="text-center"></div>
+        </div>
+        <div id="infos">
+            <div class="infos-jours">Días</div>
+            <div class="infos-heures">Horas</div>
+            <div class="infos-minutes">Minutos</div>
+            <div class="infos-secondes">Segundos</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="text-center">
+      <p>Copyright - <span id="annee"></span> © FES Cuautitlán </p>
+      <P>SICEP Proyecto de Cursos</P>
+    </footer>
+  </div>
+  
+  <!-- JavaScript -->
+  <script type="text/javascript">
+    // Date de fin
+var countDownDate = new Date('Jun 11, 2021 11:59:59').getTime();
+
+// Update toutes les 1 secondes
+var x = setInterval(function() {
+  
+  // Récupération de la date du jour
+  var now = new Date().getTime();
+  
+  // Calcul de la distance entre aujourd'hui et la fin
+  var distance = countDownDate - now;
+  
+  //Calcul des temps
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  
+  var hours = Math.floor ((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  // Affichage du résultat dans l'id=demo
+  document.getElementById("jours").innerHTML = days;
+  document.getElementById("heures").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("secondes").innerHTML = seconds;
+  
+  // On stylise les éléments
+  document.getElementById("jours").style.backgroundColor = 'rgba(0,0,0,0.2)';
+  document.getElementById("heures").style.backgroundColor = 'rgba(0,0,0,0.2)';
+  document.getElementById("minutes").style.backgroundColor = 'rgba(0,0,0,0.2)';
+  document.getElementById("secondes").style.backgroundColor = 'rgba(0,0,0,0.2)';
+  
+  document.getElementById("jours").style.color = 'rgb(225,225,225)';
+  document.getElementById("heures").style.color = 'rgb(225,225,225)';
+  document.getElementById("minutes").style.color = 'rgb(225,225,225)';
+  document.getElementById("secondes").style.color = 'rgb(225,225,225)';
+  
+  document.getElementById("jours").font.weight = 'bold';
+  document.getElementById("heures").font.weight = 'bold';
+  document.getElementById("minutes").font.weight = 'bold';
+  document.getElementById("secondes").font.weight = 'bold';
+  
+  // Si le compteur arrive à la fin
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+  </script>
+  
+  <script type="text/javascript">
+    var date = new Date();
+    var annee = date.getFullYear();
+
+    document.getElementById('annee').innerHTML = annee;
+  </script>
+  
+</body>
+
+</body></html>
