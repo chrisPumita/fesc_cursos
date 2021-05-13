@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>StudyLab - Free Bootstrap 4 Template by Colorlib</title>
+    <title>SICEP - Bienvenidos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -24,14 +24,13 @@
     <link rel="stylesheet" href="./assets/style/style.css">
 
     <style type="text/css">
-      .background {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: -1;
-      }
+        .background {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
     </style>
 
 </head>
@@ -59,10 +58,11 @@
 </nav>
 <!-- END nav -->
 
-<div class="hero-wrap js-fullheight bg" style="background-image: url('./assets/img/fondo3.png');" >
-  <canvas class="background"></canvas>
+<div class="hero-wrap js-fullheight bg" style="background-image: url('./assets/img/fondo3.png')">
+    <canvas class="background"></canvas><script src="./assets/js/particles.js"></script>
   <div class="overlay"></div>
   <div class="container img_bk" style="background-image: url('./assets/img/fondo_hand.png')">
+
     <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
       <div class="col-md-7 ftco-animate">
         <span class="subheading text-secondary">Bienvenido a SICEP</span>
@@ -657,10 +657,21 @@
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
     <script type="text/javascript">
-      var particles = Particles.init({
-        selector: '.background',
-        color: '#DA0463'
-      });
+        window.onload = function() {
+            Particles.init({
+                selector: '.background',
+                color: ['#196398', '#CDAC12', '#efefef'],
+                connectParticles: true,
+                responsive: [{
+                    breakpoint: 800,
+                    options: {
+                        color: '#196398',
+                        maxParticles: 80,
+                        connectParticles: false
+                    }
+                }]
+            });
+        };
     </script>
 
 <script src="./assets/js/jquery.min.js"></script>
