@@ -53,7 +53,7 @@
                 <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="index.php"><i class="icon ion-md-apps mr-2 lead"></i>Principal</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="../admin/index.php"><i class="icon ion-md-school mr-2 lead"></i>Profesores</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="admin-profesores-view.php"><i class="icon ion-md-school mr-2 lead"></i>Profesores</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="../admin/cursos.php"><i class="icon ion-md-rocket mr-2 lead"></i>Cursos</a>
