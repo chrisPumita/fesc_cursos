@@ -1,249 +1,683 @@
-
-<!------ Include the above in your HEAD tag ---------->
-
-<!DOCTYPE html><html lang='en' class=''>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
-  <script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'>
-  <meta name="robots" content="soon">
-  <link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
-  <link rel="canonical" href="https://codepen.io/ikabot/pen/XgozPE?limit=all&page=9&q=coming+soon" />
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>StudyLab - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
-<style class="cp-pen-styles">* {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-html {
-    font-family: -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-    font-size: 62.5%; /* 1rem vaut 10px */
-}
+    <link rel="stylesheet" href="./assets/css/animate.css">
+    
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./assets/css/magnific-popup.css">
 
-body {
-    font-size: 1.4rem; /* 1.4 rem vaut 14px */
-    height: 100%;
-}
+    <link rel="stylesheet" href="./assets/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="./assets/css/jquery.timepicker.css">
 
-.wrapper {
-  display: flex;
-  background-image: url('assets/tmp/back.jfif');
-  background-size: cover;
-  color: rgb(225,225,225);
-  flex-direction: column;
-  min-height: 100vh;
-}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/flaticon.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
 
-.main-content {
-  display: flex;
-  flex: 1;
-}
+    <style type="text/css">
+      .background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+      }
+    </style>
 
-.counterDown {
-  margin: auto;
-}
-
-.counterDown h1 {
-  font-size: 4rem;
-}
-
-hr {
-  background-color: rgba(255,255,255, 0.8);
-}
-
-#demo {
-  display: flex;
-  flex-direction: row;
-  font-size: 1.6rem;
-}
-
-#jours {
-  font-family: "Roboto Mono", sans-serif;
-  font-size: 4rem;
-  height: 10rem;
-  margin-right: 1rem;
-  width: 8rem;
-}
-
-#heures {
-  font-family: "Roboto Mono", sans-serif;
-  font-size: 4rem;
-  height: 10rem;
-  margin-right: 1rem;
-  width: 8rem;
-}
-
-#minutes {
-  font-family: "Roboto Mono", sans-serif;
-  font-size: 4rem;
-  height: 10rem;
-  margin-right: 1rem;
-  width: 8rem;
-}
-
-#secondes {
-  font-family: "Roboto Mono", sans-serif;
-  font-size: 4rem;
-  height: 10rem;
-  margin: auto;
-  width: 8rem;
-}
-
-#infos {
-  color: rgba(225,225,225,1);
-  display: flex;
-  flex-direction: row;
-  font-size: 1.6rem;
-}
-
-.infos-jours {
-  font-family: "Roboto Mono", sans-serif;
-  margin-right: 1rem;
-  margin-top: -3rem;
-  width: 8rem;
-}
-
-.infos-heures {
-  font-family: "Roboto Mono", sans-serif;
-  margin-right: 1rem;
-  margin-top: -3rem;
-  width: 8rem;
-}
-
-.infos-minutes {
-  font-family: "Roboto Mono", sans-serif;
-  margin-right: 1rem;
-  margin-top: -3rem;
-  width: 8rem;
-}
-
-.infos-secondes {
-  font-family: "Roboto Mono", sans-serif;
-  margin: auto;
-  margin-top: -3rem;
-  width: 8rem;
-}
-
-/* Footer */
-footer {
-  border-top: 1px solid rgba(255,255,255, 0.5);
-  font-size: 1.5rem;
-  padding-top: 0.6rem;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-}
-.drop 
-  { 
-    filter: drop-shadow(0 2px 5px rgba(225, 225, 225, 0.7)) !important; 
-  }
-</style>
 </head>
 <body>
-<!-- BootStrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+ <nav class="navbar navbar-expand-lg ftco_navbar  ftco-navbar-light" id="ftco-navbar">
+   <div class="container">
+       <img src="./assets/img/logo.png" class=" img-fluid rounded float-left" alt="" width="150">
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="oi oi-menu"></span> Menu
+   </button>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+   <div class="collapse navbar-collapse" id="ftco-nav">
+       <ul class="navbar-nav ml-auto">
+         <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
+         <li class="nav-item"><a href="about.html" class="nav-link">Acerca de</a></li>
+         <li class="nav-item"><a href="course.html" class="nav-link">Cursos</a></li>
+         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+           <li class="nav-item"><a href="login.php" class="nav-link">
+               <button type="button" class="btn btn-outline-primary">Iniciar Sesion</button>
+           </a></li>
 
-<body>
-  <div class="wrapper">
-    <!-- Content -->
+     </ul>
+ </div>
+</div>
+</nav>
+<!-- END nav -->
 
-    <div class="main-content">
-      <div class="counterDown text-center">
-            <img src="assets/tmp/logo_simple.png" class="rounded mx-auto d-block drop" width="200" height="auto">
-        <h1>PRÓXIMAMENTE</h1>
-        <hr>
-        <div id="demo">
-          <div id="jours" class="text-center"></div>
-          <div id="heures" class="text-center"></div>
-          <div id="minutes" class="text-center"></div>
-          <div id="secondes" class="text-center"></div>
-        </div>
-        <div id="infos">
-            <div class="infos-jours">Días</div>
-            <div class="infos-heures">Horas</div>
-            <div class="infos-minutes">Minutos</div>
-            <div class="infos-secondes">Segundos</div>
-        </div>
-      </div>
+<div class="hero-wrap js-fullheight bg" style="background-image: url('./assets/img/fondo3.png');" >
+  <canvas class="background"></canvas>
+  <div class="overlay"></div>
+  <div class="container img_bk" style="background-image: url('./assets/img/fondo_hand.png')">
+    <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
+      <div class="col-md-7 ftco-animate">
+        <span class="subheading text-secondary">Bienvenido a SICEP</span>
+          <h1 class="mb-4 text-primary">Inscribete a los cursos que la <strong>FES Cuautitlán</strong> tiene para ti</h1>
+        <p class="caps text-primary">Gran diversidad de cursos, recibe una constancia con valor curricular</p>
+        <p class="mb-0"><a href="#" class="btn btn-primary">Nuestros Cursos</a> <a href="#" class="btn btn-white">Iniciar Sesión</a></p>
     </div>
-    
-    <!-- Footer -->
-    <footer class="text-center">
-      <p>Copyright - <span id="annee"></span> © FES Cuautitlán </p>
-      <P>SICEP Proyecto de Cursos</P>
-    </footer>
+</div>
+</div>
+</div>
+
+<section class="ftco-section">
+   <div class="container">
+      <div class="row justify-content-center pb-4">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<span class="subheading">Start Learning Today</span>
+            <h2 class="mb-4">Browse Online Course Category</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+     <div class="col-md-3 col-lg-2">
+        <a href="#" class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(./assets/images/work-1.jpg);">
+           <div class="text w-100 text-center">
+              <h3>IT &amp; Software</h3>
+              <span>100 course</span>
+          </div>
+      </a>
   </div>
-  
-  <!-- JavaScript -->
-  <script type="text/javascript">
-    // Date de fin
-var countDownDate = new Date('Jun 11, 2021 11:59:59').getTime();
+  <div class="col-md-3 col-lg-2">
+    <a href="#" class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(./assets/images/work-9.jpg);">
+       <div class="text w-100 text-center">
+          <h3>Music</h3>
+          <span>100 course</span>
+      </div>
+  </a>
+</div>
+<div class="col-md-3 col-lg-2">
+    <a href="#" class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(./assets/images/work-3.jpg);">
+       <div class="text w-100 text-center">
+          <h3>Photography</h3>
+          <span>100 course</span>
+      </div>
+  </a>
+</div>
+<div class="col-md-3 col-lg-2">
+    <a href="#" class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(./assets/images/work-5.jpg);">
+       <div class="text w-100 text-center">
+          <h3>Marketing</h3>
+          <span>100 course</span>
+      </div>
+  </a>
+</div>
+<div class="col-md-3 col-lg-2">
+    <a href="#" class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(./assets/images/work-8.jpg);">
+       <div class="text w-100 text-center">
+          <h3>Health</h3>
+          <span>100 course</span>
+      </div>
+  </a>
+</div>
+<div class="col-md-3 col-lg-2">
+    <a href="#" class="course-category img d-flex align-items-center justify-content-center" style="background-image: url(./assets/images/work-6.jpg);">
+       <span class="text w-100 text-center">
+          <h3>Audio Video</h3>
+          <span>100 course</span>
+      </span>
+  </a>
+</div>
+<div class="col-md-12 text-center mt-5">
+    <a href="#" class="btn btn-secondary">See All Courses</a>
+</div>
+</div>
+</div>
+</section>
 
-// Update toutes les 1 secondes
-var x = setInterval(function() {
-  
-  // Récupération de la date du jour
-  var now = new Date().getTime();
-  
-  // Calcul de la distance entre aujourd'hui et la fin
-  var distance = countDownDate - now;
-  
-  //Calcul des temps
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  
-  var hours = Math.floor ((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-  // Affichage du résultat dans l'id=demo
-  document.getElementById("jours").innerHTML = days;
-  document.getElementById("heures").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("secondes").innerHTML = seconds;
-  
-  // On stylise les éléments
-  document.getElementById("jours").style.backgroundColor = 'rgba(0,0,0,0.2)';
-  document.getElementById("heures").style.backgroundColor = 'rgba(0,0,0,0.2)';
-  document.getElementById("minutes").style.backgroundColor = 'rgba(0,0,0,0.2)';
-  document.getElementById("secondes").style.backgroundColor = 'rgba(0,0,0,0.2)';
-  
-  document.getElementById("jours").style.color = 'rgb(225,225,225)';
-  document.getElementById("heures").style.color = 'rgb(225,225,225)';
-  document.getElementById("minutes").style.color = 'rgb(225,225,225)';
-  document.getElementById("secondes").style.color = 'rgb(225,225,225)';
-  
-  document.getElementById("jours").font.weight = 'bold';
-  document.getElementById("heures").font.weight = 'bold';
-  document.getElementById("minutes").font.weight = 'bold';
-  document.getElementById("secondes").font.weight = 'bold';
-  
-  // Si le compteur arrive à la fin
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-  </script>
-  
-  <script type="text/javascript">
-    var date = new Date();
-    var annee = date.getFullYear();
+<section class="ftco-section bg-light">
+   <div class="container">
+      <div class="row justify-content-center pb-4">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<span class="subheading">Start Learning Today</span>
+            <h2 class="mb-4">Pick Your Course</h2>
+        </div>
+    </div>
+    <div class="row">
+       <div class="col-md-4 ftco-animate">
+          <div class="project-wrap">
+             <a href="#" class="img" style="background-image: url(./assets/images/work-1.jpg);">
+                <span class="price">Software</span>
+            </a>
+            <div class="text p-4">
+                <h3><a href="#">Design for the web with adobe photoshop</a></h3>
+                <p class="advisor">Advisor <span>Tony Garret</span></p>
+                <ul class="d-flex justify-content-between">
+                   <li><span class="flaticon-shower"></span>2300</li>
+                   <li class="price">$199</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+   <div class="col-md-4 ftco-animate">
+      <div class="project-wrap">
+         <a href="#" class="img" style="background-image: url(./assets/images/work-2.jpg);">
+            <span class="price">Software</span>
+        </a>
+        <div class="text p-4">
+            <h3><a href="#">Design for the web with adobe photoshop</a></h3>
+            <p class="advisor">Advisor <span>Tony Garret</span></p>
+            <ul class="d-flex justify-content-between">
+               <li><span class="flaticon-shower"></span>2300</li>
+               <li class="price">$199</li>
+           </ul>
+       </div>
+   </div>
+</div>
+<div class="col-md-4 ftco-animate">
+  <div class="project-wrap">
+     <a href="#" class="img" style="background-image: url(./assets/images/work-3.jpg);">
+        <span class="price">Software</span>
+    </a>
+    <div class="text p-4">
+        <h3><a href="#">Design for the web with adobe photoshop</a></h3>
+        <p class="advisor">Advisor <span>Tony Garret</span></p>
+        <ul class="d-flex justify-content-between">
+           <li><span class="flaticon-shower"></span>2300</li>
+           <li class="price">$199</li>
+       </ul>
+   </div>
+</div>
+</div>
 
-    document.getElementById('annee').innerHTML = annee;
-  </script>
-  
+<div class="col-md-4 ftco-animate">
+  <div class="project-wrap">
+     <a href="#" class="img" style="background-image: url(./assets/images/work-4.jpg);">
+        <span class="price">Software</span>
+    </a>
+    <div class="text p-4">
+        <h3><a href="#">Design for the web with adobe photoshop</a></h3>
+        <p class="advisor">Advisor <span>Tony Garret</span></p>
+        <ul class="d-flex justify-content-between">
+           <li><span class="flaticon-shower"></span>2300</li>
+           <li class="price">$199</li>
+       </ul>
+   </div>
+</div>
+</div>
+<div class="col-md-4 ftco-animate">
+  <div class="project-wrap">
+     <a href="#" class="img" style="background-image: url(./assets/images/work-5.jpg);">
+        <span class="price">Software</span>
+    </a>
+    <div class="text p-4">
+        <h3><a href="#">Design for the web with adobe photoshop</a></h3>
+        <p class="advisor">Advisor <span>Tony Garret</span></p>
+        <ul class="d-flex justify-content-between">
+           <li><span class="flaticon-shower"></span>2300</li>
+           <li class="price">$199</li>
+       </ul>
+   </div>
+</div>
+</div>
+<div class="col-md-4 ftco-animate">
+  <div class="project-wrap">
+     <a href="#" class="img" style="background-image: url(./assets/images/work-6.jpg);">
+        <span class="price">Software</span>
+    </a>
+    <div class="text p-4">
+        <h3><a href="#">Design for the web with adobe photoshop</a></h3>
+        <p class="advisor">Advisor <span>Tony Garret</span></p>
+        <ul class="d-flex justify-content-between">
+           <li><span class="flaticon-shower"></span>2300</li>
+           <li class="price">$199</li>
+       </ul>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(./assets/images/bg_4.jpg);">
+ <div class="overlay"></div>
+ <div class="container">
+    <div class="row">
+       <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+         <div class="block-18 d-flex align-items-center">
+            <div class="icon"><span class="flaticon-online"></span></div>
+            <div class="text">
+             <strong class="number" data-number="400">0</strong>
+             <span>Online Courses</span>
+         </div>
+     </div>
+ </div>
+ <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+     <div class="block-18 d-flex align-items-center">
+        <div class="icon"><span class="flaticon-graduated"></span></div>
+        <div class="text">
+         <strong class="number" data-number="4500">0</strong>
+         <span>Students Enrolled</span>
+     </div>
+ </div>
+</div>
+<div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+ <div class="block-18 d-flex align-items-center">
+    <div class="icon"><span class="flaticon-instructor"></span></div>
+    <div class="text">
+     <strong class="number" data-number="1200">0</strong>
+     <span>Experts Instructors</span>
+ </div>
+</div>
+</div>
+<div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+ <div class="block-18 d-flex align-items-center">
+    <div class="icon"><span class="flaticon-tools"></span></div>
+    <div class="text">
+     <strong class="number" data-number="300">0</strong>
+     <span>Hours Content</span>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="ftco-section ftco-about img">
+   <div class="container">
+      <div class="row d-flex">
+         <div class="col-md-12 about-intro">
+            <div class="row">
+               <div class="col-md-6 d-flex">
+                  <div class="d-flex about-wrap">
+                     <div class="img d-flex align-items-center justify-content-center" style="background-image:url(./assets/images/about-1.jpg);">
+                     </div>
+                     <div class="img-2 d-flex align-items-center justify-content-center" style="background-image:url(./assets/images/about.jpg);">
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-6 pl-md-5 py-5">
+              <div class="row justify-content-start pb-3">
+                  <div class="col-md-12 heading-section ftco-animate">
+                     <span class="subheading">Enhanced Your Skills</span>
+                     <h2 class="mb-4">Learn Anything You Want Today</h2>
+                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                     <p><a href="#" class="btn btn-primary">Get in touch with us</a></p>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+</div>
+</div>
+</section>
+
+
+<section class="ftco-section testimony-section bg-light">
+   <div class="overlay" style="background-image: url(./assets/images/bg_2.jpg);"></div>
+   <div class="container">
+    <div class="row pb-4">
+      <div class="col-md-7 heading-section ftco-animate">
+         <span class="subheading">Testimonial</span>
+         <h2 class="mb-4">What Are Students Says</h2>
+     </div>
+ </div>
+</div>
+<div class="container container-2">
+    <div class="row ftco-animate">
+      <div class="col-md-12">
+        <div class="carousel-testimony owl-carousel">
+          <div class="item">
+            <div class="testimony-wrap py-4">
+              <div class="text">
+                 <p class="star">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </p>
+                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="d-flex align-items-center">
+                   <div class="user-img" style="background-image: url(./assets/images/person_1.jpg)"></div>
+                   <div class="pl-3">
+                      <p class="name">Roger Scott</p>
+                      <span class="position">Marketing Manager</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="item">
+    <div class="testimony-wrap py-4">
+      <div class="text">
+         <p class="star">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </p>
+        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        <div class="d-flex align-items-center">
+           <div class="user-img" style="background-image: url(./assets/images/person_2.jpg)"></div>
+           <div class="pl-3">
+              <p class="name">Roger Scott</p>
+              <span class="position">Marketing Manager</span>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+<div class="item">
+    <div class="testimony-wrap py-4">
+      <div class="text">
+         <p class="star">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </p>
+        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        <div class="d-flex align-items-center">
+           <div class="user-img" style="background-image: url(./assets/images/person_3.jpg)"></div>
+           <div class="pl-3">
+              <p class="name">Roger Scott</p>
+              <span class="position">Marketing Manager</span>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+<div class="item">
+    <div class="testimony-wrap py-4">
+      <div class="text">
+         <p class="star">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </p>
+        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        <div class="d-flex align-items-center">
+           <div class="user-img" style="background-image: url(./assets/images/person_1.jpg)"></div>
+           <div class="pl-3">
+              <p class="name">Roger Scott</p>
+              <span class="position">Marketing Manager</span>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+<div class="item">
+    <div class="testimony-wrap py-4">
+      <div class="text">
+         <p class="star">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </p>
+        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        <div class="d-flex align-items-center">
+           <div class="user-img" style="background-image: url(./assets/images/person_2.jpg)"></div>
+           <div class="pl-3">
+              <p class="name">Roger Scott</p>
+              <span class="position">Marketing Manager</span>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="ftco-intro ftco-section ftco-no-pb">
+ <div class="container">
+    <div class="row justify-content-center">
+       <div class="col-md-12 text-center">
+          <div class="img"  style="background-image: url(./assets/images/bg_4.jpg);">
+             <div class="overlay"></div>
+             <h2>We Are StudyLab An Online Learning Center</h2>
+             <p>We can manage your dream building A small river named Duden flows by their place</p>
+             <p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">Enroll Now</a></p>
+         </div>
+     </div>
+ </div>
+</div>
+</section>
+
+<section class="ftco-section services-section">
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-md-6 heading-section pr-md-5 ftco-animate d-flex align-items-center">
+         <div class="w-100 mb-4 mb-md-0">
+            <span class="subheading">Welcome to StudyLab</span>
+            <h2 class="mb-4">We Are StudyLab An Online Learning Center</h2>
+            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+            <div class="d-flex video-image align-items-center mt-md-4">
+              <a href="#" class="video img d-flex align-items-center justify-content-center" style="background-image: url(./assets/images/about.jpg);">
+                 <span class="fa fa-play-circle"></span>
+             </a>
+             <h4 class="ml-4">Learn anything from StudyLab, Watch video</h4>
+         </div>
+     </div>
+ </div>
+ <div class="col-md-6">
+     <div class="row">
+        <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+          <div class="services">
+            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-tools"></span></div>
+            <div class="media-body">
+              <h3 class="heading mb-3">Top Quality Content</h3>
+              <p>A small river named Duden flows by their place and supplies</p>
+          </div>
+      </div>      
+  </div>
+  <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+      <div class="services">
+        <div class="icon icon-2 d-flex align-items-center justify-content-center"><span class="flaticon-instructor"></span></div>
+        <div class="media-body">
+          <h3 class="heading mb-3">Highly Skilled Instructor</h3>
+          <p>A small river named Duden flows by their place and supplies</p>
+      </div>
+  </div>    
+</div>
+<div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+  <div class="services">
+    <div class="icon icon-3 d-flex align-items-center justify-content-center"><span class="flaticon-quiz"></span></div>
+    <div class="media-body">
+      <h3 class="heading mb-3">World Class &amp; Quiz</h3>
+      <p>A small river named Duden flows by their place and supplies</p>
+  </div>
+</div>      
+</div>
+<div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+  <div class="services">
+    <div class="icon icon-4 d-flex align-items-center justify-content-center"><span class="flaticon-browser"></span></div>
+    <div class="media-body">
+      <h3 class="heading mb-3">Get Certified</h3>
+      <p>A small river named Duden flows by their place and supplies</p>
+  </div>
+</div>      
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="ftco-section bg-light">
+  <div class="container">
+     <div class="row justify-content-center pb-4">
+      <div class="col-md-12 heading-section text-center ftco-animate">
+         <span class="subheading">Our Blog</span>
+         <h2 class="mb-4">Recent Post</h2>
+     </div>
+ </div>
+ <div class="row d-flex">
+  <div class="col-lg-4 ftco-animate">
+    <div class="blog-entry">
+      <a href="blog-single.html" class="block-20" style="background-image: url('./assets/images/image_1.jpg');">
+      </a>
+      <div class="text d-block">
+         <div class="meta">
+          <p>
+             <a href="#"><span class="fa fa-calendar mr-2"></span>Sept. 17, 2020</a>
+             <a href="#"><span class="fa fa-user mr-2"></span>Admin</a>
+             <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+         </p>
+     </div>
+     <h3 class="heading"><a href="#">I'm not creative, Should I take this course?</a></h3>
+     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...</p>
+     <p><a href="blog.html" class="btn btn-secondary py-2 px-3">Read more</a></p>
+ </div>
+</div>
+</div>
+
+<div class="col-lg-4 ftco-animate">
+    <div class="blog-entry">
+      <a href="blog-single.html" class="block-20" style="background-image: url('./assets/images/image_2.jpg');">
+      </a>
+      <div class="text d-block">
+         <div class="meta">
+          <p>
+             <a href="#"><span class="fa fa-calendar mr-2"></span>Sept. 17, 2020</a>
+             <a href="#"><span class="fa fa-user mr-2"></span>Admin</a>
+             <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+         </p>
+     </div>
+     <h3 class="heading"><a href="#">I'm not creative, Should I take this course?</a></h3>
+     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...</p>
+     <p><a href="blog.html" class="btn btn-secondary py-2 px-3">Read more</a></p>
+ </div>
+</div>
+</div>
+<div class="col-lg-4 ftco-animate">
+    <div class="blog-entry">
+      <a href="blog-single.html" class="block-20" style="background-image: url('./assets/images/image_3.jpg');">
+      </a>
+      <div class="text d-block">
+         <div class="meta">
+          <p>
+             <a href="#"><span class="fa fa-calendar mr-2"></span>Sept. 17, 2020</a>
+             <a href="#"><span class="fa fa-user mr-2"></span>Admin</a>
+             <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+         </p>
+     </div>
+     <h3 class="heading"><a href="#">I'm not creative, Should I take this course?</a></h3>
+     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...</p>
+     <p><a href="blog.html" class="btn btn-secondary py-2 px-3">Read more</a></p>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<footer class="ftco-footer ftco-no-pt">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md pt-5">
+        <div class="ftco-footer-widget pt-md-5 mb-4">
+          <h2 class="ftco-heading-2">About</h2>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+            <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+        </ul>
+    </div>
+</div>
+<div class="col-md pt-5">
+    <div class="ftco-footer-widget pt-md-5 mb-4 ml-md-5">
+      <h2 class="ftco-heading-2">Help Desk</h2>
+      <ul class="list-unstyled">
+        <li><a href="#" class="py-2 d-block">Customer Care</a></li>
+        <li><a href="#" class="py-2 d-block">Legal Help</a></li>
+        <li><a href="#" class="py-2 d-block">Services</a></li>
+        <li><a href="#" class="py-2 d-block">Privacy and Policy</a></li>
+        <li><a href="#" class="py-2 d-block">Refund Policy</a></li>
+        <li><a href="#" class="py-2 d-block">Call Us</a></li>
+    </ul>
+</div>
+</div>
+<div class="col-md pt-5">
+   <div class="ftco-footer-widget pt-md-5 mb-4">
+      <h2 class="ftco-heading-2">Recent Courses</h2>
+      <ul class="list-unstyled">
+        <li><a href="#" class="py-2 d-block">Computer Engineering</a></li>
+        <li><a href="#" class="py-2 d-block">Web Design</a></li>
+        <li><a href="#" class="py-2 d-block">Business Studies</a></li>
+        <li><a href="#" class="py-2 d-block">Civil Engineering</a></li>
+        <li><a href="#" class="py-2 d-block">Computer Technician</a></li>
+        <li><a href="#" class="py-2 d-block">Web Developer</a></li>
+    </ul>
+</div>
+</div>
+<div class="col-md pt-5">
+    <div class="ftco-footer-widget pt-md-5 mb-4">
+       <h2 class="ftco-heading-2">Have a Questions?</h2>
+       <div class="block-23 mb-3">
+         <ul>
+           <li><span class="icon fa fa-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+           <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+           <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@yourdomain.com</span></a></li>
+       </ul>
+   </div>
+</div>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12 text-center">
+
+    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  </div>
+</div>
+</div>
+</footer>
+
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+    <script type="text/javascript">
+      var particles = Particles.init({
+        selector: '.background',
+        color: '#DA0463'
+      });
+    </script>
+
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="./assets/js/popper.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/jquery.easing.1.3.js"></script>
+<script src="./assets/js/jquery.waypoints.min.js"></script>
+<script src="./assets/js/jquery.stellar.min.js"></script>
+<script src="./assets/js/owl.carousel.min.js"></script>
+<script src="./assets/js/jquery.magnific-popup.min.js"></script>
+<script src="./assets/js/jquery.animateNumber.min.js"></script>
+<script src="./assets/js/bootstrap-datepicker.js"></script>
+<script src="./assets/js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="./assets/js/google-map.js"></script>
+<script src="./assets/js/main.js"></script>
+
 </body>
-
-</body></html>
+</html>
