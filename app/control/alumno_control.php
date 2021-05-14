@@ -1,38 +1,40 @@
 <?php
 include_once "../model/ALUMNO.php";
 
-
-
-function crearCuenta(){
+function crearCuentaAlumno($id_municipio, $id_universidad,$matricula,$nombre_uni,$tipo_procedencia,
+                     $carrera_especialidad,$email,$pw,$nombre,$app,$apm,$telefono,$sexo){
     include_once "../model/CLAVES.php";
     //verificar si existe una cuenta
 
     $al = new ALUMNO();
     $clave = date("YmdHis");
     $al->setIdPersona($clave);
-    $al->setNombre("Filiberto");
-    $al->setApp("Martinez");
-    $al->setApm("Casas");
-    $al->setTelefono("55986523145");
-    $al->setSexo("1");
+    $al->setNombre($nombre);
+    $al->setApp($app);
+    $al->setApm($apm);
+    $al->setTelefono($telefono);
+    $al->setSexo($sexo);
+    //default el eestado es 1
     $al->setEstatus("1");
     ///Crear alumno
-    $al->setIdMunicipio("45");
-    $al->setIdUniversidad("2");
-    $al->setMatricula("45124578");
-    $al->setNombreUni("UNIVERSIDAD NACIONAL AUTÓNOMA DE MEXICO");
-    $al->setTipoProcedencia("1");
-    $al->setCarreraEspecialidad("Informatica");
-    $al->setEmail("correo@example.com");
-    $al->setPw(md5("0000"));
+    $al->setIdMunicipio($id_municipio);
+    $al->setIdUniversidad($id_universidad);
+    $al->setMatricula($matricula);
+    $al->setNombreUni($nombre_uni);
+    $al->setTipoProcedencia($tipo_procedencia);
+    $al->setCarreraEspecialidad($carrera_especialidad);
+    $al->setEmail($email);
+    $al->setPw(md5($pw));
+    // valor por default de la cuenta de alumno = 1
     $al->setEstatusAlumno("1");
 
     $result = $al->registraPersona();
     if ($result){
         $res= $al->agregaAlumno();
-        if ($res){
-            echo "<h1>Guardamnos a ".$al->getNombreCompleto()."</h1>";
-        }
+        return $res;
+    }
+    else{
+        return false;
     }
 }
 

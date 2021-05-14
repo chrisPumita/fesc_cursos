@@ -53,7 +53,7 @@ function consultaMunicipios(id_estado) {
     $.ajax(
         {
             url: "./app/control/list_municipios.php",
-            data: { id :id_estado },
+            data: { id : id_estado },
             type: "POST",
             beforeSend: function ()
             {
@@ -62,7 +62,6 @@ function consultaMunicipios(id_estado) {
             success: function (response)
             {
                 let obj_result = JSON.parse(response);
-                console.log(response);
                 let template = "";
                 obj_result.forEach(
                     (obj_result)=>
@@ -102,3 +101,69 @@ $("#estados").change(function ()
         municipio.find('option').remove();
     }
 });
+
+//solo cargar cuando se ha cargado el modal
+try{
+    $("frm-add-alumno").validate({
+        // ----- JQuery Validacion
+        event:"blur",
+        rules:{
+            //indicar que obj son obligatorios
+            nombreAlumno : "required",
+            appAlumno: "required",
+            apmAlumno: "required"
+        },
+        messages:{
+            nombreAlumno : "Escribe tu nombre",
+            appAlumno: "Escribe tu primer apellido",
+            apmAlumno: "Escribe tu segundo apellido"
+        },
+        debug: true,
+        errorElement: "label",
+        submitHandler: function (form) {
+            $("$alerta").show();
+            $("$alerta").html(
+            "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">\n" +
+                "<strong>Registro exitoso</strong> Hemos registrado tu cuenta\n" +
+                "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                "<span aria-hidden=\"true\">&times;</span>\n" +
+                "</button>\n" +
+                "</div>"
+            );
+            setTimeout(function () {
+                $("#alerta").fadeOut("slow");
+            }, 5000);
+            // ----- AJAX send php response
+            $.ajax({
+                url: "./app/control/alumnos_add.php",
+                type: "POST",
+                data:{
+                    matricula:  $('#matricula').val(),
+                    procedencia:$('#procedencia').val(),
+                    carrera:    $('#carrera').val(),
+                    email:      $('#correoAlumno').val(),
+                    pw:         $('#pwAlumno').val(),
+                    nombre:     $('#nombreAlumno').val(),
+                    app:        $('#appAlumno').val(),
+                    apm:        $('#apmAlumno').val(),
+                    id_mun:     $('#municipios').val(),
+                    id_uni:     $('#universidades').val(),
+                    nombre_uni: $('#nombreUni').val(),
+                    telefono:   $('#telAlumno').val(),
+                    sexo:       $('#radioHombreAlumno').val() === '0' ? "0":"1"
+                },
+                success: function (msg)
+                {
+                    $("#alerta").html(msg);
+                    setTimeout(function () {
+                        $("#alerta").fadeOut("slow");
+                    }, 3000);
+                }
+            });
+            $("#frm-add-alumno").trigger("reset");
+        }
+    })
+}
+catch (e) {
+
+}

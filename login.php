@@ -88,6 +88,10 @@
                                     <p>¿No tienes una cuenta? <br>
                                         <a class="small" href="#" data-toggle="modal" data-target="#staticBackdrop">Crear una cuenta!</a>
                                     </p>
+                                    <div id="alerta">
+                                        <!-- ajax mje -->
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -121,26 +125,26 @@
                         <div class="p-3">
 
                             <!-- Inicia el formulario-->
-                            <form class="user" id="frm_crear_cuenta_alumno">
+                            <form class="user" id="frm-add-alumno">
                                 <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nombre">
+                                        <input type="text" class="form-control form-control-user" id="nombreAlumno" requere placeholder="Nombre">
                                     </div>
                                     <div class="col-sm-4 mb-3">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Primer Apellido">
+                                        <input type="text" class="form-control form-control-user" id="appAlumno" requere placeholder="Primer Apellido">
                                     </div>
                                     <div class="col-sm-4 mb-3">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Segundo Apellido">
+                                        <input type="text" class="form-control form-control-user" id="apmAlumno" requere placeholder="Segundo Apellido">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="tel" class="form-control form-control-user" id="exampleInputEmail" placeholder="Teléfono">
+                                        <input type="tel" class="form-control form-control-user" id="telAlumno" requere placeholder="Teléfono">
                                     </div>
                                     <div class="col-sm-6 row mb-3">
                                         <div class="col-sm-6">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                                <input class="form-check-input" type="radio" id="radioHombreAlumno" value="option1" checked>
                                                 <label class="form-check-label" for="exampleRadios1">
                                                     Hombre
                                                 </label>
@@ -148,7 +152,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                                <input class="form-check-input" type="radio" id="radioMujerAlumno" value="option2">
                                                 <label class="form-check-label" for="exampleRadios2">
                                                     Mujer
                                                 </label>
@@ -158,14 +162,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Correo Electrónico">
+                                    <input type="email" class="form-control form-control-user" id="correoAlumno" requere placeholder="Correo Electrónico">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                        <input type="password" class="form-control form-control-user" id="pwAlumno" requere placeholder="Password">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
+                                        <input type="password" class="form-control form-control-user" id="pwAlumnoConfirm" requere placeholder="Repeat Password">
                                     </div>
                                 </div>
                                 <hr>
@@ -195,12 +199,12 @@
                                         <label for="exampleFormControlSelect2">Procedencia</label>
                                     </div>
                                     <div class="col-sm-8">
-                                        <select class="form-control" id="municipios">
-                                            <option>Comunidad FESC</option>
-                                            <option>Comunidad UNAM</option>
-                                            <option>Ex-Alumno</option>
-                                            <option>Comunidad Externa</option>
-                                            <option>Otro</option>
+                                        <select class="form-control" id="procedencia">
+                                            <option value="1">Comunidad FESC</option>
+                                            <option value="2">Comunidad UNAM</option>
+                                            <option value="3">Ex-Alumno</option>
+                                            <option value="4">Comunidad Externa</option>
+                                            <option value="0">Otro</option>
                                         </select>
                                     </div>
                                 </div>
@@ -218,16 +222,16 @@
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                         </div>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control form-control-user d-none" id="nombre_u" placeholder="">
+                                        <input type="text" class="form-control form-control-user d-none" id="nombreUni" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="carrera" placeholder="Carrera/Profesion actual">
+                                        <input type="text" class="form-control form-control-user" id="carrera" required placeholder="Carrera/Profesion actual">
 
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="matricula" placeholder="No de Cuenta/Matricula">
+                                        <input type="text" class="form-control form-control-user" id="matricula" required placeholder="No de Cuenta/Matricula">
                                     </div>
                                 </div>
                                 <hr>
@@ -237,9 +241,7 @@
                                             la Política de datos y la Política de cookies.</p>
                                     </div>
                                     <div class="col-sm-4">
-                                        <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                            Register Account
-                                        </a>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">Registrarme</button>
                                     </div>
                                 </div>
                             </form>
@@ -265,6 +267,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<!--  Librerias de validacion en formularios que se tienen que validar-->
+<script src="./app/assets/js/jquery.form.js"></script>
+<script src="./app/assets/js/jquery.validate.js"></script>
+<!--  Librerias de validacion en formularios que se tienen que validar-->
 <script src="./app/ajax/alumno_ajax.js"></script>
 </body>
 
