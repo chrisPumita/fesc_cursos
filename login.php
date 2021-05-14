@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,9 +37,10 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4 py-5">Biendenido de nuevo</h1>
+                                    <img src="./app/assets/img/logo.png" class="rounded mx-auto d-block" alt="Logo de SICEP" width="200">
+                                    <h1 class="h4 text-gray-900 mb-4 py-3">Iniciar Sesión</h1>
                                 </div>
-                                <form class="user">
+                                <form class="user" id="login">
                                     <div class="form-group row">
                                         <div class="col-sm-12 row mb-3">
                                             <div class="col-sm-6">
@@ -81,11 +81,13 @@
                                     </a>
                                 </form>
                                 <hr class="py-3">
-                                <div class="text-center">
+                                <div class="text-center py-3">
                                     <a class="small" href="forgot-password.html">Olvidé la contraseña</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="#" data-toggle="modal" data-target="#staticBackdrop">Crear una cuenta!</a>
+                                    <p>¿No tienes una cuenta? <br>
+                                        <a class="small" href="#" data-toggle="modal" data-target="#staticBackdrop">Crear una cuenta!</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +119,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="p-3">
-                            <form class="user">
+                            <!-- Inicia el formulario-->
+                            <form class="user" id="frm_crear_cuenta_alumno">
                                 <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nombre">
@@ -214,17 +217,20 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <select class="form-control" id="universidades">
-                                            <option>Universidad Nacional</option>
-                                            <option>Instituto Politécnico</option>
-                                            <option>Tec de Monterrey</option>
-                                            <option>Comunidad Externa</option>
-                                            <option>Otro</option>
+                                            <!--AJAX result DB -->
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                        </div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control form-control-user d-none" id="nombre_u" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="matricula" placeholder="Carrera/Profesion actual">
+                                        <input type="text" class="form-control form-control-user" id="carrera" placeholder="Carrera/Profesion actual">
 
                                     </div>
                                     <div class="col-sm-6">
@@ -263,7 +269,11 @@
 
 <!-- Custom scripts for all pages-->
 <script src="./plantilla/js/sb-admin-2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<script src="./app/ajax/alumno_ajax.js"></script>
 </body>
 
 </html>
