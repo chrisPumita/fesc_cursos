@@ -119,6 +119,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="p-3">
+
                             <!-- Inicia el formulario-->
                             <form class="user" id="frm_crear_cuenta_alumno">
                                 <div class="form-group row">
@@ -241,9 +242,8 @@
                                         </a>
                                     </div>
                                 </div>
-
-
                             </form>
+                            <!-- Inicia el formulario-->
                         </div>
                     </div>
                 </div>

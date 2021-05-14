@@ -2,13 +2,7 @@
 $(document).ready(function () {
     consultaUniversidades();
     consultaEstadosRep();
-    consultaMunicipios();
-    /*Llenar la lista de municipios de acuerdo al estado seleccionado
-    * De momento solo llena con el ***id_estado_fk = 1 (Aguascalientes)***
-    * en el query
-    * */
-
-    //LLenar lista de estados
+    consultaMunicipios(15);
 });
 
 function consultaUniversidades() {
@@ -52,13 +46,23 @@ function consultaEstadosRep() {
         }
     );
 }
-function consultaMunicipios() {
+
+function consultaMunicipios(id_estado) {
+    //Obj que voy a modificar
+    var municipio = $("#municipios");
     $.ajax(
         {
             url: "./app/control/list_municipios.php",
+            data: { id :id_estado },
+            type: "POST",
+            beforeSend: function ()
+            {
+                municipio.prop('disabled',false);
+            },
             success: function (response)
             {
                 let obj_result = JSON.parse(response);
+                console.log(response);
                 let template = "";
                 obj_result.forEach(
                     (obj_result)=>
@@ -67,55 +71,34 @@ function consultaMunicipios() {
                     }
                 );
                 $("#municipios").html(template);
+                municipio.prop('disabled',false);
+            },
+            error: function ()
+            {
+                alert('Ocurrio un error en el servidor...');
+                municipio.prop('disabled',true);
             }
         }
     );
 }
 
-$("#estados").change(function()
-{/*
-    var municipio = $("#municipios");
+
+/*Escuchas que se ejecuntan cuando hay una accion (clic)*/
+
+
+$("#estados").change(function ()
+{
+    //obj que tienes cambios
     var estado_sel = $(this);
-    if ($(this).val() != '')
+    var id = estado_sel.val();
+    if (id != '')
     {
-        $.ajax(
-            {
-                data: { id : estado_sel.val()},
-                url: "./app/control/list_municipios.php",
-                type: "POST",
-                beforeSend: function ()
-                {
-                    municipio.prop('disabled',false);
-                },
-                success: function (response)
-                {
-                    //municipio.prop('disabled', false);
-                    //municipio.find('option').remove();
-                    let obj_result =  JSON.parse(response);
-                    let template = "";
-                    obj_result.forEach(
-                        (obj_result)=>
-                        {
-                            template += `<option value="${obj_result.id_municipio}">${obj_result.municipio}</option>`;
-                        }
-                    );
-                    console.log(template);
-                    //template += `<option value="${obj_result.id_municipio}">${obj_result.municipio}</option>`;
-                    $("municipios").html(template);
-                    municipio.prop('disabled',false);
-                },
-                error: function ()
-                {
-                    alert('Ocurrio un error en el servidor...');
-                    municipio.prop('disabled',false);
-                }
-            }
-        );
+        consultaMunicipios(id);
     }
     else
     {
+        var municipio = $("#municipios");
         alert("No selecciono ningun elemento");
         municipio.find('option').remove();
-        //municipio.prop('disabled',true);
-    }**/
+    }
 });
