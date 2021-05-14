@@ -174,11 +174,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <select class="form-control" id="estados">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <!--AJAX result DB -->
                                         </select>
                                     </div>
                                 </div>
@@ -188,11 +184,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <select class="form-control" id="municipios">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <!--AJAX result DB -->
                                         </select>
                                     </div>
                                 </div>
