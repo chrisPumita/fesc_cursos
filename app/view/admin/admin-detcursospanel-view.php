@@ -76,11 +76,9 @@
 
 <!-- INICIA SECCION INFO DEL CURSO -->
 <section class="container bg-grey">
-    <!-- INICIA DESCRIPCION -->
-    <!-- FIN DESCRIPCION -->
     <div class="card bg-grey estadisticas">
         <div class="card-body py-1">
-            <div class="row">
+            <div class="row"> <!-- DETALLE DEL CURSO CALLOUT -->
                 <div class="col-lg-12">
                     <div class="callout callout-second">
                         <h4>Detalles del curso</h4>
@@ -88,100 +86,114 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <!-- TARJETA DE INFO DEL CURSO -->
                 <div class="col-sm-6 py-4">
                     <div class="card">
                         <div class="card-body">
                             <div class="mx-auto">
-                                <h5><strong>Creado por: </strong>Juan Perez Sanchez</h5>
-                                <p>15 de Mayo de 2020</p>
-                                <div id="accordion">
-                                    <div class="card">
-                                        <div class="card-header" id="headingOne">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Antecedentes
-                                            </button>
-                                        </h5>
-                                        </div>
+                                <div>
+                                    <h5><strong>Creado por: </strong>Juan Perez Sanchez</h5>
+                                    <p>15 de Mayo de 2020</p>
+                                </div>
 
-                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                                <div class="px-1">
+                                    <div id="accordion">
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+                                                <h5 class="mb-0">
+                                                    <button class="btn text-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    Antecedentes
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                                                </div>
+                                            </div>
                                         </div>
+                                        <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                                <h5 class="mb-0">
+                                                    <button class="btn text-primary collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Objetivo
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingTwo">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Objetivo
-                                            </button>
-                                        </h5>
+                                        <div class="card">
+                                            <div class="card-header" id="headingThree">
+                                                <h5 class="mb-0">
+                                                    <button class="btn text-primary collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    Detalles
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <h6><strong>Modalidad: </strong> A distancia</h6>
+                                                    <h6><strong>Cupo: </strong>30</h6>
+                                                    <h6><strong>Sesiones: </strong> 20</h6>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                                        </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingThree">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Detalles
-                                            </button>
-                                        </h5>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <h6><strong>Modalidad: </strong> A distancia</h6>
-                                            <h6><strong>Cupo: </strong>30</h6>
-                                            <h6><strong>Sesiones: </strong> 20</h6>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>                                
-                                <a href=""><button class="btn btn-primary btn-block" type="button">Editar información</button></a>
+                                    </div>                                                                   
+                                </div>                
                             </div>
                             <div class="mx-auto py-4">
+                            <a href=""><button class="btn btn-primary btn-block" type="button">Editar información</button></a> 
+                            <hr> 
                                 <h6><strong>PDF del temario descargable</strong></h6>
-                                <div class="btn-group">
-                                    <button class="btn btn-primary w-100 aling-self-center">
-                                        <i class="icon arrow-down-circle-outline mr-2 lead"></i>Descargar
-                                    </button>
-                                    <button class="btn btn-primary w-100 aling-self-center">
-                                        <i class="icon ion-md-cloud-upload mr-2 lead"></i>Subir
-                                    </button>
-                                    <button class="btn btn-primary w-100 aling-self-center">
-                                        <i class="icon ion-md-cloud-upload mr-2 lead"></i>Ver
-                                    </button>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a href="#" class="btn btn-primary btn-block">Descargar</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                    <a href="#" class="btn btn-primary btn-block">Subir</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                    <a href="#" class="btn btn-primary btn-block">Ver</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>                    
                 </div>
+
                 <!-- TARJETA DE BANNER -->
-                <div class="col-sm-6">  
-                    <div class="row py-3">
-                    <div class="container">
-                        <div class="row">
-                            <div class="m-auto">
-                                <i class="icon ion-md-checkmark-circle"></i>
+                <div class="col-sm-6 py-4">  
+                    <div class="row">
+                        <div class="container">
+                            <div class="">
+                                <div class="callout callout-primary">
+                                    <h4>Detalles del curso</h4>
+                                    <div class="d-flex">
+                                        <div class="m-auto">
+                                            <img src="../../assets/img/ok.svg" width="60" alt="svg ok">
+                                        </div>
+                                        <div class="m-auto">
+                                            <h5>Aprobado por:</h5>
+                                            <h6><strong> Felipe Moran Suarez</strong></h6>
+                                            <h6>Jefe de Departamento de Informática</h6>
+                                        </div>
+                                    </div>
+                                    <div class="m-auto">
+                                        <a href="#" class="btn btn-danger btn-block">Inhabilitar</a>
+                                    </div>
+                                 </div>
+                                
                             </div>
-                            <div class="m-auto">
-                                <h5>Aprobado por:</h5>
-                                <h6><strong> Felipe Moran Suarez</strong></h6>
-                                <h6>Jefe de Departamento de Informática</h6>
-                            </div>
-                            <div class="m-auto">
-                                <a href="#" class="btn btn-danger btn-block">Inhabilitar</a>
-                            </div>
-                        </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="">
                         <div class="card">
                             <img src="http://www.rrhhdigital.com/userfiles/CURSO-EXCEL-RRHHDIGITAL.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -197,9 +209,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>           
-
+                    </div>
                 </div>
+                <!-- FIN TARJETA BANNER -->
             </div>
         </div>        
     </div>
