@@ -89,7 +89,7 @@
 
             <div class="row">
                 <!-- TARJETA DE INFO DEL CURSO -->
-                <div class="col-sm-6 py-4">
+                <div class="col-sm-6 py-2">
                     <div class="card">
                         <div class="card-body">
                             <div class="mx-auto">
@@ -148,19 +148,19 @@
                                     </div>                                                                   
                                 </div>                
                             </div>
-                            <div class="mx-auto py-4">
+                            <div class="mx-auto py-2">
                             <a href=""><button class="btn btn-primary btn-block" type="button">Editar información</button></a> 
                             <hr> 
                                 <h6><strong>PDF del temario descargable</strong></h6>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <a href="#" class="btn btn-primary btn-block">Descargar</a>
+                                        <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-download"></i> Descargar</a>
                                     </div>
                                     <div class="col-md-4">
-                                    <a href="#" class="btn btn-primary btn-block">Subir</a>
+                                    <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-cloud"></i> Subir</a>
                                     </div>
                                     <div class="col-md-4">
-                                    <a href="#" class="btn btn-primary btn-block">Ver</a>
+                                    <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-eye"></i> Ver</a>
                                     </div>
                                 </div>
                             </div>
@@ -169,18 +169,35 @@
                 </div>
 
                 <!-- TARJETA DE BANNER -->
-                <div class="col-sm-6 py-4">  
+                <div class="col-sm-6 py-2">  
+                    <div class="">
+                        <div class="card">
+                            <img src="http://www.rrhhdigital.com/userfiles/CURSO-EXCEL-RRHHDIGITAL.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6 class="card-title"><strong>Imagen del Banner</strong></h6>
+                                <p class="card-text py-1">Debe tener una resolución de 600px por 300px</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-refresh"></i> Cambiar</a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="#"><button type="button" class="btn btn-warning btn-sec btn-block">Quitar</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="container">
                             <div class="">
                                 <div class="callout callout-primary">
-                                    <h4>Detalles del curso</h4>
+                                    <h5>Detalles de Aprobación</h5>
                                     <div class="d-flex">
                                         <div class="m-auto">
                                             <img src="../../assets/img/ok.svg" width="60" alt="svg ok">
                                         </div>
                                         <div class="m-auto">
-                                            <h5>Aprobado por:</h5>
+                                            <h6>Aprobado por:</h6>
                                             <h6><strong> Felipe Moran Suarez</strong></h6>
                                             <h6>Jefe de Departamento de Informática</h6>
                                         </div>
@@ -193,25 +210,163 @@
                             </div>
                         </div>
                     </div>
-                    <div class="">
-                        <div class="card">
-                            <img src="http://www.rrhhdigital.com/userfiles/CURSO-EXCEL-RRHHDIGITAL.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h6 class="card-title"><strong>Imagen del Banner</strong></h6>
-                                <p class="card-text py-1">Debe tener una resolución de 600px por 300px</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <a href="#" class="btn btn-primary btn-block">Cambiar</a>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <a href="#"><button type="button" class="btn btn-outline-secondary btn-sec btn-block">Quitar</button></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <!-- FIN TARJETA BANNER -->
+                <div class="col-sm-12 py-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="mx-auto">
+                                <div class="row p-3">
+                                    <div class="col-lg-9">
+                                        <h5><strong>Temario</strong></h5>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <a href="#" class="btn btn-primary btn-block">Nuevo</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 overflow-auto">
+                                        <table class="table table-striped bg-light table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">No.</th>
+                                                    <th scope="col">Nombre</th>
+                                                    <th scope="col">Departamento</th>
+                                                    <th scope="col">Teléfono</th>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">Registro</th>
+                                                    <th scope="col">Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>123</td>
+                                                    <td>Juan Pérez Sánchez</td>
+                                                    <td>Informática</td>
+                                                    <td>5563258917</td>
+                                                    <td>juan@gmail.com</td>
+                                                    <td>--------</td>
+                                                    <td>  <!-- BOTON ACCIONES -->
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <button type="button" class="btn btn-primary">Modificar</button>
+                                                            <button type="button" class="btn btn-danger">Eliminar</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>456</td>
+                                                    <td>Roberto Gomez Ramírez</td>
+                                                    <td>Matemáticas</td>
+                                                    <td>5589367405</td>
+                                                    <td>roberto@gmail.com</td>
+                                                    <td>--------</td>
+                                                <!-- BOTON ACCIONES -->
+                                                    <td>
+                                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <button type="button" class="btn btn-primary">Modificar</button>
+                                                            <button type="button" class="btn btn-danger">Eliminar</button>
+                                                        </div> 
+                                                    </td>  
+                                                </tr>   
+                                            </tbody>
+                                        </table>
+                                        </div>
+                                        </div>
+
+<!-- para agregar en los horarios
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                        <h1>HOLA</h1>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                        <h2>2</h2>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                        <h3>3</h3>
+                                    </div>
+                                </div>   
+
+                                -->            
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>        
+    </div>
+</section>
+
+<section class="container bg-grey">
+    <div class="col-sm-12 py-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="mx-auto">
+                    <div class="row p-3">
+                        <div class="col-lg-1">
+                        <i class="icon ion-md-rocket  paleta"></i>
+                        </div>
+                        <div class="col-lg-9">
+                            <h4>Creacion de asignacion de Grupo</h4>
+                                <div class="form-group">
+                                <label for="sel1">Crear y Asignar un grupo de este curso, seleccione el profesor asignado:</label>
+                                <select class="form-control" id="sel1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                                </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <button class="btn btn-primary w-100 aling-self-center">Envíar</button>
+                         </div>  
+                    </div>      
+                </div>
+            </div>
+        </div>                    
+    </div>
+    <div class="card bg-grey estadisticas">
+        <div class="card-body py-1">
+            <div class="row"> <!-- DETALLE DEL CURSO CALLOUT -->
+                <div class="col-lg-12">
+                    <div class="row align-items-center justify-content-center">
+               
+            </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- TARJETA DE INFO DEL CURSO -->
+                <div class="col-sm-12 py-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="mx-auto">
+                                <div class="row p-3">
+                                    <div class="col-lg-9">
+                                        <h5><strong>Temario</strong></h5>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <a href="#" class="btn btn-primary btn-block">Nuevo</a>
+                                    </div>
+                                </div>      
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
             </div>
         </div>        
     </div>

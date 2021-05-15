@@ -3,7 +3,7 @@
 
 <?php
 //Abrir para agregar los includes
-$tittle = "Cursos registrados";
+$tittle = "Template";
 include("../includes/header.php");
 ?>
 <body class="body-home">
@@ -15,13 +15,11 @@ include("../includes/header.php");
         <div id="content">
             <!--Inicio contenido dinamico-->
             <div class="componet-dinamico bg-grey">
-                <?php include ("admin-cursospanel-view.php")?>
+               <h1>COLOCAR AQUI EL NUEVO CODIGO HTML5</h1>
             </div>
             <!--FIN contenido dinamico-->
             <?php include("../includes/footer.php");?>
         </div>
-
-
     </div>
 </div>
 <!-- script_js -->
