@@ -102,10 +102,10 @@ $("#estados").change(function ()
     }
 });
 
+
 //solo cargar cuando se ha cargado el modal
-try{
+/*
     $("frm-add-alumno").validate({
-        // ----- JQuery Validacion
         event:"blur",
         rules:{
             //indicar que obj son obligatorios
@@ -123,12 +123,7 @@ try{
         submitHandler: function (form) {
             $("$alerta").show();
             $("$alerta").html(
-            "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">\n" +
-                "<strong>Registro exitoso</strong> Hemos registrado tu cuenta\n" +
-                "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
-                "<span aria-hidden=\"true\">&times;</span>\n" +
-                "</button>\n" +
-                "</div>"
+                "<img src='../assets/img/ajax-loader.gif' class='loading_save'/><strong>Guardando información...</strong>"
             );
             setTimeout(function () {
                 $("#alerta").fadeOut("slow");
@@ -138,32 +133,50 @@ try{
                 url: "./app/control/alumnos_add.php",
                 type: "POST",
                 data:{
-                    matricula:  $('#matricula').val(),
-                    procedencia:$('#procedencia').val(),
-                    carrera:    $('#carrera').val(),
-                    email:      $('#correoAlumno').val(),
-                    pw:         $('#pwAlumno').val(),
                     nombre:     $('#nombreAlumno').val(),
                     app:        $('#appAlumno').val(),
                     apm:        $('#apmAlumno').val(),
+                    telefono:   $('#telAlumno').val(),
+                    sexo:       $('#radioHombreAlumno').val() === '0' ? "0":"1",
+                    email:      $('#correoAlumno').val(),
+                    pw:         $('#pwAlumno').val(),
                     id_mun:     $('#municipios').val(),
+                    procedencia:$('#procedencia').val(),
                     id_uni:     $('#universidades').val(),
                     nombre_uni: $('#nombreUni').val(),
-                    telefono:   $('#telAlumno').val(),
-                    sexo:       $('#radioHombreAlumno').val() === '0' ? "0":"1"
+                    carrera:    $('#carrera').val(),
+                    matricula:  $('#matricula').val()
                 },
                 success: function (msg)
                 {
+                    console.log(msg);
                     $("#alerta").html(msg);
                     setTimeout(function () {
                         $("#alerta").fadeOut("slow");
                     }, 3000);
                 }
-            });
+            }); // end ajax
             $("#frm-add-alumno").trigger("reset");
         }
-    })
-}
-catch (e) {
+    });
 
-}
+*/
+    /* ************** VALIDACION ***************/
+// Agregar la clase needs-validation a los form que se requieran validar cuyo campo sea requere
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();

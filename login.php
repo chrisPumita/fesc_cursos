@@ -12,17 +12,86 @@
 
     <!-- Custom fonts for this template-->
     <link href="./plantilla/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
-
     <!-- Custom styles for this template-->
     <link href="./plantilla/css/sb-admin-2.css" rel="stylesheet">
+    <link rel="stylesheet" href="./app/assets/css/estilos-login.css">
 
+    <style>
+        .toggle_radio{
+            position: relative;
+            background: #0d70c9;
+            margin: 1rem auto;
+            overflow: hidden;
+            padding: 0 !important;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 50px;
+            position: relative;
+            height: 40px;
+            width: auto;
+        }
+        .toggle_radio > * {
+            float: left;
+        }
+        .toggle_radio input[type=radio]{
+            display: none;
+            /*position: fixed;*/
+        }
+        .toggle_radio label{
+            font: 1.5rem "Source Sans Pro";
+            color: #ffffff;
+            z-index: 0;
+            z-index: 0;
+            display: block;
+            width: 100px;
+            height: 20px;
+            margin: 3px 3px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1;
+            text-align: center;
+            /*margin: 0 2px;*/
+            /*background: #145d8b;*/ /*make it blue*/
+        }
+        .toggle_option_slider{
+            /*display: none;*/
+            /*background: red;*/
+            width: 100px;
+            height: 35px;
+            position: absolute;
+            top: 3px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;
+            -webkit-transition: all .4s ease;
+            -moz-transition: all .4s ease;
+            -o-transition: all .4s ease;
+            -ms-transition: all .4s ease;
+            transition: all .4s ease;
+        }
+
+        #first_toggle:checked ~ .toggle_option_slider{
+            background: rgba(255,255,255,.3);
+            left: 3px;
+        }
+        #second_toggle:checked ~ .toggle_option_slider{
+            background: rgba(255,255,255,.3);
+            left: 109px;
+        }
+        #third_toggle:checked ~ .toggle_option_slider{
+            background: rgba(255,255,255,.3);
+            left: 215px;
+        }
+    </style>
 </head>
 
 <body class="bg-gradient-primary">
-
+<!-- Cargando modal de registro de alumno -->
+<?php include_once "./modal-add-alumno.php";?>
 <div class="container-fluid">
 
     <!-- Outer Row -->
@@ -43,22 +112,15 @@
                                 <form class="user" id="login">
                                     <div class="form-group row">
                                         <div class="col-sm-12 row mb-3">
-                                            <div class="col-sm-6">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
-                                                    <label class="form-check-label" for="exampleRadios1">
-                                                        Soy alumno
-                                                    </label>
+                                                <div class="toggle_radio">
+                                                    <input type="radio" class="toggle_option" id="first_toggle" name="toggle_option">
+                                                    <input type="radio" checked class="toggle_option" id="second_toggle" name="toggle_option">
+                                                    <input type="radio" class="toggle_option" id="third_toggle" name="toggle_option">
+                                                    <label for="first_toggle"><p>Alumno</p></label>
+                                                    <label for="second_toggle"><p>Profesor</p></label>
+                                                    <div class="toggle_option_slider">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                                    <label class="form-check-label" for="exampleRadios2">
-                                                        Soy un Profesor
-                                                    </label>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -88,10 +150,6 @@
                                     <p>¿No tienes una cuenta? <br>
                                         <a class="small" href="#" data-toggle="modal" data-target="#staticBackdrop">Crear una cuenta!</a>
                                     </p>
-                                    <div id="alerta">
-                                        <!-- ajax mje -->
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
@@ -106,172 +164,19 @@
 
 </div>
 
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h2>Registrate</h2>
-                <p>Registrate para poder inscribirte a los cursos que ofrece las FES-Cuautitlán. Es facil y
-                    rápido.
-                </p>
-                <hr>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="p-3">
-
-                            <!-- Inicia el formulario-->
-                            <form class="user" id="frm-add-alumno">
-                                <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="nombreAlumno" requere placeholder="Nombre">
-                                    </div>
-                                    <div class="col-sm-4 mb-3">
-                                        <input type="text" class="form-control form-control-user" id="appAlumno" requere placeholder="Primer Apellido">
-                                    </div>
-                                    <div class="col-sm-4 mb-3">
-                                        <input type="text" class="form-control form-control-user" id="apmAlumno" requere placeholder="Segundo Apellido">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="tel" class="form-control form-control-user" id="telAlumno" requere placeholder="Teléfono">
-                                    </div>
-                                    <div class="col-sm-6 row mb-3">
-                                        <div class="col-sm-6">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="radioHombreAlumno" value="option1" checked>
-                                                <label class="form-check-label" for="exampleRadios1">
-                                                    Hombre
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" id="radioMujerAlumno" value="option2">
-                                                <label class="form-check-label" for="exampleRadios2">
-                                                    Mujer
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="correoAlumno" requere placeholder="Correo Electrónico">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" id="pwAlumno" requere placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="pwAlumnoConfirm" requere placeholder="Repeat Password">
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <label for="exampleFormControlSelect2">Estado</label>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <select class="form-control" id="estados">
-                                            <!--AJAX result DB -->
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <label for="exampleFormControlSelect2">Municipio</label>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <select class="form-control" id="municipios">
-                                            <!--AJAX result DB -->
-                                        </select>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <label for="exampleFormControlSelect2">Procedencia</label>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <select class="form-control" id="procedencia">
-                                            <option value="1">Comunidad FESC</option>
-                                            <option value="2">Comunidad UNAM</option>
-                                            <option value="3">Ex-Alumno</option>
-                                            <option value="4">Comunidad Externa</option>
-                                            <option value="0">Otro</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <label for="exampleFormControlSelect2">Universidad</label>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <select class="form-control" id="universidades">
-                                            <!--AJAX result DB -->
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
-                                        </div>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control form-control-user d-none" id="nombreUni" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="carrera" required placeholder="Carrera/Profesion actual">
-
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="matricula" required placeholder="No de Cuenta/Matricula">
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="form-group row">
-                                    <div class="col-sm-8 mb-3 mb-sm-0">
-                                        <p>Al hacer clic en "Registrarte", aceptas nuestras Condiciones,
-                                            la Política de datos y la Política de cookies.</p>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">Registrarme</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- Inicia el formulario-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Bootstrap core JavaScript-->
-<script src="./plantilla/vendor/jquery/jquery.min.js"></script>
-<script src="./plantilla/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="./plantilla/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="./plantilla/js/sb-admin-2.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!--  Librerias de validacion en formularios que se tienen que validar-->
-<script src="./app/assets/js/jquery.form.js"></script>
+
+<!--  Librerias de validacion en formularios que se tienen que validar
+<script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+-->
 <script src="./app/assets/js/jquery.validate.js"></script>
+<script src="./app/assets/js/jquery.form.js"></script>
 <!--  Librerias de validacion en formularios que se tienen que validar-->
 <script src="./app/ajax/alumno_ajax.js"></script>
-</body>
 
+</body>
 </html>
