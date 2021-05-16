@@ -11,11 +11,11 @@
     <title>SICEP - Login</title>
 
     <!-- Custom fonts for this template-->
-    <link href="./plantilla/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/style/all.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="./plantilla/css/sb-admin-2.css" rel="stylesheet">
+    <link href="./assets/style/sb-admin-2.css" rel="stylesheet">
     <link rel="stylesheet" href="./app/assets/css/estilos-login.css">
 
     <style>
@@ -86,6 +86,22 @@
             background: rgba(255,255,255,.3);
             left: 215px;
         }
+
+        .background {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .nav-link img {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            margin: -8px 0;
+            float: left;
+            margin-right: 10px;
+        }
     </style>
 </head>
 
@@ -93,7 +109,8 @@
 <!-- Cargando modal de registro de alumno -->
 <?php include_once "./modal-add-alumno.php";?>
 <div class="container-fluid">
-
+    <canvas class="background"></canvas>
+    <script src="./assets/js/particles.js"></script>
     <!-- Outer Row -->
     <div class="row justify-content-center">
 
@@ -106,18 +123,17 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <img src="./app/assets/img/logo.png" class="rounded mx-auto d-block" alt="Logo de SICEP" width="200">
+                                    <a href="./"><img src="./app/assets/img/logo.png" class="rounded mx-auto d-block" alt="Logo de SICEP" width="200"></a>
                                     <h1 class="h4 text-gray-900 mb-4 py-3">Iniciar Sesión</h1>
                                 </div>
                                 <form class="user" id="login">
                                     <div class="form-group row">
                                         <div class="col-sm-12 row mb-3">
                                                 <div class="toggle_radio">
-                                                    <input type="radio" class="toggle_option" id="first_toggle" name="toggle_option">
-                                                    <input type="radio" checked class="toggle_option" id="second_toggle" name="toggle_option">
-                                                    <input type="radio" class="toggle_option" id="third_toggle" name="toggle_option">
                                                     <label for="first_toggle"><p>Alumno</p></label>
+                                                    <input type="radio" class="toggle_option" id="first_toggle" name="toggle_option" checked>
                                                     <label for="second_toggle"><p>Profesor</p></label>
+                                                    <input type="radio" class="toggle_option" id="second_toggle" name="toggle_option">
                                                     <div class="toggle_option_slider">
                                                     </div>
                                                 </div>
@@ -178,5 +194,22 @@
 <!--  Librerias de validacion en formularios que se tienen que validar-->
 <script src="./app/ajax/alumno_ajax.js"></script>
 
+<script type="text/javascript">
+    window.onload = function() {
+        Particles.init({
+            selector: '.background',
+            color: ['#196398', '#CDAC12', '#efefef'],
+            connectParticles: true,
+            responsive: [{
+                breakpoint: 800,
+                options: {
+                    color: '#196398',
+                    maxParticles: 80,
+                    connectParticles: false
+                }
+            }]
+        });
+    };
+</script>
 </body>
 </html>
