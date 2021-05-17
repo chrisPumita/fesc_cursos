@@ -29,6 +29,9 @@ class CURSO extends CONEXION_M implements I_CURSO
     private $obj_profesor_autor;
     private $obj_profesor_admin_acredita;
 
+    /*******************************************************************************
+     * Inician Getters and Setters
+     *******************************************************************************/
     /**
      * @return mixed
      */
@@ -400,7 +403,12 @@ class CURSO extends CONEXION_M implements I_CURSO
     {
         $this->obj_profesor_admin_acredita = $obj_profesor_admin_acredita;
     }
-
+    /*******************************************************************************
+     * Terminan Getters and Setters
+     *******************************************************************************/
+    /*******************************************************************************
+     * Inician Funciones de Interfaz
+     *******************************************************************************/
     public function consultaTemas($id_curso)
     {
         $this->connect();
@@ -426,7 +434,7 @@ class CURSO extends CONEXION_M implements I_CURSO
 
     public function consultaGrupos($id_curso)
     {
-        // TODO: Implement consultaGrupos() method.
+
     }
 
     function registraCurso($curso)
@@ -473,4 +481,7 @@ class CURSO extends CONEXION_M implements I_CURSO
     {
         // TODO: Implement quitarDocumetoSolicitado() method.
     }
+    /*******************************************************************************
+     * Terminan Funciones de Interfaz
+     *******************************************************************************/
 }

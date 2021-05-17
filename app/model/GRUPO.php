@@ -93,8 +93,8 @@ private $estatus;
         // TODO: Implement eliminaGrupo() method.
     }
 
-    public  function consultaGrupos()
+    public  function consultaGrupos($id_curso)
     {
-        // TODO: Implement consultaGrupos() method.
+        $query = "SELECT `id_curso`, `id_profesor_admin_acredita`, `id_profesor_autor`, `codigo`, `nombre_curso`, `dirigido_a`, `objetivo`, `descripcion`, `no_sesiones`, `antecedentes`, `aprobado`, `costo_sugerido`, `link_temario_pdf`, `fecha_creacion`, `fecha_acreditacion`, `banner_img`, `tipo_curso` FROM `curso` WHERE 1";
     }
 }
