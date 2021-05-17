@@ -1,6 +1,6 @@
 <?php
-include_once "../model/ESTADO_REP.php";
+include_once "../model/GRUPO.php";
 
-$edo = new ESTADO_REP();
-$resultado = $edo->consultaEstados();
+$grupo = new GRUPO();
+$resultado = $grupo->consultaGrupos(1);
 var_dump($resultado);

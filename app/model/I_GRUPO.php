@@ -8,5 +8,5 @@ interface I_GRUPO
 
     public  function eliminaGrupo($id_grupo);
 
-    public  function consultaGrupos();
+    public  function consultaGrupos($id_curso);
 }
