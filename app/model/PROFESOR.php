@@ -256,7 +256,7 @@ class PROFESOR extends PERSONA implements I_PROFESOR
 
     function agregaProfesor()
     {
-        // TODO: Implement agregaProfesor() method.
+        $query = "";
     }
 
     function modificaProfesor()
