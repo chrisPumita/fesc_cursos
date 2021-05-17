@@ -207,6 +207,7 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
     function modificaArchivo($archivo)
     {
         /* recibe un array del documento a modificar
+        ['arch1','fechanueva']
        */
         $this->connect();
         $filtro="";
@@ -224,7 +225,6 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
 
     function eliminarArchivo($id_archivo)
     {
-
         $this->connect();
         $datos = $this-> getData("DELETE FROM `archivo` WHERE `id_archivo`=".$id_archivo);
         $this->close();

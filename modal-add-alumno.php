@@ -115,6 +115,9 @@
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user" name="matricula"  id="matricula" required="" placeholder="No de Cuenta/Matricula">
                                     </div>
+                                    <div class="col-sm-6">
+                                        <input type="hidden" class="form-control form-control-user" name="catpcha"  id="catpcha" required="" placeholder="No de Cuenta/Matricula">
+                                    </div>
                                 </div>
                                 <hr>
                                 <div class="form-group row">
@@ -123,7 +126,7 @@
                                             la Política de datos y la Política de cookies.</p>
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="submit" id="btnEnviar" name="btnEnviar" value="Enviar formulario" class="btn btn-primary btn-user btn-block">
+                                        <input type="submit" id="btnEnviar" name="btnEnviar" value="Registrarme" class="btn btn-primary btn-user btn-block">
                                     </div>
                                 </div>
                                 <div id="formError" class="alert alert-danger d-none" role="alert">

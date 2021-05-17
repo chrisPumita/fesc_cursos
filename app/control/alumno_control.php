@@ -25,8 +25,9 @@ function crearCuentaAlumno($id_municipio, $id_universidad,$matricula,$nombre_uni
     $al->setCarreraEspecialidad($carrera_especialidad);
     $al->setEmail($email);
     $al->setPw(md5($pw));
-    // valor por default de la cuenta de alumno = 1
-    $al->setEstatusAlumno("1");
+    // valor por default de la cuenta de alumno = 0
+    // porque no se ha validado cuenta de alumno
+    $al->setEstatusAlumno("0");
 
     $result = $al->registraPersona();
     if ($result){

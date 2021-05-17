@@ -23,14 +23,16 @@
 <body class="bg-gradient-primary">
 <!-- Cargando modal de registro de alumno -->
 <?php include_once "./modal-add-alumno.php";?>
-<div class="container py-5">
-    <canvas class="background"></canvas>
-    <script src="./assets/js/particles.js"></script>
 
-    <div class="toast-container" aria-live="polite" aria-atomic="true">
-        <!-- Position it -->
-        <div style="position: absolute;top: 1em;right: 1em;width: 250px;">
-            <div id="toast">   <!-- Ajax Peticion -->     </div>
+    <div class="container py-5">
+        <canvas class="background"></canvas>
+        <script src="./assets/js/particles.js"></script>
+
+        <div class="toast-container" aria-live="polite" aria-atomic="true">
+            <!-- Position it -->
+            <div style="position: absolute;top: 1em;right: 1em;width: 250px;">
+                <div id="toast"> <!-- Ajax Peticion --></div>
+            </div>
         </div>
     </div>
 
@@ -105,15 +107,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
-<!--  Librerias de validacion en formularios que se tienen que validar
-<script src="./app/assets/js/jquery.validate.js"></script>
-<script src="./app/assets/js/jquery.form.js"></script>
--->
+<!--  Librerias de validacion en formularios que se tienen que validar -->
 <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
 
-<!--  Librerias de validacion en formularios que se tienen que validar-->
+<!--  Control de alumnos de ajax-->
 <script src="./app/ajax/alumno_ajax.js"></script>
+<script src="./app/ajax/validar-form.js"></script>
 
 <script type="text/javascript">
     window.onload = function() {

@@ -102,6 +102,7 @@ $("#estados").change(function ()
     }
 });
 
+//Inciacia envio de formulario
 $(function() {
     jQuery("#frm-add-alumno").validate({ //inicamos la validación del formulario
         //Cada cosa que configures la debes de terminar con una coma ,
@@ -109,19 +110,27 @@ $(function() {
         rules: { //iniciamos sección de reglas
             nombreAlumno: { //estas seras las reglas para el objeto que en su propiedad name tenga nameO
                 required: true, //indicamos que es requerido que contenga un valor
-                minlength: 4, //indicamos que debe de tener por lo menos 4 caracteres
+                minlength: 3, //indicamos que debe de tener por lo menos 4 caracteres
                 maxlength: 20 //indicamos que debe de tener maximo 20 caracteres
             },
             correoAlumno: {
                 required: true,
                 email: true //indicamos que debe de cumplir con la estructura de un email
             },
-            contrasena: {required:true,minlength:6,maxlength:15},
-            contrasenaconfirmar: {required:true,equalTo:"#contrasena" }
+            contrasena: {
+                required:true,
+                minlength:6,
+                maxlength:50
+            },
+            contrasenaconfirmar:
+                {
+                    required:true,
+                    equalTo:"#contrasena"
+                }
         },
         messages: {//estos seran los mensaje que aparezcan segun el objeto y la reque que espeficiquemos en la sección de reglas
             nombreAlumno: {
-                required: "Hey vamos, por favor, d&aacute;nos tu nombre",
+                required: "Porfavor indicanos tu nombre",
                 minlength: $.format("Necesitamos por lo menos {0} caracteres"),
                 maxlength: $.format("{0} caracteres son demasiados!")
             },
@@ -129,12 +138,14 @@ $(function() {
                 required: "Hey vamos, por favor, d&aacute;nos tu email",
                 email: "No cumple con la estructura de un email."
             },
+            contrasena: "Son demaciados caracteres",
             contrasenaconfirmar: "Las contraseñas no coinciden."
         },
         submitHandler: function(form){ //si todos los controles cumplen con las validaciones, se ejecuta este codigo
             $("#formError").addClass("hidden"); //para ocultar el mensaje, le agregamos la clase de Bootstrap 3
             var btnEnviar = $("#btnEnviar");
             var formulario = $('#frm-add-alumno');
+            // start ajax
             $.ajax({
                 url: "./app/control/alumnos_add.php",
                 type: "POST",
@@ -146,7 +157,7 @@ $(function() {
                     telefono:   $('#telAlumno').val(),
                     sexo:       $('input:radio[name=sexo]:checked').val(),
                     email:      $('#correoAlumno').val(),
-                    pw1:         $('#contrasena').val(),
+                    pw1:        $('#contrasena').val(),
                     id_mun:     $('#municipios').val(),
                     procedencia:$('#procedencia').val(),
                     id_uni:     $('#universidades').val(),
@@ -154,6 +165,13 @@ $(function() {
                     carrera:    $('#carrera').val(),
                     matricula:  $('#matricula').val()
                 }, //parametros (valores) en formato llaver:valor, que se enviaran con la solicitud
+                beforeSend: function(){
+                    /** Esta función se ejecuta durante el envió de la petición al
+                    * servidor.* */
+                    formulario.css("opacity",".5");
+                    btnEnviar.val("Enviando..."); // Para input de tipo button
+                    btnEnviar.attr("disabled","disabled");
+                },
                 complete: function(xhr, textStatus) {
                     //se llama cuando se recibe la respuesta (no importa si es error o exito)
                     btnEnviar.val("Registrarme");
@@ -164,19 +182,8 @@ $(function() {
                     formulario.css("opacity","");
                     btnEnviar.removeAttr("disabled");
                 },
-                beforeSend: function(){
-                    /*
-                    * Esta función se ejecuta durante el envió de la petición al
-                    * servidor.
-                    * */
-                    formulario.css("opacity",".5");
-                    btnEnviar.val("Enviando..."); // Para input de tipo button
-                    btnEnviar.attr("disabled","disabled");
-                },
                 success: function(msg) {
                     $('.statusMsg').html('');
-                    console.log(msg);
-
                     var toast = `
                         <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"  data-autohide="false">
                             <div class="toast-header">
@@ -194,13 +201,12 @@ $(function() {
 
                     $("#toast").html(toast);
                     $('.toast').toast('show');
-
                 },
                 error: function(xhr, textStatus, errorThrown) {
                     //called when there is an error
                     alert("La respuesta fue con error");
                 }
-            });
+            }); //end ajax
         },
         invalidHandler: function(event, validator) { //si por lo menos uno control no cumplen con las validaciones, se ejecuta este codigo
             var errors = validator.numberOfInvalids(); // número de errores encontrados al validar el formulario
@@ -221,7 +227,7 @@ $(function() {
     });
 });
 
-
+/*
 $.validator.addMethod("passwordcheck", function(value) {
         return /^[a-zA-Z0-9!@#$%^&()=[]{};':"\|,.<>\/?+-]+$/.test(value)
             && /[a-z]/.test(value) // has a lowercase letter
@@ -229,82 +235,5 @@ $.validator.addMethod("passwordcheck", function(value) {
             && /[!@#$%^&()=[]{};':"\|,.<>\/?+-]/.test(value)// has a special character
     },"La contraseña debe contener de 8 a 15 carácteres alfanuméricos (a-z A-Z), contener mínimo un dígito (0-9) y un carácter especial (_-=)."
 );
-
-
-//solo cargar cuando se ha cargado el modal
-/*
-    $("frm-add-alumno").validate({
-        event:"blur",
-        rules:{
-            //indicar que obj son obligatorios
-            nombreAlumno : "required",
-            appAlumno: "required",
-            apmAlumno: "required"
-        },
-        messages:{
-            nombreAlumno : "Escribe tu nombre",
-            appAlumno: "Escribe tu primer apellido",
-            apmAlumno: "Escribe tu segundo apellido"
-        },
-        debug: true,
-        errorElement: "label",
-        submitHandler: function (form) {
-            $("$alerta").show();
-            $("$alerta").html(
-                "<img src='../assets/img/ajax-loader.gif' class='loading_save'/><strong>Guardando información...</strong>"
-            );
-            setTimeout(function () {
-                $("#alerta").fadeOut("slow");
-            }, 5000);
-            // ----- AJAX send php response
-            $.ajax({
-                url: "./app/control/alumnos_add.php",
-                type: "POST",
-                data:{
-                    nombre:     $('#nombreAlumno').val(),
-                    app:        $('#appAlumno').val(),
-                    apm:        $('#apmAlumno').val(),
-                    telefono:   $('#telAlumno').val(),
-                    sexo:       $('#radioHombreAlumno').val() === '0' ? "0":"1",
-                    email:      $('#correoAlumno').val(),
-                    pw:         $('#pwAlumno').val(),
-                    id_mun:     $('#municipios').val(),
-                    procedencia:$('#procedencia').val(),
-                    id_uni:     $('#universidades').val(),
-                    nombre_uni: $('#nombreUni').val(),
-                    carrera:    $('#carrera').val(),
-                    matricula:  $('#matricula').val()
-                },
-                success: function (msg)
-                {
-                    console.log(msg);
-                    $("#alerta").html(msg);
-                    setTimeout(function () {
-                        $("#alerta").fadeOut("slow");
-                    }, 3000);
-                }
-            }); // end ajax
-            $("#frm-add-alumno").trigger("reset");
-        }
-    });
-
 */
-    /* ************** VALIDACION ***************/
-// Agregar la clase needs-validation a los form que se requieran validar cuyo campo sea requere
-(function() {
-    'use strict';
-    window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
-})();
+
