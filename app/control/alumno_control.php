@@ -45,6 +45,3 @@ function consultaAlumnos(){
     echo $json_data;
     return $json_data;
 }
-
-crearCuenta();
-consultaAlumnos();

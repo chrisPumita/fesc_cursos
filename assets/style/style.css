@@ -71,7 +71,7 @@ a:hover{
 .img_bk{
     background-repeat: no-repeat;
     background-position: center;
-    background-size: auto;
+    background-size: contain;
 }
 
 
@@ -179,3 +179,51 @@ a:hover{
         opacity: .6;
         background: var(--primary);
     }
+
+@media (max-width: 991.98px){
+    .ftco-navbar-light {
+        background: var(--white);
+        position: relative;
+        top: 0;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    .img_bk{
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+    .ftco-navbar-light .navbar-nav {
+        padding-bottom: 17px;
+        padding-top: 15px;
+    }
+    .ftco-navbar-light .container {
+        margin: 5px auto;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 576px){
+    .img_bk{
+        background-size: auto;
+    }
+    .ftco-navbar-light .container {
+        margin: .5em auto;
+        padding: .5em;
+    }
+}
+
+.ftco-navbar-light .navbar-toggler {
+    color: var(--primary);
+}
+
+.dropdown-menu {
+    top: 90%;
+}
+

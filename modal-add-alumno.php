@@ -34,11 +34,11 @@
                                     </div>
                                     <div class="col-sm-6 row mb-3">
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" id="rbnHombre" name="radioSexo" class="custom-control-input" value="0" checked>
+                                            <input type="radio" id="rbnHombre" name="sexo" class="custom-control-input" value="0" checked>
                                             <label class="custom-control-label" for="rbnHombre">Hombre</label>
                                         </div>
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" id="rbnMujer" name="radioSexo" class="custom-control-input"  value="1">
+                                            <input type="radio" id="rbnMujer" name="sexo" class="custom-control-input"  value="1">
                                             <label class="custom-control-label" for="rbnMujer">Mujer</label>
                                         </div>
                                     </div>
@@ -48,10 +48,10 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" name="pwAlumno"  id="pwAlumno" required="" placeholder="Password">
+                                        <input type="password" class="form-control form-control-user" name="contrasena"  id="contrasena" required="" placeholder="Password">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" name="pwAlumnoConfirm" id="pwAlumnoConfirm" required="" placeholder="Repeat Password">
+                                        <input type="password" class="form-control form-control-user" name="contrasenaconfirmar" id="contrasenaconfirmar" required="" placeholder="Repeat Password">
                                     </div>
                                 </div>
                                 <hr>
@@ -123,11 +123,15 @@
                                             la Política de datos y la Política de cookies.</p>
                                     </div>
                                     <div class="col-sm-4">
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">Registrarme</button>
+                                        <input type="submit" id="btnEnviar" name="btnEnviar" value="Enviar formulario" class="btn btn-primary btn-user btn-block">
                                     </div>
                                 </div>
-                                <div class="alert alert-success" id="alerta" style="display: none;">&nbsp;
+                                <div id="formError" class="alert alert-danger d-none" role="alert">
+                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                    <span id="Mensaje">Error: </span>
                                 </div>
+                                <div id="summary"></div><!--Espacio donde se colocara un mensaje general para el usuario-->
+
                             </form>
                             <!-- Inicia el formulario-->
                         </div>

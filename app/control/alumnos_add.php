@@ -1,9 +1,9 @@
 <?php
 if (isset($_POST['matricula'])
-    && isset($_POST['tipo_procedencia'])
-    && isset($_POST['carrera_especialidad'])
+    && isset($_POST['procedencia'])
+    && isset($_POST['carrera'])
     && isset($_POST['email'])
-    && isset($_POST['pw'])
+    && isset($_POST['pw1'])
     && isset($_POST['nombre'])
     && isset($_POST['app'])
     && isset($_POST['apm'])
@@ -19,11 +19,11 @@ if (isset($_POST['matricula'])
     $tipo_procedencia= $_POST['procedencia'];
     $carrera_especialidad= $_POST['carrera'];
     $email= $_POST['email'];
-    $pw= $_POST['pw'];
+    $pw= md5($_POST['pw1']);
     $nombre= $_POST['nombre'];
     $app= $_POST['app'];
     $apm= $_POST['apm'];
-    $telefono= $_POST['tel'];
+    $telefono= $_POST['telefono'];
     $sexo = $_POST['sexo'];
 
     if(crearCuentaAlumno($id_municipio,$id_universidad,$matricula,

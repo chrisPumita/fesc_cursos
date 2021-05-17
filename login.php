@@ -16,106 +16,27 @@
             rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="./assets/style/sb-admin-2.css" rel="stylesheet">
-    <link rel="stylesheet" href="./app/assets/css/estilos-login.css">
+    <link rel="stylesheet" href="./assets/style/style_login.css">
 
-    <style>
-        .toggle_radio{
-            position: relative;
-            background: #0d70c9;
-            margin: 1rem auto;
-            overflow: hidden;
-            padding: 0 !important;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 50px;
-            position: relative;
-            height: 40px;
-            width: auto;
-        }
-        .toggle_radio > * {
-            float: left;
-        }
-        .toggle_radio input[type=radio]{
-            display: none;
-            /*position: fixed;*/
-        }
-        .toggle_radio label{
-            font: 1.5rem "Source Sans Pro";
-            color: #ffffff;
-            z-index: 0;
-            z-index: 0;
-            display: block;
-            width: 100px;
-            height: 20px;
-            margin: 3px 3px;
-            -webkit-border-radius: 50px;
-            -moz-border-radius: 50px;
-            border-radius: 50px;
-            cursor: pointer;
-            z-index: 1;
-            text-align: center;
-            /*margin: 0 2px;*/
-            /*background: #145d8b;*/ /*make it blue*/
-        }
-        .toggle_option_slider{
-            /*display: none;*/
-            /*background: red;*/
-            width: 100px;
-            height: 35px;
-            position: absolute;
-            top: 3px;
-            -webkit-border-radius: 50px;
-            -moz-border-radius: 50px;
-            border-radius: 50px;
-            -webkit-transition: all .4s ease;
-            -moz-transition: all .4s ease;
-            -o-transition: all .4s ease;
-            -ms-transition: all .4s ease;
-            transition: all .4s ease;
-        }
-
-        #first_toggle:checked ~ .toggle_option_slider{
-            background: rgba(255,255,255,.3);
-            left: 3px;
-        }
-        #second_toggle:checked ~ .toggle_option_slider{
-            background: rgba(255,255,255,.3);
-            left: 109px;
-        }
-        #third_toggle:checked ~ .toggle_option_slider{
-            background: rgba(255,255,255,.3);
-            left: 215px;
-        }
-
-        .background {
-            position: absolute;
-            display: block;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-        .nav-link img {
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            margin: -8px 0;
-            float: left;
-            margin-right: 10px;
-        }
-    </style>
 </head>
 
 <body class="bg-gradient-primary">
 <!-- Cargando modal de registro de alumno -->
 <?php include_once "./modal-add-alumno.php";?>
-<div class="container-fluid">
+<div class="container py-5">
     <canvas class="background"></canvas>
     <script src="./assets/js/particles.js"></script>
+
+    <div class="toast-container" aria-live="polite" aria-atomic="true">
+        <!-- Position it -->
+        <div style="position: absolute;top: 1em;right: 1em;width: 250px;">
+            <div id="toast">   <!-- Ajax Peticion -->     </div>
+        </div>
+    </div>
+
     <!-- Outer Row -->
     <div class="row justify-content-center">
-
         <div class="col-xl-10 col-lg-12 col-md-9">
-
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
@@ -175,7 +96,6 @@
             </div>
 
         </div>
-
     </div>
 
 </div>
@@ -187,10 +107,11 @@
 
 
 <!--  Librerias de validacion en formularios que se tienen que validar
-<script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
--->
 <script src="./app/assets/js/jquery.validate.js"></script>
 <script src="./app/assets/js/jquery.form.js"></script>
+-->
+<script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+
 <!--  Librerias de validacion en formularios que se tienen que validar-->
 <script src="./app/ajax/alumno_ajax.js"></script>
 

@@ -15,3 +15,104 @@
 .label_mje{color: var(--alert);}
 
 
+.toggle_radio{
+    position: relative;
+    background: #0d70c9;
+    margin: 1rem auto;
+    overflow: hidden;
+    padding: 0 !important;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 50px;
+    position: relative;
+    height: 40px;
+    width: auto;
+}
+.toggle_radio > * {
+    float: left;
+}
+.toggle_radio input[type=radio]{
+    display: none;
+    /*position: fixed;*/
+}
+.toggle_radio label{
+    font: 1.5rem "Source Sans Pro";
+    color: #ffffff;
+    z-index: 0;
+    z-index: 0;
+    display: block;
+    width: 100px;
+    height: 20px;
+    margin: 3px 3px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+    /*margin: 0 2px;*/
+    /*background: #145d8b;*/ /*make it blue*/
+}
+.toggle_option_slider{
+    /*display: none;*/
+    /*background: red;*/
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    top: 3px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+#first_toggle:checked ~ .toggle_option_slider{
+    background: rgba(255,255,255,.3);
+    left: 3px;
+}
+#second_toggle:checked ~ .toggle_option_slider{
+    background: rgba(255,255,255,.3);
+    left: 109px;
+}
+#third_toggle:checked ~ .toggle_option_slider{
+    background: rgba(255,255,255,.3);
+    left: 215px;
+}
+
+.background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.nav-link img {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    margin: -8px 0;
+    float: left;
+    margin-right: 10px;
+}
+.bg-gradient-primary {
+    background-color: #4e73df;
+    background-image: linear-gradient(
+            180deg
+            , #000000 10%, #1a588e 100%);
+    background-size: cover;
+}
+
+
+.toast-container{
+    position: absolute;
+    min-height: 200px;
+    z-index: 99;
+    right: 0;
+    position: absolute;
+    min-height: 200px;
+    z-index: 99
+}

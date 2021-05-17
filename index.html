@@ -32,6 +32,37 @@
             float: left;
             margin-right: 10px;
             }
+
+            #triangle-topleft {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 0;
+                height: 0;
+                border-top: 100px solid var(--second);
+                border-right: 100px solid transparent;
+            }
+
+            .text-block {
+                color: white;
+                position: relative;
+                top: -60px;
+                left: 15px;
+                font-weight: bold;
+                padding:5px;
+                transform: rotate(-45deg);
+            }
+
+            .text-block {
+                color: white;
+                position: relative;
+                top: -75px;
+                left: 25px;
+                font-weight: bold;
+                padding: 0px;
+                transform: rotate(-45deg);
+                line-height: 1;
+            }
         </style>
     </head>
     <body>
@@ -102,7 +133,7 @@
                         <div class="project-wrap">
                             <a href="#" class="img" style="background-image: url(./assets/img/demo-cursos/excel.jpg);">
                             <span class="price">Excel avanzado</span>
-                            <span class="badge badge-primary  pull-right">*Hasta 70% OFF</span>
+                            <span class="badge badge-primary  pull-right">CURSO</span>
                             </a>
                             <div class="text p-4">
                                 <h3><a href="#">Crea hojas de excel avanzados y hojas de estilo</a></h3>
@@ -118,7 +149,28 @@
                         <div class="project-wrap">
                             <a href="#" class="img" style="background-image: url(./assets/img/demo-cursos/excel.jpg);">
                             <span class="price">Excel avanzado</span>
-                            <span class="badge badge-primary  pull-right">*Hasta 70% OFF</span>
+                            <span class="badge badge-primary  pull-right">CURSO</span>
+                            </a>
+                            <div class="text p-4">
+                                <h3><a href="#">Crea hojas de excel avanzados y hojas de estilo</a></h3>
+                                <p class="advisor">Profesor: <span>Juan Perez Sanchez</span></p>
+                                <ul class="d-flex justify-content-between">
+                                    <li class="price">Costo $1300</li>
+                                    <a href="#" class="btn btn-secondary">Ver más...</a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ftco-animate">
+                        <div class="project-wrap">
+                            <a href="#" class="img" style="background-image: url(./assets/img/demo-cursos/excel.jpg);">
+                            <div id="triangle-topleft">
+                                <div class="text-block">
+                                    70% OFF
+                                </div>
+                            </div>
+                            <span class="price">Excel avanzado</span>
+                            <span class="badge badge-primary  pull-right">DIPLOMADO</span>
                             </a>
                             <div class="text p-4">
                                 <h3><a href="#">Crea hojas de excel avanzados y hojas de estilo</a></h3>
@@ -134,7 +186,7 @@
                         <div class="project-wrap">
                             <a href="#" class="img" style="background-image: url(./assets/img/demo-cursos/excel.jpg);">
                             <span class="price">Excel avanzado</span>
-                            <span class="badge badge-primary  pull-right">*Hasta 70% OFF</span>
+                            <span class="badge badge-primary  pull-right">CURSO</span>
                             </a>
                             <div class="text p-4">
                                 <h3><a href="#">Crea hojas de excel avanzados y hojas de estilo</a></h3>
@@ -150,7 +202,7 @@
                         <div class="project-wrap">
                             <a href="#" class="img" style="background-image: url(./assets/img/demo-cursos/excel.jpg);">
                             <span class="price">Excel avanzado</span>
-                            <span class="badge badge-primary  pull-right">*Hasta 70% OFF</span>
+                            <span class="badge badge-primary  pull-right">SEMINARIO</span>
                             </a>
                             <div class="text p-4">
                                 <h3><a href="#">Crea hojas de excel avanzados y hojas de estilo</a></h3>
@@ -166,23 +218,7 @@
                         <div class="project-wrap">
                             <a href="#" class="img" style="background-image: url(./assets/img/demo-cursos/excel.jpg);">
                             <span class="price">Excel avanzado</span>
-                            <span class="badge badge-primary  pull-right">*Hasta 70% OFF</span>
-                            </a>
-                            <div class="text p-4">
-                                <h3><a href="#">Crea hojas de excel avanzados y hojas de estilo</a></h3>
-                                <p class="advisor">Profesor: <span>Juan Perez Sanchez</span></p>
-                                <ul class="d-flex justify-content-between">
-                                    <li class="price">Costo $1300</li>
-                                    <a href="#" class="btn btn-secondary">Ver más...</a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 ftco-animate">
-                        <div class="project-wrap">
-                            <a href="#" class="img" style="background-image: url(./assets/img/demo-cursos/excel.jpg);">
-                            <span class="price">Excel avanzado</span>
-                            <span class="badge badge-primary  pull-right">*Hasta 70% OFF</span>
+                            <span class="badge badge-primary  pull-right">CURSO</span>
                             </a>
                             <div class="text p-4">
                                 <h3><a href="#">Crea hojas de excel avanzados y hojas de estilo</a></h3>
@@ -221,7 +257,7 @@
                     </div>
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 d-flex align-items-center">
-                            <div class="icon"><span class="flaticon-instructor"></span></div>
+                            <div class="icon"><span class="flaticon-browser"></span></div>
                             <div class="text">
                                 <strong class="number" data-number="1200">0</strong>
                                 <span>Certificados entregados</span>
@@ -400,8 +436,8 @@
                         <div class="img"  style="background-image: url(./assets/img/online_clases.jpg);">
                             <div class="overlay"></div>
                             <h2>AVISO POR PANDEMIA</h2>
-                            <p>Por el momento y derivado a las condiciones sanitarias por la pandemia todos los cursos son en modalidad remota.</p>
-                            <p>Las clases se darán mediante herramientas síncronas (video reuniones) y complementos asíncronos (actividades no en tiempo real)</p>
+                            <p>Por el momento y derivado a las condiciones sanitarias por la pandemia todos los cursos son en modalidad remota.
+                                <br> Las clases se darán mediante herramientas síncronas (video reuniones) y complementos asíncronos (actividades no en tiempo real)</p>
                             <p class="mb-0"><a href="#" class="btn btn-primary px-4 py-3">Ver mas..</a></p>
                         </div>
                     </div>
@@ -457,7 +493,9 @@
                             </div>
                             <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
                                 <div class="services">
-                                    <div class="icon icon-4 d-flex align-items-center justify-content-center"><span class="flaticon-browser"></span></div>
+                                    <div class="icon icon-4 d-flex align-items-center justify-content-center">
+                                        <span class="flaticon-browser"></span>
+                                    </div>
                                     <div class="media-body">
                                         <h3 class="heading mb-3">Get Certified</h3>
                                         <p>A small river named Duden flows by their place and supplies</p>
@@ -476,7 +514,8 @@
                     <div class="col-md pt-5">
                         <div class="ftco-footer-widget pt-md-5 mb-4">
                             <h2 class="ftco-heading-2">Acerca de</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            <p>&copy; SICEP</p>
+                            <p>Sistema de Inscripcion de Cursos para Estudiantes y Profesionales</p>
                             <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
                                 <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
                                 <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -519,7 +558,7 @@
                                         Km 2.5 Carretera Cuautitlán-Teoloyucan Col. San Sebastián Xhala,
                                         Cuautitlán Izcalli Edo. México C.P. 54714</span></li>
                                     <li><span class="icon fa fa-phone"></span><span class="text">55 5623 1940</span></li>
-                                    <li><span class="icon fa fa-paper-plane"></span><span class="text">coordinacion.li.fesc@hotmail.com</span></li>
+                                    <li><span class="icon fa fa-paper-plane"></span><span class="text d-block">coordinacion.li.fesc@hotmail.com</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -529,7 +568,7 @@
                     <div class="col-md-12 text-center">
                         <p>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>SICEP - Derechos Reservados | Creado con <i class="fa fa-heart" aria-hidden="true"></i> por <a href="#" target="_blank">Servicio Social</a>
+                            Copyright &copy; <script>document.write(new Date().getFullYear());</script> SICEP - Derechos Reservados | Creado con <i class="fa fa-heart" aria-hidden="true"></i> por <a href="#" target="_blank">Servicio Social</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
