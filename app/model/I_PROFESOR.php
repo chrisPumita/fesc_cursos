@@ -11,9 +11,9 @@ interface I_PROFESOR
 
     function agregaProfesor();
 
-    function modificaProfesor();
+    function modificaProfesor($id_profesor,$profesor);
 
-    function modifcaPw();
+    function modifcaPw($id_profesor,$pw);
 
     function eliminaProfesor($id_profesor);
 

@@ -115,31 +115,27 @@ class DOCUMENTO extends CONEXION_M implements I_DOCUMENTOS
         return $datos;
     }
 
-    function modificaDocumento($documento)
+    function modificaDocumento()
     {
         /* recibe un array del documento a modificar
         */
         $this->connect();
         $filtro="";
-        $filtro = $documento[2]!= NULL ? $filtro." `formato_admitido`='" . $documento[2]."'," : "";
-        $filtro = $documento[3]!= NULL ? $filtro." `tipo`=" . $documento[3]."," : "";
-        $filtro = $documento[4]!= NULL ? $filtro." `peso_max_mb`=" . $documento[4]."," : "";
-        $filtro = $documento[5]!= NULL ? $filtro." `estatus`=" . $documento[5] : "";
-        $filtro=$filtro."WHERE `id_documento`=".$documento[0];
+        $filtro = $this->getFormatoAdmitido() != NULL ? $filtro." `formato_admitido`='" .$this->getFormatoAdmitido()."'," : "";
+        $filtro = $this->getTipo() != NULL ? $filtro." `tipo`=" .$this->getTipo()."," : "";
+        $filtro = $this->getPesoMaxMb() != NULL ? $filtro." `peso_max_mb`=" .$this->getPesoMaxMb()."," : "";
+        $filtro = $this->getEstatus() != NULL ? $filtro." `estatus`=".$this->getEstatus().","  : "";
+        $filtro=$filtro."WHERE `id_documento`=".$this->getIdDocumento();
         $datos = $this-> getData("UPDATE `documento` SET  ".$filtro);
         $this->close();
         return $datos;
     }
 
-    function crearDocumento($documento)
+    function crearDocumento()
     {
         $this->connect();
-        $valores="NULL";
-        for($i=0;$i=4;$i++){
-            $valores=$valores.",'".$documento[$i+1]."'";
-        }
-
-        $datos = $this-> getData("INSERT INTO `documento`(`id_documento`,`nombre_doc`,`formato_admitido`,`tipo`,`peso_max_mb`,`estatus`) VALUES ( ".$valores.");");
+        $datos = $this-> getData("INSERT INTO `documento`(`id_documento`,`nombre_doc`,`formato_admitido`,`tipo`,`peso_max_mb`,`estatus`)
+                                      VALUES (NULL,'".$this->getNombreDoc()."','".$this->getFormatoAdmitido()."','".$this->getTipo()."','".$this->getPesoMaxMb()."','".$this->getEstatus()."');");
         $this->close();
         return $datos;
     }

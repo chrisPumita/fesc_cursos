@@ -7,6 +7,8 @@ class ACTA
 	private $id_asignacion_fk;
 	private $fecha_creacion;
 	private $sello_digital;
+    private $acreditacion;
+    private $estatus;
 
 	/*Dependencia de uso*/
     private $GRUPO_ASIGNACION;
@@ -140,6 +142,5 @@ class ACTA
     {
         $this->estatus = $estatus;
     }
-	private $acreditacion;
-	private $estatus;
+
 }

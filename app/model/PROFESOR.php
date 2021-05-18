@@ -252,26 +252,58 @@ class PROFESOR extends PERSONA implements I_PROFESOR
     function consultaProfesor($id_profesor)
     {
         // TODO: Implement consultaProfesor() method.
+        $query="SELECT
+                ps.nombre,
+                ps.app,
+                ps.apm,
+                ps.telefono,
+                pf.email,
+                dp.nombre as Departamento
+            FROM
+                persona ps,
+                profesor pf,
+                departamentos dp
+            WHERE
+                 ps.id_persona = pf.id_persona_fk AND pf.id_depto_fk = dp.id_depto AND pf.id_profesor =".$id_profesor;
+        $this->connect();
+        $datos = $this-> executeInstruction($query);
+        $this->close();
+        return $datos;
     }
 
     function agregaProfesor()
     {
-        $query = "";
+        $query = "INSERT INTO `profesor`(`id_profesor`, `id_persona_fk`, `id_depto_fk`, `no_trabajador`, `prefijo`, `email`, `pw`, `key_hash`, `fecha_registro`, `firma_digital`, `firma_digital_img`, `estatus`) 
+                  VALUES (NULL,'".$this->getIdPersonaFk()."','".$this->getIdDeptoFk()."','".$this->getNoTrabajador()."','".$this->getPrefijo()."','".$this->getEmail()."','".$this->getPw()."','".$this->getKeyHash()."','".$this->getFechaRegistro()."','".$this->getFirmaDigital()."','".$this->getFirmaDigitalImg()."','".$this->getEstatus()."')";
+        $this->connect();
+        $datos = $this-> executeInstruction($query);
+        $this->close();
+        return $datos;
     }
 
-    function modificaProfesor()
+    function modificaProfesor($id_profesor,$profesor)
     {
         // TODO: Implement modificaProfesor() method.
     }
 
-    function modifcaPw()
+    function modifcaPw($id_profesor,$pw)
     {
         // TODO: Implement modifcaPw() method.
+        $query="UPDATE `profesor` SET `pw`='".$pw."' WHERE `id_profesor`=".$id_profesor;
+        $this->connect();
+        $datos = $this-> excecute($query);
+        $this->close();
+        return $datos;
     }
 
     function eliminaProfesor($id_profesor)
     {
         // TODO: Implement eliminaProfesor() method.
+        $query="UPDATE profesor SET profesor.estatus=0 WHERE profesor.id_profesor=".$id_profesor;
+        $this->connect();
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;
     }
 
     function creaFirmaDigital()

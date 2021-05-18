@@ -5,9 +5,9 @@ interface I_DOCUMENTOS
 {
     function consultaDocumentos();
 
-    function modificaDocumento($documento);
+    function modificaDocumento();
 
-    function crearDocumento($documento);
+    function crearDocumento();
 
     // DELETE, id * -1 , estatus 0;
     function borrarDocumento($idDocumento,$estatus);
