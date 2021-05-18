@@ -439,6 +439,7 @@ class CURSO extends CONEXION_M implements I_CURSO
 
     function registraCurso($curso)
     {
+        //INSERT INTO `curso` (`id_curso`, `id_profesor_admin_acredita`, `id_profesor_autor`, `codigo`, `nombre_curso`, `dirigido_a`, `objetivo`, `descripcion`, `no_sesiones`, `antecedentes`, `aprobado`, `costo_sugerido`, `link_temario_pdf`, `fecha_creacion`, `fecha_acreditacion`, `banner_img`, `tipo_curso`) VALUES (NULL, NULL, '1', 'PROGRA', '', 'LAUMNOS', 'ONJ', 'DESC', '15', 'ANTC', '0', '1300', 'LINKTEMA', '2021-05-18 00:00:00', NULL, 'BAN', '1');
         // TODO: Implement registraCurso() method.
     }
 

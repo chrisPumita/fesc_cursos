@@ -9,7 +9,23 @@ class DOCUMENTO extends CONEXION_M implements I_DOCUMENTOS
     private $formato_admitido;
     private $tipo;
     private $peso_max_mb;
-    private $estatus;
+    private $estatus_documento;
+
+    /**
+     * @return mixed
+     */
+    public function getEstatusDocumento()
+    {
+        return $this->estatus_documento;
+    }
+
+    /**
+     * @param mixed $estatus_documento
+     */
+    public function setEstatusDocumento($estatus_documento): void
+    {
+        $this->estatus_documento = $estatus_documento;
+    }
     /**
      * @return mixed
      */
@@ -90,27 +106,11 @@ class DOCUMENTO extends CONEXION_M implements I_DOCUMENTOS
         $this->peso_max_mb = $peso_max_mb;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getEstatus()
-    {
-        return $this->estatus;
-    }
-
-    /**
-     * @param mixed $estatus
-     */
-    public function setEstatus($estatus): void
-    {
-        $this->estatus = $estatus;
-    }
-
 
     function consultaDocumentos()
     {
         $this->connect();
-        $datos = $this-> getData("SELECT * FROM `documento` ");
+        $datos = $this-> getData("SELECT * FROM `documento` WHERE  `documento`.`estatus` >0 ");
         $this->close();
         return $datos;
     }
@@ -119,31 +119,36 @@ class DOCUMENTO extends CONEXION_M implements I_DOCUMENTOS
     {
         /* recibe un array del documento a modificar
         */
+        $sql = "UPDATE `documento` SET 
+                       `nombre_doc` = '".$this->getNombreDoc()."', 
+                       `formato_admitido` = '".$this->getFormatoAdmitido()."', 
+                       `tipo` = '".$this->getTipo()."', 
+                       `peso_max_mb` = '".$this->getPesoMaxMb()."', 
+                       `estatus` = '".$this->getEstatusDocumento()."' 
+                WHERE `documento`.`id_documento` = ".$this->getIdDocumento();
         $this->connect();
-        $filtro="";
-        $filtro = $this->getFormatoAdmitido() != NULL ? $filtro." `formato_admitido`='" .$this->getFormatoAdmitido()."'," : "";
-        $filtro = $this->getTipo() != NULL ? $filtro." `tipo`=" .$this->getTipo()."," : "";
-        $filtro = $this->getPesoMaxMb() != NULL ? $filtro." `peso_max_mb`=" .$this->getPesoMaxMb()."," : "";
-        $filtro = $this->getEstatus() != NULL ? $filtro." `estatus`=".$this->getEstatus().","  : "";
-        $filtro=$filtro."WHERE `id_documento`=".$this->getIdDocumento();
-        $datos = $this-> getData("UPDATE `documento` SET  ".$filtro);
+        $result = $this->executeInstruction($sql);
         $this->close();
-        return $datos;
+        return $result;
     }
 
     function crearDocumento()
     {
         $this->connect();
-        $datos = $this-> getData("INSERT INTO `documento`(`id_documento`,`nombre_doc`,`formato_admitido`,`tipo`,`peso_max_mb`,`estatus`)
-                                      VALUES (NULL,'".$this->getNombreDoc()."','".$this->getFormatoAdmitido()."','".$this->getTipo()."','".$this->getPesoMaxMb()."','".$this->getEstatus()."');");
+        
+        $sql = "INSERT INTO `documento`(`id_documento`,`nombre_doc`,`formato_admitido`,`tipo`,`peso_max_mb`,`estatus`)
+            VALUES (NULL,'".$this->getNombreDoc()."','".$this->getFormatoAdmitido()."','".$this->getTipo()."','".$this->getPesoMaxMb()."','".$this->getEstatusDocumento()."');";
+
+        $result = $this-> executeInstruction($sql);
         $this->close();
-        return $datos;
+        return $result;
     }
 
     function borrarDocumento($idDocumento,$estatus)
     {
         $this->connect();
-        $datos = $this-> getData("UPDATE `documento` SET `estatus`=".$estatus."WHERE `id_documento`=".$idDocumento);
+        $sql = "UPDATE `documento` SET `estatus`='".$estatus."' WHERE `id_documento`=".$idDocumento;
+        $datos = $this-> executeInstruction($sql);
         $this->close();
         return $datos;
     }

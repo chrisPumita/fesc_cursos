@@ -3,10 +3,12 @@
 
 interface I_DOCS_SOLICITADOS
 {
-    function consultarListaDocumentos($id_curso);
-    function crearDocumentos();
+    function consultarListaDocumentosSol($id_curso);
+
+    function crearDocumentosSol();
 
     function eliminaDocumentoSolicitado($id_documento_sol);
+
     function cambiarOblig($id_documento_sol,$estatus);
 
 }
