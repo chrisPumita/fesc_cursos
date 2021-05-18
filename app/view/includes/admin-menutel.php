@@ -53,10 +53,10 @@
                 <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="index.php"><i class="icon ion-md-apps mr-2 lead"></i>Principal</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="admin-profesores-view.php"><i class="icon ion-md-school mr-2 lead"></i>Profesores</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="lista-profesores-view.php"><i class="icon ion-md-school mr-2 lead"></i>Profesores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="../admin/admin-listacursos-view.php"><i class="icon ion-md-rocket mr-2 lead"></i>Cursos</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="../admin/lista-cursos-view.php"><i class="icon ion-md-rocket mr-2 lead"></i>Cursos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="users.php"><i class="icon ion-md-contacts mr-2 lead"></i>Alumnos</a>

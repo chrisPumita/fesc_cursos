@@ -75,7 +75,7 @@
                                                             Opciones
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <a href="./admin-detcursos-view.php">
+                                                            <a href="./detalles-curso-view.php">
                                                                 <button class="dropdown-item" type="button">Ver Detalles</button>
                                                             </a>                                        
                                                             <button class="dropdown-item" type="button">Editar</button>
@@ -101,7 +101,7 @@
                                                             Opciones
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <a href="./admin-detcursos-view.php">
+                                                            <a href="./detalles-curso-view.php">
                                                                 <button class="dropdown-item" type="button">Ver Detalles</button>
                                                             </a>                                        
                                                             <button class="dropdown-item" type="button">Editar</button>
@@ -128,7 +128,7 @@
                                                             Opciones
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <a href="./admin-detcursos-view.php">
+                                                            <a href="./detalles-curso-view.php">
                                                                 <button class="dropdown-item" type="button">Ver Detalles</button>
                                                             </a>
                                                             <button class="dropdown-item" type="button">Editar</button>
