@@ -376,36 +376,3 @@
         </div>
 </section>
 <!--FINALIZA SECCIÓN DE LOS DOCUMENTOS REQUERIDOS-->
-
-
-
-<!-- <div class="row">
-            <div class="col-sm-6">
-
-
-<i class="ion-ios-checkmark-circle mr-2 lead" width="100"></i>
-
-                <div class="container py-2 bg-grey">
-                    <i class="ion-ios-checkmark-circle" width=50px></i><h5>Objetivo General</h5>
-                </div>
-            </div>
-
-            <div class="card">
-            <div class="card-body bg-grey">
-                <i class="ion-ios-checkmark-circle" width=50px></i>
-                <h5>Objetivo General</h5>
-            </div>
-        </div>
-         </div>
-
-        <div class="d-flex align-items-center">
-                <div class="flex-shrink-0">
-                    <img src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/checkmark-24-512.png" width=50px heigh=50px alt="...">
-                </div>
-            <div class="flex-grow-1 ms-3">
-                <h5 class="font-weight-bold">Objetivo General</h5>
-                <p class="text-left">Al finalizar el curso, el alumno conocerá diversas tecnologías e identificará la importancia de las mismas para el desarrollo de aplicaciones para internet.</p>
-            </div>
-
-
-        </div>-->
