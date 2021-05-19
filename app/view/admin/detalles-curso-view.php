@@ -118,15 +118,17 @@
                                                                 <div class="card">
                                                                     <div class="card-header" id="headingOne">
                                                                         <h5 class="mb-0">
-                                                                            <button class="btn text-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                                            Antecedentes
+                                                                            <button class="btn text-primary collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                                            Detalles
                                                                             </button>
                                                                         </h5>
                                                                     </div>
-
-                                                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                                                         <div class="card-body">
-                                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. 
+                                                                        <h6><strong>Dirigido a: </strong> Estudiantes</h6>
+                                                                            <h6><strong>Modalidad: </strong> A distancia</h6>
+                                                                            <h6><strong>Cupo: </strong>30</h6>
+                                                                            <h6><strong>Sesiones: </strong> 20</h6>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -148,15 +150,13 @@
                                                                     <div class="card-header" id="headingThree">
                                                                         <h5 class="mb-0">
                                                                             <button class="btn text-primary collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                                            Detalles
+                                                                            Antecedentes
                                                                             </button>
                                                                         </h5>
                                                                     </div>
                                                                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                                                         <div class="card-body">
-                                                                            <h6><strong>Modalidad: </strong> A distancia</h6>
-                                                                            <h6><strong>Cupo: </strong>30</h6>
-                                                                            <h6><strong>Sesiones: </strong> 20</h6>
+                                                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -202,6 +202,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- INICIO TARJETA DETALLES APROBACION -->
                                             <div class="row">
                                                 <div class="container">
                                                     <div class="">
@@ -225,107 +226,103 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- FIN TARJETA BANNER -->
-                                        <div class="col-sm-12 py-4">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="mx-auto">
-                                                        <div class="row p-3">
-                                                            <div class="col-lg-9">
-                                                                <h5><strong>Temario</strong></h5>
-                                                            </div>
-                                                            <div class="col-lg-3">
-                                                                <a href="#" class="btn btn-primary btn-block">Nuevo</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12 overflow-auto">
-                                                                <table class="table table-striped bg-light table-hover">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th scope="col">#</th>
-                                                                            <th scope="col">No.</th>
-                                                                            <th scope="col">Nombre</th>
-                                                                            <th scope="col">Departamento</th>
-                                                                            <th scope="col">Teléfono</th>
-                                                                            <th scope="col">Email</th>
-                                                                            <th scope="col">Registro</th>
-                                                                            <th scope="col">Acciones</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <th scope="row">1</th>
-                                                                            <td>123</td>
-                                                                            <td>Juan Pérez Sánchez</td>
-                                                                            <td>Informática</td>
-                                                                            <td>5563258917</td>
-                                                                            <td>juan@gmail.com</td>
-                                                                            <td>--------</td>
-                                                                            <td>  <!-- BOTON ACCIONES -->
-                                                                                <div class="btn-group" role="group" aria-label="Basic example">
-                                                                                    <button type="button" class="btn btn-primary">Modificar</button>
-                                                                                    <button type="button" class="btn btn-danger">Eliminar</button>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th scope="row">2</th>
-                                                                            <td>456</td>
-                                                                            <td>Roberto Gomez Ramírez</td>
-                                                                            <td>Matemáticas</td>
-                                                                            <td>5589367405</td>
-                                                                            <td>roberto@gmail.com</td>
-                                                                            <td>--------</td>
-                                                                        <!-- BOTON ACCIONES -->
-                                                                            <td>
-                                                                            <div class="btn-group" role="group" aria-label="Basic example">
-                                                                                    <button type="button" class="btn btn-primary">Modificar</button>
-                                                                                    <button type="button" class="btn btn-danger">Eliminar</button>
-                                                                                </div> 
-                                                                            </td>  
-                                                                        </tr>   
-                                                                    </tbody>
-                                                                </table>
-                                                                </div>
-                                                                </div>
-
-                        <!-- para agregar en los horarios
-                                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                                            <li class="nav-item">
-                                                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="tab-content" id="pills-tabContent">
-                                                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                                                <h1>HOLA</h1>
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                                                <h2>2</h2>
-                                                            </div>
-                                                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                                                <h3>3</h3>
-                                                            </div>
-                                                        </div>   
-
-                                                        -->            
-                                                    </div>
-                                                </div>
-                                            </div>                    
+                                            <!-- FIN TARJETA DETALLES APROBACION -->
                                         </div>
                                     </div>
                                 </div>        
                             </div>
                         </section>
 
+                        <!-- INICIA TABLA DE TEMARIO -->
+                        <section>
+                            <div class="col-sm-12 py-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mx-auto">
+                                            <div class="row p-3">
+                                                <div class="col-lg-9">
+                                                    <h5><strong>Temario General del Curso</strong></h5>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <a href="#" class="btn btn-primary btn-block">Nuevo</a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 overflow-auto">
+                                                    <table class="table table-striped bg-light table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Índice</th>
+                                                                <th scope="col">Tema</th>
+                                                                <th scope="col">Descripción</th>
+                                                                <th scope="col">Acciones</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>1.1</td>
+                                                                <td>Programación Orientada a Objetos</td>
+                                                                <td>--------------------------</td>
+                                                                <td>  <!-- BOTON ACCIONES -->
+                                                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                                                        <button type="button" class="btn btn-primary">Modificar</button>
+                                                                        <button type="button" class="btn btn-danger">Eliminar</button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">2</th>
+                                                                <td>1.2</td>
+                                                                <td>Introducción al lenguaje de programación Python</td>
+                                                                <td>----------------------------</td>
+                                                                <!-- BOTON ACCIONES -->
+                                                                <td>
+                                                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                                                        <button type="button" class="btn btn-primary">Modificar</button>
+                                                                        <button type="button" class="btn btn-danger">Eliminar</button>
+                                                                    </div> 
+                                                                </td>  
+                                                            </tr>   
+                                                        </tbody>
+                                                    </table>
+                                                    </div>
+                                                </div>
+
+                                                <!-- para agregar en los horarios
+                                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content" id="pills-tabContent">
+                                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                                        <h1>HOLA</h1>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                        <h2>2</h2>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                                        <h3>3</h3>
+                                                    </div>
+                                                </div> -->            
+                                        </div>
+                                    </div>
+                                </div>                    
+                            </div>
+                        </section>
+                        <!-- FIN TABLA TEMARIO -->
+
+                        <!-- INICIA INFO DE GRUPOS -->
                         <section class="container bg-grey">
+                            <!-- INICIA TARJETA ASIG GRUPO -->
                             <div class="col-sm-12 py-4">
                                 <div class="card">
                                     <div class="card-body">
@@ -336,7 +333,7 @@
                                                 </div>
                                                 <div class="col-lg-9">
                                                     <h4>Creacion de asignacion de Grupo</h4>
-                                                        <div class="form-group">
+                                                    <div class="form-group">
                                                         <label for="sel1">Crear y Asignar un grupo de este curso, seleccione el profesor asignado:</label>
                                                         <select class="form-control" id="sel1">
                                                             <option>1</option>
@@ -344,26 +341,26 @@
                                                             <option>3</option>
                                                             <option>4</option>
                                                         </select>
-                                                        </div>
+                                                    </div>                                                       
                                                 </div>
                                                 <div class="col-lg-2">
-                                                    <button class="btn btn-primary w-100 aling-self-center">Envíar</button>
-                                                </div>  
+                                                    <button class="btn btn-primary w-100 aling-self-center">Crear</button>
+                                                </div> 
                                             </div>      
                                         </div>
                                     </div>
                                 </div>                    
                             </div>
+                            <!-- FIN TARJETA ASIG GRUPO -->
+
                             <div class="card bg-grey estadisticas">
                                 <div class="card-body py-1">
                                     <div class="row"> <!-- DETALLE DEL CURSO CALLOUT -->
                                         <div class="col-lg-12">
-                                            <div class="row align-items-center justify-content-center">
-                                    
-                                    </div>
+                                            <div class="row align-items-center justify-content-center">                                    
+                                            </div>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <!-- TARJETA DE INFO DEL CURSO -->
                                         <div class="col-sm-12 py-4">
@@ -372,10 +369,73 @@
                                                     <div class="mx-auto">
                                                         <div class="row p-3">
                                                             <div class="col-lg-9">
-                                                                <h5><strong>Temario</strong></h5>
+                                                                <h5><strong>Historico de Grupos Derivados de este Curso</strong></h5>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <a href="#" class="btn btn-primary btn-block">Nuevo</a>
+                                                                <div class="form-group">
+                                                                    <select class="form-control" id="sel1">
+                                                                        <option>Todos</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12 overflow-auto">
+                                                                <table class="table table-striped bg-light table-hover">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th scope="col">#</th>
+                                                                            <th scope="col">Grupo</th>
+                                                                            <th scope="col">Curso</th>
+                                                                            <th scope="col">Profesor</th>
+                                                                            <th scope="col">Ocupación</th>
+                                                                            <th scope="col">Fecha de Inicio</th>
+                                                                            <th scope="col">Tipo</th>
+                                                                            <th scope="col">Notas</th>
+                                                                            <th scope="col">Estado</th>
+                                                                            <th scope="col">Acciones</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <th scope="row">1</th>
+                                                                            <td>24265</td>
+                                                                            <td>Iniciacion al Computo I</td>
+                                                                            <td>Juan Pérez Sánchez</td>
+                                                                            <td>29/30</td>
+                                                                            <td>08 de Agosto, 2020</td>
+                                                                            <td>Presencial</td>
+                                                                            <td>--------</td>
+                                                                            <td>Finalizado</td>
+                                                                            <td>  <!-- BOTON ACCIONES -->
+                                                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                                                    <button type="button" class="btn btn-primary">Modificar</button>
+                                                                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th scope="row">1</th>
+                                                                            <td>24265</td>
+                                                                            <td>Iniciacion al Computo I</td>
+                                                                            <td>Juana Peralta Suarez</td>
+                                                                            <td>30/30</td>
+                                                                            <td>18 de Mayo, 2021</td>
+                                                                            <td>Online</td>
+                                                                            <td>--------</td>
+                                                                            <td>Activo</td>
+                                                                            <td>  <!-- BOTON ACCIONES -->
+                                                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                                                    <button type="button" class="btn btn-primary">Modificar</button>
+                                                                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>  
+                                                                    </tbody>
+                                                                </table>
                                                             </div>
                                                         </div>      
                                                     </div>
@@ -386,7 +446,7 @@
                                 </div>        
                             </div>
                         </section>
-                        <!-- FIN SECCION INFO DEL CURSO -->
+                        <!-- FIN INFO DE GRUPOS -->
                     </div>
                     <!--FIN contenido dinamico-->
                     <?php include("../includes/footer.php");?>
@@ -394,4 +454,4 @@
             </div>
         </div>
     </body>
-</html>
+</html>30

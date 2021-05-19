@@ -32,6 +32,10 @@ a:hover{
     color: var(--second) !important;
 }
 
+.text-light {
+    color: var(--ligth) !important;
+}
+
 .btn{
     border: 2em !important;
 }
@@ -346,3 +350,24 @@ a {
     font-size: 1.5rem;
 }
 
+.img .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .6;
+    background:#000000;
+    z-index: -1;
+}
+
+.img {
+    padding: 3em;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

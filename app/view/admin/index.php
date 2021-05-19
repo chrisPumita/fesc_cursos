@@ -22,9 +22,11 @@ include("../includes/header.php");
                             <h2 class="font-weight-bold mb-0">Panel de Administración</h2>
                         </div>
                         <div class="col-lg-3">
-                            <button class="btn btn-primary w-100 aling-self-center">
-                                <i class="icon ion-md-cloud-upload mr-2 lead"></i>Ver Cursos
-                            </button>
+                            <a href="../admin/lista-cursos-view.php">
+                                <button class="btn btn-primary w-100 aling-self-center">
+                                    <i class="icon ion-md-cloud-upload mr-2 lead"></i>Ver Cursos
+                                </button>
+                            </a>                            
                         </div>
                     </div>
                     <div class="row">
@@ -259,7 +261,9 @@ include("../includes/header.php");
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                                         <button class="dropdown-item" type="button">Nuevo grupo</button>
-                                                        <button class="dropdown-item" type="button">Ver detalles</button>
+                                                        <a href="./detalles-curso-view.php">
+                                                            <button class="dropdown-item" type="button">Ver Detalles</button>
+                                                        </a>
                                                         <button class="dropdown-item" type="button">Historial</button>
                                                         <button class="dropdown-item" type="button">Acreditar curso</button>
                                                     </div>
@@ -284,7 +288,9 @@ include("../includes/header.php");
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                                         <button class="dropdown-item" type="button">Nuevo grupo</button>
-                                                        <button class="dropdown-item" type="button">Ver detalles</button>
+                                                        <a href="./detalles-curso-view.php">
+                                                            <button class="dropdown-item" type="button">Ver Detalles</button>
+                                                        </a>
                                                         <button class="dropdown-item" type="button">Historial</button>
                                                         <button class="dropdown-item" type="button">Acreditar curso</button>
                                                     </div>
@@ -442,8 +448,10 @@ include("../includes/header.php");
                                     <div class="card-body">
                                         <h5 class="card-title font-weight-bold">Profesores</h5>
                                         <p class="card-text text-muted">En este apartado se pueden realizar distintas acciones de gestion para las cuentas de profesores.</p>
-                                        <button type="button" class="btn btn-primary btn-sm">Crear cuenta</button>
-                                        <button type="button" class="btn btn-primary btn-sm">Gestión de cuentas</button>
+                                        <button type="button" class="btn btn-primary btn-sm">Crear cuenta</button>                                        
+                                        <a href="./lista-profesores-view.php">
+                                            <button type="button" class="btn btn-primary btn-sm">Gestión de cuentas</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

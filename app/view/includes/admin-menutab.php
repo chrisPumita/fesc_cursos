@@ -6,8 +6,8 @@
     </div>
     <div class="menu">
         <a href="index.php" class="d-block text-light p-3"><i class="icon ion-md-apps mr-2 lead"></i>Principal</a>
-        <a href="admin-profesores-view.php" class="d-block text-light p-3"><i class="icon ion-md-school mr-2 lead"></i>Profesores</a>
-        <a href="../admin/admin-listacursos-view.php" class="d-block text-light p-3"><i class="icon ion-md-rocket mr-2 lead"></i>Cursos</a>
+        <a href="lista-profesores-view.php" class="d-block text-light p-3"><i class="icon ion-md-school mr-2 lead"></i>Profesores</a>
+        <a href="../admin/lista-cursos-view.php" class="d-block text-light p-3"><i class="icon ion-md-rocket mr-2 lead"></i>Cursos</a>
         <a href="users.php" class="d-block text-light p-3"><i class="icon ion-md-contacts mr-2 lead"></i>Alumnos</a>
         <a href="reports.php" class="d-block text-light p-3"><i class="icon ion-md-finger-print mr-2 lead"></i>Cuentas</a>
         <a href="account.php" class="d-block text-light p-3"><i class="icon ion-md-stats mr-2 lead"></i>Reportes</a>

@@ -181,14 +181,14 @@ include("../includes/header.php");
                                                     Opciones
                                                 </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <a href="./admin-detcursos-view.php">
-                                                            <button class="dropdown-item" type="button">Ver Asignaciones</button>
-                                                        </a>                                        
-                                                            <button class="dropdown-item" type="button">Reestablecer contraseña</button>
+                                                        <a href="">
+                                                            <button class="dropdown-item" type="button" data-toggle='modal' data-target='#modal2'>Ver Asignaciones</button>
+                                                        </a>                                       
                                                         <a href="./perfil-profesor-view.php">
                                                             <button class="dropdown-item" type="button">Editar</button>
                                                         </a>
-                                                            <button class="dropdown-item" type="button">Inhabilitar</button>
+                                                        <button class="dropdown-item" type="button">Reestablecer contraseña</button>
+                                                        <button class="dropdown-item" type="button">Inhabilitar</button>
                                                     </div>
                                             </div>
                                         </td>
@@ -208,11 +208,13 @@ include("../includes/header.php");
                                                     Opciones
                                                 </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <a href="./admin-detcursos-view.php">
-                                                        <button class="dropdown-item" type="button">Ver Asignaciones</button>
-                                                        </a>                                        
+                                                        <a href="">
+                                                            <button class="dropdown-item" type="button" data-toggle='modal' data-target='#modal2'>Ver Asignaciones</button>
+                                                        </a>                                       
+                                                        <a href="./perfil-profesor-view.php">
+                                                            <button class="dropdown-item" type="button">Editar</button>
+                                                        </a>
                                                         <button class="dropdown-item" type="button">Reestablecer contraseña</button>
-                                                        <button class="dropdown-item" type="button" data-toggle='modal' data-target='#modal2'>Editar</button>
                                                         <button class="dropdown-item" type="button">Inhabilitar</button>
                                                     </div>
                                             </div>   
