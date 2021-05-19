@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom navbar-static-top" role="navigation">
     <!-- Just an image -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="./home-view.php">
         <img src="../../assets/img/logo.png" width="auto" height="60" alt="" class="d-block d-sm-block d-md-none">
     </a>
 
@@ -50,13 +50,13 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="index.php"><i class="icon ion-md-apps mr-2 lead"></i>Principal</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="./home-view.php"><i class="icon ion-md-apps mr-2 lead"></i>Principal</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="lista-profesores-view.php"><i class="icon ion-md-school mr-2 lead"></i>Profesores</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="./lista-profesores-view.php"><i class="icon ion-md-school mr-2 lead"></i>Profesores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="../admin/lista-cursos-view.php"><i class="icon ion-md-rocket mr-2 lead"></i>Cursos</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="./lista-cursos-view.php"><i class="icon ion-md-rocket mr-2 lead"></i>Cursos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href=""><i class="icon ion-md-contacts mr-2 lead"></i>Alumnos</a>

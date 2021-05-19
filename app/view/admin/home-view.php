@@ -22,7 +22,7 @@ include("../includes/header.php");
                             <h2 class="font-weight-bold mb-0">Panel de Administración</h2>
                         </div>
                         <div class="col-lg-3">
-                            <a href="../admin/lista-cursos-view.php">
+                            <a href="./lista-cursos-view.php">
                                 <button class="btn btn-primary w-100 aling-self-center">
                                     <i class="icon ion-md-cloud-upload mr-2 lead"></i>Ver Cursos
                                 </button>

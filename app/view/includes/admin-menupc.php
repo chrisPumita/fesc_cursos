@@ -1,10 +1,10 @@
 <!--SIDER PARA VERSION ESCRITORIO-->
 <div id="sidebar-container"class="bg-ligth">
     <div class="logo">
-        <a href="./"><img src="../../assets/img/logo.png" class="img-fluid mx-auto d-block" alt="..." width="200"></a>
+        <a href="./home-view.php"><img src="../../assets/img/logo.png" class="img-fluid mx-auto d-block" alt="..." width="200"></a>
     </div>
     <div class="menu">
-        <a href="index.php" class="menuDesk d-block  p-3"><i class="icon ion-md-apps mr-2 lead"></i>Principal</a>
+        <a href="./home-view.php" class="menuDesk d-block  p-3"><i class="icon ion-md-apps mr-2 lead"></i>Principal</a>
         <a href="lista-profesores-view.php" class="menuDesk d-block  p-3"><i class="icon ion-md-school mr-2 lead"></i>Profesores</a>
         <a href="../admin/lista-cursos-view.php" class="menuDesk d-block  p-3"><i class="icon ion-md-rocket mr-2 lead"></i>Cursos</a>
         <a href="" class="menuDesk d-block  p-3"><i class="icon ion-md-contacts mr-2 lead"></i>Alumnos</a>
