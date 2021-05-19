@@ -409,7 +409,7 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
     {
         $query = "SELECT * FROM `horario_clase_virtual` WHERE `id_asignacion_fk`=" . $id_asig;
         $this->connect();
-        $datos = $this-> getData($query);
+        $datos = $this->getData($query);
         $this->close();
         return $datos;
     }
@@ -418,19 +418,76 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
     {
         $query = "SELECT * FROM `horario_clase_presencial` WHERE `id_asignacion_fk`=" . $id_asig;
         $this->connect();
-        $datos = $this-> getData($query);
+        $datos = $this->getData($query);
         $this->close();
         return $datos;
     }
 
 
-    public function consultaInscripciones($id_asig)
+    public function consultaAsignaciones()
     {
-        $query = "SELECT * FROM `inscripcion` WHERE `id_asignacion_fk`=" . $id_asig;
+        $query = "SELECT asig.id_asignacion,
+                           gp.grupo, 
+                           p.nombre,
+                           p.app,
+                           p.apm,
+                           pf.email,
+                           asig.generacion,
+                           asig.semestre,
+                           asig.fecha_inicio,
+                           asig.fecha_fin,
+                           asig.fecha_lim_inscripcion,
+                           asig.fecha_inicio_actas,
+                           asig.fecha_fin_actas,
+                           asig.cupo,
+                           asig.costo_real,
+                           asig.descuento,
+                           asig.notas,
+                           asig.modalidad  
+                    FROM asignacion_grupo asig, 
+                         profesor pf, 
+                         persona p,
+                         grupo gp 
+                    WHERE asig.id_profesor_fk=pf.id_profesor 
+                      AND pf.id_persona_fk=p.id_persona 
+                      AND asig.id_grupo_fk=gp.id_grupo";
         $this->connect();
-        $datos = $this-> getData($query);
+        $datos = $this->getData($query);
         $this->close();
         return $datos;
+    }
+
+
+    function crearasignacion()
+    {
+        $query = "INSERT INTO `asignacion_grupo`(`id_asignacion`, `id_grupo_fk`, `id_profesor_fk`, `generacion`, `semestre`, `campus_cede`, `fecha_creacion`, `fecha_inicio`, `fecha_fin`, `fecha_lim_inscripcion`, `fecha_inicio_actas`, `fecha_fin_actas`, `cupo`, `costo_real`, `descuento`, `nivel_aplicacion_desc`, `notas`, `modalidad`) 
+                VALUES (NULL,'" . $this->getIdGrupoFk() . "','" . $this->getIdProfesorFk() . "','" . $this->getGeneracion() . "','" . $this->getSemestre() . "','" . $this->getCampusCede() . "','" . $this->getFechaCreacion() . "','" . $this->getFechaInicio() . "','" . $this->getFechaFin() . "','" . $this->getFechaLimInscripcion() . "','" . $this->getFechaInicioActas() .
+            "','" . $this->getFechaFinActas() . "','" . $this->getCupo() . "','" . $this->getCostoReal() . "','" . $this->getDescuento() . "','" . $this->getNivelAplicacionDesc() . "','" . $this->getNotas() . "','" . $this->getModalidad() . "')";
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    }
+
+    function modificarasignacion()
+    {
+        $query = "UPDATE `asignacion_grupo` SET `id_grupo_fk`='".$this->getIdGrupoFk()."',`id_profesor_fk`='".$this->getIdProfesorFk()."',`generacion`='".$this->getGeneracion()."',`semestre`='".$this->getSemestre()."',`campus_cede`='".$this->getCampusCede()."',
+                            `fecha_creacion`='".$this->getFechaCreacion()."',`fecha_inicio`='".$this->getFechaInicio()."',`fecha_fin`='".$this->getFechaFin()."',`fecha_lim_inscripcion`='".$this->getFechaLimInscripcion()."',`fecha_inicio_actas`='".$this->getFechaInicioActas()."',
+                            `fecha_fin_actas`='".$this->getFechaFinActas()."',`cupo`='".$this->getCupo()."',`costo_real`='".$this->getCostoReal()."',`descuento`='".$this->getDescuento()."',`nivel_aplicacion_desc`='".$this->getNivelAplicacionDesc()."',
+                            `notas`='".$this->getNotas()."',`modalidad`='".$this->getModalidad()."' WHERE `id_asignacion`=".$this->getIdAsignacion();
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    }
+
+    function eliminarasignacion($id_asignacion)
+    {
+        $query="DELETE FROM `asignacion_grupo` WHERE `id_asignacion`=".$id_asignacion;
+        $this->connect();
+        $result = $this-> executeInstruction($query);
+        $this->close();
+        return $result;
     }
 
 

@@ -4,7 +4,6 @@ include_once "I_ARCHIVO.php";
 class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
 {
     private $id_archivo;
-    private $id_doc_sol_fk;
     private $id_inscripcion_fk;
     private $codigo_doc;
     private $name_archivo;
@@ -13,7 +12,23 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
     private $fecha_creacion;
     private $notas;
     private $estado_revision;
-    private $estado;
+    private $estadoArchivo;
+
+    /**
+     * @return mixed
+     */
+    public function getEstadoArchivo()
+    {
+        return $this->estadoArchivo;
+    }
+
+    /**
+     * @param mixed $estadoArchivo
+     */
+    public function setEstadoArchivo($estadoArchivo): void
+    {
+        $this->estadoArchivo = $estadoArchivo;
+    }
 
     /**
      * @return mixed
@@ -31,21 +46,7 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
         $this->id_archivo = $id_archivo;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getIdDocSolFk()
-    {
-        return $this->id_doc_sol_fk;
-    }
 
-    /**
-     * @param mixed $id_doc_sol_fk
-     */
-    public function setIdDocSolFk($id_doc_sol_fk): void
-    {
-        $this->id_doc_sol_fk = $id_doc_sol_fk;
-    }
 
     /**
      * @return mixed
@@ -175,23 +176,16 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
         $this->estado_revision = $estado_revision;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getEstado()
+    function crearArchivo()
     {
-        return $this->estado;
+        $query="INSERT INTO `archivo`(`id_archivo`, `id_doc_sol_fk`, `id_inscripcion_fk`, `codigo_doc`, `name_archivo`, `name_file_md5`, `path`, `fecha_creacion`, `notas`, `estado_revision`, `estado`) 
+                                      VALUES (NULL,'".$this->getIdDocSol()."','".$this->getIdInscripcionFk()."','".$this->getCodigoDoc()."','".$this->getNameArchivo()."','".$this->getNameFileMd5().
+            "','".$this->getPath()."','".$this->getFechaCreacion()."','".$this->getNotas()."','".$this->getEstadoRevision()."','".$this->getEstadoArchivo()."');";
+        $this->connect();
+        $result = $this-> executeInstruction($query);
+        $this->close();
+        return $result;
     }
-
-    /**
-     * @param mixed $estado
-     */
-    public function setEstado($estado): void
-    {
-        $this->estado = $estado;
-    }
-
-
 
     function consultaArchivos($id_inscripcion)
     {
@@ -212,7 +206,7 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
                                 AND docs_solicitados_curso.id_documento_fk =documento.id_documento
                                 AND archivo.id_inscripcion_fk=".$id_inscripcion;
        $this->connect();
-        $datos = $this-> executeInstruction($query);
+        $datos = $this-> getData($query);
         $this->close();
         return $datos;
     }
@@ -220,24 +214,21 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
 
     function modificaArchivo()
     {
-        $datos= $this->getCodigoDoc() != NULL ? "codigo_doc='".$this->getCodigoDoc()." '," : "";
-        $datos= $this->getNameArchivo() != NULL ? "name_archivo='".$this->getNameArchivo()." '," : "";
-        $datos= $this->getNameFileMd5() != NULL ? "name_file_md5='".$this->getNameFileMd5()." '," : "";
-        $datos= $this->getPath() != NULL ? "path='".$this->getPath()." '," : "";
-        $datos= $this->getFechaCreacion() != NULL ? "fecha_creacion='".$this->getFechaCreacion()." '," : "";
-        $datos= $this->getNotas() != NULL ? "notas='".$this->getNotas()." '," : "";
-        $datos= $this->getEstado() != NULL ? "estado='".$this->getEstado()." '," : "";
+        $query="UPDATE `archivo` SET `id_doc_sol_fk`='".$this->getIdDocSol()."',`id_inscripcion_fk`='".$this->getIdInscripcionFk()."',`codigo_doc`='".$this->getCodigoDoc()."'
+                ,`name_archivo`='".$this->getNameArchivo()."',`name_file_md5`='".$this->getNameFileMd5()."',`path`='".$this->getPath()."',`fecha_creacion`='".$this->getFechaCreacion()."'
+                ,`notas`='".$this->getNotas()."',`estado_revision`='".$this->getEstadoRevision()."',`estado`='".$this->getEstadoArchivo()."' 
+                WHERE `id_archivo`=".$this->getIdArchivo();
         $this->connect();
-        $datos = $this-> getData("UPDATE `archivo` SET ".$datos." WHERE id_archivo=".$this->getIdArchivo());
+        $result = $this-> executeInstruction($query);
         $this->close();
-        return $datos;
+        return $result;
     }
  
 
     function eliminarArchivo($id_archivo)
     {
         $this->connect();
-        $datos = $this-> getData("DELETE FROM `archivo` WHERE `id_archivo`=".$id_archivo);
+        $datos = $this-> executeInstruction("DELETE FROM `archivo` WHERE `id_archivo`=".$id_archivo);
         $this->close();
         return $datos;
     }
@@ -247,16 +238,7 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
         unlink($path);
     }
 
-    function crearArchivo()
-    {
-        $query="INSERT INTO `archivo`(`id_archivo`, `id_doc_sol_fk`, `id_inscripcion_fk`, `codigo_doc`, `name_archivo`, `name_file_md5`, `path`, `fecha_creacion`, `notas`, `estado_revision`, `estado`) 
-                                      VALUES (NULL,'".$this->getIdDocSolFk()."','".$this->getIdInscripcionFk()."','".$this->getCodigoDoc()."','".$this->getNameArchivo()."','".$this->getNameFileMd5().
-                                      "','".$this->getPath()."','".$this->getFechaCreacion()."','".$this->getNotas()."','".$this->getEstadoRevision()."','".$this->getEstado()."')";
-        $this->connect();
-        $datos = $this-> executeInstruction($query);
-        $this->close();
-        return $datos;
-    }
+
 
     function crearArchivoPath($archivo)
     {

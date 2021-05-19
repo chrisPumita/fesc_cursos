@@ -4,9 +4,9 @@ include_once ("I_HORARIO_CLASE_P.php");
 
 class HORARIO_CLASE_P extends AULAS implements I_HORARIO_CLASE_P
 {
+
     private $id_horario_pres;
     private $id_asignacion_fk;
-    private $id_aula_fk;
     private $dia_semana;
     private $hora_inicio;
     private $duracion;
@@ -61,21 +61,6 @@ class HORARIO_CLASE_P extends AULAS implements I_HORARIO_CLASE_P
         $this->id_asignacion_fk = $id_asignacion_fk;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getIdAulaFk()
-    {
-        return $this->id_aula_fk;
-    }
-
-    /**
-     * @param mixed $id_aula_fk
-     */
-    public function setIdAulaFk($id_aula_fk): void
-    {
-        $this->id_aula_fk = $id_aula_fk;
-    }
 
     /**
      * @return mixed
@@ -141,7 +126,7 @@ class HORARIO_CLASE_P extends AULAS implements I_HORARIO_CLASE_P
     function CrearHorario()
     {
         $query="INSERT INTO `horario_clase_presencial`(`id_horario_pres`, `id_asignacion_fk`, `id_aula_fk`, `dia_semana`, `hora_inicio`, `duracion`) 
-                VALUES (NULL,'".$this->getIdAsignacionFk()."','".$this->getIdAulaFk()."','".$this->getDiaSemana()."','".$this->getHoraInicio()."','".$this->getDuracion()."');";
+                VALUES (NULL,'".$this->getIdAsignacionFk()."','".$this->getIdAula()."','".$this->getDiaSemana()."','".$this->getHoraInicio()."','".$this->getDuracion()."');";
         $this->connect();
         $datos = $this-> executeInstruction($query);
         $this->close();
@@ -150,13 +135,7 @@ class HORARIO_CLASE_P extends AULAS implements I_HORARIO_CLASE_P
 
     function updateHorario()
     {
-        $filtro = $this->getIdAsignacionFk() != NULL ? "`id_asignacion_fk`='".$this->getIdAsignacionFk()." '," : "";
-        $filtro = $this->getIdAulaFk() != NULL ? "`dia_semana`='".$this->getIdAulaFk()."'," : "";
-        $filtro = $this->getDiaSemana()!= NULL ? "`id_asignacion_fk`='".$this->getDiaSemana()." '," : "";
-        $filtro = $this->getHoraInicio() != NULL ? "`dia_semana`='".$this->getHoraInicio()."'," : "";
-        $filtro = $this->getDuracion() != NULL ? "`dia_semana`='".$this->getDuracion()."'," : "";
-
-        $query="UPDATE `horario_clase_presencial` SET".$filtro." WHERE `id_asignacion_fk`=".$this->getIdHorarioPres();
+        $query="UPDATE `horario_clase_presencial` SET `id_asignacion_fk`='".$this->getIdAsignacionFk()."',`id_aula_fk`='".$this->getIdAula()."',`dia_semana`='".$this->getDiaSemana()."',`hora_inicio`='".$this->getHoraInicio()."',`duracion`='".$this->getDuracion()."' WHERE `id_horario_pres`=".$this->getIdHorarioPres();
         $this->connect();
         $datos = $this-> executeInstruction($query);
         $this->close();
@@ -166,7 +145,7 @@ class HORARIO_CLASE_P extends AULAS implements I_HORARIO_CLASE_P
     function eliminarhorario($id_Asignatura)
     {
         $this->connect();
-        $datos = $this-> getData("DELETE FROM `horario_clase_presencial` WHERE `id_horario_pres`=".$id_Asignatura);
+        $datos = $this-> executeInstruction("DELETE FROM `horario_clase_presencial` WHERE `id_horario_pres`=".$id_Asignatura);
         $this->close();
         return $datos;
     }

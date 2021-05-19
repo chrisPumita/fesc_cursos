@@ -14,7 +14,7 @@ function crearCuentaAlumno($id_municipio, $id_universidad,$matricula,$nombre_uni
     $al->setApm($apm);
     $al->setTelefono($telefono);
     $al->setSexo($sexo);
-    //default el eestado es 1
+    //default el estado es 1
     $al->setEstatus("1");
     ///Crear alumno
     $al->setIdMunicipio($id_municipio);

@@ -3,7 +3,7 @@
 
 interface I_PROFESOR
 {
-    public function getListaProfesores($filtro);
+    public function getListaProfesores($tipo_filtro, $valor);
 
     function updateEstatusProf($id_profesor, $estatus);
 
@@ -11,7 +11,7 @@ interface I_PROFESOR
 
     function agregaProfesor();
 
-    function modificaProfesor($id_profesor,$profesor);
+    function modificaProfesor();
 
     function modifcaPw($id_profesor,$pw);
 

@@ -179,16 +179,7 @@ class HORARIO_CLASE_V extends CONEXION_M implements I_HORARIO_CLASE_V
 
     function updateHorarioV()
     {
-        $filtro = $this->getIdAsignacionFk() != NULL ? "`id_asignacion_fk`='".$this->getIdAsignacionFk()." '," : "";
-        $filtro = $this->getDiaSemana() != NULL ? "`dia_semana`='".$this->getDiaSemana()."'," : "";
-        $filtro = $this->getHoraInicio() != NULL ? "`hora_inicio`='".$this->getHoraInicio()."'," : "";
-        $filtro = $this->getDuracion() != NULL ? "`duracion`='".$this->getDuracion()."'," : "";
-        $filtro = $this->getReunion() != NULL ? "`reunion`='".$this->getReunion()."'," : "";
-        $filtro = $this->getPlataforma() != NULL ? "`plataforma`='".$this->getPlataforma()."'," : "";
-        $filtro = $this->getUrlReunion() != NULL ? "`url_reunion`='".$this->getUrlReunion()."'," : "";
-        $filtro = $this->getUrlPlataforma() != NULL ? "`url_plataforma`='".$this->getUrlPlataforma()."'" : "";
-
-        $query = "UPDATE `horario_clase_virtual` SET".$filtro." WHERE `id_horario_virtual`=".$this->getIdHorarioVirtual();
+        $query = "UPDATE `horario_clase_virtual` SET `id_asignacion_fk`='".$this->getIdAsignacionFk()."',`dia_semana`='".$this->getDiaSemana()."',`hora_inicio`='".$this->getHoraInicio()."',`duracion`='".$this->getDuracion()."',`reunion`='".$this->getReunion()."',`plataforma`='".$this->getPlataforma()."',`url_reunion`='".$this->getUrlReunion()."',`url_plataforma`='".$this->getUrlPlataforma()."' WHERE `id_horario_virtual`=".$this->getIdHorarioVirtual();
         $this->connect();
         $datos = $this-> executeInstruction($query);
         $this->close();
