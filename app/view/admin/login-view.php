@@ -1,2 +1,2 @@
 <?php
-echo "Control de login";
+header('Location: ../login.php');

@@ -4,13 +4,13 @@
 <?php
 //Abrir para agregar los includes
 $tittle = "Profesores";
-include("../includes/header.php");
+include("./view/includes/header.php");
 ?>
 <body class="body-home">
 <div class="d-flex">
-    <?php include("../includes/admin-menupc.php"); ?>
+    <?php include("./view/includes/admin-menupc.php"); ?>
     <div class="w-100">
-        <?php include("../includes/admin-menutel.php"); ?>
+        <?php include("./view/includes/admin-menutel.php"); ?>
 
         <div id="content">
             <!--Inicio contenido dinamico-->
@@ -184,7 +184,7 @@ include("../includes/header.php");
                                                         <a href="">
                                                             <button class="dropdown-item" type="button" data-toggle='modal' data-target='#modal2'>Ver Asignaciones</button>
                                                         </a>                                       
-                                                        <a href="./perfil-profesor-view.php">
+                                                        <a href="./perfil-profesor">
                                                             <button class="dropdown-item" type="button">Editar</button>
                                                         </a>
                                                         <button class="dropdown-item" type="button">Reestablecer contraseña</button>
@@ -211,7 +211,7 @@ include("../includes/header.php");
                                                         <a href="">
                                                             <button class="dropdown-item" type="button" data-toggle='modal' data-target='#modal2'>Ver Asignaciones</button>
                                                         </a>                                       
-                                                        <a href="./perfil-profesor-view.php">
+                                                        <a href="./perfil-profesor">
                                                             <button class="dropdown-item" type="button">Editar</button>
                                                         </a>
                                                         <button class="dropdown-item" type="button">Reestablecer contraseña</button>
@@ -332,7 +332,7 @@ include("../includes/header.php");
                 <!-- FIN SECCION CURSOS ACTUALES -->
             </div>
             <!--FIN contenido dinamico-->
-            <?php include("../includes/footer.php");?>
+            <?php include("./view/includes/footer.php");?>
         </div>
 
 

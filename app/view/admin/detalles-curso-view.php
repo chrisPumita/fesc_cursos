@@ -3,13 +3,13 @@
     <?php
     //Abrir para agregar los includes
     $tittle = "Detalle del curso";
-    include("../includes/header.php");
+    include("./view/includes/header.php");
     ?>
     <body class="body-home">
         <div class="d-flex">
-            <?php include("../includes/admin-menupc.php"); ?>
+            <?php include("./view/includes/admin-menupc.php"); ?>
             <div class="w-100">
-                <?php include("../includes/admin-menutel.php"); ?>
+                <?php include("./view/includes/admin-menutel.php"); ?>
                 <div id="content">
                     <!--Inicio contenido dinamico-->
                     <div class="componet-dinamico bg-grey">
@@ -449,7 +449,7 @@
                         <!-- FIN INFO DE GRUPOS -->
                     </div>
                     <!--FIN contenido dinamico-->
-                    <?php include("../includes/footer.php");?>
+                    <?php include("./view/includes/footer.php");?>
                 </div>
             </div>
         </div>

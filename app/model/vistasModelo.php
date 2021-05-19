@@ -8,14 +8,14 @@ class vistaModelo
     protected static function obtener_vistas_modelo($vistas)
     {
         #Lista blanca de palabras de la url
-        $listaBlanca=["home"];
+        $listaBlanca=["home","detalles-asignacion","detalles-curso","lista-cursos","lista-profesores","perfil-profesor"];
         #Verificamos si la vista que esta entrando esta en la lista blanca para poder moestrarla
         if (in_array($vistas,$listaBlanca))
         {
-            if (is_file("./vistas/contenidos/".$vistas."-view.php"))
+            if (is_file("./view/admin/".$vistas."-view.php"))
             {
                 //buscamos la referencia del archivo y mostramos la vista
-                $contenido = "./vistas/contenidos/".$vistas."-view.php";
+                $contenido = "./view/admin/".$vistas."-view.php";
             }
             else
             {

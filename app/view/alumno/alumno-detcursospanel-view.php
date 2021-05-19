@@ -150,7 +150,7 @@
                 <div class="mx-auto">
                     <div class="row">
                         <div class="col-lg-12 mb-2">
-                            <h4 class="font-weight-bold">Presencial:</h2>
+                            <h4 class="font-weight-bold">Presencial:</h4>
                         </div>
                     </div>
                     <div class="row">
@@ -203,7 +203,7 @@
                 <div class="mx-auto">
                     <div class="row">
                         <div class="col-lg-12 mb-2">
-                            <h4 class="font-weight-bold">Remoto:</h2>
+                            <h4 class="font-weight-bold">Remoto:</h4>
                         </div>
                     </div>
                     <div class="row">

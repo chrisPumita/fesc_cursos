@@ -3,13 +3,13 @@
     <?php
     //Abrir para agregar los includes
     $tittle = "Cursos registrados";
-    include("../includes/header.php");
+    include("./view/includes/header.php");
     ?>
     <body class="body-home">
         <div class="d-flex">
-            <?php include("../includes/admin-menupc.php"); ?>
+            <?php include("./view/includes/admin-menupc.php"); ?>
             <div class="w-100">
-                <?php include("../includes/admin-menutel.php"); ?>
+                <?php include("./view/includes/admin-menutel.php"); ?>
                 <div id="content">
                     <!--Inicio contenido dinamico-->
                     <div class="componet-dinamico bg-grey">
@@ -75,7 +75,7 @@
                                                             Opciones
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <a href="./detalles-curso-view.php">
+                                                            <a href="./detalles-curso">
                                                                 <button class="dropdown-item" type="button">Ver Detalles</button>
                                                             </a>                                        
                                                             <button class="dropdown-item" type="button">Editar</button>
@@ -101,7 +101,7 @@
                                                             Opciones
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <a href="./detalles-curso-view.php">
+                                                            <a href="./detalles-curso">
                                                                 <button class="dropdown-item" type="button">Ver Detalles</button>
                                                             </a>                                        
                                                             <button class="dropdown-item" type="button">Editar</button>
@@ -128,7 +128,7 @@
                                                             Opciones
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <a href="./detalles-curso-view.php">
+                                                            <a href="./detalles-curso">
                                                                 <button class="dropdown-item" type="button">Ver Detalles</button>
                                                             </a>
                                                             <button class="dropdown-item" type="button">Editar</button>
@@ -164,7 +164,7 @@
                         <!-- FIN SECCION CURSOS ACTUALES -->
                     </div>
                     <!--FIN contenido dinamico-->
-                    <?php include("../includes/footer.php");?>
+                    <?php include("./view/includes/footer.php");?>
                 </div>
             </div>
         </div>

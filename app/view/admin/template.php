@@ -4,7 +4,7 @@
 <?php
 //Abrir para agregar los includes
 $tittle = "Template";
-include("../includes/header.php");
+include("./view/includes/header.php");
 ?>
 <body class="body-home">
 <div class="d-flex">
