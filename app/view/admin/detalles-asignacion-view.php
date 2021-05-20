@@ -92,7 +92,7 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-md-12 text-center">
-                                    <div class="img" style="background-image: url(https://vilmanunez.com/wp-content/uploads/2020/03/Los-6-mejores-cursos-gratuitos.jpg); ">
+                                    <div class="img" style="background-image: url(./assets/img/reposit-img/curso-excel.jpg); ">
                                         <div class="overlay"></div>
                                         <h4 class="text-light text-left"><strong> Grupo 2210 Paginas Web Sem. 2021-1 Gen 15</strong></h4>
                                         <h5 class="text-secondary text-left">Profesor: <strong> Martha Areyano Felix</strong></h5>

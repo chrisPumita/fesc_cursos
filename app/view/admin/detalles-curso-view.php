@@ -183,7 +183,7 @@
                                         <div class="col-sm-6 py-2">
                                             <div class="">
                                                 <div class="card">
-                                                    <img src="http://www.rrhhdigital.com/userfiles/CURSO-EXCEL-RRHHDIGITAL.jpg" class="card-img-top" alt="...">
+                                                    <img src="./assets/img/reposit-img/curso-excel.jpg" class="card-img-top" alt="img del curso">
                                                     <div class="card-body">
                                                         <h6 class="card-title"><strong>Imagen del Banner</strong></h6>
                                                         <p class="card-text py-1">Debe tener una resolución de 600px por 300px</p>
@@ -206,7 +206,7 @@
                                                             <h5>Detalles de Aprobación</h5>
                                                             <div class="d-flex">
                                                                 <div class="m-auto">
-                                                                    <img src="../../assets/img/ok.svg" width="60" alt="svg ok">
+                                                                    <img src="./assets/img/ok.svg" width="60" alt="svg ok">
                                                                 </div>
                                                                 <div class="m-auto">
                                                                     <h6>Aprobado por:</h6>
