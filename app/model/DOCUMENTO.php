@@ -117,8 +117,7 @@ class DOCUMENTO extends CONEXION_M implements I_DOCUMENTOS
 
     function modificaDocumento()
     {
-        /* recibe un array del documento a modificar
-        */
+
         $sql = "UPDATE `documento` SET 
                        `nombre_doc` = '".$this->getNombreDoc()."', 
                        `formato_admitido` = '".$this->getFormatoAdmitido()."', 
@@ -134,11 +133,11 @@ class DOCUMENTO extends CONEXION_M implements I_DOCUMENTOS
 
     function crearDocumento()
     {
-        $this->connect();
+
         
         $sql = "INSERT INTO `documento`(`id_documento`,`nombre_doc`,`formato_admitido`,`tipo`,`peso_max_mb`,`estatus`)
             VALUES (NULL,'".$this->getNombreDoc()."','".$this->getFormatoAdmitido()."','".$this->getTipo()."','".$this->getPesoMaxMb()."','".$this->getEstatusDocumento()."');";
-
+        $this->connect();
         $result = $this-> executeInstruction($sql);
         $this->close();
         return $result;
@@ -146,8 +145,8 @@ class DOCUMENTO extends CONEXION_M implements I_DOCUMENTOS
 
     function borrarDocumento($idDocumento,$estatus)
     {
-        $this->connect();
         $sql = "UPDATE `documento` SET `estatus`='".$estatus."' WHERE `id_documento`=".$idDocumento;
+        $this->connect();
         $datos = $this-> executeInstruction($sql);
         $this->close();
         return $datos;

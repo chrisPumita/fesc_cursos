@@ -235,7 +235,8 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
 
     function eliminaArchivoPath($path)
     {
-        unlink($path);
+       $result= unlink($path);
+       return $result;
     }
 
 

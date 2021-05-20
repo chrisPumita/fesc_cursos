@@ -12,7 +12,7 @@ function creaDocumento($nombreDoc, $formato, $tipo, $pesoMax){
     $obj_doc->setTipo($tipo);
     $obj_doc->setPesoMaxMb($pesoMax);
     $obj_doc->setEstatusDocumento("1");
-    return $obj_doc->crearDocumento() ? "Se guardo datos de documento":"Error al guardar datos de documento";
+    return $obj_doc->crearDocumento() ? "Se guardarón datos de documento":"Error al guardar datos de documento";
 }
 
 function editaDocumento($id_documento,$nombre,$formato,$tipo,$pesomax,$estatus_doc){
@@ -43,13 +43,12 @@ function borraDocumento($id_doc,$estado){
 }
 /* ------------------DOCUMENTOS SOLICITADOS FUNCIONES----------------------- */
 
-function agregaDocumentosol($idCurso){
+function agregaDocumentosol($id_documento,$idCurso){
     include_once "../model/DOCS_SOLICITADOS_CURSO.php";
     $obj_doc_sol = new DOCS_SOLICITADOS_CURSO();
-    $obj_doc_sol->setIdDocumento("4");
+    $obj_doc_sol->setIdDocumento($id_documento);
     $obj_doc_sol->setIdCursoFk($idCurso);
     $obj_doc_sol->setObligatorio("1");
-
     return $obj_doc_sol->crearDocumentosSol() ? "Se agregó un documento al curso": "No pudimos agregar el documento";
 }
 

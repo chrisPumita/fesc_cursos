@@ -155,6 +155,11 @@ function editaAsignacion($id_asignacion,$id_grupo,$id_prof,$generacion,$semestre
 function eliminaAsignacion($id_asignacion){
     include_once "../model/ASIGNACION_GRUPO.php";
     $obj_asignacion= new ASIGNACION_GRUPO();
-    echo $obj_asignacion->eliminarasignacion($id_asignacion) ? "Se eliminó la asignacion de un grupo": "No pudimos eliminar la asignacion de un grupo";
+    return $obj_asignacion->eliminarasignacion($id_asignacion) ? "Se eliminó la asignacion de un grupo": "No pudimos eliminar la asignacion de un grupo";
 
+}
+function eliminarArchivoPath($path){
+    include_once "../model/ARCHIVO.php";
+    $obj_archivo= new ARCHIVO();
+    return  $obj_archivo-> eliminaArchivoPath($path) == TRUE ? "Path eliminado" :"Error al eliminar el path";
 }
