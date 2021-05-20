@@ -220,25 +220,14 @@ class PROFESOR extends PERSONA implements I_PROFESOR
                 $filtro = " AND p.sexo = ".$valor;
                 break;
             case "2":
-                //Filtro por municipio
-                $filtro = " AND al.id_municipio = ".$valor;
+                //Filtro por por estatus de la cuenta (activa/inactva)
+                $filtro = " AND pf.estatus = ".$valor;
                 break;
             case "3":
-                //Filtro por por estatus de la cuenta (activa/inactva)
-                $filtro = " AND p.estatus = ".$valor;
+                //Filtro por departamento
+                $filtro = " AND dp.nombre = ".$valor;
                 break;
-            case "4":
-                //Filtro por por Id de iniversidad
-                $filtro = " AND al.id_universidad = ".$valor;
-                break;
-            case "5":
-                //Filtro por tipo de procedenceia
-                $filtro = " AND al.tipo_procedencia = ".$valor;
-                break;
-            case "6":
-                //Filtro por carrera
-                $filtro = " AND al.carrera_especialidad = ".$valor;
-                break;
+
             default:
                 $filtro = "";
                 break;
@@ -251,12 +240,12 @@ class PROFESOR extends PERSONA implements I_PROFESOR
            p.telefono, 
            p.sexo, 
            p.estatus AS estatus_p, 
-           pf.email
-           pf.pw
-           pf.firma_digital
+           pf.email,
+           pf.pw,
+           pf.firma_digital,
            dp.nombre as Departamento
         FROM profesor pf,persona p,departamentos dp 
-        WHERE pf.id_persona = p.id_persona
+        WHERE pf.id_persona_fk = p.id_persona
           AND pf.id_depto_fk = dp.id_depto
           AND p.estatus = 1  ".$filtro." ORDER BY `p`.`nombre` ASC";
         $this->connect();
