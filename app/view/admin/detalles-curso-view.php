@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
     <?php
-    //Abrir para agregar los includes
-    $tittle = "Detalle del curso";
-    include("./view/includes/header.php");
-    ?>
+        //Abrir para agregar los includes
+        $tittle = "Detalle del curso";
+        include("./view/includes/header.php");
+        ?>
     <body class="body-home">
         <div class="d-flex">
             <?php include("./view/includes/admin-menupc.php"); ?>
@@ -28,58 +28,57 @@
                                 <div class="col-lg-9 py-2">
                                     <h3 class="font-weight-bold mb-0">2658 - Iniciación al cómputo I</h3>
                                 </div>
-                            </div>   
-
+                            </div>
                             <!--INICIA ESTADISTICAS-->
                             <div class="card bg-grey estadisticas">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <div class="card">
-                                            <div class="card-body">
-                                                <div class="mx-auto">
-                                                    <i class="icon ion-md-rocket mr-1 position-absolute paleta"></i>
-                                                    <h6 class="text-muted"></i><STrong>Grupos</STrong></h6>
-                                                    <h3 class="font-weight-bold">3</h3>
-                                                    <h6 class="text-warning">Activos</h6>
+                                                <div class="card-body">
+                                                    <div class="mx-auto">
+                                                        <i class="icon ion-md-rocket mr-1 position-absolute paleta"></i>
+                                                        <h6 class="text-muted"></i><STrong>Grupos</STrong></h6>
+                                                        <h3 class="font-weight-bold">3</h3>
+                                                        <h6 class="text-warning">Activos</h6>
+                                                    </div>
                                                 </div>
-                                            </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="card">
-                                            <div class="card-body">
-                                                <div class="mx-auto">
-                                                    <i class="icon ion-md-checkmark mr-1 position-absolute paleta"></i>
-                                                    <h6 class="text-muted"><strong>Constancias</strong></h6>
-                                                    <h3 class="font-weight-bold">45</h3>
-                                                    <h6 class="text-warning">Revisadas</h6>
+                                                <div class="card-body">
+                                                    <div class="mx-auto">
+                                                        <i class="icon ion-md-checkmark mr-1 position-absolute paleta"></i>
+                                                        <h6 class="text-muted"><strong>Constancias</strong></h6>
+                                                        <h3 class="font-weight-bold">45</h3>
+                                                        <h6 class="text-warning">Revisadas</h6>
+                                                    </div>
                                                 </div>
-                                            </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="card">
-                                            <div class="card-body">
-                                                <div class="mx-auto">
-                                                    <i class="icon ion-md-stats mr-1 position-absolute paleta"></i>
-                                                    <h6 class="text-muted"><strong>Inscripciones</strong></h6>
-                                                    <h3 class="font-weight-bold">17</h3>
-                                                    <h6 class="text-warning">Activas</h6>
+                                                <div class="card-body">
+                                                    <div class="mx-auto">
+                                                        <i class="icon ion-md-stats mr-1 position-absolute paleta"></i>
+                                                        <h6 class="text-muted"><strong>Inscripciones</strong></h6>
+                                                        <h3 class="font-weight-bold">17</h3>
+                                                        <h6 class="text-warning">Activas</h6>
+                                                    </div>
                                                 </div>
-                                            </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="card">
-                                            <div class="card-body">
-                                                <div class="mx-auto">
-                                                    <i class="icon ion-md-contacts mr-1 position-absolute paleta"></i>
-                                                    <h6 class="text-muted"><strong>Alumnos</strong></h6>
-                                                    <h3 class="font-weight-bold">8</h3>
-                                                    <h6 class="text-success">Inscritos en este curso</h6>
+                                                <div class="card-body">
+                                                    <div class="mx-auto">
+                                                        <i class="icon ion-md-contacts mr-1 position-absolute paleta"></i>
+                                                        <h6 class="text-muted"><strong>Alumnos</strong></h6>
+                                                        <h3 class="font-weight-bold">8</h3>
+                                                        <h6 class="text-success">Inscritos en este curso</h6>
+                                                    </div>
                                                 </div>
-                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -88,12 +87,12 @@
                             <!-- FIN ESTADISTICAS-->
                         </section>
                         <!-- FIN ENCABEZADO CON ESTADISTICAS -->
-
                         <!-- INICIA SECCION INFO DEL CURSO -->
                         <section class="container bg-grey">
                             <div class="card bg-grey estadisticas">
                                 <div class="card-body py-1">
-                                    <div class="row"> <!-- DETALLE DEL CURSO CALLOUT -->
+                                    <div class="row">
+                                        <!-- DETALLE DEL CURSO CALLOUT -->
                                         <div class="col-lg-12">
                                             <div class="callout callout-second">
                                                 <h4>Detalles del curso</h4>
@@ -101,7 +100,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <!-- TARJETA DE INFO DEL CURSO -->
                                         <div class="col-sm-6 py-2">
@@ -112,7 +110,6 @@
                                                             <h5><strong>Creado por: </strong>Juan Perez Sanchez</h5>
                                                             <p>15 de Mayo de 2020</p>
                                                         </div>
-
                                                         <div class="px-1">
                                                             <div id="accordion">
                                                                 <div class="card">
@@ -125,7 +122,7 @@
                                                                     </div>
                                                                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                                                         <div class="card-body">
-                                                                        <h6><strong>Dirigido a: </strong> Estudiantes</h6>
+                                                                            <h6><strong>Dirigido a: </strong> Estudiantes</h6>
                                                                             <h6><strong>Modalidad: </strong> A distancia</h6>
                                                                             <h6><strong>Cupo: </strong>30</h6>
                                                                             <h6><strong>Sesiones: </strong> 20</h6>
@@ -160,31 +157,30 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>                                                                   
-                                                        </div>                
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="mx-auto py-2">
-                                                    <a href=""><button class="btn btn-primary btn-block" type="button">Editar información</button></a> 
-                                                    <hr> 
+                                                        <a href=""><button class="btn btn-primary btn-block" type="button">Editar información</button></a> 
+                                                        <hr>
                                                         <h6><strong>PDF del temario descargable</strong></h6>
                                                         <div class="row">
                                                             <div class="col-md-4">
                                                                 <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-download"></i> Descargar</a>
                                                             </div>
                                                             <div class="col-md-4">
-                                                            <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-cloud"></i> Subir</a>
+                                                                <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-cloud"></i> Subir</a>
                                                             </div>
                                                             <div class="col-md-4">
-                                                            <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-eye"></i> Ver</a>
+                                                                <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-eye"></i> Ver</a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>                    
+                                            </div>
                                         </div>
-
                                         <!-- TARJETA DE BANNER -->
-                                        <div class="col-sm-6 py-2">  
+                                        <div class="col-sm-6 py-2">
                                             <div class="">
                                                 <div class="card">
                                                     <img src="http://www.rrhhdigital.com/userfiles/CURSO-EXCEL-RRHHDIGITAL.jpg" class="card-img-top" alt="...">
@@ -222,17 +218,15 @@
                                                                 <a href="#" class="btn btn-danger btn-block">Inhabilitar</a>
                                                             </div>
                                                         </div>
-                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- FIN TARJETA DETALLES APROBACION -->
                                         </div>
                                     </div>
-                                </div>        
+                                </div>
                             </div>
                         </section>
-
                         <!-- INICIA TABLA DE TEMARIO -->
                         <section>
                             <div class="col-sm-12 py-4">
@@ -265,7 +259,8 @@
                                                                 <td>1.1</td>
                                                                 <td>Programación Orientada a Objetos</td>
                                                                 <td>--------------------------</td>
-                                                                <td>  <!-- BOTON ACCIONES -->
+                                                                <td>
+                                                                    <!-- BOTON ACCIONES -->
                                                                     <div class="btn-group" role="group" aria-label="Basic example">
                                                                         <button type="button" class="btn btn-primary">Modificar</button>
                                                                         <button type="button" class="btn btn-danger">Eliminar</button>
@@ -282,15 +277,14 @@
                                                                     <div class="btn-group" role="group" aria-label="Basic example">
                                                                         <button type="button" class="btn btn-primary">Modificar</button>
                                                                         <button type="button" class="btn btn-danger">Eliminar</button>
-                                                                    </div> 
-                                                                </td>  
-                                                            </tr>   
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
-                                                    </div>
                                                 </div>
-
-                                                <!-- para agregar en los horarios
+                                            </div>
+                                            <!-- para agregar en los horarios
                                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                                     <li class="nav-item">
                                                         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
@@ -315,11 +309,10 @@
                                                 </div> -->            
                                         </div>
                                     </div>
-                                </div>                    
+                                </div>
                             </div>
                         </section>
                         <!-- FIN TABLA TEMARIO -->
-
                         <!-- INICIA INFO DE GRUPOS -->
                         <section class="container bg-grey">
                             <!-- INICIA TARJETA ASIG GRUPO -->
@@ -329,7 +322,7 @@
                                         <div class="mx-auto">
                                             <div class="row p-3">
                                                 <div class="col-lg-1">
-                                                <i class="icon ion-md-rocket  paleta"></i>
+                                                    <i class="icon ion-md-rocket  paleta"></i>
                                                 </div>
                                                 <div class="col-lg-9">
                                                     <h4>Creacion de asignacion de Grupo</h4>
@@ -341,21 +334,21 @@
                                                             <option>3</option>
                                                             <option>4</option>
                                                         </select>
-                                                    </div>                                                       
+                                                    </div>
                                                 </div>
                                                 <div class="col-lg-2">
                                                     <button class="btn btn-primary w-100 aling-self-center">Crear</button>
-                                                </div> 
-                                            </div>      
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>                    
+                                </div>
                             </div>
                             <!-- FIN TARJETA ASIG GRUPO -->
-
                             <div class="card bg-grey estadisticas">
                                 <div class="card-body py-1">
-                                    <div class="row"> <!-- DETALLE DEL CURSO CALLOUT -->
+                                    <div class="row">
+                                        <!-- DETALLE DEL CURSO CALLOUT -->
                                         <div class="col-lg-12">
                                             <div class="row align-items-center justify-content-center">                                    
                                             </div>
@@ -410,7 +403,8 @@
                                                                             <td>Presencial</td>
                                                                             <td>--------</td>
                                                                             <td>Finalizado</td>
-                                                                            <td>  <!-- BOTON ACCIONES -->
+                                                                            <td>
+                                                                                <!-- BOTON ACCIONES -->
                                                                                 <div class="btn-group" role="group" aria-label="Basic example">
                                                                                     <button type="button" class="btn btn-primary">Modificar</button>
                                                                                     <button type="button" class="btn btn-danger">Eliminar</button>
@@ -427,23 +421,24 @@
                                                                             <td>Online</td>
                                                                             <td>--------</td>
                                                                             <td>Activo</td>
-                                                                            <td>  <!-- BOTON ACCIONES -->
+                                                                            <td>
+                                                                                <!-- BOTON ACCIONES -->
                                                                                 <div class="btn-group" role="group" aria-label="Basic example">
                                                                                     <button type="button" class="btn btn-primary">Modificar</button>
                                                                                     <button type="button" class="btn btn-danger">Eliminar</button>
                                                                                 </div>
                                                                             </td>
-                                                                        </tr>  
+                                                                        </tr>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
-                                                        </div>      
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>                    
+                                            </div>
                                         </div>
                                     </div>
-                                </div>        
+                                </div>
                             </div>
                         </section>
                         <!-- FIN INFO DE GRUPOS -->
@@ -454,4 +449,4 @@
             </div>
         </div>
     </body>
-</html>30
+</html>
