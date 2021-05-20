@@ -12,10 +12,10 @@ include("./view/includes/header.php");
     <div class="w-100">
         <?php include("./view/includes/admin-menutel.php"); ?>
 
-        <div id="content bg-grey">
+        <div id="content">
             <!--Inicio contenido dinamico-->
-            <div class="componet-dinamico">
-               <h1>COLOCAR AQUI EL NUEVO CODIGO HTML5</h1>
+            <div class="componet-dinamico bg-grey">
+               <h1>SOY UN EJEMPLo5</h1>
             </div>
             <!--FIN contenido dinamico-->
             <?php include("./view/includes/footer.php");?>

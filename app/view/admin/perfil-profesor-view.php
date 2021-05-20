@@ -153,7 +153,9 @@ include("./view/includes/header.php");
                                             <option>2523 Iniciación al Cómputo </option>
                                             <option>2624 Excel Financiero</option>
                                         </select>
+                                        <a href="./nueva-asignacion">
                                         <br><button type="button" class="btn btn-primary btn-sm">Crear</button></br>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
