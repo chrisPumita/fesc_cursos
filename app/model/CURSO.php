@@ -311,7 +311,6 @@ class CURSO extends CONEXION_M implements I_CURSO
     public function getListaTemas()
     {
         return consultaTemas($this->getIdCurso());
-        //return $this->lista_temas;
     }
 
     /**
@@ -422,8 +421,8 @@ class CURSO extends CONEXION_M implements I_CURSO
 
     public function consultaDocsSolicitados($id_curso)
     {
-        $docs = new DOCS_SOLICITADOS_CURSO();
-        return $docs -> consultarListaDocumentos($id_curso);
+        include "../model/DOCS_SOLICITADOS_CURSO.php";
+        return DOCS_SOLICITADOS_CURSO::class(consultarListaDocumentosSol($this->getIdCurso()));
     }
 
     public function consultaGrupos($id_curso)
@@ -497,12 +496,18 @@ class CURSO extends CONEXION_M implements I_CURSO
     {
         // TODO: Implement quitarKerword() method.
     }
-
-    function agregaDocumentoSolicitado($documentoSolicitado)
+/*
+    function agregaDocumentoSol($documentoSolicitado,$obl)
     {
-        // TODO: Implement agregaDocumentoSolicitado() method.
-    }
+        include_once "DOCS_SOLICITADOS_CURSO.php";
+        $doc = new DOCS_SOLICITADOS_CURSO();
+        $doc ->setIdDocumento($documentoSolicitado);
+        $doc ->setIdCursoFk($this->getIdCurso());
+        $doc->setObligatorio($obl);
 
+        return $doc -> crearDocumentosSol()? "Se ha creado el documento":"Error al crear documento";
+    }
+*/
     function quitarDocumetoSolicitado($id_doc_solicitado, $id_curso)
     {
         // TODO: Implement quitarDocumetoSolicitado() method.

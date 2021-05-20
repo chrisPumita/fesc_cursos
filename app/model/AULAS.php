@@ -1,12 +1,13 @@
 <?php
-include_once "CONEXION_M.php";
-
+include_once "./CONEXION_M.php";
 class AULAS extends CONEXION_M
 {
 	private $id_aula;
 	private $edificio;
 	private $aula;
 	private $campus;
+    private $cupo;
+    private $estad;
 
     /**
      * @return mixed
@@ -103,6 +104,34 @@ class AULAS extends CONEXION_M
     {
         $this->estad = $estad;
     }
-	private $cupo;
-	private $estad;
+
+    function crearNuevaAula($parametros){
+
+        return true;
+    }
+
+    function editaAula(){
+
+    }
+
+    function eliminaAula($idAula){
+
+    }
+
+    function ConsultaAulas()
+    {
+        $this->connect();
+        $datos = $this-> getData("SELECT horario_clase_presencial.id_horario_pres,horario_clase_presencial.dia_semana,
+                                        horario_clase_presencial.hora_inicio,horario_clase_presencial.duracion,aulas.edificio,
+                                        aulas.aula,aulas.campus,aulas.cupo,asignacion_grupo.id_asignacion,asignacion_grupo.id_grupo_fk 
+                                        FROM `horario_clase_presencial`,`aulas`,`asignacion_grupo` 
+                                            WHERE aulas.id_aula=horario_clase_presencial.id_aula_fk 
+                                              AND horario_clase_presencial.id_asignacion_fk=asignacion_grupo.id_asignacion");
+        $this->close();
+        return $datos;
+    }
+
+    function consultaAula($idHoraClase){
+        return 1;
+    }
 }

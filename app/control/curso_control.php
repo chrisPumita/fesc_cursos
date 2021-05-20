@@ -83,3 +83,25 @@ function actualizaTema($id_tema,$indice,$nombre,$resumen)
 
     echo $tema->actualizaTema() ? "Se actualizo un tema" : "No se pudo actualizar el tema";
 }
+
+//
+//* OTRAS FUNCIONES ADICIONALES*/
+function agregaDocumentoAlCurso($id_doc,$idCurso,$obl){
+    require_once "./documentos-control.php";
+    return agregaDocumentoSol($id_doc,$idCurso,$obl);
+}
+
+function consultaDumentacion($id_curso){
+    require_once "./documentos-control.php";
+    return consultaDocumentosDeCurso($id_curso);
+}
+
+function quitarDocumentoCurso($idDocSol){
+    require_once "./documentos-control.php";
+    return remueveDocumentoCurso($idDocSol);
+}
+
+function cambiaObligacion($idDocSol,$estatus){
+    require_once "./documentos-control.php";
+    return modificaObligacionDocSol($idDocSol,$estatus);
+}

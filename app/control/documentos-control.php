@@ -41,14 +41,14 @@ function borraDocumento($id_doc,$estado){
     $obj_doc = new DOCUMENTO();
     return $obj_doc->borrarDocumento($id_doc,$estado) ? "Se eliminó el documento":"Error al eliminar documento";
 }
-/* ------------------DOCUMENTOS SOLICITADOS FUNCIONES----------------------- */
+/* ------------------DOCUMENTOS SOLICITADOS FUNCIONES CURSO ----------------------- */
 
-function agregaDocumentosol($id_documento,$idCurso){
+function agregaDocumentosol($id_documento,$idCurso,$obl){
     include_once "../model/DOCS_SOLICITADOS_CURSO.php";
     $obj_doc_sol = new DOCS_SOLICITADOS_CURSO();
     $obj_doc_sol->setIdDocumento($id_documento);
     $obj_doc_sol->setIdCursoFk($idCurso);
-    $obj_doc_sol->setObligatorio("1");
+    $obj_doc_sol->setObligatorio($obl);
     return $obj_doc_sol->crearDocumentosSol() ? "Se agregó un documento al curso": "No pudimos agregar el documento";
 }
 
@@ -65,7 +65,14 @@ function consultaDocumentosDeCurso($idCurso){
     $json_data = json_encode($result);
     return $json_data;
 }
-/* ------------------ARCHIVOS FUNCIONES----------------------- */
+
+function modificaObligacionDocSol($id_doc_sol, $nuevoEdo){
+    include_once "../model/DOCS_SOLICITADOS_CURSO.php";
+    $obj_doc_sol = new DOCS_SOLICITADOS_CURSO();
+    $obj_doc_sol->setIdDocSol($id_doc_sol);
+    return $obj_doc_sol->cambiarOblig($nuevoEdo) ? "Se cambio el estado": "No pudimos cambiar el estado";
+}
+/* ------------------ARCHIVOS FUNCIONES QUE OCUPA INSCRIPCIONES----------------------- */
 
 function consultarArchivo($id_inscripcion){
     include_once "../model/ARCHIVO.php";
@@ -114,3 +121,9 @@ function eliminarArchivo($id_archivo){
     $obj_archivo = new ARCHIVO();
     echo $obj_archivo->eliminarArchivo($id_archivo) ? "Se eliminó el Archivo ":"Error al eliminar el Archivo";
 }
+
+
+//crear una carpeta en el repositorio de imagenes
+// primero verifica si no hay una carpeta ya creada (nombre folder: noInsc(id)
+//repositorios/c0c7c76d30bd3dcaefc96f40275bdc0a/c0c7c76d30bd3dcaefc96f40275bdc0a.pdf
+//repositorios/c0c7c76d30bd3dcaefc96f40275bdc0a/c0c7c76d30bbhfd7daefc96f7gdfvv.pdf

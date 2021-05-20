@@ -70,7 +70,7 @@ class DOCS_SOLICITADOS_CURSO extends  DOCUMENTO implements I_DOCS_SOLICITADOS
     }
 
     //ejecuta la insctruccion y me regresa true si se efectuo de forma correcta
-    function crearDocumentosSol()
+    public function crearDocumentosSol()
     {
         $query = "INSERT INTO `docs_solicitados_curso` (`id_doc_sol`, `id_documento_fk`, 
                    `id_curso_fk`, `obligatorio`) 
@@ -90,11 +90,13 @@ class DOCS_SOLICITADOS_CURSO extends  DOCUMENTO implements I_DOCS_SOLICITADOS
         return $datos;
     }
 
-    function cambiarOblig($id_documento_sol, $estatus)
+    function cambiarOblig($estatus)
     {
         $this->connect();
-        $datos = $this-> getData("UPDATE `docs_solicitados_curso` SET  `obligatorio`= ".$estatus."WHERE `id_doc_sol`=".$id_documento_sol);
+        $sql = "UPDATE `docs_solicitados_curso` SET `obligatorio` = '".$estatus."' 
+        WHERE `docs_solicitados_curso`.`id_doc_sol` = ".$this->getIdDocSol();
+        $response = $this-> executeInstruction($sql);
         $this->close();
-        return $datos;
+        return $response;
     }
 }

@@ -9,6 +9,6 @@ interface I_DOCS_SOLICITADOS
 
     function eliminaDocumentoSolicitado($id_documento_sol);
 
-    function cambiarOblig($id_documento_sol,$estatus);
+    function cambiarOblig($estatus);
 
 }

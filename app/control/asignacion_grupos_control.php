@@ -9,6 +9,11 @@ function consultaAulas()
     return $json_data;
 }
 
+function creaAula(){
+    include "../model/AULAS.php";
+
+}
+
 function creaHorarioPre($idAsignacion,$idAula,$diasSem,$HoraInicio,$Duracion){
     include_once "../model/HORARIO_CLASE_P.php";
     //  `id_horario_pres`, `id_asignacion_fk`, `id_aula_fk`, `dia_semana`, `hora_inicio`, `duracion`
@@ -87,7 +92,6 @@ function VerHorarioVirtual($id_asignacion){
     $result=$obj_asignacion->consultaHorarioVirtual($id_asignacion);
     $json_data=json_encode($result);
     return $json_data;
-
 }
 
 function VerHorarioPresencial($id_asignacion){
@@ -96,10 +100,9 @@ function VerHorarioPresencial($id_asignacion){
     $result=$obj_asignacion->consultaHorarioPresencial($id_asignacion);
     $json_data=json_encode($result);
     return $json_data;
-
 }
 
-function creaAsignacion($id_grupo,$id_prof,$generacion,$semestre,$cede,$fCreacion,$fInicio,$fFin,$fLimiteI,$fInicioActas,$fFinActas,$cupo,$costo,$descuento,$nivelDesc,$notas,$modalidad){
+function creaAsignacion($id_grupo,$id_prof,$generacion,$semestre,$cede,$fInicio,$fFin,$fLimiteI,$fInicioActas,$fFinActas,$cupo,$costo,$descuento,$nivelDesc,$notas,$modalidad){
     include_once "../model/ASIGNACION_GRUPO.php";
     //`id_asignacion`, `id_grupo_fk`, `id_profesor_fk`, `generacion`, `semestre`, `campus_cede`, `fecha_creacion`, `fecha_inicio`, `fecha_fin`, `fecha_lim_inscripcion`, `fecha_inicio_actas`,
     // `fecha_fin_actas`, `cupo`, `costo_real`, `descuento`, `nivel_aplicacion_desc`, `notas`, `modalidad`
@@ -109,7 +112,6 @@ function creaAsignacion($id_grupo,$id_prof,$generacion,$semestre,$cede,$fCreacio
     $obj_asignacion->setGeneracion($generacion);
     $obj_asignacion->setSemestre($semestre);
     $obj_asignacion->setCampusCede($cede);
-    $obj_asignacion->setFechaCreacion($fCreacion);
     $obj_asignacion->setFechaInicio($fInicio);
     $obj_asignacion->setFechaFin($fFin);
     $obj_asignacion->setFechaLimInscripcion($fLimiteI);
@@ -125,7 +127,7 @@ function creaAsignacion($id_grupo,$id_prof,$generacion,$semestre,$cede,$fCreacio
 
 }
 
-function editaAsignacion($id_asignacion,$id_grupo,$id_prof,$generacion,$semestre,$cede,$fCreacion,$fInicio,$fFin,$fLimiteI,$fInicioActas,$fFinActas,$cupo,$costo,$descuento,$nivelDesc,$notas,$modalidad){
+function editaAsignacion($id_asignacion,$id_grupo,$id_prof,$generacion,$semestre,$cede,$fInicio,$fFin,$fLimiteI,$fInicioActas,$fFinActas,$cupo,$costo,$descuento,$nivelDesc,$notas,$modalidad){
     include_once "../model/ASIGNACION_GRUPO.php";
     //`id_asignacion`, `id_grupo_fk`, `id_profesor_fk`, `generacion`, `semestre`, `campus_cede`, `fecha_creacion`, `fecha_inicio`, `fecha_fin`, `fecha_lim_inscripcion`, `fecha_inicio_actas`,
     // `fecha_fin_actas`, `cupo`, `costo_real`, `descuento`, `nivel_aplicacion_desc`, `notas`, `modalidad`
@@ -136,7 +138,6 @@ function editaAsignacion($id_asignacion,$id_grupo,$id_prof,$generacion,$semestre
     $obj_asignacion->setGeneracion($generacion);
     $obj_asignacion->setSemestre($semestre);
     $obj_asignacion->setCampusCede($cede);
-    $obj_asignacion->setFechaCreacion($fCreacion);
     $obj_asignacion->setFechaInicio($fInicio);
     $obj_asignacion->setFechaFin($fFin);
     $obj_asignacion->setFechaLimInscripcion($fLimiteI);
@@ -158,6 +159,8 @@ function eliminaAsignacion($id_asignacion){
     return $obj_asignacion->eliminarasignacion($id_asignacion) ? "Se eliminó la asignacion de un grupo": "No pudimos eliminar la asignacion de un grupo";
 
 }
+
+//////////////////////////////////////
 function eliminarArchivoPath($path){
     include_once "../model/ARCHIVO.php";
     $obj_archivo= new ARCHIVO();

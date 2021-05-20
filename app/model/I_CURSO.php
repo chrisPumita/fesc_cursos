@@ -18,7 +18,7 @@ interface I_CURSO
 
     function quitarKeyword($id_key,$id_curso);
 
-    function agregaDocumentoSolicitado($documentoSolicitado);
+  //  function agregaDocumentoSol($documentoSolicitado, $obl);
 
     function quitarDocumetoSolicitado($id_doc_solicitado, $id_curso);
 

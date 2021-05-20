@@ -18,7 +18,7 @@ class HORARIO_CLASE_P extends AULAS implements I_HORARIO_CLASE_P
      */
     public function getAula()
     {
-        return $this->aula;
+        return $this->consultaAula($this->getIdHorarioPres());
     }
 
     /**
@@ -110,18 +110,7 @@ class HORARIO_CLASE_P extends AULAS implements I_HORARIO_CLASE_P
         $this->duracion = $duracion;
     }
 
-    function ConsultaAulas()
-    {
-        $this->connect();
-        $datos = $this-> getData("SELECT horario_clase_presencial.id_horario_pres,horario_clase_presencial.dia_semana,
-                                        horario_clase_presencial.hora_inicio,horario_clase_presencial.duracion,aulas.edificio,
-                                        aulas.aula,aulas.campus,aulas.cupo,asignacion_grupo.id_asignacion,asignacion_grupo.id_grupo_fk 
-                                        FROM `horario_clase_presencial`,`aulas`,`asignacion_grupo` 
-                                            WHERE aulas.id_aula=horario_clase_presencial.id_aula_fk 
-                                              AND horario_clase_presencial.id_asignacion_fk=asignacion_grupo.id_asignacion");
-        $this->close();
-        return $datos;
-    }
+
 
     function CrearHorario()
     {

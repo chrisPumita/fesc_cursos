@@ -1,30 +1,15 @@
 <?php
 
-
+require_once "../config/SERVER.php";
 class CONEXION_M
 {
-    /*
-    const SERVER = "localhost";
-    const DB = "seltic";
-    const USER = "root";
-    const PASS = "";
-    const CONN = "mysql:host=".SERVER.";dbname=".DB;
-*/
-    private $host = "localhost";
-    private $usuario = "root";
-    private $pass = "";
-    private $db = "seltic";
+    private $host = SERVER;
+    private $usuario = USER;
+    private $pass = PASS;
+    private $db = DB;
 
     private $connection;
-/*
-    function __construct($host, $usuario, $pass, $db)
-    {
-        $this->host = $host;
-        $this->usuario = $usuario;
-        $this->pass = $pass;
-        $this->db = $db;
-    }
-*/
+
     function connect(){
         $this->connection = mysqli_connect(
             $this->host,
