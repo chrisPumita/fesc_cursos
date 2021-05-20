@@ -72,14 +72,14 @@ function eliminaTema($idTema)
     echo $tema->quitarTema($idTema) ? "Se elimino un tema" : "No se pudo eliminar el tema";
 }
 
-function actualizaTema($id_tema,$id_curso_fk,$indice,$nombre,$resumen)
+//No es necesario enviar el valor del id_curso pùesto que tenemos el id del tema ya como dato
+function actualizaTema($id_tema,$indice,$nombre,$resumen)
 {
     $tema = new TEMAS();
     $tema ->setIdTema($id_tema);
-    $tema ->setIdCursoFk($id_curso_fk);
     $tema ->setIndice($indice);
     $tema ->setNombre($nombre);
     $tema -> setResumen($resumen);
 
-    echo $tema->actualizaTema($tema) ? "Se actualizo un tema" : "No se pudo actualizar el tema";
+    echo $tema->actualizaTema() ? "Se actualizo un tema" : "No se pudo actualizar el tema";
 }

@@ -126,11 +126,12 @@ private $resumen;
         return true;
     }
 
-    function actualizaTema($tema)
+
+    //eliminar el obj de que no llega por parametro
+    function actualizaTema()
     {
         $query =    "UPDATE `temas` 
-                    SET `id_curso_fk` = '".$this->getIdCursoFk()."', 
-                        `indice` = '".$this->getIndice()."', 
+                    SET `indice` = '".$this->getIndice()."', 
                         `nombre` = '".$this->getNombre()."', 
                         `resumen` = '".$this->getResumen()."' 
                     WHERE `temas`.`id_tema` = ".$this->getIdTema();

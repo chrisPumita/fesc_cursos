@@ -310,7 +310,7 @@ class CURSO extends CONEXION_M implements I_CURSO
      */
     public function getListaTemas()
     {
-        return $this->consultaTemas($this->getIdCurso());
+        return consultaTemas($this->getIdCurso());
         //return $this->lista_temas;
     }
 
@@ -462,6 +462,7 @@ class CURSO extends CONEXION_M implements I_CURSO
         return $datos;
     }
 
+    //En el actualiza no se actualiza la verificacion del profesor que acredita, esta sera acreditada por el admin en la clase admin
     function actualizaCurso($curso)
     {
         $query = "UPDATE `curso` SET 
@@ -509,4 +510,14 @@ class CURSO extends CONEXION_M implements I_CURSO
     /*******************************************************************************
      * Terminan Funciones de Interfaz
      *******************************************************************************/
+
+
+    /*
+     * Otras funciones
+     * */
+
+    protected function consultaTemas(){
+        include_once "./TEMAS.php";
+        return TEMAS::class(consultaTemas($this->getIdCurso()));
+    }
 }
