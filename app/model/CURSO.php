@@ -1,7 +1,8 @@
 <?php
 
 include_once "DOCS_SOLICITADOS_CURSO.php";
-
+include_once "TEMAS.php";
+include_once "I_CURSO.php";
 class CURSO extends CONEXION_M implements I_CURSO
 {
     private $id_curso;
@@ -406,17 +407,10 @@ class CURSO extends CONEXION_M implements I_CURSO
     /*******************************************************************************
      * Terminan Getters and Setters
      *******************************************************************************/
+
     /*******************************************************************************
      * Inician Funciones de Interfaz
      *******************************************************************************/
-    public function consultaTemas($id_curso)
-    {
-        $this->connect();
-        $temas = $this-> getData("SELECT * FROM `temas` WHERE `id_curso_fk` = ".$id_curso." ORDER BY `temas`.`id_tema` ASC ");
-        $this->close();
-        return $temas;
-        // TODO: Implement consultaTemas() method.
-    }
     public function consultaGroupKeys($id_curso)
     {
         $this->connect();
@@ -437,30 +431,60 @@ class CURSO extends CONEXION_M implements I_CURSO
 
     }
 
-    function registraCurso($curso)
+    function registraCurso()
     {
-        //INSERT INTO `curso` (`id_curso`, `id_profesor_admin_acredita`, `id_profesor_autor`, `codigo`, `nombre_curso`, `dirigido_a`, `objetivo`, `descripcion`, `no_sesiones`, `antecedentes`, `aprobado`, `costo_sugerido`, `link_temario_pdf`, `fecha_creacion`, `fecha_acreditacion`, `banner_img`, `tipo_curso`) VALUES (NULL, NULL, '1', 'PROGRA', '', 'LAUMNOS', 'ONJ', 'DESC', '15', 'ANTC', '0', '1300', 'LINKTEMA', '2021-05-18 00:00:00', NULL, 'BAN', '1');
-        // TODO: Implement registraCurso() method.
+        $query = "INSERT INTO `curso` (
+                    `id_curso`, 
+                    `id_profesor_admin_acredita`,
+                    `id_profesor_autor`,
+                    `codigo`, 
+                    `nombre_curso`, 
+                    `dirigido_a`, 
+                    `objetivo`, 
+                    `descripcion`, 
+                    `no_sesiones`, 
+                    `antecedentes`, 
+                    `aprobado`, 
+                    `costo_sugerido`, 
+                    `link_temario_pdf`, 
+                    `fecha_creacion`, 
+                    `fecha_acreditacion`, 
+                    `banner_img`, 
+                    `tipo_curso`) VALUES 
+                    (NULL, NULL, '".$this->getIdProfesorAutor()."', '".$this->getCodigo()."', 
+                    '".$this->getNombreCurso()."', '".$this->getDirigidoA()."', '".$this->getObjetivo()."', 
+                    '".$this->getDescripcion()."', '".$this->getNoSesiones()."', '".$this->getAntecedentes()."', 
+                    '0', '".$this->getCostoSugerido()."', '".$this->getLinkTemarioPdf()."', 
+                    '".date('Y-m-d H:i:s')."', NULL, '".$this->getBannerImg()."', '".$this->getTipoCurso()."')";
+        $this->connect();
+        $datos = $this->executeInstruction($query);
+        $this->close();
+        return $datos;
     }
 
     function actualizaCurso($curso)
     {
-        // TODO: Implement actualizaCurso() method.
-    }
-
-    function agregaTema($tema)
-    {
-        // TODO: Implement agregaTema() method.
-    }
-
-    function quitarTema($idTema)
-    {
-        // TODO: Implement quitarTema() method.
-    }
-
-    function actualizaTema($tema)
-    {
-        // TODO: Implement actualizaTema() method.
+        $query = "UPDATE `curso` SET 
+                    `id_profesor_admin_acredita` = '".$this->getIdProfesorAdminAcredita()."', 
+                    `id_profesor_autor` = '".$this->getIdProfesorAutor()."', 
+                    `codigo` = '".$this->getCodigo()."', 
+                    `nombre_curso` = '".$this->getNombreCurso()."', 
+                    `dirigido_a` = '".$this->getDirigidoA()."', 
+                    `objetivo` = '".$this->getObjetivo()."', 
+                    `descripcion` = '".$this->getDescripcion()."', 
+                    `no_sesiones` = '".$this->getNoSesiones()."', 
+                    `antecedentes` = '".$this->getAntecedentes()."', 
+                    `aprobado` = '".$this->getAprobado()."', 
+                    `costo_sugerido` = '".$this->getCostoSugerido()."', 
+                    `link_temario_pdf` = '".$this->getLinkTemarioPdf()."', 
+                    `fecha_acreditacion` = '".($this->getAprobado() == "1" ? date('Y-m-d H:i:s') : NULL)."', 
+                    `banner_img` = '".$this->getBannerImg()."', 
+                    `tipo_curso` = '".$this->getTipoCurso()."' 
+                    WHERE `curso`.`id_curso` = '".$this->getIdCurso()."'";
+        $this->connect();
+        $datos = $this->executeInstruction($query);
+        $this->close();
+        return $datos;
     }
 
     function agregaKeywordGrupo($keyword)
@@ -468,7 +492,7 @@ class CURSO extends CONEXION_M implements I_CURSO
         // TODO: Implement agregaKeywordGrupo() method.
     }
 
-    function quitarKerword($id_key, $id_curso)
+    function quitarKeyword($id_key, $id_curso)
     {
         // TODO: Implement quitarKerword() method.
     }
