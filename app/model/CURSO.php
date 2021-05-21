@@ -410,13 +410,6 @@ class CURSO extends CONEXION_M implements I_CURSO
     /*******************************************************************************
      * Inician Funciones de Interfaz
      *******************************************************************************/
-
-
-    public function consultaCursos($filtro)
-    {
-        // TODO: Implement consultaCursos() method.
-    }
-
     public function consultaGroupKeys($id_curso)
     {
         $this->connect();
@@ -457,7 +450,7 @@ class CURSO extends CONEXION_M implements I_CURSO
                     `fecha_acreditacion`, 
                     `banner_img`, 
                     `tipo_curso`) VALUES 
-                    ('".$this->getIdCurso()."', NULL, '".$this->getIdProfesorAutor()."', '".$this->getCodigo()."', 
+                    (NULL, NULL, '".$this->getIdProfesorAutor()."', '".$this->getCodigo()."', 
                     '".$this->getNombreCurso()."', '".$this->getDirigidoA()."', '".$this->getObjetivo()."', 
                     '".$this->getDescripcion()."', '".$this->getNoSesiones()."', '".$this->getAntecedentes()."', 
                     '0', '".$this->getCostoSugerido()."', '".$this->getLinkTemarioPdf()."', 
@@ -532,5 +525,4 @@ class CURSO extends CONEXION_M implements I_CURSO
         include_once "./TEMAS.php";
         return TEMAS::class(consultaTemas($this->getIdCurso()));
     }
-
 }

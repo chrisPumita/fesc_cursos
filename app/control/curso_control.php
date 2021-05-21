@@ -7,8 +7,6 @@ function registraCurso( $id_profesor_autor, $codigo_curso, $nombre_curso, $dirig
                         $costo_sugerido_curso, $link_temario_curso, $bannerImg_curso)
 {
     $curso = new CURSO();
-    $key = date('YmdHis');
-    $curso->setIdCurso($key);
     $curso->setIdProfesorAutor($id_profesor_autor);
     $curso->setCodigo($codigo_curso);
     $curso->setNombreCurso($nombre_curso);

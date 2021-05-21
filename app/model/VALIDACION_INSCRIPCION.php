@@ -123,17 +123,4 @@ class VALIDACION_INSCRIPCION
         $this->nota = $nota;
     }
 
-    function validaInscripcion($id_inscripcion,$id_admin){
-        include_once "CONEXION_M.php";
-        $sql = "INSERT INTO `validacion_inscripcion` (
-        `id_inscripcion_fk`, `id_profesor_admin_fk`, `fecha_validacion`, `fecha_pago`, `monto_pago_realizado`, `descripcion`, `notas`) 
-        VALUES (
-        '".$id_inscripcion."', '".$id_admin."', '".date('Y-m-d H:i:s')."', '".$this->getFechaPago()."', 
-        '".$this->getMontoPagoRealizado()."', '".$this->getDescripcion()."', '".$this->getNota()."');";
-        $this->connect();
-        $result = $this->executeInstruction($sql);
-        $this->close();
-        return $result;
-    }
-
 }
