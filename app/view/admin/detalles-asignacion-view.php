@@ -238,14 +238,15 @@
                                     <table class="table table-striped bg-light">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Hora</th>
-                                                <th scope="col">Lunes</th>
-                                                <th scope="col">Martes</th>
-                                                <th scope="col">Miercoles</th>
-                                                <th scope="col">Jueves</th>
-                                                <th scope="col">Viernes</th>
-                                                <th scope="col">Sábado</th>
-                                                <th scope="col"></th>
+                                                <th scope="col" class="col-hora">Hora</th>
+                                                <th scope="col" class="col-dia">Lunes</th>
+                                                <th scope="col" class="col-dia">Martes</th>
+                                                <th scope="col" class="col-dia">Miercoles</th>
+                                                <th scope="col" class="col-dia">Jueves</th>
+                                                <th scope="col" class="col-dia">Viernes</th>
+                                                <th scope="col" class="col-dia">Sábado</th>
+                                                <th scope="col" class="col-dia">Domingo</th>
+                                                <th scope="col col-accion" class="col-accion"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -255,6 +256,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td>A21</td>
+                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td>
@@ -270,6 +272,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td>B-32</td>
+                                                <td></td>
                                                 <td></td>
                                                 <td>
                                                     <!-- BOTON ACCIONES -->
@@ -315,14 +318,15 @@
                                     <table class="table table-striped bg-light">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Hora</th>
-                                                <th scope="col">Lunes</th>
-                                                <th scope="col">Martes</th>
-                                                <th scope="col">Miercoles</th>
-                                                <th scope="col">Jueves</th>
-                                                <th scope="col">Viernes</th>
-                                                <th scope="col">Sábado</th>
-                                                <th scope="col"></th>
+                                                <th scope="col" class="col-hora">Hora</th>
+                                                <th scope="col" class="col-dia">Lunes</th>
+                                                <th scope="col" class="col-dia">Martes</th>
+                                                <th scope="col" class="col-dia">Miercoles</th>
+                                                <th scope="col" class="col-dia">Jueves</th>
+                                                <th scope="col" class="col-dia">Viernes</th>
+                                                <th scope="col" class="col-dia">Sábado</th>
+                                                <th scope="col" class="col-dia">Domingo</th>
+                                                <th scope="col col-accion" class="col-accion"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -332,6 +336,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td>ZOOM</td>
+                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td>
@@ -344,6 +349,7 @@
                                                 <td>13:00</td>
                                                 <td></td>
                                                 <td>CLASSROOM</td>
+                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td>CLASSROOM</td>

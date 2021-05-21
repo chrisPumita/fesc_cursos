@@ -374,3 +374,10 @@ a {
     background-size: cover;
     background-position: center;
 }
+
+.col-hora, .col-dia{
+    width: 10%;
+}
+.col-accion{
+    width: 20%;
+}
