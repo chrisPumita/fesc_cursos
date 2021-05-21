@@ -37,7 +37,10 @@ a:hover{
 }
 
 .btn{
-    border: 2em !important;
+    /* border: 2em !important; */
+    max-width: 200px !important;
+    min-width: auto;
+    
 }
 .btn-primary{
     background-color: var(--primary) !important;

@@ -19,34 +19,28 @@ include("./view/includes/header.php");
     <section class="container py-3 ">
         <div class="row">
             <div class="col-lg-9">
-                <h2 class="font-weight-bold mb-0">PANEL DE PROFESORES</h2>
+                <h2 class="font-weight-bold mb-0">Panel de Profesores</h2>
             </div>
-            <div class="col-lg-3">
-                <button class="btn btn-primary w-100 aling-self-center" data-toggle='modal' data-target='#modal1'>Nuevo</button>
+            <div class="col-lg-3 text-right">
+                <button class="btn btn-primary w-100" data-toggle='modal' data-target='#modal1'>Nuevo</button>
             </div>
         </div>
-        <div class="row">
+        <div class="row pb-3">
             <div class="col-lg-12">
                 <div class="callout callout-second">
                     <h4>Crear una nueva cuenta de profesor</h4>
                     En este apartado puede crear cuentas de profesores y/o autorizar las cuentas generadas a partir del formulario.
-                    <br>Revise la información y asegurese de verificar bien los datos de las solicitudes.</br>
+                    Revise la información y asegurese de verificar bien los datos de las solicitudes.
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="container py-3 bg-grey col-lg-12">
-                <h3 class="font-weight-bold mb-0">ENVIAR SOLICITUD DE INSCRIPCIÓN</h3>
-            </div>
-        </div>
-        <br>
+
         <div class="container bg-white">
-            </br>
-            <div class="row align-items-center justify-content-center">
+            <div class="row align-items-center justify-content-center pb-2">
                 <div class="col-lg-1">
                     <i class="icon ion-md-mail paleta"></i>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-5 py-3">
                     <h4>Envíar invitación de registro</h4>
                     <p>Envíe la invitación al profesor, para que éste pueda registrarse en el sistema.</p>
                 </div>
@@ -55,11 +49,11 @@ include("./view/includes/header.php");
                 </div>
                 <div class="col-lg-2">
                     <button class="btn btn-primary w-100 aling-self-center">Envíar</button>
-                </div>
             </div>
         </div>
     </section>
     <!-- FIN ENCABEZADO DE DETALLES-->
+
     <!--INICIA SECCION DEL MODAL 1: CREACIÓN DE CUENTA DE PROFESOR-->
     <div class="container">
         <div class="modal" tabindex="-1" id="modal1">
@@ -143,8 +137,9 @@ include("./view/includes/header.php");
         </div>
     </div>
     <!--FIN SECCION DEL MODAL 1: CREACIÓN DE CUENTA DE PROFESOR-->
-    <!--INICIA SECCION DE HISTORIAL DE CURSOS EN EL SISTEMA-->
-    <section class="container py-3 bg-grey">
+
+    <!--INICIA SECCION DE LISTA PROFESORES-->
+    <section class="container py-2 bg-grey">
         <div class="row">
             <div class="col-lg-12 py-3">
                 <h3>Listado de profesores registrados en el sistema</h3>
@@ -449,7 +444,7 @@ include("./view/includes/header.php");
             </div>
         </div>
     </section>
-    <!-- FIN SECCION CURSOS ACTUALES -->
+    <!-- FIN SECCION LISTA PROFESORES-->
 </div>
 <!--FIN contenido dinamico-->
             <?php include("./view/includes/footer.php");?>
