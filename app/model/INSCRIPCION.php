@@ -1,7 +1,8 @@
 <?php
 
-
-class INSCRIPCION
+include_once "I_INSCRIPCION.php";
+include_once "CONEXION_M.php";
+class INSCRIPCION extends CONEXION_M implements I_INSCRIPCION
 {
     private $id_inscripcion;
     private $id_alumno_fk;
@@ -18,6 +19,11 @@ class INSCRIPCION
 
     /* ASOCIACION de cla clase VALIDACION_INSCRIPCION*/
     private $VALIDACION;
+
+
+    /*******************************************************************************
+     * INICIAN Getters and Setters
+     *******************************************************************************/
 
     /**
      * @return mixed
@@ -210,5 +216,98 @@ class INSCRIPCION
         $this->lista_archivos = $lista_archivos;
     }
 
+    /*******************************************************************************
+     * Terminan Getters and Setters
+     *******************************************************************************/
+
+    /*******************************************************************************
+     * Inician Funciones implenebtadas de la Interface
+     *******************************************************************************/
+
+    function consultaInscripciones($filtro)
+    {
+        $sql = "SELECT `id_inscripcion`, `id_alumno_fk`, 
+               `id_asignacion_fk`, `pago_confirmado`, `autorizacion_inscripcion`, 
+               `validacion_constancia`, `fecha_solicitud`, `fecha_conclusion`, `notas`, `estatus` 
+                FROM `inscripcion` ". $filtro;
+    //Abro conexion de consulta a BD
+        $this->connect();
+        $result = $this->getData();
+        $this->close();
+        return $result;
+    }
+
+    function registraInscripcion($id_alumno,$id_asig)
+    {
+         $sql = "INSERT INTO `inscripcion` (`id_inscripcion`, `id_alumno_fk`, `id_asignacion_fk`, 
+                           `pago_confirmado`, `autorizacion_inscripcion`, `validacion_constancia`, `fecha_solicitud`, `fecha_conclusion`, `notas`, `estatus`) 
+            VALUES ('".$this->getIdInscripcion()."', '".$id_alumno."', '".$id_asig."', '0', '0', '0',
+             '".date('Y-m-d H:i:s')."', '".$this->getFechaConclusion()."', '".$this->getNotas()."', '1')";
+
+        $this->connect();
+        $result = $this->executeInstruction($sql);
+        $this->close();
+        return $result;
+    }
+
+    //envio true o false
+    //confirmaPago(true);
+    //confirmaPago(false);
+    function confirmaPago($confirmacion)
+    {
+        $sql = "UPDATE `inscripcion` SET 
+                         `pago_confirmado` = '".($confirmacion?1:0)."', 
+                         `autorizacion_inscripcion` = '".($confirmacion?1:0)."', 
+                         `notas`= CONCAT(notas,' ', '".$this->getNotas()."') 
+                WHERE `inscripcion`.`id_inscripcion` = ". $this->getIdInscripcion();
+
+        $this->connect();
+        $result = $this->executeInstruction($sql);
+        $this->close();
+        return $result;
+    }
+
+    function validaAutorizacion($id_admin,$clave_confirm,$fechaPago,$monto,$desc,$notas)
+    {
+        // incluir el control de validacion
+        //  control me autoriza inluid control_validacion
+        // validarInscip (id,clve)
+        //  return SI / NO
+
+
+        include_once "VALIDACION_INSCRIPCION.php";
+        $obj_valida = new VALIDACION_INSCRIPCION();
+        $obj_valida->setFechaPago($fechaPago);
+        $obj_valida->setMontoPagoRealizado($monto);
+        $obj_valida->setDescripcion($desc);
+        $obj_valida->setNota($notas);
+
+        return $obj_valida->validaInscripcion($this->getIdInscripcion(),$id_admin);
+    }
+
+    function inscribeEnActa()
+    {
+        // TODO: Implement inscribeEnActa() method.
+    }
+
+    function modificaEstado($id_inscripcion, $estado_insc)
+    {
+        // TODO: Implement modificaEstado() method.
+    }
+
+    function eliminaRegistroInscripcion($id_inscripcion)
+    {
+        // TODO: Implement eliminaRegistroInscripcion() method.
+    }
+
+
+    /*******************************************************************************
+     * Terminan Funciones implementadas de la Interface
+     *******************************************************************************/
+
+
+    /*******************************************************************************
+     * Inician Otras funciones
+     *******************************************************************************/
 
 }
