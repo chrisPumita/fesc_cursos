@@ -14,19 +14,17 @@
                     <!--Inicio contenido dinamico-->
                     <div class="componet-dinamico bg-grey">
                         <!--INICIA ENCABEZADO DETALLES USUARIO BIENVENIDA-->
-                        <section class="container py-3 bg-grey">
-                            <div class = "col-lg-12">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                        <li class="breadcrumb-item"><a href="#">Profesores</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Detalles del Profesor</li>
-                                    </ol>
-                                </nav>
-                            </div>
+                        <section class="container bg-grey">                            
                             <div class="row">
-                                <div class="col-lg-12">
-                                    <h2 class="font-weight-bold mb-0 ml-3">Editar datos de cuenta de profesor</h2>
+                                <div class = "col-lg-12">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Profesores</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Detalles del Profesor</li>
+                                        </ol>
+                                    </nav>
+                                    <h2 class="font-weight-bold mb-0">Detalles del Profesor</h2>
                                 </div>
                             </div>
                             <div class="row py-2">
@@ -48,14 +46,10 @@
                             </div>
                         </section>
                         <!-- FIN ENCABEZADO DETALLES USUARIO BIENVENIDA -->
-                        <!--INICIA LISTADO DE PROFESORES-->
+
+                        <!--INICIA FORMULARIO EDICION-->
                         <section class="container py-2 bg-grey">
                             <div class="container py-2 bg-white">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <h3 class="font-weight-bold mb-2 mt-3">Listado de profesores registrados en el sistema</h3>
-                                    </div>
-                                </div>
                                 <div class="row g-3 align-items-center">
                                     <div class="col-lg-3">
                                         <label class="col-form-label font-weight-bold">Abreviación: </label>
@@ -136,16 +130,17 @@
                                 </div>
                             </div>
                         </section>
-                        <!-- FIN LISTADO DE PROFESORES-->
+                        <!-- FIN FORMULARIO EDICION-->
+                        
                         <!-- SECCION DE ACCESOS RAPIDOS -->
                         <section class="container bg-grey">
                             <div class="row">
                                 <div class="col-lg-12 py-3">
-                                    <h3 class="font-weight-bold ml-3">Accesos Rápidos</h3>
+                                    <h3>Accesos Rápidos</h3>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-6 my-3">
+                                <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title font-weight-bold">Reestablecer contraseña</h5>
@@ -154,7 +149,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 my-3">
+                                <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title font-weight-bold">Asignar grupo</h5>
@@ -173,6 +168,7 @@
                             </div>
                         </section>
                         <!-- FIN DE SECCION ACCESOS RAPIDOS -->
+
                         <!--INICIA SECCION HISTORIAL DE GRUPOS ASOCIADOS-->
                         <section class="container bg-grey">
                             <div class="row">
@@ -181,10 +177,10 @@
                                         <div class="card-body">
                                             <div class="mx-auto">
                                                 <div class="row">
-                                                    <div class="col-lg-9 mt-2 mb-2">
-                                                        <h3 class="font-weight-bold ml-3">Historial de grupos asociados a este profesor</h3>
+                                                    <div class="col-lg-9">
+                                                        <h3>Historial de grupos asociados a este profesor</h3>
                                                     </div>
-                                                    <div class="col-lg-3 mt-2 mb-2">
+                                                    <div class="col-lg-3">
                                                         <select class="form-control" id="exampleFormControlSelect1">
                                                             <option>Todos</option>
                                                             <option>Presencial</option>
@@ -288,7 +284,7 @@
                                                 </div>
                                                 <!-- PAGINADOR DE TABLA -->
                                                 <div class="row">
-                                                    <div class="col-lg-12 my-2">
+                                                    <div class="col-lg-12">
                                                         <nav aria-label="Page navigation example">
                                                             <ul class="pagination justify-content-center">
                                                                 <li class="page-item disabled">
