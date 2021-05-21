@@ -17,10 +17,10 @@
                         <section class="container py-3 bg-grey">
                             <div class="row">
                                 <div class="col-lg-9">
-                                    <h2 class="font-weight-bold mb-0">PANEL CURSOS</h2>
+                                    <h2 class="font-weight-bold mb-0">Panel de Cursos</h2>
                                 </div>
-                                <div class="col-lg-3">
-                                    <button class="btn btn-primary w-100 aling-self-center">Nuevo</button>
+                                <div class="col-lg-3 text-right">
+                                    <button class="btn btn-primary w-100">Nuevo</button>
                                 </div>
                             </div>
                             <div class="row">
@@ -37,7 +37,7 @@
                         <!--INICIA SECCION DE HISTORIAL DE CURSOS EN EL SISTEMA-->
                         <section class="container py-3 bg-grey">
                             <div class="row">
-                                <div class="col-lg-12 py-3">
+                                <div class="col-lg-12">
                                     <h3>Historial de Cursos en el sistema</h3>
                                 </div>
                             </div>

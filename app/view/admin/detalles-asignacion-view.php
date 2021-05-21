@@ -88,25 +88,31 @@
                             <!-- FIN ESTADISTICAS-->
                         </section>
                         <!-- FIN SECCION ENCABEZADO Y ESTA -->
+
+                        <!-- INICIA IMAG DEGRADADO -->
                         <section>
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-md-12 text-center">
-                                    <div class="img" style="background-image: url(./assets/img/reposit-img/curso-excel.jpg); ">
-                                        <div class="overlay"></div>
-                                        <h4 class="text-light text-left"><strong> Grupo 2210 Paginas Web Sem. 2021-1 Gen 15</strong></h4>
-                                        <h5 class="text-secondary text-left">Profesor: <strong> Martha Areyano Felix</strong></h5>
-                                        <h5 class="text-secondary text-left">Departemento de Cómputo</h5>
-                                        <h5 class="text-secondary text-left">Inicio:<strong> 5 de Mayo de 2021</strong></h5>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-12 text-center">
+                                        <div class="img" style="background-image: url(./assets/img/reposit-img/curso-excel.jpg); ">
+                                            <div class="overlay"></div>
+                                            <h4 class="text-light text-left"><strong> Grupo 2210 Paginas Web Sem. 2021-1 Gen 15</strong></h4>
+                                            <h5 class="text-secondary text-left">Profesor: <strong> Martha Areyano Felix</strong></h5>
+                                            <h5 class="text-secondary text-left">Departamento de Cómputo</h5>
+                                            <h5 class="text-secondary text-left">Inicio:<strong> 5 de Mayo de 2021</strong></h5>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         </section>
+                        <!-- FIN IMAG DEGRADADO -->
+
+                        <!-- SECCION CALLOUT IMPORTANTE Y DETALLES-->
                         <section class="container bg-grey">
                             <div class="card bg-grey estadisticas">
                                 <div class="card-body py-1">
-                                    <div class="row"> <!-- DETALLE DEL CURSO CALLOUT -->
+                                    <div class="row">
+                                        <!-- DETALLE DEL CURSO CALLOUT -->
                                         <div class="col-lg-12">
                                             <div class="callout callout-second">
                                                 <h4>Detalles del curso</h4>
@@ -114,7 +120,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <!-- TARJETA DE INFO DEL CURSO -->
                                         <div class="col-sm-6 py-2">
@@ -125,7 +130,6 @@
                                                             <h5><strong>Creado por: </strong>Juan Perez Sanchez</h5>
                                                             <p>15 de Mayo de 2020</p>
                                                         </div>
-
                                                         <div class="px-1">
                                                             <div id="accordion">
                                                                 <div class="card">
@@ -138,7 +142,7 @@
                                                                     </div>
                                                                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                                                         <div class="card-body">
-                                                                        <h6><strong>Dirigido a: </strong> Estudiantes</h6>
+                                                                            <h6><strong>Dirigido a: </strong> Estudiantes</h6>
                                                                             <h6><strong>Modalidad: </strong> A distancia</h6>
                                                                             <h6><strong>Cupo: </strong>30</h6>
                                                                             <h6><strong>Sesiones: </strong> 20</h6>
@@ -173,31 +177,30 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>                                                                   
-                                                        </div>                
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="mx-auto py-2">
-                                                    <a href=""><button class="btn btn-primary btn-block" type="button">Editar información</button></a> 
-                                                    <hr> 
+                                                        <a href=""><button class="btn btn-primary btn-block" type="button">Editar información</button></a> 
+                                                        <hr>
                                                         <h6><strong>PDF del temario descargable</strong></h6>
                                                         <div class="row">
                                                             <div class="col-md-4">
                                                                 <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-download"></i> Descargar</a>
                                                             </div>
                                                             <div class="col-md-4">
-                                                            <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-cloud"></i> Subir</a>
+                                                                <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-cloud"></i> Subir</a>
                                                             </div>
                                                             <div class="col-md-4">
-                                                            <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-eye"></i> Ver</a>
+                                                                <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-eye"></i> Ver</a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>                    
+                                            </div>
                                         </div>
-
                                         <!-- TARJETA DE BANNER -->
-                                        <div class="col-sm-6 py-2">  
+                                        <div class="col-sm-6 py-2">
                                             <div class="">
                                                 <div class="card">
                                                     <img src="http://www.rrhhdigital.com/userfiles/CURSO-EXCEL-RRHHDIGITAL.jpg" class="card-img-top" alt="...">
@@ -215,36 +218,270 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- INICIO TARJETA DETALLES APROBACION -->
-                                            <div class="row">
-                                                <div class="container">
-                                                    <div class="">
-                                                        <div class="callout callout-primary">
-                                                            <h5>Detalles de Aprobación</h5>
-                                                            <div class="d-flex">
-                                                                <div class="m-auto">
-                                                                    <img src="../../assets/img/ok.svg" width="60" alt="svg ok">
-                                                                </div>
-                                                                <div class="m-auto">
-                                                                    <h6>Aprobado por:</h6>
-                                                                    <h6><strong> Felipe Moran Suarez</strong></h6>
-                                                                    <h6>Jefe de Departamento de Informática</h6>
-                                                                </div>
-                                                            </div>
-                                                            <div class="m-auto">
-                                                                <a href="#" class="btn btn-danger btn-block">Inhabilitar</a>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- FIN TARJETA DETALLES APROBACION -->
                                         </div>
+                                        <!-- FIN TARJETA BANNER -->
                                     </div>
-                                </div>        
+                                </div>
+                            </div>                        
+                        </section>
+                        <!-- FIN SECCION CALLOUT IMPORTANTE Y DETALLES -->
+
+                        <!-- INICIO TABLA HORARIO PRESENCIAL -->
+                        <section class="container py-3 bg-grey">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h3><strong>Horario Presencial</strong></h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 overflow-auto">
+                                    <table class="table table-striped bg-light">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Hora</th>
+                                                <th scope="col">Lunes</th>
+                                                <th scope="col">Martes</th>
+                                                <th scope="col">Miercoles</th>
+                                                <th scope="col">Jueves</th>
+                                                <th scope="col">Viernes</th>
+                                                <th scope="col">Sábado</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>9:00</td>
+                                                <td>A21</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>A21</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <!-- BOTON ACCIONES -->
+                                                    <button class="btn btn-primary" type="button" >Modificar</button>
+                                                    <button class="btn btn-outline-danger border-2" type="button">Eliminar</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>13:00</td>
+                                                <td></td>
+                                                <td>B-32</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>B-32</td>
+                                                <td></td>
+                                                <td>
+                                                    <!-- BOTON ACCIONES -->
+                                                    <button class="btn btn-primary" type="button" >Modificar</button>
+                                                    <button class="btn btn-outline-danger" type="button" >Eliminar</button>
+                                                </td>
+                                            </tr>                                             
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- PAGINADOR DE TABLA -->
+                            <div class="row">
+                                <div class="col-lg-12 my-2">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Siguiente</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!-- FIN PAGINADOR -->
+                        </section>
+                        <!-- FIN TABLA HORARIO PRESENCIAL -->
+
+                        <!-- INICIO TABLA HORARIO VIRTUAL -->
+                        <section class="container bg-grey">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h3><strong>Horario Virutal</strong></h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 overflow-auto">
+                                    <table class="table table-striped bg-light">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Hora</th>
+                                                <th scope="col">Lunes</th>
+                                                <th scope="col">Martes</th>
+                                                <th scope="col">Miercoles</th>
+                                                <th scope="col">Jueves</th>
+                                                <th scope="col">Viernes</th>
+                                                <th scope="col">Sábado</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>9:00</td>
+                                                <td>ZOOM</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>ZOOM</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <!-- BOTON ACCIONES -->
+                                                    <button class="btn btn-primary" type="button" >Modificar</button>
+                                                    <button class="btn btn-outline-danger" type="button" >Eliminar</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>13:00</td>
+                                                <td></td>
+                                                <td>CLASSROOM</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>CLASSROOM</td>
+                                                <td></td>
+                                                <td>
+                                                    <!-- BOTON ACCIONES -->
+                                                    <button class="btn btn-primary" type="button" >Modificar</button>
+                                                    <button class="btn btn-outline-danger" type="button" >Eliminar</button>
+                                                </td>
+                                            </tr>                                             
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- PAGINADOR DE TABLA -->
+                            <div class="row">
+                                <div class="col-lg-12 my-2">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Siguiente</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!-- FIN PAGINADOR -->
+                        </section>
+                        <!-- FIN TABLA HORARIO VIRTUAL -->
+
+                        <!-- INICIO TABLA ALUMNOS INSCRITOS-->
+                        <section class="container py-3 bg-grey">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h3><strong>Alumnos Inscritos</strong></h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 overflow-auto">
+                                    <table class="table table-striped bg-light">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Matricula</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Pago</th>
+                                                <th scope="col">Constancia</th>
+                                                <th scope="col">Incripción</th>
+                                                <th scope="col">Estado</th>
+                                                <th scope="col">Cal.</th>
+                                                <th scope="col">Notas</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>316344483</td>
+                                                <td>Jennifer Morales Rosas</td>
+                                                <td>Acreditado</td>
+                                                <td>Pendiente</td>
+                                                <td>Acreditada</td>
+                                                <td>Activo</td>
+                                                <td>8</td>
+                                                <td>-------------------</td>
+                                                <td>
+                                                    <!-- BOTON ACCIONES -->
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                                        
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                            <button class="dropdown-item" type="button">Ficha de Insc.</button>
+                                                            <button class="dropdown-item" type="button">Generar Constancia</button>
+                                                            <button class="dropdown-item" type="button">Revisar Doc.</button>
+                                                            <button class="dropdown-item" type="button">Cancelar Insc.</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>316344483</td>
+                                                <td>Luis Bautista Miranda</td>
+                                                <td>Acreditado</td>
+                                                <td>Pendiente</td>
+                                                <td>Acreditada</td>
+                                                <td>Activo</td>
+                                                <td>10</td>
+                                                <td>-------------------</td>
+                                                <td>
+                                                    <!-- BOTON ACCIONES -->
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                                        
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                            <button class="dropdown-item" type="button">Ficha de Insc.</button>
+                                                            <button class="dropdown-item" type="button">Generar Constancia</button>
+                                                            <button class="dropdown-item" type="button">Revisar Doc.</button>
+                                                            <button class="dropdown-item" type="button">Cancelar Insc.</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>                                                                                      
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- PAGINADOR DE TABLA -->
+                            <div class="row">
+                                <div class="col-lg-12 my-2">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Siguiente</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!-- FIN PAGINADOR -->
+                            <!-- BOTON FINAL -->
+                            <div class="row">
+                                <div class="col text-right m-2 pb-4">
+                                    <button class="btn-lg btn-primary">Descargar</button>
+                                </div> 
                             </div>
                         </section>
+                        <!-- FIN TABLA ALUMNOS INSCRITOS-->
+
                     </div>
                     <!--FIN contenido dinamico-->
                     <?php include("./view/includes/footer.php");?>
