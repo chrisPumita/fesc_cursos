@@ -1,17 +1,54 @@
 <?php
 /* ------------------HORARIOS_PRE FUNCIONES----------------------- */
-function consultaAulas()
+      //   CONSULTA TODAS LAS AULAS
+function consultaAulas($filtro)
 {
-    include_once "../model/HORARIO_CLASE_P.php";
-    $obj_horarioP = new HORARIO_CLASE_P();
-    $result=$obj_horarioP->ConsultaAulas();
+    include_once "../model/AULAS.php";
+    $obj_horarioP = new AULAS();
+    $result=$obj_horarioP->ConsultaAulas($filtro);
+    $json_data=json_encode($result);
+    return $json_data;
+}
+       // CONSULTA SOLO 1 AULA
+function consultaAula($id_aula){
+    include_once "../model/AULAS.php";
+    $obj_horarioP = new AULAS();
+    $result=$obj_horarioP->ConsultarAula($id_aula);
     $json_data=json_encode($result);
     return $json_data;
 }
 
-function creaAula(){
-    include "../model/AULAS.php";
+function creaAula($edificio,$aula,$campus,$cupo,$estadoAula){
+    include_once "../model/AULAS.php";
+    $obj_aula=new AULAS();
+    //`id_aula`, `edificio`, `aula`, `campus`, `cupo`, `estado`
+    $obj_aula->setEdificio($edificio);
+    $obj_aula->setAula($aula);
+    $obj_aula->setCampus($campus);
+    $obj_aula->setCupo($cupo);
+    $obj_aula->setEstadoAula($estadoAula);
+    return $obj_aula->crearNuevaAula() ? "Se creó una nueva Aula" :"Error al crear una nueva Aula";
 
+}
+
+function editaAula($id_aula,$edificio,$aula,$campus,$cupo,$estadoAula){
+    include_once "../model/AULAS.php";
+    $obj_aula=new AULAS();
+    //`id_aula`, `edificio`, `aula`, `campus`, `cupo`, `estado`
+    $obj_aula->setIdAula($id_aula);
+    $obj_aula->setEdificio($edificio);
+    $obj_aula->setAula($aula);
+    $obj_aula->setCampus($campus);
+    $obj_aula->setCupo($cupo);
+    $obj_aula->setEstadoAula($estadoAula);
+    return $obj_aula->editaAula() ? "Se modificó una Aula" :"Error al modificar una  Aula";
+}
+
+
+function eliminaAula($id_aula){
+    include_once "../model/AULAS.php";
+    $obj_aula=new AULAS();
+    return $obj_aula->eliminarAula($id_aula) ? "Se elimino una Aula" :"Error al eliminar una  Aula";
 }
 
 function creaHorarioPre($idAsignacion,$idAula,$diasSem,$HoraInicio,$Duracion){
@@ -101,6 +138,23 @@ function VerHorarioPresencial($id_asignacion){
     $json_data=json_encode($result);
     return $json_data;
 }
+function consultaAsignaciones()
+{
+    include_once "../model/ASIGNACION_GRUPO.php";
+    $obj_asignacion = new ASIGNACION_GRUPO();
+    $result = $obj_asignacion->consultaAsignaciones();
+    $json_data = json_encode($result);
+    return $json_data;
+}
+
+function consultaAsignacion($id_grupo)
+{
+    include_once "../model/ASIGNACION_GRUPO.php";
+    $obj_asignacion = new ASIGNACION_GRUPO();
+    $result=$obj_asignacion->consultaAsignacion($id_grupo);
+    $json_data=json_encode($result);
+    return $json_data;
+}
 
 function creaAsignacion($id_grupo,$id_prof,$generacion,$semestre,$cede,$fInicio,$fFin,$fLimiteI,$fInicioActas,$fFinActas,$cupo,$costo,$descuento,$nivelDesc,$notas,$modalidad){
     include_once "../model/ASIGNACION_GRUPO.php";
@@ -160,9 +214,5 @@ function eliminaAsignacion($id_asignacion){
 
 }
 
-//////////////////////////////////////
-function eliminarArchivoPath($path){
-    include_once "../model/ARCHIVO.php";
-    $obj_archivo= new ARCHIVO();
-    return  $obj_archivo-> eliminaArchivoPath($path) == TRUE ? "Path eliminado" :"Error al eliminar el path";
-}
+
+

@@ -119,9 +119,14 @@ function editarArchivo($id_archivo,$id_docSol,$idInscripcion,$codigoDoc,$nameArc
 function eliminarArchivo($id_archivo){
     include_once "../model/ARCHIVO.php";
     $obj_archivo = new ARCHIVO();
-    echo $obj_archivo->eliminarArchivo($id_archivo) ? "Se eliminó el Archivo ":"Error al eliminar el Archivo";
+    return $obj_archivo->eliminarArchivo($id_archivo) ? "Se eliminó el Archivo ":"Error al eliminar el Archivo";
 }
 
+function eliminarArchivoPath($path){
+    include_once "../model/ARCHIVO.php";
+    $obj_archivo= new ARCHIVO();
+    return  $obj_archivo-> eliminaArchivoPath($path)  ? "Path eliminado" :"Error al eliminar el path";
+}
 
 //crear una carpeta en el repositorio de imagenes
 // primero verifica si no hay una carpeta ya creada (nombre folder: noInsc(id)

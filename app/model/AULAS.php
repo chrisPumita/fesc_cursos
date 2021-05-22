@@ -1,5 +1,5 @@
 <?php
-include_once "./CONEXION_M.php";
+include "CONEXION_M.php";
 class AULAS extends CONEXION_M
 {
 	private $id_aula;
@@ -7,7 +7,23 @@ class AULAS extends CONEXION_M
 	private $aula;
 	private $campus;
     private $cupo;
-    private $estad;
+    private $estadoAula;
+
+    /**
+     * @return mixed
+     */
+    public function getEstadoAula()
+    {
+        return $this->estadoAula;
+    }
+
+    /**
+     * @param mixed $estadoAula
+     */
+    public function setEstadoAula($estadoAula): void
+    {
+        $this->estadoAula = $estadoAula;
+    }
 
     /**
      * @return mixed
@@ -89,49 +105,71 @@ class AULAS extends CONEXION_M
         $this->cupo = $cupo;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getEstad()
-    {
-        return $this->estad;
-    }
 
-    /**
-     * @param mixed $estad
-     */
-    public function setEstad($estad): void
-    {
-        $this->estad = $estad;
-    }
 
-    function crearNuevaAula($parametros){
-
-        return true;
+    function crearNuevaAula(){
+        $query="INSERT INTO `aulas`(`id_aula`, `edificio`, `aula`, `campus`, `cupo`, `estado`) 
+                VALUES (NULL ,'".$this->getEdificio()."','".$this->getAula()."','".$this->getCampus()."','".$this->getCupo()."','".$this->getEstadoAula()."') ";
+        $this->connect();
+        $result = $this-> executeInstruction($query);
+        $this->close();
+        return $result;
     }
 
     function editaAula(){
-
+        $query="UPDATE `aulas` SET `edificio`='".$this->getEdificio()."',`aula`='".$this->getAula()."',`campus`='".$this->getCampus()."',
+        `cupo`='".$this->getCupo()."',`estado`='".$this->getEstadoAula()."' WHERE `id_aula`=".$this->getIdAula();
+        $this->connect();
+        $result = $this-> executeInstruction($query);
+        $this->close();
+        return $result;
     }
 
-    function eliminaAula($idAula){
-
+    function eliminarAula($idAula){
+        $query="DELETE FROM `aulas`  WHERE `id_aula`=".$idAula;
+        $this->connect();
+        $result = $this-> executeInstruction($query);
+        $this->close();
+        return $result;
     }
 
-    function ConsultaAulas()
+    function ConsultaAulas($tipo_filtro)
     {
+        //Defiunir Control de filtro
+
+        $filtro = "";
+        switch ($tipo_filtro){
+            case "1":
+                //Filtro por edificio
+                $filtro = "ORDER BY aulas.edificio asc  ";
+                break;
+            case "2":
+                //Filtro por campus
+                $filtro = "ORDER BY aulas.campus asc  ";
+                break;
+            default:
+                $filtro = "";
+                break;
+        }
         $this->connect();
         $datos = $this-> getData("SELECT horario_clase_presencial.id_horario_pres,horario_clase_presencial.dia_semana,
                                         horario_clase_presencial.hora_inicio,horario_clase_presencial.duracion,aulas.edificio,
                                         aulas.aula,aulas.campus,aulas.cupo,asignacion_grupo.id_asignacion,asignacion_grupo.id_grupo_fk 
                                         FROM `horario_clase_presencial`,`aulas`,`asignacion_grupo` 
                                             WHERE aulas.id_aula=horario_clase_presencial.id_aula_fk 
-                                              AND horario_clase_presencial.id_asignacion_fk=asignacion_grupo.id_asignacion");
+                                              AND horario_clase_presencial.id_asignacion_fk=asignacion_grupo.id_asignacion ".$filtro);
         $this->close();
         return $datos;
     }
 
-    function consultaAula($idHoraClase){
-        return 1;
+    function consultarAula($idHoraClase){
+        $query="SELECT au.* FROM aulas au, horario_clase_presencial hp WHERE au.id_aula=hp.id_aula_fk and hp.id_horario_pres=".$idHoraClase;
+        $this->connect();
+        $result = $this-> getData($query);
+        $this->close();
+        return $result;
     }
+
+
+
 }

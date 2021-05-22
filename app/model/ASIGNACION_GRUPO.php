@@ -423,7 +423,38 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
         return $datos;
     }
 
-
+    function consultaAsignacion($id_grupo){
+        $query="SELECT asig.id_asignacion,
+                           gp.grupo, 
+                           p.nombre,
+                           p.app,
+                           p.apm,
+                           pf.email,
+                           asig.generacion,
+                           asig.semestre,
+                           asig.fecha_inicio,
+                           asig.fecha_fin,
+                           asig.fecha_lim_inscripcion,
+                           asig.fecha_inicio_actas,
+                           asig.fecha_fin_actas,
+                           asig.cupo,
+                           asig.costo_real,
+                           asig.descuento,
+                           asig.notas,
+                           asig.modalidad  
+                    FROM asignacion_grupo asig, 
+                         profesor pf, 
+                         persona p,
+                         grupo gp 
+                    WHERE asig.id_profesor_fk=pf.id_profesor 
+                      AND pf.id_persona_fk=p.id_persona 
+                      AND asig.id_grupo_fk=gp.id_grupo
+                      AND gp.id_grupo=".$id_grupo;
+        $this->connect();
+        $datos = $this->getData($query);
+        $this->close();
+        return $datos;
+    }
     public function consultaAsignaciones()
     {
         $query = "SELECT asig.id_asignacion,
