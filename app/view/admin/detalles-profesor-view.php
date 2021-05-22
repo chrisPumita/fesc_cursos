@@ -50,84 +50,86 @@
                         <!--INICIA FORMULARIO EDICION-->
                         <section class="container py-2 bg-grey">
                             <div class="container py-2 bg-white">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-lg-3">
-                                        <label class="col-form-label font-weight-bold">Abreviación: </label>
+                                <form class="user needs-validation" id="frm-det-profesor" role="form" autocomplete="off" novalidate>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 mt-3 mb-1">
+                                            <label class="col-form-label font-weight-bold">Abreviación: </label>
+                                        </div>
+                                        <div class="col-lg-9 mt-3 mb-1">
+                                            <select class="form-control" id="abreviatura">
+                                                <option>Lic.</option>
+                                                <option>Mto.</option>
+                                                <option>Dr.</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="col-9 py-2">
-                                        <select class="form-control" id="abreviatura">
-                                            <option>Lic.</option>
-                                            <option>Mto.</option>
-                                            <option>Dr.</option>
-                                        </select>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 mb-1">
+                                            <label class="col-form-label font-weight-bold">Nombre(s): </label>  
+                                        </div>
+                                        <div class="col-lg-9 mb-1">
+                                            <input type="text" class="form-control" placeholder="Nombre(s)" aria-label="Nombres">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-lg-3">
-                                        <label class="col-form-label font-weight-bold">Nombre(s): </label>  
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 mb-1">
+                                            <label class="col-form-label font-weight-bold">Apellido Paterno: </label>  
+                                        </div>
+                                        <div class="col-lg-9 mb-1">
+                                            <input type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Primer Apellido">
+                                        </div>
                                     </div>
-                                    <div class="col-lg-9 py-2">
-                                        <input type="text" class="form-control" placeholder="Nombre(s)" aria-label="Nombres">
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 mb-1">
+                                            <label class="col-form-label font-weight-bold">Apellido Materno: </label>  
+                                        </div>
+                                        <div class="col-lg-9 mb-1">
+                                            <input type="text" class="form-control" placeholder="Apellido Materno" aria-label="Segundo Apellido">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-lg-3">
-                                        <label class="col-form-label font-weight-bold">Apellido Paterno: </label>  
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 mb-1">
+                                            <label class="col-form-label font-weight-bold">No. de Trabajador: </label>  
+                                        </div>
+                                        <div class="col-lg-9 mb-1">
+                                            <input type="text" class="form-control" placeholder="Número de Trabajador" aria-label="No. Trabajador">
+                                        </div>
                                     </div>
-                                    <div class="col-lg-9 py-2">
-                                        <input type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Primer Apellido">
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 mb-1">
+                                            <label class="col-form-label font-weight-bold">Teléfono: </label>  
+                                        </div>
+                                        <div class="col-lg-9 mb-1">
+                                            <input type="text" class="form-control" placeholder="5555555555" aria-label="Telefono">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-lg-3">
-                                        <label class="col-form-label font-weight-bold">Apellido Materno: </label>  
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 mb-1">
+                                            <label class="col-form-label font-weight-bold">Correo Electrónico: </label>  
+                                        </div>
+                                        <div class="col-lg-9 mb-1">
+                                            <input type="text" class="form-control" placeholder="ejemplo@dominio.com" aria-label="Correo">
+                                        </div>
                                     </div>
-                                    <div class="col-lg-9 py-2">
-                                        <input type="text" class="form-control" placeholder="Apellido Materno" aria-label="Segundo Apellido">
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 mb-1">
+                                            <label class="col-form-label font-weight-bold">Departamento: </label>
+                                        </div>
+                                        <div class="col-lg-9 mb-1">
+                                            <select class="form-control" id="depto">
+                                                <option>Informática</option>
+                                                <option>Matemáticas</option>
+                                                <option>Cómputo</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-lg-3">
-                                        <label class="col-form-label font-weight-bold">No. de Trabajador: </label>  
+                                    <div class="form-group row">
+                                        <div class="col-lg-9"></div>
+                                        <div class="col-lg-3 text-align-right">
+                                            <button class="btn btn-primary w-100 aling-self-center mt-2 mb-3 ml-5">Actualizar</button>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-9 py-2">
-                                        <input type="text" class="form-control" placeholder="Número de Trabajador" aria-label="No. Trabajador">
-                                    </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-lg-3">
-                                        <label class="col-form-label font-weight-bold">Teléfono: </label>  
-                                    </div>
-                                    <div class="col-lg-9 py-2">
-                                        <input type="text" class="form-control" placeholder="5555555555" aria-label="Telefono">
-                                    </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-lg-3">
-                                        <label class="col-form-label font-weight-bold">Correo Electrónico: </label>  
-                                    </div>
-                                    <div class="col-lg-9 py-2">
-                                        <input type="text" class="form-control" placeholder="ejemplo@dominio.com" aria-label="Correo">
-                                    </div>
-                                </div>
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-lg-3">
-                                        <label class="col-form-label font-weight-bold">Departamento: </label>
-                                    </div>
-                                    <div class="col-lg-9 py-2">
-                                        <select class="form-control" id="depto">
-                                            <option>Informática</option>
-                                            <option>Matemáticas</option>
-                                            <option>Cómputo</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-9"></div>
-                                    <div class="col-lg-3 text-align-right">
-                                        <button class="btn btn-primary w-100 aling-self-center mt-2 mb-3 ml-5">Actualizar</button>
-                                    </div>
-                                </div>
+                                </form>    
                             </div>
                         </section>
                         <!-- FIN FORMULARIO EDICION-->
