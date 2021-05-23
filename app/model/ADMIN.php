@@ -108,4 +108,15 @@ class ADMIN extends PROFESOR implements I_admin
         $this->close();
         return $datos;
     }
+//Busca una cuenta de un profesor que sea administrador
+    public function buscaCuentaAdmin($id_profesor_admin)
+    {
+        $sql = "SELECT `id_profesor_admin_fk`, `cargo`, `permisos`, `clave_confirmacion`, `estatus` 
+                FROM `administrador` WHERE `id_profesor_admin_fk` = '".$id_profesor_admin."' ";
+
+        $this->connect();
+        $datos = $this-> getData($sql);
+        $this->close();
+        return $datos;
+    }
 }

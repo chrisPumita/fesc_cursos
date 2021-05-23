@@ -123,6 +123,7 @@ class VALIDACION_INSCRIPCION
         $this->nota = $nota;
     }
 
+    //Llamado de control de verificacion
     function validaInscripcion($id_inscripcion,$id_admin){
         include_once "CONEXION_M.php";
         $sql = "INSERT INTO `validacion_inscripcion` (
