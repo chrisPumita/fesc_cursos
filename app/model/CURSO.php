@@ -410,6 +410,13 @@ class CURSO extends CONEXION_M implements I_CURSO
     /*******************************************************************************
      * Inician Funciones de Interfaz
      *******************************************************************************/
+
+
+    public function consultaCursos($filtro)
+    {
+        // TODO: Implement consultaCursos() method.
+    }
+
     public function consultaGroupKeys($id_curso)
     {
         $this->connect();
@@ -450,7 +457,7 @@ class CURSO extends CONEXION_M implements I_CURSO
                     `fecha_acreditacion`, 
                     `banner_img`, 
                     `tipo_curso`) VALUES 
-                    (NULL, NULL, '".$this->getIdProfesorAutor()."', '".$this->getCodigo()."', 
+                    ('".$this->getIdCurso()."', NULL, '".$this->getIdProfesorAutor()."', '".$this->getCodigo()."', 
                     '".$this->getNombreCurso()."', '".$this->getDirigidoA()."', '".$this->getObjetivo()."', 
                     '".$this->getDescripcion()."', '".$this->getNoSesiones()."', '".$this->getAntecedentes()."', 
                     '0', '".$this->getCostoSugerido()."', '".$this->getLinkTemarioPdf()."', 
@@ -496,18 +503,17 @@ class CURSO extends CONEXION_M implements I_CURSO
     {
         // TODO: Implement quitarKerword() method.
     }
-/*
-    function agregaDocumentoSol($documentoSolicitado,$obl)
-    {
-        include_once "DOCS_SOLICITADOS_CURSO.php";
-        $doc = new DOCS_SOLICITADOS_CURSO();
-        $doc ->setIdDocumento($documentoSolicitado);
-        $doc ->setIdCursoFk($this->getIdCurso());
-        $doc->setObligatorio($obl);
-
-        return $doc -> crearDocumentosSol()? "Se ha creado el documento":"Error al crear documento";
-    }
-*/
+    /*
+        function agregaDocumentoSol($documentoSolicitado,$obl)
+        {
+            include_once "DOCS_SOLICITADOS_CURSO.php";
+            $doc = new DOCS_SOLICITADOS_CURSO();
+            $doc ->setIdDocumento($documentoSolicitado);
+            $doc ->setIdCursoFk($this->getIdCurso());
+            $doc->setObligatorio($obl);
+            return $doc -> crearDocumentosSol()? "Se ha creado el documento":"Error al crear documento";
+        }
+    */
     function quitarDocumetoSolicitado($id_doc_solicitado, $id_curso)
     {
         // TODO: Implement quitarDocumetoSolicitado() method.
@@ -525,4 +531,5 @@ class CURSO extends CONEXION_M implements I_CURSO
         include_once "./TEMAS.php";
         return TEMAS::class(consultaTemas($this->getIdCurso()));
     }
+
 }

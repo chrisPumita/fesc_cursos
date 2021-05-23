@@ -3,6 +3,7 @@
 
 interface I_CURSO
 {
+    public function consultaCursos($filtro);
     //regresa una lista de grupos del curso
     public function consultaGrupos($id_curso);
 
@@ -18,7 +19,7 @@ interface I_CURSO
 
     function quitarKeyword($id_key,$id_curso);
 
-  //  function agregaDocumentoSol($documentoSolicitado, $obl);
+    //  function agregaDocumentoSol($documentoSolicitado, $obl);
 
     function quitarDocumetoSolicitado($id_doc_solicitado, $id_curso);
 
