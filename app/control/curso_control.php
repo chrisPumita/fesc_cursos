@@ -89,21 +89,21 @@ function actualizaTema($id_tema,$indice,$nombre,$resumen)
 //
 //* OTRAS FUNCIONES ADICIONALES*/
 function agregaDocumentoAlCurso($id_doc,$idCurso,$obl){
-    require_once "./documentos-control.php";
+    require_once "./documentos_control.php";
     return agregaDocumentoSol($id_doc,$idCurso,$obl);
 }
 
 function consultaDumentacion($id_curso){
-    require_once "./documentos-control.php";
+    require_once "./documentos_control.php";
     return consultaDocumentosDeCurso($id_curso);
 }
 
 function quitarDocumentoCurso($idDocSol){
-    require_once "./documentos-control.php";
+    require_once "./documentos_control.php";
     return remueveDocumentoCurso($idDocSol);
 }
 
 function cambiaObligacion($idDocSol,$estatus){
-    require_once "./documentos-control.php";
+    require_once "./documentos_control.php";
     return modificaObligacionDocSol($idDocSol,$estatus);
 }
