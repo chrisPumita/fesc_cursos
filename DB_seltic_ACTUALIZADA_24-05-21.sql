@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 16-05-2021 a las 23:19:01
--- Versión del servidor: 10.1.47-MariaDB-0+deb9u1
--- Versión de PHP: 7.4.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 24-05-2021 a las 07:26:47
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `SELTIC`
+-- Base de datos: `seltic`
 --
 
 -- --------------------------------------------------------
@@ -50,6 +50,14 @@ CREATE TABLE `administrador` (
   `estatus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`id_profesor_admin_fk`, `cargo`, `permisos`, `clave_confirmacion`, `estatus`) VALUES
+(1, 'Jefe', 1, 'dfkjhbikhjbikhasdd', 1),
+(2, 'Coordinador', 1, 'fgsdgdsfgfgd', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -72,6 +80,14 @@ CREATE TABLE `alumno` (
   `estatus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `alumno`
+--
+
+INSERT INTO `alumno` (`id_alumno`, `id_municipio`, `id_universidad`, `id_persona`, `matricula`, `nombre_uni`, `tipo_procedencia`, `carrera_especialidad`, `email`, `pw`, `fecha_registro`, `perfil_image`, `estatus`) VALUES
+(1, 15, 2, 20210517145526, '312260633', '', 1, 'Informatica', 'cesar.hpp96@hotmail.com', 'fd412178b6640dcca278604231bdf31b', '2021-05-17 14:55:26', '', 1),
+(2, 15, 2, 20210517185211, '12364HMCN', '', 1, 'Derecho', 'lucia@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', '2021-05-17 18:52:11', '', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -88,7 +104,7 @@ CREATE TABLE `archivo` (
   `path` varchar(100) NOT NULL,
   `fecha_creacion` datetime NOT NULL,
   `notas` varchar(100) NOT NULL,
-  `estado_revision` tinyint(1) NOT NULL DEFAULT '0',
+  `estado_revision` tinyint(1) NOT NULL DEFAULT 0,
   `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -204,6 +220,16 @@ CREATE TABLE `curso` (
   `tipo_curso` tinyint(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `curso`
+--
+
+INSERT INTO `curso` (`id_curso`, `id_profesor_admin_acredita`, `id_profesor_autor`, `codigo`, `nombre_curso`, `dirigido_a`, `objetivo`, `descripcion`, `no_sesiones`, `antecedentes`, `aprobado`, `costo_sugerido`, `link_temario_pdf`, `fecha_creacion`, `fecha_acreditacion`, `banner_img`, `tipo_curso`) VALUES
+(1, 1, 2, '001', 'Induccion al computo', 'Publico en general', 'Objetivo', 'Descripcion', 9, 'Ningun antecedente', 1, '550.00', 'link del temario', '2021-05-18 13:04:26', '2021-05-19 20:03:52', 'banner', 0),
+(2, NULL, 1, '002', 'Macros en Excel', 'Publico en general', 'Incursionar a las nuevas generaciones en las macros en excel', 'En este curso en alumno aprenderá a etc, etc, etc', 17, 'Conocimientos basicos en excel', 0, '1300.00', 'https://www.google.com', '2021-05-18 22:55:43', NULL, 'Imagen banner', 1),
+(3, NULL, 2, '003', 'Aspel NOI', 'Alumnado en general', 'Introduccion a ASPEL NOI', 'En este curso abarcaremos todas las funcionalidades con respecto a la nomina en una empresa con ASPEL NOI', 16, 'Ninguno', 0, '1640.00', 'www.link.com', '2021-05-19 13:57:09', NULL, 'imagen/banner', 1),
+(4, NULL, 1, '004', 'Diccionarios de datos', 'Publico en general', 'Dar a conocer las nuevas metodologias dentro de la programacion', 'Aqui va la descripcion del curso', 13, 'Conocimientos basicos en programacion', 0, '1150.00', 'https://www.link_temario_pdf.com.mx', '2021-05-19 20:58:23', NULL, 'Imagen y/o banner', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -214,6 +240,19 @@ CREATE TABLE `departamentos` (
   `id_depto` int(5) NOT NULL,
   `nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `departamentos`
+--
+
+INSERT INTO `departamentos` (`id_depto`, `nombre`) VALUES
+(1, 'Informatica'),
+(2, 'Contabilidad'),
+(3, 'IME'),
+(4, 'Veterinaria'),
+(5, 'Administracion'),
+(6, 'Agricola'),
+(7, 'ITSE');
 
 -- --------------------------------------------------------
 
@@ -297,17 +336,6 @@ INSERT INTO `estados` (`id_estado`, `clave`, `estado`, `abrev`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `group_key`
---
-
-CREATE TABLE `group_key` (
-  `id_curso_fk` int(10) NOT NULL,
-  `id_key_fk` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `grupo`
 --
 
@@ -361,7 +389,7 @@ CREATE TABLE `inscripcion` (
   `id_inscripcion` bigint(20) NOT NULL,
   `id_alumno_fk` int(10) NOT NULL,
   `id_asignacion_fk` int(10) NOT NULL,
-  `pago_confirmado` tinyint(1) NOT NULL DEFAULT '0',
+  `pago_confirmado` tinyint(1) NOT NULL DEFAULT 0,
   `autorizacion_inscripcion` tinyint(1) NOT NULL,
   `validacion_constancia` tinyint(1) NOT NULL,
   `fecha_solicitud` datetime NOT NULL,
@@ -380,7 +408,7 @@ CREATE TABLE `inscripcion_acta` (
   `id_inscripcion_acta` bigint(20) NOT NULL,
   `folio_acta_fk` int(10) NOT NULL,
   `fecha_incorpora` datetime NOT NULL,
-  `calificacion` varchar(3) NOT NULL DEFAULT '0',
+  `calificacion` int(3) NOT NULL DEFAULT 0,
   `estatus` tinyint(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -391,7 +419,7 @@ CREATE TABLE `inscripcion_acta` (
 --
 
 CREATE TABLE `keywords` (
-  `id_key` int(10) NOT NULL,
+  `id_curso_fk` int(10) NOT NULL,
   `keyword` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -2896,6 +2924,18 @@ CREATE TABLE `persona` (
   `estatus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `persona`
+--
+
+INSERT INTO `persona` (`id_persona`, `nombre`, `app`, `apm`, `telefono`, `sexo`, `estatus`) VALUES
+(1, 'Julio', 'Montemayor', 'Enriquez', '5587649832', 0, 0),
+(2, 'Paola', 'Cortes', 'Ponciano', '5584321548', 1, 1),
+(3, 'Monica', 'Pimentel', 'Rodriguez', '5574548415', 1, 0),
+(4, 'Juan', 'Apolinar', 'Ledesma', '5625845620', 0, 0),
+(20210517145526, 'Cesar Haziel', 'Pineda', 'Pacheco', '+525539832331', 0, 1),
+(20210517185211, 'Lucia', 'Perez', 'Jimenez', '5587481564', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -2916,6 +2956,14 @@ CREATE TABLE `profesor` (
   `firma_digital_img` text NOT NULL,
   `estatus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `profesor`
+--
+
+INSERT INTO `profesor` (`id_profesor`, `id_persona_fk`, `id_depto_fk`, `no_trabajador`, `prefijo`, `email`, `pw`, `key_hash`, `fecha_registro`, `firma_digital`, `firma_digital_img`, `estatus`) VALUES
+(1, 20210517145526, 1, '1', 'Lic', 'c@hotmail.com', '1234', 'weerfewrrwe', '2021-05-18 13:58:22', 'ewrewweer', 'thhbyerereewdf', 1),
+(2, 2, 6, '2', 'Dra', 'pao@hotmail.com', '9876', 'tgyhtyrgbwqw', '2021-05-19 13:58:22', 'ffgrvguhujuip', 'tuuvniusjkkjqa', 1);
 
 -- --------------------------------------------------------
 
@@ -2947,6 +2995,15 @@ CREATE TABLE `temas` (
   `nombre` varchar(30) NOT NULL,
   `resumen` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `temas`
+--
+
+INSERT INTO `temas` (`id_tema`, `id_curso_fk`, `indice`, `nombre`, `resumen`) VALUES
+(1, 1, 'indice de tema 1', 'Nombre de tema', 'Resumen de tema'),
+(2, 2, 'indice de tema 2', 'Nombre de tema 2', 'Resumen de tema2'),
+(4, 1, 'Indice Tema Actualiz', 'Nombre Actualizado de Tema', 'Resumen Actualizado de Tema');
 
 -- --------------------------------------------------------
 
@@ -3085,14 +3142,6 @@ ALTER TABLE `estados`
   ADD PRIMARY KEY (`id_estado`);
 
 --
--- Indices de la tabla `group_key`
---
-ALTER TABLE `group_key`
-  ADD PRIMARY KEY (`id_curso_fk`,`id_key_fk`),
-  ADD KEY `id_curso_fk` (`id_curso_fk`),
-  ADD KEY `id_key_fk` (`id_key_fk`);
-
---
 -- Indices de la tabla `grupo`
 --
 ALTER TABLE `grupo`
@@ -3134,7 +3183,8 @@ ALTER TABLE `inscripcion_acta`
 -- Indices de la tabla `keywords`
 --
 ALTER TABLE `keywords`
-  ADD PRIMARY KEY (`id_key`);
+  ADD PRIMARY KEY (`id_curso_fk`),
+  ADD KEY `id_key` (`id_curso_fk`);
 
 --
 -- Indices de la tabla `municipios`
@@ -3198,7 +3248,7 @@ ALTER TABLE `acta`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id_alumno` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_alumno` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `archivo`
@@ -3231,10 +3281,10 @@ ALTER TABLE `constancia_profesor`
   MODIFY `id_constancia` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `curso`
+-- AUTO_INCREMENT de la tabla `departamentos`
 --
-ALTER TABLE `curso`
-  MODIFY `id_curso` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `departamentos`
+  MODIFY `id_depto` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `docs_solicitados_curso`
@@ -3273,12 +3323,6 @@ ALTER TABLE `horario_clase_virtual`
   MODIFY `id_horario_virtual` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `inscripcion`
---
-ALTER TABLE `inscripcion`
-  MODIFY `id_inscripcion` bigint(20) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `municipios`
 --
 ALTER TABLE `municipios`
@@ -3288,13 +3332,19 @@ ALTER TABLE `municipios`
 -- AUTO_INCREMENT de la tabla `profesor`
 --
 ALTER TABLE `profesor`
-  MODIFY `id_profesor` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_profesor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `servicio_social`
 --
 ALTER TABLE `servicio_social`
   MODIFY `id_alumno` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `temas`
+--
+ALTER TABLE `temas`
+  MODIFY `id_tema` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `universidades`
@@ -3369,13 +3419,6 @@ ALTER TABLE `docs_solicitados_curso`
   ADD CONSTRAINT `docs_solicitados_curso_ibfk_2` FOREIGN KEY (`id_curso_fk`) REFERENCES `curso` (`id_curso`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `group_key`
---
-ALTER TABLE `group_key`
-  ADD CONSTRAINT `group_key_ibfk_1` FOREIGN KEY (`id_curso_fk`) REFERENCES `curso` (`id_curso`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `group_key_ibfk_2` FOREIGN KEY (`id_key_fk`) REFERENCES `keywords` (`id_key`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `grupo`
 --
 ALTER TABLE `grupo`
@@ -3405,8 +3448,14 @@ ALTER TABLE `inscripcion`
 -- Filtros para la tabla `inscripcion_acta`
 --
 ALTER TABLE `inscripcion_acta`
-  ADD CONSTRAINT `inscripcion_acta_ibfk_1` FOREIGN KEY (`id_inscripcion_acta`) REFERENCES `inscripcion` (`id_inscripcion`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `inscripcion_acta_ibfk_2` FOREIGN KEY (`folio_acta_fk`) REFERENCES `acta` (`folio`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `inscripcion_acta_ibfk_2` FOREIGN KEY (`folio_acta_fk`) REFERENCES `acta` (`folio`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inscripcion_acta_ibfk_3` FOREIGN KEY (`id_inscripcion_acta`) REFERENCES `inscripcion` (`id_inscripcion`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `keywords`
+--
+ALTER TABLE `keywords`
+  ADD CONSTRAINT `keywords_ibfk_1` FOREIGN KEY (`id_curso_fk`) REFERENCES `curso` (`id_curso`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `municipios`
@@ -3418,8 +3467,8 @@ ALTER TABLE `municipios`
 -- Filtros para la tabla `profesor`
 --
 ALTER TABLE `profesor`
-  ADD CONSTRAINT `profesor_ibfk_1` FOREIGN KEY (`id_depto_fk`) REFERENCES `departamentos` (`id_depto`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `profesor_ibfk_2` FOREIGN KEY (`id_persona_fk`) REFERENCES `persona` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `profesor_ibfk_2` FOREIGN KEY (`id_persona_fk`) REFERENCES `persona` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `profesor_ibfk_3` FOREIGN KEY (`id_depto_fk`) REFERENCES `departamentos` (`id_depto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `servicio_social`
