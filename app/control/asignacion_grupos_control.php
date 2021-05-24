@@ -143,8 +143,7 @@ function consultaAsignaciones()
     include_once "../model/ASIGNACION_GRUPO.php";
     $obj_asignacion = new ASIGNACION_GRUPO();
     $result = $obj_asignacion->consultaAsignaciones();
-    $json_data = json_encode($result);
-    return $json_data;
+    return json_encode($result);
 }
 
 function consultaAsignacion($id_grupo)
@@ -152,8 +151,13 @@ function consultaAsignacion($id_grupo)
     include_once "../model/ASIGNACION_GRUPO.php";
     $obj_asignacion = new ASIGNACION_GRUPO();
     $result=$obj_asignacion->consultaAsignacion($id_grupo);
-    $json_data=json_encode($result);
-    return $json_data;
+    return json_encode($result);
+}
+
+function detallesAsignacion_pago($id_asig){
+    include_once "../model/ASIGNACION_GRUPO.php";
+    $obj_asig = new ASIGNACION_GRUPO();
+    return $obj_asig->consultaCostosDetalles($id_asig);
 }
 
 function creaAsignacion($id_grupo,$id_prof,$generacion,$semestre,$cede,$fInicio,$fFin,$fLimiteI,$fInicioActas,$fFinActas,$cupo,$costo,$descuento,$nivelDesc,$notas,$modalidad){
