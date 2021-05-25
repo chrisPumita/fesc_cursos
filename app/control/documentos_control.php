@@ -1,8 +1,10 @@
 <?php
+include_once "../model/DOCUMENTO.php";
+include_once "../model/DOCS_SOLICITADOS_CURSO.php";
+include_once "../model/ARCHIVO.php";
 
 /* ------------------DOCUMENTOS FUNCIONES----------------------- */
 function creaDocumento($nombreDoc, $formato, $tipo, $pesoMax){
-    include_once "../model/DOCUMENTO.php";
     $obj_doc = new DOCUMENTO();
     /*`id_documento`,`nombre_doc`,`formato_admitido`,`tipo`,`peso_max_mb`,`estatus`*/
     $obj_doc->setNombreDoc($nombreDoc);
@@ -16,7 +18,7 @@ function creaDocumento($nombreDoc, $formato, $tipo, $pesoMax){
 }
 
 function editaDocumento($id_documento,$nombre,$formato,$tipo,$pesomax,$estatus_doc){
-    include_once "../model/DOCUMENTO.php";
+
     $obj_doc = new DOCUMENTO();
     $obj_doc->setIdDocumento($id_documento);
     $obj_doc->setNombreDoc($nombre);
@@ -29,7 +31,6 @@ function editaDocumento($id_documento,$nombre,$formato,$tipo,$pesomax,$estatus_d
 }
 
 function consultaDocumentos(){
-    include_once "../model/DOCUMENTO.php";
     $obj_doc = new DOCUMENTO();
     $result = $obj_doc->consultaDocumentos();
     $json_data = json_encode($result);
@@ -37,14 +38,12 @@ function consultaDocumentos(){
 }
 
 function borraDocumento($id_doc,$estado){
-    include_once "../model/DOCUMENTO.php";
     $obj_doc = new DOCUMENTO();
     return $obj_doc->borrarDocumento($id_doc,$estado) ? "Se eliminó el documento":"Error al eliminar documento";
 }
 /* ------------------DOCUMENTOS SOLICITADOS FUNCIONES CURSO ----------------------- */
 
 function agregaDocumentosol($id_documento,$idCurso,$obl){
-    include_once "../model/DOCS_SOLICITADOS_CURSO.php";
     $obj_doc_sol = new DOCS_SOLICITADOS_CURSO();
     $obj_doc_sol->setIdDocumento($id_documento);
     $obj_doc_sol->setIdCursoFk($idCurso);
@@ -53,13 +52,11 @@ function agregaDocumentosol($id_documento,$idCurso,$obl){
 }
 
 function remueveDocumentoCurso($idDocSol){
-    include_once "../model/DOCS_SOLICITADOS_CURSO.php";
     $obj_doc_sol = new DOCS_SOLICITADOS_CURSO();
     return $obj_doc_sol->eliminaDocumentoSolicitado($idDocSol) ? "Se removió el documento": "No pudimos remover el documento";
 }
 
 function consultaDocumentosDeCurso($idCurso){
-    include_once "../model/DOCS_SOLICITADOS_CURSO.php";
     $obj_doc_sol = new DOCS_SOLICITADOS_CURSO();
     $result = $obj_doc_sol->consultarListaDocumentosSol($idCurso);
     $json_data = json_encode($result);
@@ -67,7 +64,6 @@ function consultaDocumentosDeCurso($idCurso){
 }
 
 function modificaObligacionDocSol($id_doc_sol, $nuevoEdo){
-    include_once "../model/DOCS_SOLICITADOS_CURSO.php";
     $obj_doc_sol = new DOCS_SOLICITADOS_CURSO();
     $obj_doc_sol->setIdDocSol($id_doc_sol);
     return $obj_doc_sol->cambiarOblig($nuevoEdo) ? "Se cambio el estado": "No pudimos cambiar el estado";
@@ -75,8 +71,7 @@ function modificaObligacionDocSol($id_doc_sol, $nuevoEdo){
 /* ------------------ARCHIVOS FUNCIONES QUE OCUPA INSCRIPCIONES----------------------- */
 
 function consultarArchivo($id_inscripcion){
-    include_once "../model/ARCHIVO.php";
-    $obj_archivo = new ARCHIVO();
+     $obj_archivo = new ARCHIVO();
     $result=$obj_archivo->consultaArchivos($id_inscripcion);
     $json_data=json_encode($result);
     return $json_data;
@@ -84,7 +79,6 @@ function consultarArchivo($id_inscripcion){
 }
 
 function agregarArchivo($id_docSol,$idInscripcion,$codigoDoc,$nameArchivo,$nameFile,$path,$fehcaCreacion,$notas,$estadoRevision){
-    include_once "../model/ARCHIVO.php";
     /*`id_archivo`, `id_doc_sol_fk`, `id_inscripcion_fk`, `codigo_doc`, `name_archivo`, `name_file_md5`, `path`, `fecha_creacion`, `notas`, `estado_revision`, `estado`*/
     $obj_archivo = new ARCHIVO();
     $obj_archivo->setIdDocSol($id_docSol);
@@ -101,8 +95,7 @@ function agregarArchivo($id_docSol,$idInscripcion,$codigoDoc,$nameArchivo,$nameF
 }
 
 function editarArchivo($id_archivo,$id_docSol,$idInscripcion,$codigoDoc,$nameArchivo,$nameFile,$path,$fechaCreacion,$notas,$estadoRevision){
-    include_once "../model/ARCHIVO.php";
-    $obj_archivo = new ARCHIVO();
+   $obj_archivo = new ARCHIVO();
     $obj_archivo->setIdArchivo($id_archivo);
     $obj_archivo->setIdDocSol($id_docSol);
     $obj_archivo->setIdInscripcionFk($idInscripcion);
@@ -117,13 +110,11 @@ function editarArchivo($id_archivo,$id_docSol,$idInscripcion,$codigoDoc,$nameArc
 }
 
 function eliminarArchivo($id_archivo){
-    include_once "../model/ARCHIVO.php";
     $obj_archivo = new ARCHIVO();
     return $obj_archivo->eliminarArchivo($id_archivo) ? "Se eliminó el Archivo ":"Error al eliminar el Archivo";
 }
 
 function eliminarArchivoPath($path){
-    include_once "../model/ARCHIVO.php";
     $obj_archivo= new ARCHIVO();
     return  $obj_archivo-> eliminaArchivoPath($path)  ? "Path eliminado" :"Error al eliminar el path";
 }
