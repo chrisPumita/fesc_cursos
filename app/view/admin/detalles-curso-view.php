@@ -26,7 +26,7 @@
                                     </nav>
                                 </div>
                                 <div class="col-lg-9 py-2">
-                                    <h3 class="font-weight-bold mb-0">2658 - Iniciación al cómputo I</h3>
+                                    <h2 class="font-weight-bold mb-0">2658 - Iniciación al cómputo I</h2>
                                 </div>
                             </div>
                             <!--INICIA ESTADISTICAS-->
@@ -240,7 +240,7 @@
                                             <div class="mx-auto">
                                                 <div class="row p-3">
                                                     <div class="col-lg-9">
-                                                        <h5><strong>Temario General del Curso</strong></h5>
+                                                        <h3>Temario General del Curso</h3>
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <a href="#" class="btn btn-primary btn-block">Nuevo</a>
@@ -332,7 +332,7 @@
                                                         <i class="icon ion-md-rocket  paleta"></i>
                                                     </div>
                                                     <div class="col-lg-9">
-                                                        <h4>Creacion de asignacion de Grupo</h4>
+                                                        <h3>Creacion de asignacion de Grupo</h3>
                                                         <div class="form-group">
                                                             <label for="sel1">Crear y Asignar un grupo de este curso, seleccione el profesor asignado:</label>
                                                             <select class="form-control" id="sel1">
@@ -344,7 +344,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-2">
+                                                        <a href="./nueva-asignacion">
                                                         <button class="btn btn-primary w-100 aling-self-center">Crear</button>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -371,7 +373,7 @@
                                                         <div class="mx-auto">
                                                             <div class="row p-3">
                                                                 <div class="col-lg-9">
-                                                                    <h5><strong>Historico de Grupos Derivados de este Curso</strong></h5>
+                                                                    <h3>Historico de Grupos Derivados de este Curso</h3>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <div class="form-group">

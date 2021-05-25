@@ -27,7 +27,7 @@
                                     </nav>
                                 </div>
                                 <div class="col-lg-9 py-2">
-                                    <h3 class="font-weight-bold mb-0">2658 - Iniciación al cómputo I</h3>
+                                    <h2 class="font-weight-bold mb-0">2658 - Iniciación al cómputo I</h2>
                                 </div>
                             </div>
                             <!--INICIA ESTADISTICAS-->
@@ -108,14 +108,14 @@
                         <!-- FIN IMAG DEGRADADO -->
 
                         <!-- SECCION CALLOUT IMPORTANTE Y DETALLES-->
-                        <section class="container bg-grey">
+                        <section>
                             <div class="card bg-grey estadisticas">
                                 <div class="card-body py-1">
                                     <div class="row">
                                         <!-- DETALLE DEL CURSO CALLOUT -->
                                         <div class="col-lg-12">
                                             <div class="callout callout-second">
-                                                <h4>Detalles del curso</h4>
+                                                <h4>Importante</h4>
                                                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus voluptatum illum odio quos laudantium enim ratione cupiditate accusantium officia quisquam, similique fuga ipsa consequatur? Sequi, consequuntur unde! Enim, dolor deserunt!
                                             </div>
                                         </div>
@@ -230,7 +230,7 @@
                         <section class="container py-3 bg-grey">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h3><strong>Horario Presencial</strong></h3>
+                                    <h3>Horario Presencial</h3>
                                 </div>
                             </div>
                             <div class="row">
@@ -310,7 +310,7 @@
                         <section class="container bg-grey">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h3><strong>Horario Virutal</strong></h3>
+                                    <h3>Horario Virtual</h3>
                                 </div>
                             </div>
                             <div class="row">
@@ -390,7 +390,7 @@
                         <section class="container py-3 bg-grey">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h3><strong>Alumnos Inscritos</strong></h3>
+                                    <h3>Alumnos Inscritos</h3>
                                 </div>
                             </div>
                             <div class="row">

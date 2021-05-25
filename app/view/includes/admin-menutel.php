@@ -59,7 +59,7 @@
                 <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="./lista-cursos"><i class="icon ion-md-rocket mr-2 lead"></i>Cursos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href=""><i class="icon ion-md-contacts mr-2 lead"></i>Alumnos</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="./lista-alumnos"><i class="icon ion-md-contacts mr-2 lead"></i>Alumnos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="./lista-cuentas"><i class="icon ion-md-finger-print mr-2 lead"></i>Cuentas</a>

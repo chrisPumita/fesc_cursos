@@ -42,7 +42,7 @@
                                             <div class="mx-auto">
                                                 <div class="row p-3">
                                                     <div class="col-lg-9">
-                                                        <h5><strong>Listado de Asignaciones de Grupos</strong></h5>
+                                                        <h3>Listado de Asignaciones de Grupos</h3>
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <div class="form-group">
@@ -61,22 +61,25 @@
                                                                 <tr>
                                                                     <th scope="col">#</th>
                                                                     <th scope="col">Grupo</th>
+                                                                    <th scope="col">Curso</th>
                                                                     <th scope="col">Profesor</th>
-                                                                    <th scope="col">Generación</th>
-                                                                    <th scope="col">Semestre</th>
+                                                                    <th scope="col">Gen.</th>
+                                                                    <th scope="col">Sem.</th>
                                                                     <th scope="col">Campo</th>
                                                                     <th scope="col">Fecha de Inicio</th>
                                                                     <th scope="col">Fecha de Termino</th>
                                                                     <th scope="col">Cupo</th>
                                                                     <th scope="col">Costo</th>
-                                                                    <th scope="col">Descuento</th>
                                                                     <th scope="col">Modalidad</th>
+                                                                    <th scope="col">Estatus</th>
+                                                                    <th scope="col">Acciones</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
                                                                     <th scope="row">1</th>
                                                                     <td>2158</td>
+                                                                    <td>Desarrollo Arduino</td>
                                                                     <td>Juan Pérez Sánchez</td>
                                                                     <td>5°</td>
                                                                     <td>2021-II</td>
@@ -85,12 +88,33 @@
                                                                     <td>20-06-2021</td>
                                                                     <td>30</td>
                                                                     <td>$950</td>
-                                                                    <td>$500</td>
                                                                     <td>Mixto</td>
+                                                                    <td>Activo</td>
+                                                                    <td>
+                                                                        <!--INICIA BOTON DE ACCIONES -->
+                                                                        <div class="dropdown">
+                                                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                Opciones
+                                                                            </button>
+                                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                                                <a href="./detalles-curso">
+                                                                                    <button class="dropdown-item" type="button">Ver Detalles del Curso</button>
+                                                                                </a>
+                                                                                <a href="./nueva-asignacion">
+                                                                                    <button class="dropdown-item" type="button">Crear Nueva Asignación</button>
+                                                                                </a>
+                                                                                <a href="#">
+                                                                                    <button class="dropdown-item" type="button">Editar Asignación</button>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--FINALIZA BOTON DE ACCIONES -->
+                                                                    </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th scope="row">2</th>
                                                                     <td>2159</td>
+                                                                    <td>Publicidad en Redes Sociales</td>
                                                                     <td>Juana Peralta Suárez</td>
                                                                     <td>7°</td>
                                                                     <td>2021-II</td>
@@ -99,8 +123,28 @@
                                                                     <td>20-06-2021</td>
                                                                     <td>40</td>
                                                                     <td>$950</td>
-                                                                    <td>$500</td>
                                                                     <td>Online</td>
+                                                                    <td>Concluido</td>
+                                                                    <td>
+                                                                        <!--INICIA BOTON DE ACCIONES -->
+                                                                        <div class="dropdown">
+                                                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                Opciones
+                                                                            </button>
+                                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                                                <a href="./detalles-curso">
+                                                                                    <button class="dropdown-item" type="button">Ver Detalles del Curso</button>
+                                                                                </a>
+                                                                                <a href="./nueva-asignacion">
+                                                                                    <button class="dropdown-item" type="button">Crear Nueva Asignación</button>
+                                                                                </a>
+                                                                                <a href="#">
+                                                                                    <button class="dropdown-item" type="button">Editar Asignación</button>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--FINALIZA BOTON DE ACCIONES -->
+                                                                    </td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
