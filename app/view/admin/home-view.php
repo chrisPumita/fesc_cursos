@@ -18,22 +18,28 @@ include("./view/includes/header.php");
                <!--INICIA ENCABEZADO DETALLES USUARIO BIENVENIDA-->
                 <section class="container py-3 bg-grey">
                     <div class="row">
-                        <div class="col-lg-9">
+                        <div class="col-lg-12">
                             <h2 class="font-weight-bold mb-0">Panel de Administración</h2>
-                        </div>
-                        <div class="col-lg-3">
-                            <a href="./lista-cursos-view.php">
-                                <button class="btn btn-primary w-100 aling-self-center">
-                                    <i class="icon ion-md-cloud-upload mr-2 lead"></i>Ver Cursos
-                                </button>
-                            </a>                            
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="callout callout-second">
-                                <h4>Bienvenido Nombre Admin</h4>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus voluptatum illum odio quos laudantium enim ratione cupiditate accusantium officia quisquam, similique fuga ipsa consequatur? Sequi, consequuntur unde! Enim, dolor deserunt!
+                                <div class="contariner">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-lg-9">
+                                            <h4>Bienvenido Nombre Admin</h4>
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus voluptatum illum odio quos laudantium enim ratione cupiditate accusantium officia quisquam, similique fuga ipsa consequatur? Sequi, consequuntur unde! Enim, dolor deserunt!
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <a href="./lista-cursos-view.php">
+                                                <button class="btn btn-primary w-100 aling-self-center m-3">
+                                                    <i class="icon ion-md-cloud-upload mr-2 lead"></i>Ver Cursos
+                                                </button>
+                                            </a>                            
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

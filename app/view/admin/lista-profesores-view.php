@@ -16,39 +16,46 @@ include("./view/includes/header.php");
 <!--Inicio contenido dinamico-->
 <div class="componet-dinamico bg-grey">
     <!--INICIA ENCABEZADO DE DETALLES-->
-    <section class="container py-3 ">
+    <section class="container py-3 bg-grey">
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-12">
                 <h2 class="font-weight-bold mb-0">Profesores</h2>
             </div>
-            <div class="col-lg-3 text-right">
-                <button class="btn btn-primary w-100" data-toggle='modal' data-target='#modal1'>Nuevo</button>
-            </div>
         </div>
-        <div class="row pb-3">
+        <div class="row">
             <div class="col-lg-12">
                 <div class="callout callout-second">
-                    <h4>Crear una nueva cuenta de profesor</h4>
-                    En este apartado puede crear cuentas de profesores y/o autorizar las cuentas generadas a partir del formulario.
-                    Revise la información y asegurese de verificar bien los datos de las solicitudes.
+                    <div class="contariner">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-lg-9">
+                                <h4>Crear una nueva cuenta de profesor</h4>
+                                En este apartado puede crear cuentas de profesores y/o autorizar las cuentas generadas a partir del formulario.
+                                Revise la información y asegurese de verificar bien los datos de las solicitudes.
+                            </div>
+                            <div class="col-lg-3">
+                                <button class="btn btn-primary w-100 m-3" data-toggle='modal' data-target='#modal1'>Nuevo</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="container bg-white">
-            <div class="row align-items-center justify-content-center pb-2">
+            <div class="row align-items-center justify-content-center">
                 <div class="col-lg-1">
-                    <i class="icon ion-md-mail paleta"></i>
+                    <i class="icon ion-md-mail paleta ml-2"></i>
                 </div>
-                <div class="col-lg-5 py-3">
-                    <h4>Envíar invitación de registro</h4>
+                <div class="col-lg-5">
+                    <h4 class="mt-3">Envíar invitación de registro</h4>
                     <p>Envíe la invitación al profesor, para que éste pueda registrarse en el sistema.</p>
                 </div>
                 <div class="col-lg-4">
                     <input type="text" class="form-control" placeholder="ejemplo@dominio.com" aria-label="Correo">
                 </div>
                 <div class="col-lg-2">
-                    <button class="btn btn-primary w-100 aling-self-center">Envíar</button>
+                    <button class="btn btn-primary w-100 mr-3 mt-3 mb-3">Envíar</button>
+                </div>
             </div>
         </div>
     </section>
@@ -216,13 +223,16 @@ include("./view/includes/header.php");
             <div class="modal" tabindex="-1" id="modal2">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                        <section class="container bg-grey">
-                            <div class= "modal-header">
+                        <section class="container">
+                            <div class="modal-header">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-11"></div>
-                                        <div class="col-1">
-                                            <button class="btn btn-danger" data-dismiss='modal'>&times;</button>
+                                        <div class="col-lg-1">
+                                            <!--<button class="btn btn-danger" data-dismiss='modal'>&times;</button>-->
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

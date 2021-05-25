@@ -16,18 +16,24 @@
                         <!--INICIA ENCABEZADO DE DETALLES-->
                         <section class="container py-3 bg-grey">
                             <div class="row">
-                                <div class="col-lg-9">
+                                <div class="col-lg-12">
                                     <h2 class="font-weight-bold mb-0">Cursos</h2>
-                                </div>
-                                <div class="col-lg-3 text-right">
-                                    <button class="btn btn-primary w-100">Nuevo</button>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="callout callout-second">
-                                        <h4>Crear Nuevo curso</h4>
-                                        En este panel puede crear un nuevo curso para que posteriormente pueda ser asignado a un profesor.
+                                        <div class="container">
+                                            <div class="row align-items-center justify-content-center">
+                                                <div class="col-lg-9">
+                                                    <h4>Crear Nuevo curso</h4>
+                                                    En este panel puede crear un nuevo curso para que posteriormente pueda ser asignado a un profesor.
+                                                </div>
+                                                <div class="col-lg-3 text-right">
+                                                    <button class="btn btn-primary w-100">Nuevo</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

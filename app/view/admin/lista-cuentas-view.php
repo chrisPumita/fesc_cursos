@@ -17,20 +17,10 @@
                         <section class="container py-3 bg-grey">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Cuentas</li>
-                                        </ol>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12">
                                     <h2 class="font-weight-bold mb-0">Panel de Cuentas de Administradores</h2>
                                 </div>
                             </div>
-                            <div class="row py-2">
+                            <div class="row">
                                 <div class="col-lg-12">
                                     <div class="callout callout-second">
                                         <div class="contariner">

@@ -69,7 +69,7 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="container py-2">
-                                                <h5 class="mb-2"><strong>DATOS PERSONALES</strong></h5>
+                                                <h5 class="mb-2"><strong>Datos Personales</strong></h5>
                                                 <p class="mb-0">Nombre: <span class="font-weight-bold">Juan Álvarez Romo</span></p>
                                                 <p class="mb-0">Teléfono: <span class="font-weight-bold">5528794510</span></p>
                                                 <p class="mb-0">Correo eletrónico: <span class="font-weight-bold">juan@gmail.com</span></p>
@@ -78,7 +78,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="container py-2">
-                                                <h5 class="mb-2"><strong>INFORMACIÓN ACADÉMICA</strong></h5>
+                                                <h5 class="mb-2"><strong>Información Académica</strong></h5>
                                                 <p class="mb-0">Procedencia: <span class="font-weight-bold">Alumno FESC</span></p>
                                                 <p class="mb-0">Universidad Nacional Autónoma de México (UNAM)</p>
                                                 <p class="mb-0">Matrícula: <span class="font-weight-bold">215891463</span></p>
@@ -445,7 +445,7 @@
                                                     <div class="mx-auto">
                                                         <div class="row p-3">
                                                             <div class="col-lg-9">
-                                                                <h5><strong>Revisión de Documentos</strong></h5>
+                                                                <h3>Revisión de Documentos</h3>
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <div class="form-group">
@@ -585,7 +585,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-9"></div>
                                                             <div class="col-lg-3">
-                                                                <button class="btn btn-primary w-100 aling-self-center">Solicitar Documento</button>
+                                                                <button class="btn btn-primary w-100 mr-0 ml-5 mb-3">Solicitar Documento</button>
                                                             </div>
                                                         </div>
                                                         <!-- INICIA PAGINADOR DE TABLA -->
@@ -624,7 +624,7 @@
                                                     <div class="mx-auto">
                                                         <div class="row p-3">
                                                             <div class="col-lg-9">
-                                                                <h5><strong>Historal de Cursos</strong></h5>
+                                                                <h3>Historal de Cursos</h3>
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <div class="form-group">
@@ -645,6 +645,7 @@
                                                                     <thead>
                                                                         <tr>
                                                                             <th scope="col">#</th>
+                                                                            <th scope="col">Grupo</th>
                                                                             <th scope="col">Curso</th>
                                                                             <th scope="col">Profesor</th>
                                                                             <th scope="col">Estado del Pago</th>
