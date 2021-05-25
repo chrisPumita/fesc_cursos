@@ -31,6 +31,23 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
     //composicion
     private $grupo;
     private $profesor;
+    private $lista_procedencias;
+
+    /**
+     * @return mixed
+     */
+    public function getListaProcedencias()
+    {
+        return $this->consultaProcedencias();
+    }
+
+    /**
+     * @param mixed $lista_procedencias
+     */
+    public function setListaProcedencias($lista_procedencias): void
+    {
+        $this->lista_procedencias = $lista_procedencias;
+    }
 
     /**
      * @return mixed
@@ -528,6 +545,12 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
         $result = $this-> executeInstruction($query);
         $this->close();
         return $result;
+    }
+
+    function consultaProcedencias(){
+        include_once "TIPO_PROCEDENCIA.php";
+        $obj_tipo = new TIPO_PROCEDENCIA();
+        return $obj_tipo->consultaProcedenciasAsig($this->getIdAsignacion());
     }
 
 
