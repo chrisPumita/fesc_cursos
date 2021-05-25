@@ -14,7 +14,7 @@
                     <!--Inicio contenido dinamico-->
                     <div class="componet-dinamico bg-grey">
                         <!--INICIA ENCABEZADO DETALLES USUARIO BIENVENIDA-->
-                        <section class="container bg-grey">                            
+                        <section class="container bg-grey py-2">                            
                             <div class="row">
                                 <div class = "col-lg-12">
                                     <nav aria-label="breadcrumb">
@@ -33,7 +33,7 @@
                                         <div class="contariner">
                                             <div class="row">
                                                 <div class="col-lg-9">
-                                                    <h4 class="font-weight-bold">Editar los datos del profesor</h4>
+                                                    <h4>Editar los datos del profesor</h4>
                                                     Verifique su información, ya que ésta se utilizará para fines de Constancias y Enlace con los alumnos inscritos en los grupos que le sean asignados.
                                                 </div>
                                                 <div class="col-lg-3 text-align-right">
@@ -52,10 +52,10 @@
                             <div class="container py-2 bg-white">
                                 <form class="user needs-validation" id="frm-det-profesor" role="form" autocomplete="off" novalidate>
                                     <div class="form-group row">
-                                        <div class="col-lg-3 mt-3 mb-1">
-                                            <label class="col-form-label font-weight-bold">Abreviación: </label>
+                                        <div class="col-lg-3 mt-3 mb-1 text-right">
+                                            <label class="col-form-label">Abreviación: </label>
                                         </div>
-                                        <div class="col-lg-9 mt-3 mb-1">
+                                        <div class="col-lg-8 mt-3 mb-1 ">
                                             <select class="form-control" id="abreviatura">
                                                 <option>Lic.</option>
                                                 <option>Mto.</option>
@@ -64,58 +64,58 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-lg-3 mb-1">
-                                            <label class="col-form-label font-weight-bold">Nombre(s): </label>  
+                                        <div class="col-lg-3 mb-1 text-right">
+                                            <label class="col-form-label">Nombre(s): </label>  
                                         </div>
-                                        <div class="col-lg-9 mb-1">
+                                        <div class="col-lg-8 mb-1">
                                             <input type="text" class="form-control" placeholder="Nombre(s)" aria-label="Nombres">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-lg-3 mb-1">
-                                            <label class="col-form-label font-weight-bold">Apellido Paterno: </label>  
+                                        <div class="col-lg-3 mb-1 text-right">
+                                            <label class="col-form-label">Apellido Paterno: </label>  
                                         </div>
-                                        <div class="col-lg-9 mb-1">
+                                        <div class="col-lg-8 mb-1">
                                             <input type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Primer Apellido">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-lg-3 mb-1">
-                                            <label class="col-form-label font-weight-bold">Apellido Materno: </label>  
+                                        <div class="col-lg-3 mb-1 text-right">
+                                            <label class="col-form-label">Apellido Materno: </label>  
                                         </div>
-                                        <div class="col-lg-9 mb-1">
+                                        <div class="col-lg-8 mb-1">
                                             <input type="text" class="form-control" placeholder="Apellido Materno" aria-label="Segundo Apellido">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-lg-3 mb-1">
-                                            <label class="col-form-label font-weight-bold">No. de Trabajador: </label>  
+                                        <div class="col-lg-3 mb-1 text-right">
+                                            <label class="col-form-label">No. de Trabajador: </label>  
                                         </div>
-                                        <div class="col-lg-9 mb-1">
+                                        <div class="col-lg-8 mb-1">
                                             <input type="text" class="form-control" placeholder="Número de Trabajador" aria-label="No. Trabajador">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-lg-3 mb-1">
-                                            <label class="col-form-label font-weight-bold">Teléfono: </label>  
+                                        <div class="col-lg-3 mb-1 text-right">
+                                            <label class="col-form-label">Teléfono: </label>  
                                         </div>
-                                        <div class="col-lg-9 mb-1">
+                                        <div class="col-lg-8 mb-1">
                                             <input type="text" class="form-control" placeholder="5555555555" aria-label="Telefono">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-lg-3 mb-1">
-                                            <label class="col-form-label font-weight-bold">Correo Electrónico: </label>  
+                                        <div class="col-lg-3 mb-1 text-right">
+                                            <label class="col-form-label">Correo Electrónico: </label>  
                                         </div>
-                                        <div class="col-lg-9 mb-1">
+                                        <div class="col-lg-8 mb-1">
                                             <input type="text" class="form-control" placeholder="ejemplo@dominio.com" aria-label="Correo">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-lg-3 mb-1">
-                                            <label class="col-form-label font-weight-bold">Departamento: </label>
+                                        <div class="col-lg-3 mb-1 text-right">
+                                            <label class="col-form-label">Departamento: </label>
                                         </div>
-                                        <div class="col-lg-9 mb-1">
+                                        <div class="col-lg-8 mb-1">
                                             <select class="form-control" id="depto">
                                                 <option>Informática</option>
                                                 <option>Matemáticas</option>
@@ -124,7 +124,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-lg-9"></div>
+                                        <div class="col-lg-8"></div>
                                         <div class="col-lg-3 text-align-right">
                                             <button class="btn btn-primary w-100 aling-self-center mt-2 mb-3 ml-5">Actualizar</button>
                                         </div>
