@@ -1,5 +1,4 @@
 <?php
-include_once "verificacion_control.php";
 
-
-echo verificaAdministrador(1,"0000","1") ? "cuenta vefiricada": "cuenta fallida";
+include_once "inscripciones_control.php";
+confirmarPago("123456789","","","","");
