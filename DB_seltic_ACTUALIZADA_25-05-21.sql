@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2021 a las 07:26:47
+-- Tiempo de generación: 25-05-2021 a las 19:13:41
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.2
 
@@ -129,10 +129,29 @@ CREATE TABLE `asignacion_grupo` (
   `fecha_fin_actas` datetime NOT NULL,
   `cupo` int(5) NOT NULL,
   `costo_real` decimal(10,2) NOT NULL,
-  `descuento` decimal(10,2) NOT NULL,
-  `nivel_aplicacion_desc` tinyint(3) NOT NULL,
   `notas` text NOT NULL,
   `modalidad` tinyint(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `asignacion_grupo`
+--
+
+INSERT INTO `asignacion_grupo` (`id_asignacion`, `id_grupo_fk`, `id_profesor_fk`, `generacion`, `semestre`, `campus_cede`, `fecha_creacion`, `fecha_inicio`, `fecha_fin`, `fecha_lim_inscripcion`, `fecha_inicio_actas`, `fecha_fin_actas`, `cupo`, `costo_real`, `notas`, `modalidad`) VALUES
+(1, 1, 1, 15, '2021-2', 1, '2021-05-24 00:00:00', '2021-05-24 00:00:00', '2021-05-24 00:00:00', '2021-05-27 00:00:00', '2021-05-26 00:00:00', '2021-05-27 00:00:00', 30, '1500.00', 'NOTAS APLICADAS', 1),
+(2, 2, 2, 15, '2021-2', 2, '2021-05-24 00:00:00', '2021-05-25 00:00:00', '2021-05-28 00:00:00', '2021-05-26 00:00:00', '2021-05-29 00:00:00', '2021-05-31 00:00:00', 30, '1000.00', 'SEGUNDO CURSO PRUEBA', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asignacion_procedencia`
+--
+
+CREATE TABLE `asignacion_procedencia` (
+  `id_tipo_procedencia_fk` int(10) NOT NULL,
+  `id_asignacion_fk` int(10) NOT NULL,
+  `porcentaje_desc` decimal(10,2) NOT NULL,
+  `costo_final` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -346,6 +365,14 @@ CREATE TABLE `grupo` (
   `estatus` tinyint(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `grupo`
+--
+
+INSERT INTO `grupo` (`id_grupo`, `id_curso_fk`, `grupo`, `estatus`) VALUES
+(1, 4, '666', 1),
+(2, 4, '667', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -397,6 +424,14 @@ CREATE TABLE `inscripcion` (
   `notas` text NOT NULL,
   `estatus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `inscripcion`
+--
+
+INSERT INTO `inscripcion` (`id_inscripcion`, `id_alumno_fk`, `id_asignacion_fk`, `pago_confirmado`, `autorizacion_inscripcion`, `validacion_constancia`, `fecha_solicitud`, `fecha_conclusion`, `notas`, `estatus`) VALUES
+(123456789, 1, 1, 0, 0, 0, '2021-05-24 00:00:00', '2021-05-27 00:00:00', 'PRIMER INSCRITO', 1),
+(987654321, 2, 2, 0, 0, 0, '2021-05-24 00:00:00', '2021-05-29 00:00:00', 'SEGUNDO ESTUDIANTE EN 2DO GRUPO', 1);
 
 -- --------------------------------------------------------
 
@@ -3008,6 +3043,17 @@ INSERT INTO `temas` (`id_tema`, `id_curso_fk`, `indice`, `nombre`, `resumen`) VA
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tipo_procedencia`
+--
+
+CREATE TABLE `tipo_procedencia` (
+  `id_tipo_procedencia` int(10) NOT NULL,
+  `tipo_procedencia` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `universidades`
 --
 
@@ -3084,6 +3130,14 @@ ALTER TABLE `asignacion_grupo`
   ADD PRIMARY KEY (`id_asignacion`),
   ADD KEY `id_grupo_fk` (`id_grupo_fk`),
   ADD KEY `id_profesor_fk` (`id_profesor_fk`);
+
+--
+-- Indices de la tabla `asignacion_procedencia`
+--
+ALTER TABLE `asignacion_procedencia`
+  ADD PRIMARY KEY (`id_tipo_procedencia_fk`,`id_asignacion_fk`),
+  ADD KEY `id_tipo_procedencia_fk` (`id_tipo_procedencia_fk`,`id_asignacion_fk`),
+  ADD KEY `id_asignacion_fk` (`id_asignacion_fk`);
 
 --
 -- Indices de la tabla `aulas`
@@ -3222,6 +3276,12 @@ ALTER TABLE `temas`
   ADD KEY `id_curso_fk` (`id_curso_fk`);
 
 --
+-- Indices de la tabla `tipo_procedencia`
+--
+ALTER TABLE `tipo_procedencia`
+  ADD PRIMARY KEY (`id_tipo_procedencia`);
+
+--
 -- Indices de la tabla `universidades`
 --
 ALTER TABLE `universidades`
@@ -3260,7 +3320,7 @@ ALTER TABLE `archivo`
 -- AUTO_INCREMENT de la tabla `asignacion_grupo`
 --
 ALTER TABLE `asignacion_grupo`
-  MODIFY `id_asignacion` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_asignacion` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `aulas`
@@ -3308,7 +3368,7 @@ ALTER TABLE `estados`
 -- AUTO_INCREMENT de la tabla `grupo`
 --
 ALTER TABLE `grupo`
-  MODIFY `id_grupo` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_grupo` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `horario_clase_presencial`
@@ -3345,6 +3405,12 @@ ALTER TABLE `servicio_social`
 --
 ALTER TABLE `temas`
   MODIFY `id_tema` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `tipo_procedencia`
+--
+ALTER TABLE `tipo_procedencia`
+  MODIFY `id_tipo_procedencia` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `universidades`
@@ -3389,6 +3455,13 @@ ALTER TABLE `archivo`
 ALTER TABLE `asignacion_grupo`
   ADD CONSTRAINT `asignacion_grupo_ibfk_1` FOREIGN KEY (`id_grupo_fk`) REFERENCES `grupo` (`id_grupo`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `asignacion_grupo_ibfk_2` FOREIGN KEY (`id_profesor_fk`) REFERENCES `profesor` (`id_profesor`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `asignacion_procedencia`
+--
+ALTER TABLE `asignacion_procedencia`
+  ADD CONSTRAINT `asignacion_procedencia_ibfk_1` FOREIGN KEY (`id_tipo_procedencia_fk`) REFERENCES `tipo_procedencia` (`id_tipo_procedencia`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `asignacion_procedencia_ibfk_2` FOREIGN KEY (`id_asignacion_fk`) REFERENCES `asignacion_grupo` (`id_asignacion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `constancia_alumno`
