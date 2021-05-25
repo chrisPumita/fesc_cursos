@@ -423,6 +423,15 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
         return $datos;
     }
 
+    function consultaCostosDetalles($id_asignacion){
+        $sql = "SELECT costo_real,descuento,nivel_aplicacion_desc FROM asignacion_grupo 
+            WHERE id_asignacion = ".$id_asignacion;
+        $this->connect();
+        $datos = $this->getData($sql);
+        $this->close();
+        return $datos;
+    }
+
     function consultaAsignacion($id_grupo){
         $query="SELECT asig.id_asignacion,
                            gp.grupo, 

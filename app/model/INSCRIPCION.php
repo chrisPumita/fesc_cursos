@@ -225,15 +225,30 @@ class INSCRIPCION extends CONEXION_M implements I_INSCRIPCION
      * Inician Funciones implenebtadas de la Interface
      *******************************************************************************/
 
-    function consultaInscripciones($filtro)
+    function consultaInscripciones($filtro,$valor)
     {
-        $sql = "SELECT `id_inscripcion`, `id_alumno_fk`, 
-               `id_asignacion_fk`, `pago_confirmado`, `autorizacion_inscripcion`, 
-               `validacion_constancia`, `fecha_solicitud`, `fecha_conclusion`, `notas`, `estatus` 
-                FROM `inscripcion` ". $filtro;
+        // 0  TODOS
+        // 1 una ins en espcifico
+        switch ($filtro){
+            case "0":
+                $filtro = "";
+                break;
+
+            case "1":
+                $filtro = " AND  I.id_inscripcion = ".$valor;
+                break;
+
+            default:
+                $filtro="";
+                break;
+        }
+
+        $sql = "SELECT I.*,P.*, A.* FROM inscripcion I, alumno A, persona P 
+                WHERE I.id_alumno_fk = A.id_alumno AND A.id_persona = P.id_persona ".$filtro." 
+                ORDER BY P.nombre, P.app, P.apm ASC";
         //Abro conexion de consulta a BD
         $this->connect();
-        $result = $this->getData();
+        $result = $this->getData($sql);
         $this->close();
         return $result;
     }
