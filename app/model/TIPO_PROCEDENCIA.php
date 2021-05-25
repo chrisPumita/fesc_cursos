@@ -71,7 +71,7 @@ class TIPO_PROCEDENCIA
 
     function eliminarTipoProcedencia()
     {
-        $sql = "DELETE FROM hhh WHERE llll = ";
+        $sql = "DELETE FROM `tipo_procedencia` WHERE `id_tipo_procedencia`=".$this->getIdTipoProcede();
 
         $this->connect();
         $result = $this->executeInstruction($sql);
