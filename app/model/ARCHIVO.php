@@ -241,10 +241,25 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
 
 
 
-    function crearArchivoPath($archivo)
+    function crearArchivoPath($nombreArchivo,$Archivo)
     {
-        $ruta_destino_archivo = "archivos/{$archivo['name']}";
-        $archivo_ok = move_uploaded_file($archivo['tmp_name'], $ruta_destino_archivo);
-    return $archivo_ok;
+
+        $inscripcion = $this->getIdInscripcionFk();
+        $carpeta = "../model/prueba/" . $inscripcion;
+        if (!file_exists($carpeta)) {
+            if(!mkdir("$carpeta", 0777, true) ){
+                echo "error al crear la carpeta";
+            }
+        }
+        $ruta = $carpeta . '/' . md5($nombreArchivo);
+        /*if (empty($nombreArchivo)) {
+            $ruta = "";
+        }*/
+        if($archivo_ok = move_uploaded_file($Archivo, $ruta)){
+            return $ruta;
+        }else{
+            return false;
+        }
+
     }
 }
