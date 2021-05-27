@@ -45,54 +45,88 @@ function confirmarPago($id_incripcion, $monto, $desc, $fecha_pago)
     $id_asignacion = $ficha_Inscripcion[0]['id_asignacion_fk'];
     $id_alumno = $ficha_Inscripcion[0]['id_alumno_fk'];
     $alumno_procedencia = $ficha_Inscripcion[0]['tipo_procedencia'];
+    $pagoConfirmado = $ficha_Inscripcion[0]['pago_confirmado']== "1" ? true:false;
 
+    if (!$pagoConfirmado){
+        ////LISTA DE PROCEDENCIAS QUE PUEDEN TOMAR EL CURSO (ASIGNACION)
+        $listaProcedenciasAceptadas=consultaListaProcedenciaAdmitida($id_asignacion);
 
-    ////LISTA DE PROCEDENCIAS QUE PUEDEN TOMAR EL CURSO (ASIGNACION)
-    $listaProcedenciasAceptadas=consultaListaProcedenciaAdmitida($id_asignacion);
+        //defino que la aplicacion no es valida, verifico despues
+        $aplicaInscripcion = false;
+        //defino my procedencia como nula, porque en el for obtendre los datos, si es que coincide la procedencia
+        //  para aplicarle descuento
+        $myProcedencia = NULL;
 
-    //defino que la aplicacion no es valida, verifico despues
-    $aplicaInscripcion = false;
-    //defino my procedencia como nula, porque en el for obtendre los datos, si es que coincide la procedencia
-    //  para aplicarle descuento
-    $myProcedencia = NULL;
-
-    foreach ($listaProcedenciasAceptadas as $procedencia){
-        $procedenciaAdmintida = $procedencia['id_tipo_procedencia'];
-        //verifico los IDs
-        if ($procedenciaAdmintida == $alumno_procedencia){
-            //obtengo el array de datos de la procedencia que contiene la info del desc.
-            $myProcedencia = $procedencia;
-            //modifico que si hay coincidencia
-            $aplicaInscripcion = true;
-            //rompo el bucle para continuar
-            break;
+        foreach ($listaProcedenciasAceptadas as $procedencia){
+            $procedenciaAdmintida = $procedencia['id_tipo_procedencia'];
+            //verifico los IDs
+            if ($procedenciaAdmintida == $alumno_procedencia){
+                //obtengo el array de datos de la procedencia que contiene la info del desc.
+                $myProcedencia = $procedencia;
+                //modifico que si hay coincidencia
+                $aplicaInscripcion = true;
+                //rompo el bucle para continuar
+                break;
+            }
         }
+
+        //Si, sí aplica la procedencia y myprocedencia esta instanciada (diferente de NULL)
+        if ($aplicaInscripcion && isset($myProcedencia)){
+            $costoFinal = $myProcedencia["costo_final"];
+
+            //200 y $150 = 350 Resta 400. y tu pago de 250...   // 700-> $400
+            //Consultar todos los pagos que ha realizo el alumno
+            $pagosRealizados = consultaPagosRealidos($id_incripcion);
+
+            $sumaPagoRealizados = 0;
+            foreach ($pagosRealizados as $pago){
+                $sumaPagoRealizados += $pago['monto_pago_realizado'];
+            }
+
+            $pagoSaldo = $costoFinal - $sumaPagoRealizados;
+            echo "<br>Has pagado: $".$sumaPagoRealizados;
+            echo "<br>Te falta pagar: $".$pagoSaldo;
+            echo "<br>Me eestas pagando: $".$monto;
+
+            echo "<br><br>";
+            var_dump($myProcedencia);
+            echo "<br><br>";
+            echo "SI PODEMOS PROCESDAR TU PAGO";
+            // verificar cuantos pagos ha realizado el alumno
+
+            //contarlos, sumarlos, y en funcion del totoal del curso determinar cuanto es su saldo, verificarlo con el monto,
+            //  y procedemos a crear el pago, y verificar si pago confirmado lo paso a true
+
+            //determinar si el pago del alumno es el mismo que el del costo total
+
+            //descuento verifica, aplico, inscribo
+            // Verificacion del costo final en funcion del desc aplicado para
+        }
+        else{
+            echo "NO te puedes inscribir";
+        }
+
+        //
+
+        /*
+        if ($alumno_procedencia<=$nivel_apli){
+            echo "aplicar el descuiento";
+        }
+        else{
+            echo "cobrar completo";
+        }
+
+    */
+
+        //  include_once "asignacion_grupos_control.php";
+        //   $asig = consultaAsignaciones($id_asig);
+
+
     }
 
-    var_dump($myProcedencia);
-    //Si, sí aplica la procedencia y myprocedencia esta instanciada (diferente de NULL)
-    if ($aplicaInscripcion && isset($myProcedencia)){
-        echo "PROCEDEMOS A APLICARTE DESCUENTO";
-        //descuento verifica, aplico, inscribo
-        // Verificacion del costo final en funcion del desc aplicado para
-    }
-
-    //
-
-    /*
-    if ($alumno_procedencia<=$nivel_apli){
-        echo "aplicar el descuiento";
-    }
     else{
-        echo "cobrar completo";
+        echo "El total del pago ya ha sido cubierto";
     }
-
-*/
-
-      //  include_once "asignacion_grupos_control.php";
-     //   $asig = consultaAsignaciones($id_asig);
-
-
 }
 
 function consultaFichaInscripcion($id_inscripcion){
@@ -109,4 +143,11 @@ function consultaFichaInscripcion($id_inscripcion){
 function consultaListaProcedenciaAdmitida($id_asig){
     include_once "asignacion_grupos_control.php";
     return detallesAsignacion_pago($id_asig);
+}
+
+function consultaPagosRealidos($idInscripcion){
+    include_once "../model/INSCRIPCION.php";
+    $obj_insc = new INSCRIPCION();
+    $obj_insc->setIdInscripcion($idInscripcion);
+    return $obj_insc->consultaValidacionesInscripciones();
 }

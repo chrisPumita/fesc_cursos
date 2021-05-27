@@ -19,7 +19,7 @@ class INSCRIPCION extends CONEXION_M implements I_INSCRIPCION
     private $lista_archivos;
 
     /* ASOCIACION de cla clase VALIDACION_INSCRIPCION*/
-    private $VALIDACION;
+    private $lista_validadiones_pagos;
 
 
     /*******************************************************************************
@@ -29,18 +29,19 @@ class INSCRIPCION extends CONEXION_M implements I_INSCRIPCION
     /**
      * @return mixed
      */
-    public function getVALIDACION()
+    public function getListaValidadionesPagos()
     {
-        return $this->VALIDACION;
+        return $this->consultaValidacionesInscripciones();
     }
 
     /**
-     * @param mixed $VALIDACION
+     * @param mixed $lista_validadiones_pagos
      */
-    public function setVALIDACION($VALIDACION): void
+    public function setListaValidadionesPagos($lista_validadiones_pagos): void
     {
-        $this->VALIDACION = $VALIDACION;
+        $this->lista_validadiones_pagos = $lista_validadiones_pagos;
     }
+
     /**
      * @return mixed
      */
@@ -325,5 +326,17 @@ class INSCRIPCION extends CONEXION_M implements I_INSCRIPCION
     /*******************************************************************************
      * Inician Otras funciones
      *******************************************************************************/
+
+    function consultaValidacionesInscripciones()
+    {
+
+        $sql = "SELECT `id_inscripcion_fk`, `id_profesor_admin_fk`, `fecha_validacion`, `fecha_pago`, `monto_pago_realizado`, `descripcion`, `notas` 
+                FROM `validacion_inscripcion` WHERE `id_inscripcion_fk` = ".$this->getIdInscripcion();
+        //Abro conexion de consulta a BD
+        $this->connect();
+        $result = $this->getData($sql);
+        $this->close();
+        return $result;
+    }
 
 }
