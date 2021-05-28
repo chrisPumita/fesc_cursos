@@ -12,12 +12,7 @@ if (isset($_FILES['archivo'])) {
     $id_inscripcion=123456;
     $result=subirarchivo($nombreArchivo,$Archivo,$id_inscripcion);
     echo $result;
-    /*
-    if (subirarchivo($nombreArchivo,$Archivo,$id_inscripcion)) {
-        echo "Archivo subido .";
-    } else {
-        echo "Ocurrio un error";
-    }*/
+
 } else {
     echo "error al enviar el archivo";
 }

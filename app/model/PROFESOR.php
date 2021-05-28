@@ -225,7 +225,7 @@ class PROFESOR extends PERSONA implements I_PROFESOR
                 break;
             case "3":
                 //Filtro por departamento
-                $filtro = " AND dp.nombre = ".$valor;
+                $filtro = " AND dp.id_depto = ".$valor;
                 break;
 
             default:

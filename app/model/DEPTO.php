@@ -1,7 +1,7 @@
 <?php
+include_once "../model/CONEXION_M.php";
 
-
-class DEPTO
+class DEPTO extends CONEXION_M
 {
     private $id_depto;
     private $nombre_depto;
@@ -36,5 +36,36 @@ class DEPTO
     public function setNombreDepto($nombre_depto): void
     {
         $this->nombre_depto = $nombre_depto;
+    }
+
+
+    function CrearDepartamento(){
+        $query="INSERT INTO `departamentos`(`id_depto`, `nombre`) VALUES (NULL,'".$this->getNombreDepto()."')";
+        $this->connect();
+        $result = $this-> executeInstruction($query);
+        $this->close();
+        return $result;
+
+    }
+    function EliminarDepartamento($id_depto){
+        $query="DELETE FROM `departamentos` WHERE `id_depto`=".$id_depto;
+        $this->connect();
+        $result = $this-> executeInstruction($query);
+        $this->close();
+        return $result;
+    }
+    function ConsultarDepartamento($id_depto){
+        $query="SELECT * FROM `departamentos` WHERE `id_depto`=".$id_depto;
+        $this->connect();
+        $result = $this-> getData($query);
+        $this->close();
+        return $result;
+    }
+    function ListaDepartamentos(){
+        $query="SELECT * FROM `departamentos`";
+        $this->connect();
+        $result = $this-> getData($query);
+        $this->close();
+        return $result;
     }
 }

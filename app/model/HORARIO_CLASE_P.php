@@ -138,4 +138,41 @@ class HORARIO_CLASE_P extends AULAS implements I_HORARIO_CLASE_P
         $this->close();
         return $datos;
     }
+
+    function ConsultaAulas($tipo_filtro)
+    {
+        //Defiunir Control de filtro
+
+        $filtro = "";
+        switch ($tipo_filtro){
+            case "1":
+                //Filtro por edificio
+                $filtro = "ORDER BY aulas.edificio asc  ";
+                break;
+            case "2":
+                //Filtro por campus
+                $filtro = "ORDER BY aulas.campus asc  ";
+                break;
+            default:
+                $filtro = "";
+                break;
+        }
+        $this->connect();
+        $datos = $this-> getData("SELECT horario_clase_presencial.id_horario_pres,horario_clase_presencial.dia_semana,
+                                        horario_clase_presencial.hora_inicio,horario_clase_presencial.duracion,aulas.edificio,
+                                        aulas.aula,aulas.campus,aulas.cupo,asignacion_grupo.id_asignacion,asignacion_grupo.id_grupo_fk 
+                                        FROM `horario_clase_presencial`,`aulas`,`asignacion_grupo` 
+                                            WHERE aulas.id_aula=horario_clase_presencial.id_aula_fk 
+                                              AND horario_clase_presencial.id_asignacion_fk=asignacion_grupo.id_asignacion ".$filtro);
+        $this->close();
+        return $datos;
+    }
+
+    function consultarAula($idHoraClase){
+        $query="SELECT au.* FROM aulas au, horario_clase_presencial hp WHERE au.id_aula=hp.id_aula_fk and hp.id_horario_pres=".$idHoraClase;
+        $this->connect();
+        $result = $this-> getData($query);
+        $this->close();
+        return $result;
+    }
 }

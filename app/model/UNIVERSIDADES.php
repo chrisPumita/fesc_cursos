@@ -5,6 +5,7 @@ class UNIVERSIDADES
 {
 	private $id_universidad;
 	private $nombre;
+    private $siglas;
 
     /**
      * @return mixed
@@ -53,5 +54,5 @@ class UNIVERSIDADES
     {
         $this->siglas = $siglas;
     }
-	private $siglas;
+
 }
