@@ -1,18 +1,11 @@
 <?php
 
 include_once "inscripciones_control.php";
-confirmarPago("123456789","100","","");
-
-
-
-
-
-
-
-
+echo acreditarPagoInscripcion("1","0000","987654321","100","SOLO PAGO","2021-05-27");
 
 ?>
 <!--
+MODEL - VIEW - CONTROL
 <form action="archivo_add(prueba).php" method="post" enctype="multipart/form-data">
     <br>
     <b>Enviar un nuevo archivo: </b>

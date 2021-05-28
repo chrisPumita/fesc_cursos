@@ -1,7 +1,7 @@
 <?php
 
-
-class VALIDACION_INSCRIPCION
+include_once "CONEXION_M.php";
+class VALIDACION_INSCRIPCION extends CONEXION_M
 {
     private $id_inscripcion_fk;
     private $id_profesor_admin_fk;
@@ -125,7 +125,6 @@ class VALIDACION_INSCRIPCION
 
     //Llamado de control de verificacion
     function validaInscripcion($id_inscripcion,$id_admin){
-        include_once "CONEXION_M.php";
         $sql = "INSERT INTO `validacion_inscripcion` (
         `id_inscripcion_fk`, `id_profesor_admin_fk`, `fecha_validacion`, `fecha_pago`, `monto_pago_realizado`, `descripcion`, `notas`) 
         VALUES (

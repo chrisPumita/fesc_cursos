@@ -1,7 +1,7 @@
 <?php
 include_once "../model/ALUMNO.php";
 
-function crearCuentaAlumno($id_municipio, $id_universidad,$matricula,$nombre_uni,$tipo_procedencia,
+function crearCuentaAlumno($id_municipio, $id_universidad,$matricula,$nombre_uni,$idProcedencia,
                      $carrera_especialidad,$email,$pw,$nombre,$app,$apm,$telefono,$sexo){
     include_once "../model/CLAVES.php";
     //verificar si existe una cuenta
@@ -21,7 +21,7 @@ function crearCuentaAlumno($id_municipio, $id_universidad,$matricula,$nombre_uni
     $al->setIdUniversidad($id_universidad);
     $al->setMatricula($matricula);
     $al->setNombreUni($nombre_uni);
-    $al->setTipoProcedencia($tipo_procedencia);
+    $al->setIdProcedencia($idProcedencia);
     $al->setCarreraEspecialidad($carrera_especialidad);
     $al->setEmail($email);
     $al->setPw(md5($pw));

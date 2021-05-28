@@ -1,7 +1,7 @@
 <?php
 //validar el catpcha
 if (isset($_POST['matricula'])
-    && isset($_POST['procedencia'])
+    && isset($_POST['idProcedencia'])
     && isset($_POST['carrera'])
     && isset($_POST['email'])
     && isset($_POST['pw1'])
@@ -17,7 +17,7 @@ if (isset($_POST['matricula'])
     $id_universidad = $_POST['id_uni'];
     $matricula = $_POST['matricula'];
     $nombre_uni= $_POST['nombre_uni'];
-    $tipo_procedencia= $_POST['procedencia'];
+    $id_procedencia= $_POST['idProcedencia'];
     $carrera_especialidad= $_POST['carrera'];
     $email= $_POST['email'];
     $pw= $_POST['pw1'];
@@ -28,7 +28,7 @@ if (isset($_POST['matricula'])
     $sexo = $_POST['sexo'];
 
     if(crearCuentaAlumno($id_municipio,$id_universidad,$matricula,
-        $nombre_uni,$tipo_procedencia,$carrera_especialidad,
+        $nombre_uni,$id_procedencia,$carrera_especialidad,
         $email,$pw,$nombre,$app,$apm,$telefono,$sexo)){
         echo "Felicidades ".$nombre.", tu cuenta se ha registrado de forma exitosa.";
     }

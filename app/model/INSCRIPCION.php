@@ -284,21 +284,14 @@ class INSCRIPCION extends CONEXION_M implements I_INSCRIPCION
         return $result;
     }
 
-    function validaAutorizacion($id_admin,$clave_confirm,$fechaPago,$monto,$desc,$notas)
+    function validaAutorizacion($id_admin,$fechaPago,$monto,$desc,$notas)
     {
-        // incluir el control de validacion
-        //  control me autoriza inluid control_validacion
-        // validarInscip (id,clve)
-        //  return SI / NO
-
-
         include_once "VALIDACION_INSCRIPCION.php";
         $obj_valida = new VALIDACION_INSCRIPCION();
         $obj_valida->setFechaPago($fechaPago);
         $obj_valida->setMontoPagoRealizado($monto);
         $obj_valida->setDescripcion($desc);
         $obj_valida->setNota($notas);
-
         return $obj_valida->validaInscripcion($this->getIdInscripcion(),$id_admin);
     }
 

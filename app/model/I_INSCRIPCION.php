@@ -10,7 +10,7 @@ interface I_INSCRIPCION
     function confirmaPago($confirmacion);
 
     //crea una validacion
-    function validaAutorizacion($id_admin,$clave_confirm,$fechaPago,$monto,$desc,$notas);
+    function validaAutorizacion($id_admin,$fechaPago,$monto,$desc,$notas);
 
     function inscribeEnActa();
 

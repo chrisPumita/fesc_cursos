@@ -82,11 +82,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <select class="form-control" name="procedencia"  id="procedencia">
-                                            <option value="1">Comunidad FESC</option>
-                                            <option value="2">Comunidad UNAM</option>
-                                            <option value="3">Ex-Alumno</option>
-                                            <option value="4">Comunidad Externa</option>
-                                            <option value="0">Otro</option>
+                                            <!--AJAX result DB -->
                                         </select>
                                     </div>
                                 </div>

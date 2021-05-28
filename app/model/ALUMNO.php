@@ -10,6 +10,7 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
     private $matricula;
     private $nombre_uni;
     private $tipo_procedencia;
+    private $id_procedencia;
     private $carrera_especialidad;
     private $email;
     private $pw;
@@ -81,6 +82,22 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
     public function setIdUniversidad($id_universidad): void
     {
         $this->id_universidad = $id_universidad;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdProcedencia()
+    {
+        return $this->id_procedencia;
+    }
+
+    /**
+     * @param mixed $id_procedencia
+     */
+    public function setIdProcedencia($id_procedencia): void
+    {
+        $this->id_procedencia = $id_procedencia;
     }
 
     /**
@@ -283,14 +300,15 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
            al.id_persona, 
            al.matricula, 
            al.nombre_uni, 
-           al.tipo_procedencia, 
            al.carrera_especialidad, 
            al.email, 
            al.fecha_registro, 
            al.perfil_image, 
-           al.estatus AS estatus_al 
-        FROM alumno al,persona p 
-        WHERE al.id_persona = p.id_persona  
+           al.estatus AS estatus_al ,
+           tp.id_tipo_procedencia,
+           tp.tipo_procedencia
+        FROM alumno al,persona p , tipo_procedencia tp
+        WHERE al.id_persona = p.id_persona AND al.id_tipo_procedencia_fk = tp.id_tipo_procedencia
         AND p.estatus = 1  ".$filtro." ORDER BY `p`.`nombre` ASC";
 
         $this->connect();
@@ -307,9 +325,9 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
                       `id_municipio`, 
                       `id_universidad`, 
                       `id_persona`, 
+                      `id_tipo_procedencia_fk`, 
                       `matricula`, 
                       `nombre_uni`, 
-                      `tipo_procedencia`, 
                       `carrera_especialidad`, 
                       `email`, 
                       `pw`, 
@@ -317,8 +335,8 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
                       `perfil_image`, 
                       `estatus`) 
                       VALUES (NULL, '".$this->getIdMunicipio()."', '".$this->id_universidad."',
-                       '".$this->getIdPersona()."', '".$this->getMatricula()."', '".$this->getNombreUni()."',
-                        '".$this->getTipoProcedencia()."', '".$this->getCarreraEspecialidad()."',
+                       '".$this->getIdPersona()."', '".$this->getIdProcedencia()."', '".$this->getMatricula()."', '".$this->getNombreUni()."',
+                        '".$this->getCarreraEspecialidad()."',
                          '".$this->getEmail()."', '".$this->getPw()."', '".date('Y-m-d H:i:s')."', '', '".$this->getEstatusAlumno()."')";
         $this->connect();
         $result = $this->executeInstruction($query);

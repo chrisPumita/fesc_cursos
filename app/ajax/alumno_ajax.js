@@ -3,6 +3,7 @@ $(document).ready(function () {
     consultaUniversidades();
     consultaEstadosRep();
     consultaMunicipios(15);
+    consultaProcedencia();
 });
 
 function consultaUniversidades() {
@@ -42,6 +43,26 @@ function consultaEstadosRep() {
                     }
                 );
                 $("#estados").html(template);
+            }
+        }
+    );
+}
+
+function consultaProcedencia() {
+    $.ajax(
+        {
+            url: "./app/control/list_procedencia.php",
+            success: function (response)
+            {
+                let obj_result = JSON.parse(response);
+                let template = "";
+                obj_result.forEach(
+                    (obj_result)=>
+                    {
+                        template += `<option value="${obj_result.id_tipo_procedencia}">${obj_result.tipo_procedencia}</option>`;
+                    }
+                );
+                $("#procedencia").html(template);
             }
         }
     );
@@ -159,11 +180,11 @@ $(function() {
                     email:      $('#correoAlumno').val(),
                     pw1:        $('#contrasena').val(),
                     id_mun:     $('#municipios').val(),
-                    procedencia:$('#procedencia').val(),
                     id_uni:     $('#universidades').val(),
                     nombre_uni: $('#nombreUni').val(),
                     carrera:    $('#carrera').val(),
-                    matricula:  $('#matricula').val()
+                    matricula:  $('#matricula').val(),
+                    idProcedencia:  $('#procedencia').val()
                 }, //parametros (valores) en formato llaver:valor, que se enviaran con la solicitud
                 beforeSend: function(){
                     /** Esta función se ejecuta durante el envió de la petición al
