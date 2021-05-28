@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2021 a las 19:13:41
+-- Tiempo de generación: 28-05-2021 a las 15:31:09
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.2
 
@@ -71,7 +71,7 @@ CREATE TABLE `alumno` (
   `id_persona` bigint(20) NOT NULL,
   `matricula` varchar(20) NOT NULL,
   `nombre_uni` varchar(100) NOT NULL,
-  `tipo_procedencia` tinyint(2) NOT NULL,
+  `tipo_procedencia` int(10) NOT NULL,
   `carrera_especialidad` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `pw` varchar(100) NOT NULL,
@@ -153,6 +153,14 @@ CREATE TABLE `asignacion_procedencia` (
   `porcentaje_desc` decimal(10,2) NOT NULL,
   `costo_final` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `asignacion_procedencia`
+--
+
+INSERT INTO `asignacion_procedencia` (`id_tipo_procedencia_fk`, `id_asignacion_fk`, `porcentaje_desc`, `costo_final`) VALUES
+(1, 2, '50.00', '500.00'),
+(2, 2, '0.00', '1000.00');
 
 -- --------------------------------------------------------
 
@@ -3051,6 +3059,18 @@ CREATE TABLE `tipo_procedencia` (
   `tipo_procedencia` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `tipo_procedencia`
+--
+
+INSERT INTO `tipo_procedencia` (`id_tipo_procedencia`, `tipo_procedencia`) VALUES
+(1, 'Comunidad FESC'),
+(2, 'Comunidad UNAM'),
+(3, 'Ex-Alumno FESC'),
+(4, 'Ex-Alumno UNAM'),
+(5, 'Externos'),
+(6, 'Personal UNAM');
+
 -- --------------------------------------------------------
 
 --
@@ -3113,7 +3133,8 @@ ALTER TABLE `alumno`
   ADD PRIMARY KEY (`id_alumno`),
   ADD KEY `id_municipio` (`id_municipio`),
   ADD KEY `id_universidad` (`id_universidad`),
-  ADD KEY `id_persona` (`id_persona`);
+  ADD KEY `id_persona` (`id_persona`),
+  ADD KEY `tipo_procedencia` (`tipo_procedencia`);
 
 --
 -- Indices de la tabla `archivo`
@@ -3410,7 +3431,7 @@ ALTER TABLE `temas`
 -- AUTO_INCREMENT de la tabla `tipo_procedencia`
 --
 ALTER TABLE `tipo_procedencia`
-  MODIFY `id_tipo_procedencia` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tipo_procedencia` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `universidades`
@@ -3440,7 +3461,8 @@ ALTER TABLE `administrador`
 ALTER TABLE `alumno`
   ADD CONSTRAINT `alumno_ibfk_1` FOREIGN KEY (`id_universidad`) REFERENCES `universidades` (`id_universidad`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `alumno_ibfk_2` FOREIGN KEY (`id_municipio`) REFERENCES `municipios` (`id_municipio`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `alumno_ibfk_3` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `alumno_ibfk_3` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id_persona`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `alumno_ibfk_4` FOREIGN KEY (`tipo_procedencia`) REFERENCES `tipo_procedencia` (`id_tipo_procedencia`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `archivo`
