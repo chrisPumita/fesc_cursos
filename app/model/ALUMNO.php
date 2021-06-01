@@ -26,7 +26,7 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
      */
     public function getCuentaSERVICIOSOCIAL()
     {
-        return $this->cuenta_SERVICIO_SOCIAL;
+        return $this->consultaCuentaServSoc();
     }
 
     /**
@@ -361,7 +361,10 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
 
     function consultaCuentaServSoc()
     {
-        // TODO: Implement consultaCuentaServSoc() method.
+        include_once "SERVICIO_SOCIAL.php";
+        $obj_serv = new SERVICIO_SOCIAL();
+        $obj_serv->setIdAlumno($this->getIdAlumno());
+        return $obj_serv->consultaCuenta();
     }
 
     function crearCuentaServSoc()

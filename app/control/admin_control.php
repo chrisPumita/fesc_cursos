@@ -8,9 +8,9 @@
         //incluir el modelo de ADMIN
         include_once "../model/ADMIN.php";
         $objAdmin = new ADMIN();
-        $resultados = $objAdmin -> getListaAdministradores(15);
-        var_dump($resultados);
+        $result = $objAdmin -> getListaAdministradores(1);
+        $json_data = json_encode($result);
+        return $json_data;
     }
-    consultaAdministradores();
 
 

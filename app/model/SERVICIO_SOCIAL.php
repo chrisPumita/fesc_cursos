@@ -140,5 +140,11 @@ class SERVICIO_SOCIAL
         $this->estatus = $estatus;
     }
 
+    public function consultaCuenta()
+    {
+        $cuenta = "";
+        return $cuenta;
+    }
+
 
 }

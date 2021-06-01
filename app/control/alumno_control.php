@@ -43,6 +43,5 @@ function consultaAlumnos(){
     $al = new ALUMNO();
     $result = $al ->consultaAlumnos("0","0");
     $json_data = json_encode($result);
-    echo $json_data;
     return $json_data;
 }

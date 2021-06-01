@@ -1,0 +1,4 @@
+-------- CHRIS 31/05/21 -----
+INSERT INTO `administrador` (`id_profesor_admin_fk`, `cargo`, `permisos`, `clave_confirmacion`, `estatus`) VALUES ('2', 'cd', '1', 'cdc', '1')
+
+INSERT INTO `administrador` (`id_profesor_admin_fk`, `cargo`, `permisos`, `clave_confirmacion`, `estatus`) VALUES ('2', 'cd', '1', 'cdc', '1')

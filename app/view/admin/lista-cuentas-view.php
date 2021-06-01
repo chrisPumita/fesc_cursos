@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12 overflow-auto">
+                                <div id="tbl-container" class="col-lg-12 overflow-auto">
                                     <table class="table table-striped bg-light">
                                         <thead>
                                             <tr>
@@ -64,49 +64,8 @@
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>213541849</td>
-                                                <td>Claudia Cruz Sánchez</td>
-                                                <td>Jefa del Departamento de Cómputo</td>
-                                                <td>Cómputo</td>
-                                                <td>ccs@gmail.com</td>
-                                                <td>02-01-2021</td>
-                                                <td>
-                                                    <!-- BOTON ACCIONES -->
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                        </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <button class="dropdown-item" type="button">Ver Detalles</button>
-                                                            <button class="dropdown-item" type="button">Inhabilitar</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>213879471</td>
-                                                <td>Juan Martínez Valdez</td>
-                                                <td>Docente</td>
-                                                <td>Informática</td>
-                                                <td>jmv@gmail.com</td>
-                                                <td>12-02-2021</td>
-                                                <td>
-                                                    <!-- BOTON ACCIONES -->
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                        </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <button class="dropdown-item" type="button">Ver Detalles</button>
-                                                            <button class="dropdown-item" type="button">Inhabilitar</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        <tbody id="tbl-admin">
+                                            <!-- ajax response -->
                                         </tbody>
                                     </table>
                                 </div>
@@ -138,6 +97,10 @@
                 </div>
             </div>
         </div>
-        <!-- script_js -->
+        <!-- script_js
+            ../../ =====>1
+            ./     =====>2
+        -->
+        <script src="./ajax/admin_ajax.js"></script>
     </body>
 </html>

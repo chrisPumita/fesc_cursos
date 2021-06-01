@@ -1,7 +1,10 @@
 <?php
 
-include_once "inscripciones_control.php";
-echo acreditarPagoInscripcion("1","0000","987654321","100","SOLO PAGO","2021-05-27");
+//include_once "inscripciones_control.php";
+//echo acreditarPagoInscripcion("1","0000","987654321","100","SOLO PAGO","2021-05-27");
+
+include_once "./admin_control.php";
+echo consultaAdministradores();
 
 ?>
 <!--
@@ -20,3 +23,4 @@ INSERT INTO `validacion_inscripcion` (`id_inscripcion_fk`, `id_profesor_admin_fk
 VALUES ('123456789', '1', '2021-05-27 00:00:00', '2021-05-26 00:00:00', '200', 'HSBC Ref 4515',
  '<Se realizo el registro del pago por $200 como prueba atraves de la BD')
 -->
+
