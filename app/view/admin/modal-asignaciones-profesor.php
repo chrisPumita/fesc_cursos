@@ -1,6 +1,6 @@
 <!--INICIA SECCION DEL MODAL TABLA ASIGNACIONES-->
-<div class="container">
-    <div class="modal" tabindex="-1" id="asignacio-prof" data-backdrop="static">
+
+    <div class="modal" tabindex="-1" id="asigProfHistory" data-backdrop="static">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <section class="container">
@@ -209,5 +209,4 @@
             </div>
         </div>
     </div>
-</div>
 <!--FIN SECCION DEL MODAL TABLA ASIGNACIONES-->

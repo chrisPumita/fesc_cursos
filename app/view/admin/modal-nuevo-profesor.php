@@ -1,6 +1,6 @@
 <!--INICIA MODAL: CREACIÓN DE CUENTA DE PROFESOR-->
-<div class="modal fade" id="nuevo-profesor" data-backdrop="static">
-    <div class="modal" tabindex="-1">
+<div class="modal fade" id="nuevoProfesor" data-backdrop="static">
+
         <div class="modal-dialog">
             <div class="modal-content">
                 <section class="container bg-grey">
@@ -74,6 +74,5 @@
                 </section>
             </div>
         </div>
-    </div>
 </div>
 <!--FIN MODAL CREACIÓN DE CUENTA DE PROFESOR-->

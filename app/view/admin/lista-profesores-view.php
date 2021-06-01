@@ -6,8 +6,6 @@
         include("./view/includes/header.php");
         ?>
     <body class="body-home">
-    <?php include_once ("./admin/modal-asignaciones-profesor.php");?>
-    <?php include_once "./modal-nuevo-profesor.php";?>
         <div class="d-flex">
             <?php include("./view/includes/admin-menupc.php"); ?>
             <div class="w-100">
@@ -33,7 +31,7 @@
                                                     Revise la información y asegurese de verificar bien los datos de las solicitudes.
                                                 </div>
                                                 <div class="col-lg-3">
-                                                    <a href="#" data-toggle="modal" data-target="#nuevo-prof">
+                                                    <a href="#" data-toggle="modal" data-target="#nuevoProfesor">
                                                     <button class="btn btn-primary w-100 m-3">Nuevo</button>
                                                     </a>
                                                 </div>
@@ -99,7 +97,7 @@
                                                         Opciones
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <button class="dropdown-item" type="button" data-toggle='modal' data-target='#modal2'>Ver Asignaciones</button>                                       
+                                                            <button class="dropdown-item" type="button" data-toggle='modal' data-target='#asigProfHistory'>Ver Asignaciones</button>
                                                             <a href="./detalles-profesor">
                                                             <button class="dropdown-item" type="button">Ver Detalles</button>
                                                             </a>
@@ -124,7 +122,7 @@
                                                         Opciones
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <a href="#" data-toggle="modal" data-target="#mod-asig-prof">
+                                                            <a href="#" data-toggle="modal" data-target="#asigProfHistory">
                                                             <button class="dropdown-item" type="button">Ver Asignaciones</button>                               
                                                             </a>
                                                             <a href="./detalles-profesor">
@@ -166,6 +164,8 @@
                 </div>
             </div>
         </div>
+        <?php include "modal-asignaciones-profesor.php";?>
+        <?php include "modal-nuevo-profesor.php";?>
         <!-- script_js -->
     </body>
 </html>
