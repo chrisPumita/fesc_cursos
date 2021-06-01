@@ -1,6 +1,6 @@
 <!--INICIA MODAL: CREACIÓN DE CUENTA DE PROFESOR-->
-<div class="container">
-    <div class="modal" tabindex="-1" id="mod-new-prof">
+<div class="modal fade" id="nuevo-profesor" data-backdrop="static">
+    <div class="modal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <section class="container bg-grey">
