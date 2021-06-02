@@ -81,59 +81,8 @@
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>123</td>
-                                                <td>Juan Pérez Sánchez</td>
-                                                <td>Informática</td>
-                                                <td>5563258917</td>
-                                                <td>juan@gmail.com</td>
-                                                <td>--------</td>
-                                                <td>
-                                                    <!-- BOTON ACCIONES -->
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                        </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <button class="dropdown-item" type="button" data-toggle='modal' data-target='#asigProfHistory'>Ver Asignaciones</button>
-                                                            <a href="./detalles-profesor">
-                                                            <button class="dropdown-item" type="button">Ver Detalles</button>
-                                                            </a>
-                                                            <button class="dropdown-item" type="button">Reestablecer contraseña</button>
-                                                            <button class="dropdown-item" type="button">Inhabilitar</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>456</td>
-                                                <td>Roberto Gomez Ramírez</td>
-                                                <td>Matemáticas</td>
-                                                <td>5589367405</td>
-                                                <td>roberto@gmail.com</td>
-                                                <td>--------</td>
-                                                <!-- BOTON ACCIONES -->
-                                                <td>
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                        </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <a href="#" data-toggle="modal" data-target="#asigProfHistory">
-                                                            <button class="dropdown-item" type="button">Ver Asignaciones</button>                               
-                                                            </a>
-                                                            <a href="./detalles-profesor">
-                                                            <button class="dropdown-item" type="button">Ver Detalles</button>
-                                                            </a>
-                                                            <button class="dropdown-item" type="button">Reestablecer contraseña</button>
-                                                            <button class="dropdown-item" type="button">Inhabilitar</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        <tbody id="tbl-prof">
+                                            <!-- ajax-->
                                         </tbody>
                                     </table>
                                 </div>
@@ -167,5 +116,6 @@
         <?php include "modal-asignaciones-profesor.php";?>
         <?php include "modal-nuevo-profesor.php";?>
         <!-- script_js -->
+    <script src="./ajax/profesor_ajax.js"></script>
     </body>
 </html>
