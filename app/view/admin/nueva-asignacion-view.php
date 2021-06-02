@@ -150,88 +150,107 @@
                                             </div>
                                             <hr>
                                             <div class="form-group row">
-                                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                                    <label>Habilitar inscripción:</label>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox" class="form-check-input" id="chkFesc">
-                                                        <label class="form-check-label" for="chkFesc">Comunidad FESC</label>
+                                                <div class="col-sm-6">
+                                                    <div class="mt-1 mb-1 overflow-auto">
+                                                        <table class="table table-hover text-left">
+                                                            <thead>
+                                                            <tr>
+                                                                <th scope="col"></th>
+                                                                <th scope="col">Habilitar inscripción a:</th>
+                                                                <th scope="col">% Descuento</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check">
+                                                                        <input type="checkbox" class="form-check-input" id="chkFesc">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Comunidad FESC</td>
+                                                                <td>
+                                                                    <input class="form-control" type="number" value="0" id="numFesc">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check">
+                                                                        <input type="checkbox" class="form-check-input" id="chkUnam">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Comunidad UNAM</td>
+                                                                <td>
+                                                                    <input class="form-control" type="number" value="0" id="numUnam">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check">
+                                                                        <input type="checkbox" class="form-check-input" id="chkExfesc">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Ex-Alumnos FESC</td>
+                                                                <td>
+                                                                    <input class="form-control" type="number" value="0" id="numExfesc">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check">
+                                                                        <input type="checkbox" class="form-check-input" id="chkExunam">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Ex-Alumnos UNAM</td>
+                                                                <td>
+                                                                    <input class="form-control" type="number" value="0" id="numExunam">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check">
+                                                                        <input type="checkbox" class="form-check-input" id="chkPerunam">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Personal UNAM</td>
+                                                                <td>
+                                                                    <input class="form-control" type="number" value="0" id="numPerunam">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check">
+                                                                        <input type="checkbox" class="form-check-input" id="chkExternos">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Externos</td>
+                                                                <td>
+                                                                    <input class="form-control" type="number" value="0" id="numExternos">
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox" class="form-check-input" id="chkUnam">
-                                                        <label class="form-check-label" for="chkUnam">Comunidad UNAM</label>
-                                                    </div>                                                    
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox" class="form-check-input" id="chkExfesc">
-                                                        <label class="form-check-label" for="chkExfesc">Ex-Alumnos FESC</label>
-                                                    </div>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox" class="form-check-input" id="chkExunam">
-                                                        <label class="form-check-label" for="chkExunam">Ex-Alumnos UNAM</label>
-                                                    </div>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox" class="form-check-input" id="chkPersonal">
-                                                        <label class="form-check-label" for="chkPersonal">Personal UNAM</label>
-                                                    </div>
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox" class="form-check-input" id="chkExternos">
-                                                        <label class="form-check-label" for="chkExternos">Externos</label>
-                                                    </div>                                                    
                                                 </div>
-                                                <div class="col-sm-4 mb-3 mb-sm-0">                               
-                                                    <label>Aplicar descuento*</label>
-                                                </div>
-                                                <!-- <div class="col-sm-2 mb-3 mb-sm-0">                               
-                                                    <label>Notas:</label>
-                                                </div> -->
-                                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                                    <div class="form-group">
-                                                        <label for="exampleFormControlTextarea1">Notas:</label>
-                                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- <div class="form-group form-check">
-                                                <input type="checkbox" class="form-check-input" id="chkFesc">
-                                                <label class="form-check-label" for="chkFesc">Comunidad FESC</label>
-                                            </div>
-                                            <div class="form-group form-check">
-                                                <input type="checkbox" class="form-check-input" id="chkUnam">
-                                                <label class="form-check-label" for="chkUnam">Comunidad UNAM</label>
-                                            </div>                                                    
-                                            <div class="form-group form-check">
-                                                <input type="checkbox" class="form-check-input" id="chkExfesc">
-                                                <label class="form-check-label" for="chkExfesc">Ex-Alumnos FESC</label>
-                                            </div>
-                                            <div class="form-group form-check">
-                                                <input type="checkbox" class="form-check-input" id="chkExunam">
-                                                <label class="form-check-label" for="chkExunam">Ex-Alumnos UNAM</label>
-                                            </div>
-                                            <div class="form-group form-check">
-                                                <input type="checkbox" class="form-check-input" id="chkPersonal">
-                                                <label class="form-check-label" for="chkPersonal">Personal UNAM</label>
-                                            </div>
-                                            <div class="form-group form-check">
-                                                <input type="checkbox" class="form-check-input" id="chkExternos">
-                                                <label class="form-check-label" for="chkExternos">Externos</label>
-                                            </div> -->
-                                            <div class="form-group row">
-                                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                                    <div class="form-group form-check">
-                                                        <input type="checkbox" class="form-check-input" id="chkFesc">
-                                                        <label class="form-check-label" for="chkFesc">Comunidad FESC</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                                    <div class="row">
-                                                        <div class="col-sm-2">
-                                                            <label class="label" for="numCupo">Cupo: </label>
+                                                <div class="col-sm-6 p-0">
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-4 mb-3 mb-sm-0">
+                                                            <label class="label" for="txtnotas">Notas: </label>
                                                         </div>
-                                                        <div class="col-sm-4">
-                                                            <input class="form-control" type="number" value="150" id="numCupo">
+                                                        <div class="col-sm-8 p-0">
+                                                            <textarea class="form-control" id="txtnotas" rows="12"></textarea>
                                                         </div>
                                                     </div>
+                                                    <div class="col text-right">
+                                                        <div class="btn btn-primary w-100 col-lg-8 text-center">
+                                                            <a href="./nuevo-curso">Nuevo</a>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
-                                            </div>                                                 
+                                                </div>
+                                            </div>                           
+                                        </div>
+                                                                                            
 
                                         </form>
                                         <!-- termina el formulario-->
