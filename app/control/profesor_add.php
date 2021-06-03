@@ -4,7 +4,6 @@
 if (isset($_POST['no_trabajador'])
     && isset($_POST['id_depto'])
     && isset($_POST['email'])
-    && isset($_POST['pw1'])
     && isset($_POST['nombre'])
     && isset($_POST['app'])
     && isset($_POST['apm'])
@@ -24,22 +23,18 @@ if (isset($_POST['no_trabajador'])
     $no_trabajador = $_POST['no_trabajador'];
     $prefijo= $_POST['prefijo'];
     $email= $_POST['email'];
-    $pw= $_POST['pw1'];
-    $key_hash=$_POST['key_hash'];
-    $firmadigital=$_POST['firmaD'];
-    $firmadigitalI=$_POST['firmaDI'];
-
-
-
 
     if(crearCuentaProfesor($nombre,$app,$apm,$telefono,$sexo,$id_depto,
-                            $no_trabajador,$prefijo,$email,$pw,$key_hash,$firmadigital,$firmadigitalI)){
+                            $no_trabajador,$prefijo,$email)){
         echo "Felicidades ".$nombre.", tu cuenta se ha registrado de forma exitosa.";
     }
     else{
         echo "Ocurrio un error";
     }
-}
-else{
-    echo "Faltan datos del profesor";
-}
+    }
+    else{
+        echo "Faltan datos del profesor";
+    }
+
+
+

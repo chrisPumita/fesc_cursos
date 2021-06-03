@@ -40,6 +40,7 @@ function modificarPwProf($id_profesor,$pw)
     echo $obj_prof -> modifcaPw($id_profesor,md5($pw)) ? "Se modifico la contraseña" : "no pudimos modificar la contraseña";
 
 }
+/*
 function agregarProfesor($id_persona,$depto,$no_trab,$prefijo,$emal,$pw,$hash,$firma,$ruta)
 {
     include_once "../model/PROFESOR.php";
@@ -55,8 +56,8 @@ function agregarProfesor($id_persona,$depto,$no_trab,$prefijo,$emal,$pw,$hash,$f
     $obj_prof->setFirmaDigital($firma);
     $obj_prof->setFirmaDigitalImg($ruta);
     echo $obj_prof -> agregaProfesor() ? "Se registro un profesor" : "no pudimos registrar al profesor";
-
 }
+*/
 function modificarProfesor($id_prof,$id_persona,$depto,$no_trab,$prefijo,$emal,$hash,$firma,$ruta)
 {
     include_once "../model/PROFESOR.php";
@@ -74,9 +75,8 @@ function modificarProfesor($id_prof,$id_persona,$depto,$no_trab,$prefijo,$emal,$
 
 }
 
-
 function crearCuentaProfesor($nombre,$app,$apm,$telefono,$sexo,$id_depto,
-                             $no_trabajador,$prefijo,$email,$pw,$key_hash,$firmadigital,$firmadigitalI){
+                             $no_trabajador,$prefijo,$email){
     include_once "../model/PROFESOR.php";
 
     // creamos objeto
@@ -96,13 +96,12 @@ function crearCuentaProfesor($nombre,$app,$apm,$telefono,$sexo,$id_depto,
     $obj_prof->setNoTrabajador($no_trabajador);
     $obj_prof->setPrefijo($prefijo);
     $obj_prof->setEmail($email);
-    $obj_prof->setPw(md5($pw));
-    $obj_prof->setKeyHash($key_hash);
-    $obj_prof->setFirmaDigital($firmadigital);
-    $obj_prof->setFirmaDigitalImg($firmadigitalI);
+    $obj_prof->setPw(md5("0000"));
+    $obj_prof->setKeyHash("00000000000");
+    $obj_prof->setFirmaDigital("00000000000");
+    $obj_prof->setFirmaDigitalImg("0000000000000");
     // hasta ser validado
-    $obj_prof->setEstatusProfesor("0");
-
+    $obj_prof->setEstatusProfesor("1");
     $result= $obj_prof->registraPersona();
 
     if($result){
@@ -111,6 +110,4 @@ function crearCuentaProfesor($nombre,$app,$apm,$telefono,$sexo,$id_depto,
     }else{
         return false;
     }
-
-
 }
