@@ -74,3 +74,43 @@ function modificarProfesor($id_prof,$id_persona,$depto,$no_trab,$prefijo,$emal,$
 
 }
 
+
+function crearCuentaProfesor($nombre,$app,$apm,$telefono,$sexo,$id_depto,
+                             $no_trabajador,$prefijo,$email,$pw,$key_hash,$firmadigital,$firmadigitalI){
+    include_once "../model/PROFESOR.php";
+
+    // creamos objeto
+    $obj_prof = new PROFESOR();
+    $fecha_registro =date("YmdHis");
+    $clave=date("YmdHis");
+    // Datos Persona
+    $obj_prof->setIdPersona($clave);
+    $obj_prof->setNombre($nombre);
+    $obj_prof->setApp($app);
+    $obj_prof->setApm($apm);
+    $obj_prof->setTelefono($telefono);
+    $obj_prof->setSexo($sexo);
+    $obj_prof->setEstatus("1");
+    //Datos profesor
+    $obj_prof->setIdDeptoFk($id_depto);
+    $obj_prof->setNoTrabajador($no_trabajador);
+    $obj_prof->setPrefijo($prefijo);
+    $obj_prof->setEmail($email);
+    $obj_prof->setPw(md5($pw));
+    $obj_prof->setKeyHash($key_hash);
+    $obj_prof->setFirmaDigital($firmadigital);
+    $obj_prof->setFirmaDigitalImg($firmadigitalI);
+    // hasta ser validado
+    $obj_prof->setEstatusProfesor("0");
+
+    $result= $obj_prof->registraPersona();
+
+    if($result){
+        $result_profesor=$obj_prof->agregaProfesor();
+        return $result_profesor;
+    }else{
+        return false;
+    }
+
+
+}
