@@ -83,7 +83,9 @@
                                                         <option>1508</option>
                                                         <option>1507</option>
                                                     </select>
+                                                    <a href="#" data-toggle="modal" data-target="#nuevoGrupo">
                                                     <img class="image mx-2 aling-center" src="https://img.icons8.com/flat-round/452/plus.png" width="30" height="30">
+                                                    </a>                                                    
                                                 </div>
                                                 <div class="col-sm-2 mb-3 mb-sm-0">
                                                     <label class="label" for="modalidad">Modalidad: </label>
@@ -265,6 +267,7 @@
                 </div>
             </div>
         </div>
+        <?php include "modal-nuevo-grupo.php";?>
         <!-- script_js -->
         <script>
                     
