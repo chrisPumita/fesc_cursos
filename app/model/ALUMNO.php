@@ -247,13 +247,26 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
 
     /////Implementacion de metodos de la interfaz
 
+    public function consultaListaAlumnos()
+    {
+        $this->connect();
+        $datos = $this->getData("SELECT al.`id_alumno`, al.`matricula`, al.`id_persona`, 
+       al.`carrera_especialidad`, al.`email`, al.`estatus` AS estatus_alumno, per.`id_persona`, 
+       per.`nombre`, per.`app`, per.`apm`, per.`telefono`, per.`estatus` AS estatus_persona, 
+       tipproc.`id_tipo_procedencia`, tipproc.`tipo_procedencia` AS nameproc FROM `alumno` al, 
+       `persona` per , `tipo_procedencia` tipproc WHERE al.`id_persona` = per.`id_persona` 
+        AND al.`id_tipo_procedencia_fk`= tipproc.`id_tipo_procedencia` AND per.`estatus` =1 
+        ORDER BY per.`app`, per.`apm`,per.`nombre` ASC");
+        $this->close();
+        return $datos;
+    }
     function consultaAlumno()
     {
         // TODO: Implement consultaAlumno() method.
     }
 
 
-    function consultaAlumnos($tipo_filtro, $valor)
+    public function filtrarListaAlumnos($tipo_filtro, $valor)
     {
         //Defiunir Control de filtro
         //`al`.`carrera_especialidad`

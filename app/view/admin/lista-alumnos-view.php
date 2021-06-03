@@ -2,7 +2,7 @@
 <html lang="en">
     <?php
     //Abrir para agregar los includes
-    $tittle = "Cursos registrados";
+    $tittle = "Alumnos registrados";
     include("./view/includes/header.php");
     ?>
     <body class="body-home">
@@ -51,85 +51,8 @@
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>316344483</td>
-                                                <td>Jennifer Morales Rosas</td>
-                                                <td>5510801569</td>
-                                                <td>jeni@correo.com</td>
-                                                <td>Comunidad FESC</td>
-                                                <td>Contabilidad</td>
-                                                <td>Verificada</td>
-                                                <td> <!-- BOTON ACCIONES -->
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <a href="./detalles-alumno">
-                                                            <button class="dropdown-item" type="button">Ver Detalles</button>
-                                                            </a>                                     
-                                                            <a href="">
-                                                                <button class="dropdown-item" type="button" data-toggle='modal' data-target='modal-historial-cursos.php'>Ver Historial</button>
-                                                            </a>
-                                                            <button class="dropdown-item" type="button">Editar datos</button>
-                                                            <button class="dropdown-item" type="button">Acreditar Cuenta</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>316344543</td>
-                                                <td>Javier Mora Perez</td>
-                                                <td>5513245690</td>
-                                                <td>morape@correo.com</td>
-                                                <td>Comunidad Externo - IPN</td>
-                                                <td>Aeronaútica</td>
-                                                <td>N/A</td>
-                                                <td> <!-- BOTON ACCIONES -->
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <a href="./detalles-alumno">
-                                                            <button class="dropdown-item" type="button">Ver Detalles</button>
-                                                            </a>                                     
-                                                            <a href="">
-                                                                <button class="dropdown-item" type="button" data-toggle='modal' data-target='modal-historial-cursos.php'>Ver Historial</button>
-                                                            </a>
-                                                            <button class="dropdown-item" type="button">Editar datos</button>
-                                                            <button class="dropdown-item" type="button">Acreditar Cuenta</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>316344483</td>
-                                                <td>Edwin Fernandez Bodet</td>
-                                                <td>5529408786</td>
-                                                <td>eddBod@correo.com</td>
-                                                <td>Comunidad FESC</td>
-                                                <td>Informática</td>
-                                                <td>Verificada</td>
-                                                <td> <!-- BOTON ACCIONES -->
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <a href="./detalles-alumno">
-                                                            <button class="dropdown-item" type="button">Ver Detalles</button>
-                                                            </a>                                     
-                                                            <a href="">
-                                                                <button class="dropdown-item" type="button" data-toggle='modal' data-target='modal-historial-cursos.php'>Ver Historial</button>
-                                                            </a>
-                                                            <button class="dropdown-item" type="button">Editar datos</button>
-                                                            <button class="dropdown-item" type="button">Acreditar Cuenta</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        <tbody id="tbl-alum">
+                                            <!-- ajax response -->
                                         </tbody>
                                     </table>
                                 </div>
@@ -151,7 +74,7 @@
                                         </ul>
                                     </nav>
                                 </div>
-                            </div>                    
+                            </div>
                         </section>
                         <!-- FIN SECCION CURSOS ACTUALES -->
 
@@ -161,6 +84,9 @@
                 </div>
             </div>
         </div>
-        <!-- script_js -->
+    <script>
+        let pagList = true;
+    </script>
+    <script src="./ajax/alumno_ajax.js"></script>
     </body>
 </html>

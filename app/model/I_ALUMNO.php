@@ -2,8 +2,9 @@
 
 interface I_ALUMNO
 {
+    public function consultaListaAlumnos();
     function consultaAlumno();
-    function consultaAlumnos($tipo_filtro, $valor);
+    public function filtrarListaAlumnos($tipo_filtro, $valor);
     function agregaAlumno();
     function modificaAlumno();
     function modifcaPw();

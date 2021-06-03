@@ -81,14 +81,18 @@ class ADMIN extends PROFESOR implements I_admin
         //CASE TODO
         $filtro = $estatus_admin > 0 ? " AND prof.`estatus`=" . $estatus_admin : "";
         $this->connect();
-        $datos = $this-> getData("SELECT per.`id_persona`, per.`nombre`, per.`app`, per.`apm`, 
-       per.`telefono`, per.`sexo`, per.`estatus` AS estatus_persona, prof.`id_profesor`, 
-       prof.`no_trabajador`, prof.`prefijo`, prof.`email`, prof.`key_hash`, prof.`fecha_registro`, 
-       prof.`firma_digital`, prof.`firma_digital_img`, prof.`estatus` AS estatus_profesor, admin.`cargo`, 
-       admin.`permisos`, admin.`estatus` AS estatus_admin, depto.`id_depto`, depto.`nombre` AS depto_name 
+        $datos = $this-> getData("SELECT per.`id_persona`, per.`nombre`, 
+        per.`app`, per.`apm`, per.`telefono`, per.`sexo`, per.`estatus` 
+        AS estatus_persona, prof.`id_profesor`, prof.`no_trabajador`, 
+        prof.`prefijo`, prof.`email`, prof.`key_hash`, prof.`fecha_registro`, 
+        prof.`firma_digital`, prof.`firma_digital_img`, prof.`estatus` 
+        AS estatus_profesor, admin.`cargo`, admin.`permisos`, admin.`estatus` 
+        AS estatus_admin, depto.`id_depto`, depto.`nombre` AS depto_name 
         FROM `administrador` admin,`profesor` prof, `persona` per,`departamentos` depto 
-        WHERE admin.`id_profesor_admin_fk`=prof.`id_profesor` AND prof.`id_persona_fk`=per.`id_persona` 
-          AND per.`estatus` = 1 AND prof.`id_depto_fk`= depto.`id_depto`".$filtro." ORDER BY `per`.`app`,`per`.`apm`,`per`.`nombre` ASC");
+        WHERE admin.`id_profesor_admin_fk`=prof.`id_profesor` 
+        AND prof.`id_persona_fk`=per.`id_persona` 
+        AND per.`estatus` = 1 AND prof.`id_depto_fk`= depto.`id_depto`".$filtro." 
+        ORDER BY `per`.`app`,`per`.`apm`,`per`.`nombre` ASC");
         $this->close();
         return $datos;
     }

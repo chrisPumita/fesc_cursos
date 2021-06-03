@@ -2,3 +2,11 @@
 INSERT INTO `administrador` (`id_profesor_admin_fk`, `cargo`, `permisos`, `clave_confirmacion`, `estatus`) VALUES ('2', 'cd', '1', 'cdc', '1')
 
 INSERT INTO `administrador` (`id_profesor_admin_fk`, `cargo`, `permisos`, `clave_confirmacion`, `estatus`) VALUES ('2', 'cd', '1', 'cdc', '1')
+
+---------------ht------------
+INSERT INTO `alumno` (`id_alumno`, `id_municipio`, `id_universidad`, `id_persona`, `matricula`,
+ `nombre_uni`, `id_tipo_procedencia_fk`, `carrera_especialidad`, `email`, `pw`, `fecha_registro`
+, `perfil_image`, `estatus`) VALUES (NULL, '15', '3', '4', '8462215', '', '2', 'Economia', 
+'juan@hotmail.com', '4a7d1ed414474e4033ac29ccb8653d9b', '2021-06-01 18:49:53', '', '1'), 
+(NULL, '15', '2', '2', '9874631', '', '4', 'Matematicas aplicadas a la computacion', 
+'paola@hotmail.com', '4a7d1ed414474e4033ac29ccb8653d9b', '2021-06-02 18:49:53', '', '1')

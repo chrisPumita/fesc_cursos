@@ -104,6 +104,9 @@
 <!--  Librerias de validacion en formularios que se tienen que validar -->
 <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
 <!--  Control de alumnos de ajax-->
+<script>
+    let pagList = false;
+</script>
 <script src="./app/ajax/alumno_ajax.js"></script>
 <script src="./app/ajax/validar-form.js"></script>
 <script type="text/javascript">
