@@ -2,10 +2,8 @@
 $(document).ready(function () {
     if(pagList){
         consultaListaProfesoresA();
-    }else{
-        consultadepartamentos();
     }
-
+    consultadepartamentos();
 });
 
 function consultaListaProfesoresA(){
@@ -21,8 +19,9 @@ function consultaListaProfesoresA(){
                 obj_result.forEach((obj_result=>{
                     cont++;
                     let estatus = obj_result.estatus_profesor == 1 ? `Inhabilitar`:`Habilitar`;
-                    let classEnabled = obj_result.estatus_profesor == 1 ? "":"class='table-warning'";
-                    template += `<tr id_profesor =${"'"+obj_result.id_profesor+"' "+classEnabled}>
+                    let img = obj_result.estatus_profesor == 1 ? "prof_activo.png":"prof_inactivo.png";
+                    let edoCta = obj_result.estatus_profesor == 1 ? "Activa":"Inactiva";
+                    template += `<tr id_profesor =${"'"+obj_result.id_profesor+"' "}>
                                 <th scope="row">${cont}</th>
                                 <td>${obj_result.no_trabajador}</td>
                                 <td>${obj_result.app+" "+obj_result.apm+" "+obj_result.nombre}</td>
@@ -30,6 +29,10 @@ function consultaListaProfesoresA(){
                                 <td>${obj_result.telefono}</td>
                                 <td>${obj_result.email}</td>
                                 <td>${obj_result.fecha_registro}</td>
+                                <td><a href="" data-toggle="tooltip" data-placement="left" title="Cuenta ${edoCta}">
+                                    <img src="./assets/img/${img}" class="rounded float-left" alt="..." width="60"></a>
+                                    
+                                </td>
                                 <td>
                                     <div class="dropdown">
                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,16 +68,16 @@ function consultaListaProfesoresA(){
 function consultadepartamentos() {
     $.ajax(
         {
-            url: "./app/control/list_depto.php",
+            url: "./control/list_depto.php",
             success: function (response)
             {
-
+                console.log(response);
                 let obj_result = JSON.parse(response);
                 let template = "";
                 obj_result.forEach(
                     (obj_result)=>
                     {
-                        template += `<option value="${obj_result.id_depto}">${obj_result.nombre} (${obj_result.siglas})</option>`;
+                        template += `<option value="${obj_result.id_depto}">${obj_result.nombre}</option>`;
                     }
                 );
 
@@ -229,3 +232,4 @@ $(function() {
         errorClass: "alert alert-danger", //indicamos la clase que se agregara a las alertas. El valor por default es "error"
     });
 });
+

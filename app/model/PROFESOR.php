@@ -234,7 +234,6 @@ class PROFESOR extends PERSONA implements I_PROFESOR
         FROM `profesor` prof, `persona` per,`departamentos` depto 
         WHERE prof.`id_persona_fk`=per.`id_persona` 
           AND per.`estatus` = 1
-          AND prof.`estatus`=1
           AND prof.`id_depto_fk`= depto.`id_depto` ORDER BY `per`.`app`,`per`.`apm`,`per`.`nombre` ASC";
         $this->connect();
         $datos = $this-> getData($query);
@@ -282,8 +281,9 @@ class PROFESOR extends PERSONA implements I_PROFESOR
 
     function agregaProfesor()
     {
+        date_default_timezone_set("America/Mexico_City");
         $query = "INSERT INTO `profesor`(`id_profesor`, `id_persona_fk`, `id_depto_fk`, `no_trabajador`, `prefijo`, `email`, `pw`, `key_hash`, `fecha_registro`, `firma_digital`, `firma_digital_img`, `estatus`) 
-                  VALUES (NULL,'".$this->getIdPersona()."','".$this->getIdDeptoFk()."','".$this->getNoTrabajador()."','".$this->getPrefijo()."','".$this->getEmail()."','".$this->getPw()."','".$this->getKeyHash()."','".$this->getFechaRegistro()."','".$this->getFirmaDigital()."','".$this->getFirmaDigitalImg()."','1')";
+                  VALUES (NULL,'".$this->getIdPersona()."','".$this->getIdDeptoFk()."','".$this->getNoTrabajador()."','".$this->getPrefijo()."','".$this->getEmail()."','".$this->getPw()."','".$this->getKeyHash()."','".date('Y-m-d H:i:s')."','".$this->getFirmaDigital()."','".$this->getFirmaDigitalImg()."','1')";
         $this->connect();
         $datos = $this-> executeInstruction($query);
         $this->close();

@@ -61,6 +61,7 @@
                                                 <th scope="col">Departamento</th>
                                                 <th scope="col">Correo Electrónico</th>
                                                 <th scope="col">Fecha de Registro</th>
+                                                <th scope="col">Estatus</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>

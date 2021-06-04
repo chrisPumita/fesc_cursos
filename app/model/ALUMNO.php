@@ -400,8 +400,10 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
         // TODO: Implement cambiarClaveServSoc() method.
     }
 
-    function editarCuenta($id_lumno, $estatus)
+    function updateEstatusAlumno($id_lumno, $estatus)
     {
-        // TODO: Implement editarCuenta() method.
+        $this->connect();
+        $datos = $this->executeInstruction("******* P E N D I E N T E *********");
+        $this->close();
     }
 }

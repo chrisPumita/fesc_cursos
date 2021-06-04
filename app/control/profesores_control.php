@@ -9,11 +9,11 @@ function consultaListaProfesores()
     return $json_data;
 }
 
-function actualizaProfesor($id_profesor, $estatus)
+function actualizaestatusProfesor($id_profesor, $estatus)
 {
     include_once "../model/PROFESOR.php";
     $obj_prof = new PROFESOR();
-    echo $obj_prof -> updateEstatusProf($id_profesor, $estatus) ? "Se modifico profesor" : "no pudimos modificar al profesor";
+    return $obj_prof -> updateEstatusProf($id_profesor, $estatus=="1"?"0":"1");
 
 }
 

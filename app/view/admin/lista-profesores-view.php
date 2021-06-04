@@ -78,6 +78,7 @@
                                                 <th scope="col">Teléfono</th>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Registro</th>
+                                                <th scope="col">Estatus</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
@@ -121,6 +122,9 @@
         <script src="./ajax/validar-form.js"></script>
         <script>
             let pagList = true;
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
         </script>
     </body>
 </html>

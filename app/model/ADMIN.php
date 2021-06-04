@@ -97,13 +97,13 @@ class ADMIN extends PROFESOR implements I_admin
         return $datos;
     }
 
-    public function updateAdmin($admin,$estatus)
+    public function updateStatusAdmin($admin,$estatus)
     {
         $filtro = $admin > 0 ? " WHERE `administrador`.`id_profesor_admin_fk`=" . $admin : "";
         $this->connect();
-        $datos = $this-> getData("UPDATE `administrador` SET `administrador`.`estatus`= '$estatus' ".$filtro);
+        $response = $this->executeInstruction("UPDATE `administrador` SET `administrador`.`estatus`= '$estatus' ".$filtro);
         $this->close();
-        return $datos;
+        return $response;
     }
 
     public function deleteAdmin($admin)

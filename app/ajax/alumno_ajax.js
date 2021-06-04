@@ -14,7 +14,6 @@ try {
         $.ajax({
             url: "./control/list_alumnos.php",
             success: function (response) {
-                console.log(response);
                 let obj_result = JSON.parse(response);
                 let template = "";
                 if (obj_result.length > 0) {

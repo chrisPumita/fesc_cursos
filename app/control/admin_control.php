@@ -13,4 +13,11 @@
         return $json_data;
     }
 
+    function cambiaEstatusAdmin($idAdmin,$statusActual){
+        include_once "../model/ADMIN.php";
+       // return ADMIN::updateStatusAdmin($idAdmin,$statusActual);
+        $objAdmin = new ADMIN();
+        return $objAdmin->updateStatusAdmin($idAdmin,$statusActual=="1"?"0":"1");
+    }
+
 

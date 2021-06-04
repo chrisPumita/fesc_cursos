@@ -9,7 +9,7 @@ interface I_ALUMNO
     function modificaAlumno();
     function modifcaPw();
     function eliminaAlumno($id_alumno);
-    function editarCuenta($id_lumno,$estatus);
+    function updateEstatusAlumno($id_lumno,$estatus);
     function consultaCuentaServSoc();
     function crearCuentaServSoc();
     function modificarCuentaServSoc();
