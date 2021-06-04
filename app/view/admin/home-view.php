@@ -144,9 +144,13 @@ include("./view/includes/header.php");
                                                         Opciones
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <button class="dropdown-item" type="button">Ver Horario</button>
+                                                        <a href="#" data-toggle="modal" data-target="#verHorario">
+                                                            <button class="dropdown-item" type="button">Ver Horario</button>
+                                                        </a>                                                        
                                                         <button class="dropdown-item" type="button">Editar grupo</button>
-                                                        <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                                        <a href="#" data-toggle="modal" data-target="#verSolicitudes">
+                                                            <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                                        </a>                                                        
                                                         <button class="dropdown-item" type="button">Terminar grupo</button>
                                                     </div>
                                                 </div>
@@ -167,9 +171,13 @@ include("./view/includes/header.php");
                                                         Opciones
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <button class="dropdown-item" type="button">Ver Horario</button>
+                                                        <<a href="#" data-toggle="modal" data-target="#verHorario">
+                                                            <button class="dropdown-item" type="button">Ver Horario</button>
+                                                        </a>
                                                         <button class="dropdown-item" type="button">Editar grupo</button>
-                                                        <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                                        <a href="#" data-toggle="modal" data-target="#verSolicitudes">
+                                                            <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                                        </a>
                                                         <button class="dropdown-item" type="button">Terminar grupo</button>
                                                     </div>
                                                 </div>
@@ -191,9 +199,13 @@ include("./view/includes/header.php");
                                                         Opciones
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <button class="dropdown-item" type="button">Ver Horario</button>
+                                                        <a href="#" data-toggle="modal" data-target="#verHorario">
+                                                            <button class="dropdown-item" type="button">Ver Horario</button>
+                                                        </a>
                                                         <button class="dropdown-item" type="button">Editar grupo</button>
-                                                        <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                                        <a href="#" data-toggle="modal" data-target="#verSolicitudes">
+                                                            <button class="dropdown-item" type="button">Ver solicitudes</button>
+                                                        </a>
                                                         <button class="dropdown-item" type="button">Terminar grupo</button>
                                                     </div>
                                                 </div>
@@ -266,11 +278,15 @@ include("./view/includes/header.php");
                                                         Opciones
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <button class="dropdown-item" type="button">Nuevo grupo</button>
-                                                        <a href="./detalles-curso-view.php">
+                                                        <a href="#" data-toggle="modal" data-target="#nuevoGrupo">
+                                                            <button class="dropdown-item" type="button">Nuevo grupo</button>
+                                                        </a>
+                                                        <a href="./detalles-curso">
                                                             <button class="dropdown-item" type="button">Ver Detalles</button>
                                                         </a>
-                                                        <button class="dropdown-item" type="button">Historial</button>
+                                                        <a href="#" data-toggle="modal" data-target="#histCurso">
+                                                            <button class="dropdown-item" type="button">Historial</button>
+                                                        </a>                                                        
                                                         <button class="dropdown-item" type="button">Acreditar curso</button>
                                                     </div>
                                                 </div>
@@ -293,11 +309,15 @@ include("./view/includes/header.php");
                                                         Opciones
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <button class="dropdown-item" type="button">Nuevo grupo</button>
-                                                        <a href="./detalles-curso-view.php">
+                                                        <a href="#" data-toggle="modal" data-target="#nuevoGrupo">
+                                                            <button class="dropdown-item" type="button">Nuevo grupo</button>
+                                                        </a>
+                                                        <a href="./detalles-curso">
                                                             <button class="dropdown-item" type="button">Ver Detalles</button>
                                                         </a>
-                                                        <button class="dropdown-item" type="button">Historial</button>
+                                                        <a href="#" data-toggle="modal" data-target="#histCurso">
+                                                            <button class="dropdown-item" type="button">Historial</button>
+                                                        </a> 
                                                         <button class="dropdown-item" type="button">Acreditar curso</button>
                                                     </div>
                                                 </div>
@@ -367,7 +387,9 @@ include("./view/includes/header.php");
                                                         <button class="dropdown-item" type="button">Ver documento</button>
                                                         <button class="dropdown-item" type="button">Rechazar</button>
                                                         <button class="dropdown-item" type="button">Aceptar</button>
-                                                        <button class="dropdown-item" type="button">Detalles Inscripción</button>
+                                                        <a href="./ficha-insc">
+                                                            <button class="dropdown-item" type="button">Detalles Inscripción</button>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </td>
@@ -389,7 +411,9 @@ include("./view/includes/header.php");
                                                         <button class="dropdown-item" type="button">Ver documento</button>
                                                         <button class="dropdown-item" type="button">Rechazar</button>
                                                         <button class="dropdown-item" type="button">Aceptar</button>
-                                                        <button class="dropdown-item" type="button">Detalles Inscripción</button>
+                                                        <<a href="./ficha-insc">
+                                                            <button class="dropdown-item" type="button">Detalles Inscripción</button>
+                                                        </a>                                                        
                                                     </div>
                                                 </div>
                                             </td>
@@ -411,7 +435,9 @@ include("./view/includes/header.php");
                                                         <button class="dropdown-item" type="button">Ver documento</button>
                                                         <button class="dropdown-item" type="button">Rechazar</button>
                                                         <button class="dropdown-item" type="button">Aceptar</button>
-                                                        <button class="dropdown-item" type="button">Detalles Inscripción</button>
+                                                        <a href="./ficha-insc">
+                                                            <button class="dropdown-item" type="button">Detalles Inscripción</button>
+                                                        </a>                                                        
                                                     </div>
                                                 </div>
                                             </td>
@@ -454,8 +480,10 @@ include("./view/includes/header.php");
                                     <div class="card-body">
                                         <h5 class="card-title font-weight-bold">Profesores</h5>
                                         <p class="card-text text-muted">En este apartado se pueden realizar distintas acciones de gestion para las cuentas de profesores.</p>
-                                        <button type="button" class="btn btn-primary btn-sm">Crear cuenta</button>                                        
-                                        <a href="./lista-profesores-view.php">
+                                        <a href="#" data-toggle="modal" data-target="#nuevoProfesor">
+                                            <button type="button" class="btn btn-primary btn-sm">Crear cuenta</button>  
+                                        </a>                                                                              
+                                        <a href="./lista-profesores">
                                             <button type="button" class="btn btn-primary btn-sm">Gestión de cuentas</button>
                                         </a>
                                     </div>
@@ -466,7 +494,9 @@ include("./view/includes/header.php");
                                     <div class="card-body">
                                         <h5 class="card-title font-weight-bold">Cuentas Administrativas</h5>
                                         <p class="card-text text-muted">Crear nueva cuenta administrativa para entrar al sistema de Administración.</p>
-                                        <button type="button" class="btn btn-primary btn-sm">Ir</button>
+                                        <a href="./lista-cuentas">
+                                            <button type="button" class="btn btn-primary btn-sm">Ir</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -476,7 +506,9 @@ include("./view/includes/header.php");
                                         <h5 class="card-title font-weight-bold">Servicio Social</h5>
                                         <p class="card-text text-muted">Cree o gestiones cuentas de alumno de servicio social.</p>
                                         <button type="button" class="btn btn-primary btn-sm">Crear cuenta</button>
-                                        <button type="button" class="btn btn-primary btn-sm">Ver Alumnos</button>
+                                        <a href="#" data-toggle="modal" data-target="#listaServicio">
+                                            <button type="button" class="btn btn-primary btn-sm">Ver Alumnos</button>
+                                        </a>                                        
                                     </div>
                                 </div>
                             </div>
@@ -486,7 +518,7 @@ include("./view/includes/header.php");
                                         <h5 class="card-title font-weight-bold">Alumnos</h5>
                                         <p class="card-text text-muted">Buscar alumno para ver su situacion actual dentro del sistema de inscripción de cursos. Ingresar numero de cuenta registrado por el alumno.</p>
                                         <form class="form-inline position-relative my-2 d-inline-block w-100">
-                                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar curso" aria-label="Search">
+                                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar alumno" aria-label="Search">
                                             <button class="btn btn-search position-relative posicion-btn" type="submit"><i class="icon ion-md-search"></i></button>
                                         </form>
                                     </div>
@@ -592,6 +624,12 @@ include("./view/includes/header.php");
         </div>
     </div>
 </div>
+<?php include "modal-nuevo-profesor.php";?>
+<?php include "modal-lista-servicio.php";?>
+<?php include "modal-historico-curso.php";?>
+<?php include "modal-nuevo-grupo.php";?>
+<?php include "modal-ver-horario.php";?>
+<?php include "modal-ver-solicitudes.php";?>
 <!-- script_js -->
 </body>
 </html>

@@ -34,7 +34,7 @@ FINALIZA SECCIÓN DEL MODAL DE CLAVE DE VERIFICACIÓN-->
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLongTitle"><strong>Verificación</strong></h2>
+        <h2 class="modal-title"><strong>Verificación</strong></h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

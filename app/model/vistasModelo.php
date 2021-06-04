@@ -12,7 +12,7 @@ class vistaModelo
             "lista-profesores", "lista-alumnos",
         "detalles-profesor","nueva-asignacion",
             "detalles-asignacion", "lista-asignaciones",
-            "detalles-alumno", "lista-cuentas","nuevo-curso", "probar-modal"];
+            "ficha-insc", "lista-cuentas","nuevo-curso", "probar-modal"];
         #Verificamos si la vista que esta entrando esta en la lista blanca para poder moestrarla
         if (in_array($vistas,$listaBlanca))
         {

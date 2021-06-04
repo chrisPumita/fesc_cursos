@@ -16,7 +16,7 @@
                         <!-- INICIA ENCABEZADO CON ESTADISTICAS -->
                         <section class="container py-2 bg-grey">
                             <div class="row">
-                                <div class = "col-lg-12">
+                                <div class="col-lg-12">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
@@ -87,7 +87,6 @@
                             <!-- FIN ESTADISTICAS-->
                         </section>
                         <!-- FIN ENCABEZADO CON ESTADISTICAS -->
-
                         <!-- INICIA SECCION INFO DEL CURSO -->
                         <section class="container bg-grey">
                             <div class="row">
@@ -163,7 +162,9 @@
                                                             </div>
                                                         </div>
                                                         <div class="mx-auto py-2">
-                                                            <a href=""><button class="btn btn-primary btn-block" type="button">Editar información</button></a> 
+                                                        <a href="#" data-toggle="modal" data-target="#infoCurso">
+                                                            <button class="btn btn-primary w-100 m-3">Editar información</button>
+                                                        </a>
                                                             <hr>
                                                             <h6><strong>PDF del temario descargable</strong></h6>
                                                             <div class="row">
@@ -230,7 +231,6 @@
                                 </div>
                             </div>
                         </section>
-
                         <!-- INICIA TABLA DE TEMARIO -->
                         <section class="container bg-grey">
                             <div class="row">
@@ -311,7 +311,7 @@
                                                         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                                                             <h3>3</h3>
                                                         </div>
-                                                    </div> -->            
+                                                    </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -361,7 +361,7 @@
                                         <div class="row">
                                             <!-- DETALLE DEL CURSO CALLOUT -->
                                             <div class="col-lg-12">
-                                                <div class="row align-items-center justify-content-center">                                    
+                                                <div class="row align-items-center justify-content-center">
                                                 </div>
                                             </div>
                                         </div>
@@ -451,14 +451,15 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
                         </section>
                         <!-- FIN INFO DE GRUPOS -->
                     </div>
                     <!--FIN contenido dinamico-->
-                    <?php include("./view/includes/footer.php");?>
+                    <?php include("./view/includes/footer.php"); ?>
                 </div>
             </div>
         </div>
+        <?php include "modal-editar-infocurso.php";?> 
     </body>
 </html>

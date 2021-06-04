@@ -29,9 +29,14 @@
                                                     <h4>Crear Nuevo curso</h4>
                                                     En este panel puede crear un nuevo curso para que posteriormente pueda ser asignado a un profesor.
                                                 </div>
-                                                <div class="btn btn-primary w-100 col-lg-3 text-center">
-                                                    <a href="./nuevo-curso">Nuevo</a>
+                                                <div class="col-lg-3">
+                                                    <a href="./nuevo-curso">
+                                                        <button class="btn btn-primary w-100 m-3">Nuevo</button>
+                                                    </a>
                                                 </div>
+                                                <!-- <div class="btn btn-primary w-100 col-lg-3 text-center">
+                                                    <a href="./nuevo-curso">Nuevo</a>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>

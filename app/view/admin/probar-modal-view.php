@@ -15,7 +15,7 @@
                     <div class="componet-dinamico bg-grey">
                         <h1>PRUEBA DE MODALES </h1>
                         <div class="col-lg-3">
-                            <a href="#" data-toggle="modal" data-target="#histCursos">
+                            <a href="#" data-toggle="modal" data-target="#nuevoProfesor">
                             <button class="btn btn-primary w-100 m-3">MODAL</button>
                             </a>
                         </div>
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <?php include "modal-historial-cursos.php";?>
+        <?php include "modal-nuevo-profesor.php";?>
         <!-- script_js -->
     </body>
 </html>
