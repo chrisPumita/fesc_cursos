@@ -19,15 +19,18 @@ function consultaListaAdmins() {
                    let estatus;
                    let img;
                    let toolStatus = "Cuenta ";
+                   let colorBool;
                    if (obj_result.estatus_admin == 1){
                        estatus = `Inhabilitar`;
                        img = "prof_activo.png";
                        toolStatus += " ACTIVA";
+                       colorBool = "green";
                    }
                    else{
                        estatus = `Habilitar`;
                        img = "prof_inactivo.png";
                        toolStatus += " INACTIVA";
+                       colorBool = "red";
                    }
 
                    template += `<tr id_admin =${"'"+obj_result.id_profesor+"' "}>
@@ -41,6 +44,7 @@ function consultaListaAdmins() {
                                 <td><a href="" data-toggle="tooltip" data-placement="left" title="${toolStatus}">
                                     <img src="./assets/img/${img}" class="rounded float-left" alt="..." width="60">
                                     </a>
+                                    <div class="blob ${colorBool}"></div>
                                 </td>
                                 <td>
                                     <div class="dropdown" value_estatus="${obj_result.estatus_admin}">
