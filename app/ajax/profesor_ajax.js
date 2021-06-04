@@ -18,9 +18,22 @@ function consultaListaProfesoresA(){
                 var cont = 0;
                 obj_result.forEach((obj_result=>{
                     cont++;
-                    let estatus = obj_result.estatus_profesor == 1 ? `Inhabilitar`:`Habilitar`;
-                    let img = obj_result.estatus_profesor == 1 ? "prof_activo.png":"prof_inactivo.png";
-                    let edoCta = obj_result.estatus_profesor == 1 ? "Activa":"Inactiva";
+                    let estatus;
+                    let img;
+                    let edoCta;
+                    let colorBool;
+                    if(obj_result.estatus_profesor==1){
+                        estatus="Inhabilitar";
+                        img="prof_activo.png";
+                        edoCta="Activa";
+                        colorBool = "green";
+                    }else{
+                        estatus="Habilitar";
+                        img="prof_inactivo.png";
+                        edoCta="Inactiva";
+                        colorBool = "red";
+                    }
+
                     template += `<tr id_profesor =${"'"+obj_result.id_profesor+"' "}>
                                 <th scope="row">${cont}</th>
                                 <td>${obj_result.no_trabajador}</td>
@@ -31,10 +44,10 @@ function consultaListaProfesoresA(){
                                 <td>${obj_result.fecha_registro}</td>
                                 <td><a href="" data-toggle="tooltip" data-placement="left" title="Cuenta ${edoCta}">
                                     <img src="./assets/img/${img}" class="rounded float-left" alt="..." width="60"></a>
-                                    
+                                    <div class="blob ${colorBool}"></div>
                                 </td>
                                 <td>
-                                    <div class="dropdown">
+                                    <div class="dropdown" value_estatus="${obj_result.estatus_profesor}">
                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Opciones
                                         </button>
@@ -42,7 +55,7 @@ function consultaListaProfesoresA(){
                                             <a href="detalles-profesor?id-profesor=${obj_result.id_profesor}">
                                                 <button class="dropdown-item" type="button">Ver Detalles</button>
                                             </a>
-                                            <button class="dropdown-item" type="button">${estatus}</button>
+                                            <button class="dropdown-item prof-estatus" type="button">${estatus}</button>
                                         </div>
                                     </div>
                                 </td>
@@ -64,6 +77,29 @@ function consultaListaProfesoresA(){
         }
     });
 }
+
+$(document).on("click",".prof-estatus", function (){
+    if(confirm("¿Estas seguro que deseas cambiar el estado de la cuenta?")){
+        // se obtienen los elementos html que tienen el estatus y el id
+        let element=$(this)[0].parentElement.parentElement.parentElement.parentElement;
+        let element_estatus=$(this)[0].parentElement.parentElement
+        // se obtiene el valor de los atributos de html
+        let id= $(element).attr("id_profesor");
+        let status=$(element_estatus).attr("value_estatus");
+        let type =2;
+        $.post(
+            "./control/update-estatus.php",
+            {id,status,type},
+            function (responsive){
+                console.log(responsive);
+                //actualizar lista prof
+                consultaListaProfesoresA();
+            }
+        )
+
+    }
+})
+
 
 function consultadepartamentos() {
     $.ajax(
