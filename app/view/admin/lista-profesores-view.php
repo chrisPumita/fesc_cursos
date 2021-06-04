@@ -21,7 +21,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div  class="col-lg-12">
                                     <div class="callout callout-second">
                                         <div class="contariner">
                                             <div class="row align-items-center justify-content-center">
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12 overflow-auto">
+                                <div id="tbl-container" class="col-lg-12 overflow-auto">
                                     <table class="table table-striped bg-light">
                                         <thead>
                                             <tr>
@@ -119,5 +119,8 @@
         <!-- script_js -->
         <script src="./ajax/profesor_ajax.js"></script>
         <script src="./ajax/validar-form.js"></script>
+        <script>
+            let pagList = true;
+        </script>
     </body>
 </html>

@@ -1,6 +1,11 @@
 //Activar el escucha
 $(document).ready(function () {
-    consultaListaProfesoresA();
+    if(pagList){
+        consultaListaProfesoresA();
+    }else{
+        consultadepartamentos();
+    }
+
 });
 
 function consultaListaProfesoresA(){
@@ -46,7 +51,7 @@ function consultaListaProfesoresA(){
             else{
                 $("#tbl-container").empty();
                 template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                              <strong>Lo sentimos</strong> No hay registro de administradores aun, porfavor registra uno.
+                              <strong>Lo sentimos</strong> No hay registro de profesores aun, porfavor registra uno.
                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -55,6 +60,28 @@ function consultaListaProfesoresA(){
             }
         }
     });
+}
+
+function consultadepartamentos() {
+    $.ajax(
+        {
+            url: "./app/control/list_depto.php",
+            success: function (response)
+            {
+
+                let obj_result = JSON.parse(response);
+                let template = "";
+                obj_result.forEach(
+                    (obj_result)=>
+                    {
+                        template += `<option value="${obj_result.id_depto}">${obj_result.nombre} (${obj_result.siglas})</option>`;
+                    }
+                );
+
+                $("#depto").html(template);
+            }
+        }
+    );
 }
 
 /* FRM  AGREGA CUENTA DE PROFESOR */
@@ -67,8 +94,26 @@ $(function() {
         rules: { //iniciamos sección de reglas
             nombre_profesor: { //estas seras las reglas para el objeto que en su propiedad name tenga nameO
                 required: true, //indicamos que es requerido que contenga un valor
-                minlength: 3, //indicamos que debe de tener por lo menos 4 caracteres
+                minlength: 4, //indicamos que debe de tener por lo menos 4 caracteres
                 maxlength: 20 //indicamos que debe de tener maximo 20 caracteres
+            },
+            app: {
+                required: true,
+                minlength:4,
+                maxlength:25
+            },
+            apm: {
+                required: true,
+                minlength:4,
+                maxlength:25
+            },
+            correo_prof:{
+                required: true,
+                email: true
+            },
+            notrabajador:{
+                required: true
+
             }
         },
         messages: {//estos seran los mensaje que aparezcan segun el objeto y la reque que espeficiquemos en la sección de reglas
@@ -76,7 +121,25 @@ $(function() {
                 required: "Porfavor indicanos tu nombre",
                 minlength: $.format("Necesitamos por lo menos {0} caracteres"),
                 maxlength: $.format("{0} caracteres son demasiados!")
+            },
+            app: {
+                required: "Porfavor indicanos tu apellido paterno",
+                minlength: $.format("Necesitamos por lo menos {0} caracteres"),
+                maxlength: $.format("{0} caracteres son demasiados!")
+            },
+            apm: {
+                required: "Porfavor indicanos tu apellido materno",
+                minlength: $.format("Necesitamos por lo menos {0} caracteres"),
+                maxlength: $.format("{0} caracteres son demasiados!")
+            },
+            correo_prof:{
+                required: "Hey vamos, por favor, d&aacute;nos tu email",
+                email: "La estructura del correo es incorrecta"
+            },
+            notrabajador:{
+                required:"Por favor ingrese su numero de trabajador"
             }
+
         },
         submitHandler: function(form){ //si todos los controles cumplen con las validaciones, se ejecuta este codigo
             $("#formError").addClass("hidden"); //para ocultar el mensaje, le agregamos la clase de Bootstrap 3
@@ -113,10 +176,10 @@ $(function() {
                 },
                 complete: function(xhr, textStatus) {
                     //se llama cuando se recibe la respuesta (no importa si es error o exito)
-                    btnEnviar.val("Registrando");
+                    btnEnviar.val("Crear Cuenta");
                     btnEnviar.removeAttr("disabled");
 
-                    $('#staticBackdrop').modal('hide');
+                    $('#nuevoProfesor').modal('hide');
                     formulario.trigger("reset");
                     formulario.css("opacity","");
                     btnEnviar.removeAttr("disabled");
