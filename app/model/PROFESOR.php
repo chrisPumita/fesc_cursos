@@ -18,6 +18,10 @@ class PROFESOR extends PERSONA implements I_PROFESOR
     private $firma_digital_img;
     private $estatus_profesor;
 
+    /*******************************************************************************
+     * Inician Getters and Setters
+     *******************************************************************************/
+
     /**
      * @return mixed
      */
@@ -209,32 +213,29 @@ class PROFESOR extends PERSONA implements I_PROFESOR
     {
         $this->estatus_profesor = $estatus_profesor;
     }
-///+++++++++++++ FUNCIONES PROPIAS DE LA CLASE PROFESOR ++++++++++++++++++///
 
+    /*******************************************************************************
+     * Terminan Getters and Setters
+     *******************************************************************************/
 
+    /*******************************************************************************
+     * Inician Funciones de Interfaz
+     *******************************************************************************/
     public function getListaProfesores()
     {
-
         $query = "SELECT per.`id_persona`, 
-       per.`nombre`, per.`app`, per.`apm`, 
-       per.`telefono`, 
-       per.`sexo`, 
-       per.`estatus` AS estatus_persona, 
-       prof.`id_profesor`, 
-       prof.`no_trabajador`, 
-       prof.`prefijo`, 
-       prof.`email`, 
-       prof.`key_hash`, 
-       prof.`fecha_registro`, 
-       prof.`firma_digital`, 
-       prof.`firma_digital_img`, 
-       prof.`estatus` AS estatus_profesor, 
-       depto.`id_depto`, 
-       depto.`nombre` AS depto_name 
+        per.`nombre`, per.`app`, per.`apm`, 
+        per.`telefono`, per.`sexo`, per.`estatus` AS estatus_persona, 
+        prof.`id_profesor`, prof.`no_trabajador`, prof.`prefijo`, 
+        prof.`email`, prof.`key_hash`, prof.`fecha_registro`, 
+        prof.`firma_digital`, prof.`firma_digital_img`, 
+        prof.`estatus` AS estatus_profesor, 
+        depto.`id_depto`, depto.`nombre` AS depto_name 
         FROM `profesor` prof, `persona` per,`departamentos` depto 
         WHERE prof.`id_persona_fk`=per.`id_persona` 
-          AND per.`estatus` = 1
-          AND prof.`id_depto_fk`= depto.`id_depto` ORDER BY `per`.`app`,`per`.`apm`,`per`.`nombre` ASC";
+        AND per.`estatus` = 1
+        AND prof.`id_depto_fk`= depto.`id_depto` 
+        ORDER BY `per`.`app`,`per`.`apm`,`per`.`nombre` ASC";
         $this->connect();
         $datos = $this-> getData($query);
         $this->close();
@@ -245,34 +246,30 @@ class PROFESOR extends PERSONA implements I_PROFESOR
     {
         $filtro = $id_profesor > 0 ? " WHERE `profesor`.`id_profesor`=" . $id_profesor : "";
         $this->connect();
-        $datos = $this-> executeInstruction("UPDATE `profesor` SET `profesor`.`estatus`= '$estatus' ".$filtro);
+        $datos = $this-> executeInstruction("UPDATE `profesor` 
+                                                SET `profesor`.`estatus`= '$estatus' ".$filtro);
         $this->close();
         return $datos;
     }
 
     function consultaProfesor($id_profesor)
     {
-        // TODO: Implement consultaProfesor() method.
         $query="SELECT per.`id_persona`, 
-       per.`nombre`, per.`app`, per.`apm`, 
-       per.`telefono`, 
-       per.`sexo`, 
-       per.`estatus` AS estatus_persona, 
-       prof.`id_profesor`, 
-       prof.`no_trabajador`, 
-       prof.`prefijo`, 
-       prof.`email`, 
-       prof.`key_hash`, 
-       prof.`fecha_registro`, 
-       prof.`firma_digital`, 
-       prof.`firma_digital_img`, 
-       prof.`estatus` AS estatus_profesor, 
-       depto.`id_depto`, 
-       depto.`nombre` AS depto_name 
+        per.`nombre`, per.`app`, per.`apm`, 
+        per.`telefono`, per.`sexo`, 
+        per.`estatus` AS estatus_persona, 
+        prof.`id_profesor`, prof.`no_trabajador`, 
+        prof.`prefijo`, prof.`email`, prof.`key_hash`, 
+        prof.`fecha_registro`, prof.`firma_digital`, 
+        prof.`firma_digital_img`, 
+        prof.`estatus` AS estatus_profesor, 
+        depto.`id_depto`, depto.`nombre` AS depto_name 
         FROM `profesor` prof, `persona` per,`departamentos` depto 
         WHERE prof.`id_persona_fk`=per.`id_persona` 
-          AND per.`estatus` = 1
-          AND prof.`id_depto_fk`= depto.`id_depto` AND prof.id_profesor =".$id_profesor." ORDER BY `per`.`app`,`per`.`apm`,`per`.`nombre` ASC";
+        AND per.`estatus` = 1
+        AND prof.`id_depto_fk`= depto.`id_depto` 
+        AND prof.id_profesor =".$id_profesor." 
+        ORDER BY `per`.`app`,`per`.`apm`,`per`.`nombre` ASC";
         $this->connect();
         $datos = $this-> getData($query);
         $this->close();
@@ -282,8 +279,15 @@ class PROFESOR extends PERSONA implements I_PROFESOR
     function agregaProfesor()
     {
         date_default_timezone_set("America/Mexico_City");
-        $query = "INSERT INTO `profesor`(`id_profesor`, `id_persona_fk`, `id_depto_fk`, `no_trabajador`, `prefijo`, `email`, `pw`, `key_hash`, `fecha_registro`, `firma_digital`, `firma_digital_img`, `estatus`) 
-                  VALUES (NULL,'".$this->getIdPersona()."','".$this->getIdDeptoFk()."','".$this->getNoTrabajador()."','".$this->getPrefijo()."','".$this->getEmail()."','".$this->getPw()."','".$this->getKeyHash()."','".date('Y-m-d H:i:s')."','".$this->getFirmaDigital()."','".$this->getFirmaDigitalImg()."','1')";
+        $query = "INSERT INTO `profesor`
+        (`id_profesor`, `id_persona_fk`, `id_depto_fk`, `no_trabajador`, 
+        `prefijo`, `email`, `pw`, `key_hash`, `fecha_registro`, 
+        `firma_digital`, `firma_digital_img`, `estatus`) 
+        VALUES (NULL,'".$this->getIdPersona()."','".$this->getIdDeptoFk()."',
+        '".$this->getNoTrabajador()."','".$this->getPrefijo()."',
+        '".$this->getEmail()."','".$this->getPw()."','".$this->getKeyHash()."',
+        '".date('Y-m-d H:i:s')."','".$this->getFirmaDigital()."',
+        '".$this->getFirmaDigitalImg()."','1')";
         $this->connect();
         $datos = $this-> executeInstruction($query);
         $this->close();
@@ -292,20 +296,28 @@ class PROFESOR extends PERSONA implements I_PROFESOR
 
     function modificaProfesor()
     {
-        // TODO: Implement modificaProfesor() method.
-        $query="UPDATE `profesor` SET `id_persona_fk`='".$this->getIdPersona()."',`id_depto_fk`='".$this->getIdDeptoFk()."',`no_trabajador`='".$this->getNoTrabajador()."',`prefijo`='".$this->getPrefijo()."',
-                    `email`='".$this->getEmail()."',`key_hash`='".$this->getKeyHash()."',`firma_digital`='".$this->getFirmaDigital()."', `firma_digital_img`='".$this->getFirmaDigitalImg()."',`estatus`='".$this->getEstatusProfesor()."' WHERE `id_profesor`=".$this->getIdProfesor();
+        $query="UPDATE `profesor` 
+        SET `id_persona_fk`='".$this->getIdPersona()."',
+        `id_depto_fk`='".$this->getIdDeptoFk()."',
+        `no_trabajador`='".$this->getNoTrabajador()."',
+        `prefijo`='".$this->getPrefijo()."',
+        `email`='".$this->getEmail()."',
+        `key_hash`='".$this->getKeyHash()."',
+        `firma_digital`='".$this->getFirmaDigital()."', 
+        `firma_digital_img`='".$this->getFirmaDigitalImg()."',
+        `estatus`='".$this->getEstatusProfesor()."' 
+        WHERE `id_profesor`=".$this->getIdProfesor();
         $this->connect();
         $datos = $this-> executeInstruction($query);
         $this->close();
         return $datos;
-
     }
 
     function modifcaPw($id_profesor,$pw)
     {
-        // TODO: Implement modifcaPw() method.
-        $query="UPDATE `profesor` SET `pw`='".$pw."' WHERE `id_profesor`=".$id_profesor;
+        $query="UPDATE `profesor` 
+        SET `pw`='".$pw."' 
+        WHERE `id_profesor`=".$id_profesor;
         $this->connect();
         $datos = $this-> executeInstruction($query);
         $this->close();
@@ -314,8 +326,9 @@ class PROFESOR extends PERSONA implements I_PROFESOR
 
     function eliminaProfesor($id_profesor)
     {
-        // TODO: Implement eliminaProfesor() method.
-        $query="UPDATE profesor SET profesor.estatus=0 WHERE profesor.id_profesor=".$id_profesor;
+        $query="UPDATE profesor 
+        SET profesor.estatus=0 
+        WHERE profesor.id_profesor=".$id_profesor;
         $this->connect();
         $datos = $this-> executeInstruction($query);
         $this->close();
@@ -331,4 +344,7 @@ class PROFESOR extends PERSONA implements I_PROFESOR
     {
         // TODO: Implement cargaFirmaImagen() method.
     }
+    /*******************************************************************************
+     * Terminan Funciones de Interfaz
+     *******************************************************************************/
 }

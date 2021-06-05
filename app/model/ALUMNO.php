@@ -301,56 +301,38 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
                 break;
         }
         $query = "SELECT 
-           al.id_alumno, 
-           p.nombre, 
-           p.app, 
-           p.apm, 
-           p.telefono, 
-           p.sexo, 
-           p.estatus AS estatus_p, 
-           al.id_municipio, 
-           al.id_universidad, 
-           al.id_persona, 
-           al.matricula, 
-           al.nombre_uni, 
-           al.carrera_especialidad, 
-           al.email, 
-           al.fecha_registro, 
-           al.perfil_image, 
-           al.estatus AS estatus_al ,
-           tp.id_tipo_procedencia,
-           tp.tipo_procedencia
-        FROM alumno al,persona p , tipo_procedencia tp
-        WHERE al.id_persona = p.id_persona AND al.id_tipo_procedencia_fk = tp.id_tipo_procedencia
-        AND p.estatus = 1  ".$filtro." ORDER BY `p`.`nombre` ASC";
-
+            al.id_alumno, p.nombre, p.app, 
+            p.apm, p.telefono, p.sexo, 
+            p.estatus AS estatus_p, al.id_municipio, 
+            al.id_universidad, al.id_persona, al.matricula, 
+            al.nombre_uni, al.carrera_especialidad, al.email, 
+            al.fecha_registro, al.perfil_image, al.estatus AS estatus_al ,
+            tp.id_tipo_procedencia, tp.tipo_procedencia
+            FROM alumno al,persona p , tipo_procedencia tp
+            WHERE al.id_persona = p.id_persona 
+            AND al.id_tipo_procedencia_fk = tp.id_tipo_procedencia
+            AND p.estatus = 1  ".$filtro." ORDER BY `p`.`nombre` ASC";
         $this->connect();
         $result = $this->getData($query);
         $this->close();
         return $result;
-
     }
 
     function agregaAlumno()
     {
         $query ="INSERT INTO `alumno` (
-                      `id_alumno`, 
-                      `id_municipio`, 
-                      `id_universidad`, 
-                      `id_persona`, 
-                      `id_tipo_procedencia_fk`, 
-                      `matricula`, 
-                      `nombre_uni`, 
-                      `carrera_especialidad`, 
-                      `email`, 
-                      `pw`, 
-                      `fecha_registro`, 
-                      `perfil_image`, 
-                      `estatus`) 
-                      VALUES (NULL, '".$this->getIdMunicipio()."', '".$this->id_universidad."',
-                       '".$this->getIdPersona()."', '".$this->getIdProcedencia()."', '".$this->getMatricula()."', '".$this->getNombreUni()."',
-                        '".$this->getCarreraEspecialidad()."',
-                         '".$this->getEmail()."', '".$this->getPw()."', '".date('Y-m-d H:i:s')."', '', '".$this->getEstatusAlumno()."')";
+            `id_alumno`, `id_municipio`, 
+            `id_universidad`, `id_persona`, 
+            `id_tipo_procedencia_fk`, `matricula`, 
+            `nombre_uni`, `carrera_especialidad`, 
+            `email`, `pw`, `fecha_registro`, 
+            `perfil_image`, `estatus`) 
+            VALUES (NULL, '".$this->getIdMunicipio()."', '"
+            .$this->id_universidad."','".$this->getIdPersona()."', '"
+            .$this->getIdProcedencia()."', '".$this->getMatricula()."', '"
+            .$this->getNombreUni()."','".$this->getCarreraEspecialidad()."',
+            '".$this->getEmail()."', '".$this->getPw()."', '"
+            .date('Y-m-d H:i:s')."', '', '".$this->getEstatusAlumno()."')";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
@@ -400,10 +382,13 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
         // TODO: Implement cambiarClaveServSoc() method.
     }
 
-    function updateEstatusAlumno($id_lumno, $estatus)
+    function updateEstatusAlumno($id_alumno, $estatus)
     {
+        $filtro = $id_alumno > 0 ? " WHERE `alumno`.`id_alumno`=" . $id_alumno : "";
+        $query = "UPDATE `alumno` SET `alumno`.`estatus` = '$estatus' ".$filtro;
         $this->connect();
-        $datos = $this->executeInstruction("******* P E N D I E N T E *********");
+        $response = $this->executeInstruction($query);
         $this->close();
+        return $response;
     }
 }

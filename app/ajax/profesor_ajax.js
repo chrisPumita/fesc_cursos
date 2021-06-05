@@ -33,7 +33,6 @@ function consultaListaProfesoresA(){
                         edoCta="Inactiva";
                         colorBool = "red";
                     }
-
                     template += `<tr id_profesor =${"'"+obj_result.id_profesor+"' "}>
                                 <th scope="row">${cont}</th>
                                 <td>${obj_result.no_trabajador}</td>
@@ -66,11 +65,11 @@ function consultaListaProfesoresA(){
             }
             else{
                 $("#tbl-container").empty();
-                template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                              <strong>Lo sentimos</strong> No hay registro de profesores aun, porfavor registra uno.
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
+                template =  `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Lo sentimos</strong> No hay registro de profesores aun, porfavor registra uno.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>`;
                 $("#tbl-container").html(template);
             }
@@ -83,10 +82,14 @@ $(document).on("click",".prof-estatus", function (){
         // se obtienen los elementos html que tienen el estatus y el id
         let element=$(this)[0].parentElement.parentElement.parentElement.parentElement;
         let element_estatus=$(this)[0].parentElement.parentElement
+        /*console.log(element);
+        console.log(element_estatus);*/
         // se obtiene el valor de los atributos de html
         let id= $(element).attr("id_profesor");
         let status=$(element_estatus).attr("value_estatus");
         let type =2;
+        /*console.log(id);
+        console.log(status);*/
         $.post(
             "./control/update-estatus.php",
             {id,status,type},

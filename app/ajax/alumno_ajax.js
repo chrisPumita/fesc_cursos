@@ -16,13 +16,29 @@ try {
             success: function (response) {
                 let obj_result = JSON.parse(response);
                 let template = "";
-                if (obj_result.length > 0) {
+                if (obj_result.length>0) {
                     var cont = 0;
                     obj_result.forEach((obj_result => {
                         cont++;
-                        let estatus = obj_result.estatus_alumno == 1 ? `Inhabilitar` : `Habilitar`;
-                        let classEnabled = obj_result.estatus_alumno == 1 ? "" : "";
-                        template += `<tr id_alumno =${"'" + obj_result.id_alumno + "' " + classEnabled}>
+                        let estatus;
+                        let img;
+                        let edoCta;
+                        let colorBool;
+                        let edoCta1;
+                        if(obj_result.estatus_alumno == 1){
+                            estatus = "Inhabilitar";
+                            img = "alumno_activo2.png";
+                            edoCta = "Verificada";
+                            edoCta1 = 1;
+                            colorBool = "green";
+                        }else{
+                            estatus = "Habilitar";
+                            img = "alumno_inactivo.png";
+                            edoCta = "Por verificar";
+                            edoCta1 = 0;
+                            colorBool = "red";
+                        }
+                        template += `<tr id_alumno =${"'" + obj_result.id_alumno + "' "}>
                                     <th scope="row">${cont}</th>
                                     <td>${obj_result.matricula}</td>
                                     <td>${obj_result.app + " " + obj_result.apm + " " + obj_result.nombre}</td>
@@ -30,18 +46,24 @@ try {
                                     <td>${obj_result.email}</td>
                                     <td>${obj_result.nameproc}</td>
                                     <td>${obj_result.carrera_especialidad}</td>
-                                    <td>${obj_result.estatus_alumno == 1 ? `Verificada` : `Por verificar`}</td>
+                                    <td>${obj_result.estatus_alumno = edoCta}</td>
+                                    <td><a href="" data-toggle="tooltip" data-placement="left" title="Cuenta ${edoCta}">
+                                        <img src="./assets/img/${img}" class="rounded float-left" alt="..." width="60"></a>
+                                        <div class="blob ${colorBool}"></div>
+                                    </td>
                                     <td>
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Opciones
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button">Ver Detalles</button>
-                                            <button class="dropdown-item" type="button">${estatus}</button>
+                                        <div class="dropdown" value_estatus="${edoCta1}">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Opciones
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                <a href="detalles-alumno?id-alumno=${obj_result.id_alumno}">
+                                                    <button class="dropdown-item" type="button">Ver Detalles</button>
+                                                </a>
+                                                <button class="dropdown-item alumn-estatus" type="button">${estatus}</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
+                                    </td>
                                 </tr>`;
                     }));
                     $("#tbl-alum").html(template);
@@ -61,6 +83,31 @@ try {
 } catch (e) {
 
 }
+
+$(document).on("click",".alumn-estatus",function () {
+    if (confirm("¿Esta seguro que desea cambiar el estado de la cuenta?")){
+        //Obtengo los elmentos html que contiene la informacion que requiero para actualizar
+        let element = $(this)[0].parentElement.parentElement.parentElement.parentElement;
+        let element_estatus = $(this)[0].parentElement.parentElement;
+        /*console.log(element);
+        console.log(element_estatus);*/
+        //obtengo el valor del atributo del elemento seleccionado
+        let id = $(element).attr("id_alumno");
+        let status = $(element_estatus).attr("value_estatus");
+        /*console.log(id);
+        console.log(status);*/
+        // 1 = alumno; 2 = profesor; 3 = admin
+        let type = 1;
+        $.post(
+            "./control/update-estatus.php",
+            {id,status,type},
+            function (response) {
+                //actulizo la tabla de registros
+                consultaListaAlumnos();
+            }
+        )
+    }
+})
 
 function consultaUniversidades() {
     $.ajax(
@@ -183,7 +230,7 @@ $("#estados").change(function ()
     }
 });
 
-//Inciacia envio de formulario
+//Incia envio de formulario
 $(function() {
     jQuery("#frm-add-alumno").validate({ //inicamos la validación del formulario
         //Cada cosa que configures la debes de terminar con una coma ,

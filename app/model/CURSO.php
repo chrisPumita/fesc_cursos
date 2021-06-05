@@ -411,7 +411,6 @@ class CURSO extends CONEXION_M implements I_CURSO
      * Inician Funciones de Interfaz
      *******************************************************************************/
 
-
     public function consultaCursos($filtro)
     {
         // TODO: Implement consultaCursos() method.
@@ -420,10 +419,11 @@ class CURSO extends CONEXION_M implements I_CURSO
     public function consultaGroupKeys($id_curso)
     {
         $this->connect();
-        $temas = $this-> getData("SELECT * FROM `group_key` WHERE `id_curso_fk` = ".$id_curso." ORDER BY `group_key`.`id_curso_fk` ASC ");
+        $temas = $this-> getData("SELECT * FROM `group_key` 
+        WHERE `id_curso_fk` = ".$id_curso." 
+        ORDER BY `group_key`.`id_curso_fk` ASC ");
         $this->close();
         return $temas;
-        // TODO: Implement consultaGroupKeys() method.
     }
 
     public function consultaDocsSolicitados($id_curso)
@@ -457,18 +457,22 @@ class CURSO extends CONEXION_M implements I_CURSO
                     `fecha_acreditacion`, 
                     `banner_img`, 
                     `tipo_curso`) VALUES 
-                    ('".$this->getIdCurso()."', NULL, '".$this->getIdProfesorAutor()."', '".$this->getCodigo()."', 
-                    '".$this->getNombreCurso()."', '".$this->getDirigidoA()."', '".$this->getObjetivo()."', 
-                    '".$this->getDescripcion()."', '".$this->getNoSesiones()."', '".$this->getAntecedentes()."', 
+                    ('".$this->getIdCurso()."', NULL, '"
+                    .$this->getIdProfesorAutor()."', '".$this->getCodigo()."', 
+                    '".$this->getNombreCurso()."', '".$this->getDirigidoA()."', '"
+                    .$this->getObjetivo()."', '".$this->getDescripcion()."', '"
+                    .$this->getNoSesiones()."', '".$this->getAntecedentes()."', 
                     '0', '".$this->getCostoSugerido()."', '".$this->getLinkTemarioPdf()."', 
-                    '".date('Y-m-d H:i:s')."', NULL, '".$this->getBannerImg()."', '".$this->getTipoCurso()."')";
+                    '".date('Y-m-d H:i:s')."', NULL, '".$this->getBannerImg()."', '"
+                    .$this->getTipoCurso()."')";
         $this->connect();
         $datos = $this->executeInstruction($query);
         $this->close();
         return $datos;
     }
 
-    //En el actualiza no se actualiza la verificacion del profesor que acredita, esta sera acreditada por el admin en la clase admin
+    //En el actualiza no se actualiza la verificacion del
+    // profesor que acredita, esta sera acreditada por el admin en la clase admin
     function actualizaCurso($curso)
     {
         $query = "UPDATE `curso` SET 

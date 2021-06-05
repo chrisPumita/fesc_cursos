@@ -47,10 +47,10 @@ function crearCuentaAlumno($id_municipio, $id_universidad,$matricula,$nombre_uni
     }
 }
 
-function updateEstatus($id,$status){
+function updateEstatusAlumno($id,$status){
     include_once "../model/ALUMNO.php";
     $objAlum = new ALUMNO();
-    return $objAlum->updateEstatusAlumno($id,$status);
+    return $objAlum->updateEstatusAlumno($id,$status=="1"?"0":"1");
 }
 
 function consultaAlumnos(){

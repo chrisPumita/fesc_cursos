@@ -32,7 +32,6 @@ function consultaListaAdmins() {
                        toolStatus += " INACTIVA";
                        colorBool = "red";
                    }
-
                    template += `<tr id_admin =${"'"+obj_result.id_profesor+"' "}>
                                 <th scope="row">${cont}</th>
                                 <td>${obj_result.no_trabajador}</td>
@@ -64,11 +63,11 @@ function consultaListaAdmins() {
            }
            else{
                $("#tbl-container").empty();
-               template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                              <strong>Lo sentimos</strong> No hay registro de administradores aun, porfavor registra uno.
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
+               template =   `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Lo sentimos</strong> No hay registro de administradores aun, porfavor registra uno.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>`;
                $("#tbl-container").html(template);
            }

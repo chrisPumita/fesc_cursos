@@ -48,6 +48,7 @@
                                                 <th scope="col">Procedencia</th>
                                                 <th scope="col">Carrera</th>
                                                 <th scope="col">Cuenta</th>
+                                                <th scope="col">Estatus</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
