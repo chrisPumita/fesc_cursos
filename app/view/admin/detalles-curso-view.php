@@ -243,7 +243,9 @@
                                                         <h3>Temario General del Curso</h3>
                                                     </div>
                                                     <div class="col-lg-3">
-                                                        <a href="#" class="btn btn-primary btn-block">Nuevo</a>
+                                                    <a href="#" data-toggle="modal" data-target="#editTema">
+                                                        <button type="button" class="btn btn-primary btn-block">Nuevo</button>
+                                                    </a>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -267,7 +269,9 @@
                                                                     <td>
                                                                         <!-- BOTON ACCIONES -->
                                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                                            <button type="button" class="btn btn-primary">Modificar</button>
+                                                                            <a href="#" data-toggle="modal" data-target="#editTema">
+                                                                                <button type="button" class="btn btn-primary">Modificar</button>
+                                                                            </a>                                                                            
                                                                             <button type="button" class="btn btn-danger">Eliminar</button>
                                                                         </div>
                                                                     </td>
@@ -280,7 +284,9 @@
                                                                     <!-- BOTON ACCIONES -->
                                                                     <td>
                                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                                            <button type="button" class="btn btn-primary">Modificar</button>
+                                                                            <a href="#" data-toggle="modal" data-target="#editTema">
+                                                                                <button type="button" class="btn btn-primary">Modificar</button>
+                                                                            </a> 
                                                                             <button type="button" class="btn btn-danger">Eliminar</button>
                                                                         </div>
                                                                     </td>
@@ -379,9 +385,8 @@
                                                                     <div class="form-group">
                                                                         <select class="form-control" id="sel1">
                                                                             <option>Todos</option>
-                                                                            <option>2</option>
-                                                                            <option>3</option>
-                                                                            <option>4</option>
+                                                                            <option>Finalizados</option>
+                                                                            <option>Activos</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -459,7 +464,9 @@
                     <?php include("./view/includes/footer.php"); ?>
                 </div>
             </div>
+            <?php include "modal-editar-cursoinfo.php";?> 
+            <?php include "modal-editar-tema.php";?>
         </div>
-        <?php include "modal-editar-infocurso.php";?> 
+        
     </body>
 </html>

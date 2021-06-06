@@ -53,8 +53,8 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12 overflow-auto">
-                                    <table class="table table-striped bg-light">
+                                <div class="col-lg-12 overflow-auto table-responsive">
+                                    <table class="table table-hover table-striped table-sm bg-light">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
@@ -91,7 +91,9 @@
                                                             </a>                                        
                                                             <button class="dropdown-item" type="button">Editar</button>
                                                             <button class="dropdown-item" type="button">Acreditar Curso</button>
-                                                            <button class="dropdown-item" type="button">Nuevo Grupo</button>
+                                                            <a href="./nueva-asignacion">
+                                                                <button class="dropdown-item" type="button">Nuevo Grupo</button> 
+                                                            </a>                                                                                                                       
                                                         </div>
                                                     </div>
                                                 </td>
@@ -117,7 +119,9 @@
                                                             </a>                                        
                                                             <button class="dropdown-item" type="button">Editar</button>
                                                             <button class="dropdown-item" type="button">Acreditar Curso</button>
-                                                            <button class="dropdown-item" type="button">Nuevo Grupo</button>
+                                                            <a href="./nueva-asignacion">
+                                                                <button class="dropdown-item" type="button">Nuevo Grupo</button> 
+                                                            </a> 
                                                         </div>
                                                     </div>
                                                 </td>
@@ -144,7 +148,9 @@
                                                             </a>
                                                             <button class="dropdown-item" type="button">Editar</button>
                                                             <button class="dropdown-item" type="button">Acreditar Curso</button>
-                                                            <button class="dropdown-item" type="button">Nuevo Grupo</button>
+                                                            <a href="./nueva-asignacion">
+                                                                <button class="dropdown-item" type="button">Nuevo Grupo</button> 
+                                                            </a> 
                                                         </div>
                                                     </div>
                                                 </td>

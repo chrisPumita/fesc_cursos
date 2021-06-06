@@ -30,7 +30,7 @@
                                                     En este apartado puede asignar los permisos necesarios para un nuevo administrador.
                                                 </div>
                                                 <div class="col-lg-3">
-                                                    <a href="#" data-toggle="modal" data-target="#mod-new-admin">
+                                                    <a href="#" data-toggle="modal" data-target="#nuevoAdmin">
                                                         <button class="btn btn-primary w-100 m-3">Nuevo</button>
                                                     </a>
                                                 </div>
@@ -50,8 +50,8 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div id="tbl-container" class="col-lg-12 overflow-auto">
-                                    <table class="table table-striped bg-light">
+                                <div id="tbl-container" class="col-lg-12 overflow-auto table-responsive">
+                                    <table class="table table-hover table-striped table-sm bg-light">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
@@ -98,6 +98,7 @@
                 </div>
             </div>
         </div>
+        <?php include "modal-nuevo-admin.php";?>
         <!-- script_js
             ../../ =====>1
             ./     =====>2

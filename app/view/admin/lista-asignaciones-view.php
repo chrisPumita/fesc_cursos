@@ -55,8 +55,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-lg-12 overflow-auto">
-                                                        <table class="table table-striped bg-light table-hover">
+                                                    <div class="col-lg-12 overflow-auto table-responsive">
+                                                        <table class="table table-hover table-striped table-sm bg-light">
                                                             <thead>
                                                                 <tr>
                                                                     <th scope="col">#</th>
