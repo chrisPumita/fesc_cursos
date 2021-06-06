@@ -7,7 +7,11 @@
      $conn = new  CONEXION_M();
      $estado_seleccionado = $_POST['id'];
 
-     $query = "SELECT `id_municipio`, `id_estado_fk`, `clave`, `municipio` FROM `municipios`
+     $query = "SELECT `id_municipio`, 
+                `id_estado_fk`, 
+                `clave`, 
+                `municipio` 
+                FROM `municipios`
                 WHERE `id_estado_fk` = $estado_seleccionado
                 ORDER BY `municipio` ASC";
 

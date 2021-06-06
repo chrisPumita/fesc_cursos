@@ -5,7 +5,7 @@ $(document).ready(function () {
     }else {
         consultaUniversidades();
         consultaEstadosRep();
-        consultaMunicipios(15);
+        consultaMunicipios();
         consultaProcedencia();
     }
 });

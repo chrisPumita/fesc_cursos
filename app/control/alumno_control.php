@@ -9,8 +9,9 @@ function consultaListaAlumnos()
     $json_data = json_encode($result);
     return $json_data;
 }
-function crearCuentaAlumno($id_municipio, $id_universidad,$matricula,$nombre_uni,$idProcedencia,
-                     $carrera_especialidad,$email,$pw,$nombre,$app,$apm,$telefono,$sexo){
+function crearCuentaAlumno($id_municipio, $id_universidad,$matricula,
+                           $nombre_uni,$idProcedencia, $carrera_especialidad,
+                           $email,$pw,$nombre,$app,$apm,$telefono,$sexo){
     include_once "../model/CLAVES.php";
     //verificar si existe una cuenta
 
@@ -53,11 +54,63 @@ function updateEstatusAlumno($id,$status){
     return $objAlum->updateEstatusAlumno($id,$status=="1"?"0":"1");
 }
 
-function consultaAlumnos(){
+function updateAlumno()
+{
+    include_once "../model/ALUMNO.php";
+    $objAlum = new ALUMNO();
+    return $objAlum->modificaAlumno();
+}
+
+function consultaAlumno($id_alumno){
+    include_once "../model/ALUMNO.php";
     $al = new ALUMNO();
-    $result = $al ->consultaAlumnos("0","0");
+    $result = $al ->consultaAlumno($id_alumno);
     $json_data = json_encode($result);
     return $json_data;
 }
 
+function updatePwdAlumn($id_alumn,$pwd)
+{
+    include_once "../model/ALUMNO.php";
+    $objAlum = new ALUMNO();
+    echo $objAlum->modifcaPw($id_alumn, md5($pwd))?"Se modifico la contraseña correctamente":"No se pudo modificar la contraseña";
+}
 
+function eliminarAlumno($id_alumno)
+{
+    include_once "../model/ALUMNO.php";
+    $obj_alumn = new ALUMNO();
+    echo $obj_alumn->eliminaAlumno($id_alumno) ? "Se elimino profesor" : "No se pudo eliminar al alumno";
+}
+/****************************************************
+ *
+ *          P E N D I E N T E
+ *
+ *  CREAR CUENTA SERVICIO SOCIAL
+ *
+ * **************************************************/
+function crearCuentaServSoc($id_alumno,$clave_acceso,
+                            $fecha_inicio_serv,$fecha_termino_serv,
+                            $notas,$permisos)
+{
+    include_once "../model/SERVICIO_SOCIAL.php";
+    include_once "../model/ALUMNO.php";
+    $objAlum = new ALUMNO();
+    $servSoc = new SERVICIO_SOCIAL();
+    $servSoc->setIdAlumno($id_alumno);
+    $servSoc->setClaveAcceso(md5($clave_acceso));
+    $servSoc->setFechaInicioServ($fecha_inicio_serv);
+    $servSoc->setFechaTerminoServ($fecha_termino_serv);
+    $servSoc->setNotas($notas);
+    $servSoc->setPermisos($permisos);
+    $servSoc->setEstatus("1");
+    $objAlum = $servSoc;
+    //$res = $objAlum->
+}
+/****************************************************
+ *
+ *          P E N D I E N T E
+ *
+ *  CREAR CUENTA SERVICIO SOCIAL
+ *
+ * **************************************************/

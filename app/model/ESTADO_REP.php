@@ -91,12 +91,12 @@ class ESTADO_REP extends CONEXION_M
 	private $abrev;
 
     public function consultaEstados(){
-        $query = "SELECT 
-                   `id_estado`, 
-                   `clave`, 
-                   `estado`, 
-                   `abrev` 
-                FROM `estados`";
+        $query =    "SELECT 
+                    `id_estado`, 
+                    `clave`, 
+                    `estado`, 
+                    `abrev` 
+                    FROM `estados`";
         $this->connect();
         $result = $this-> getData($query);
         $this->close();
@@ -104,7 +104,9 @@ class ESTADO_REP extends CONEXION_M
     }
 
     public function consultaMunicipios($id_edo){
-        $query = "SELECT * FROM `municipios` WHERE `municipios`.`id_estado_fk` = ".$id_edo." ORDER BY `municipios`.`municipio` ASC ";
+        $query =    "SELECT * FROM `municipios` 
+                    WHERE `municipios`.`id_estado_fk` = ".$id_edo." 
+                    ORDER BY `municipios`.`municipio` ASC ";
         $this->connect();
         $result = $this-> getData($query);
         $this->close();

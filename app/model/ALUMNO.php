@@ -18,7 +18,10 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
     private $perfil_image;
     private $estatus_alumno;
 
-        //Asociacion
+    /*******************************************************************************
+     * Inician Getters and Setters
+     *******************************************************************************/
+    //Asociacion
     private $cuenta_SERVICIO_SOCIAL;
 
     /**
@@ -243,26 +246,81 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
     {
         $this->estatus_alumno = $estatus_alumno;
     }
+    /*******************************************************************************
+     * Terminan Getters and Setters
+     *******************************************************************************/
 
-
-    /////Implementacion de metodos de la interfaz
+    /*******************************************************************************
+     * Inician Funciones de Interfaz
+     *******************************************************************************/
 
     public function consultaListaAlumnos()
     {
         $this->connect();
-        $datos = $this->getData("SELECT al.`id_alumno`, al.`matricula`, al.`id_persona`, 
-       al.`carrera_especialidad`, al.`email`, al.`estatus` AS estatus_alumno, per.`id_persona`, 
-       per.`nombre`, per.`app`, per.`apm`, per.`telefono`, per.`estatus` AS estatus_persona, 
-       tipproc.`id_tipo_procedencia`, tipproc.`tipo_procedencia` AS nameproc FROM `alumno` al, 
-       `persona` per , `tipo_procedencia` tipproc WHERE al.`id_persona` = per.`id_persona` 
-        AND al.`id_tipo_procedencia_fk`= tipproc.`id_tipo_procedencia` AND per.`estatus` =1 
+        $datos = $this->getData("SELECT al.`id_alumno`, 
+        al.`matricula`, al.`id_persona`, al.`carrera_especialidad`, 
+        al.`email`, al.`estatus` AS estatus_alumno, per.`id_persona`, 
+        per.`nombre`, per.`app`, per.`apm`, per.`telefono`, 
+        per.`estatus` AS estatus_persona, tipproc.`id_tipo_procedencia`, 
+        tipproc.`tipo_procedencia` AS nameproc FROM `alumno` al, 
+       `persona` per , `tipo_procedencia` tipproc 
+        WHERE al.`id_persona` = per.`id_persona` 
+        AND al.`id_tipo_procedencia_fk`= tipproc.`id_tipo_procedencia` 
+        AND per.`estatus` =1 
         ORDER BY per.`app`, per.`apm`,per.`nombre` ASC");
         $this->close();
         return $datos;
     }
-    function consultaAlumno()
+
+    function agregaAlumno()
     {
-        // TODO: Implement consultaAlumno() method.
+        $query ="INSERT INTO `alumno` (
+            `id_alumno`, `id_municipio`, 
+            `id_universidad`, `id_persona`, 
+            `id_tipo_procedencia_fk`, `matricula`, 
+            `nombre_uni`, `carrera_especialidad`, 
+            `email`, `pw`, `fecha_registro`, 
+            `perfil_image`, `estatus`) 
+            VALUES (NULL, '".$this->getIdMunicipio()."', '"
+            .$this->getIdUniversidad()."','"
+            .$this->getIdPersona()."', '"
+            .$this->getIdProcedencia()."', '"
+            .$this->getMatricula()."', '"
+            .$this->getNombreUni()."','"
+            .$this->getCarreraEspecialidad()."',
+            '".$this->getEmail()."', '"
+            .$this->getPw()."', '"
+            .date('Y-m-d H:i:s')."', '', '"
+            .$this->getEstatusAlumno()."')";
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    }
+
+    function consultaAlumno($id_alumno)
+    {
+        $query = "SELECT per.`id_persona`, per.`nombre` AS nombre_alumno, 
+        per.`app`, per.`apm`, alu.`email`, per.`telefono`, est.`estado`, 
+        mun.`municipio`, tipproc.`tipo_procedencia`, uni.`siglas`, 
+        uni.`nombre` AS nombre_uni, alu.`carrera_especialidad`, alu.`matricula`, 
+        per.`estatus`AS status_persona, tipproc.`id_tipo_procedencia`, 
+        alu.`id_alumno`, alu.`id_municipio` AS id_municipio_fk, 
+        alu.`id_universidad`, alu.`id_persona`, alu.`id_tipo_procedencia_fk`, 
+        uni.`id_universidad`, mun.`id_municipio`, mun.`id_estado_fk`, 
+        est.`id_estado`, est.`abrev` 
+        FROM `persona` per, `tipo_procedencia` tipproc, `alumno` alu, 
+        `universidades` uni, `municipios` mun, `estados` est 
+        WHERE per.`id_persona` = alu.`id_persona` 
+        AND tipproc.`id_tipo_procedencia` = alu.`id_tipo_procedencia_fk` 
+        AND alu.`id_municipio` = mun.`id_municipio` 
+        AND mun.`id_estado_fk` = est.`id_estado` 
+        AND alu.`id_universidad` = uni.`id_universidad`
+        AND alu.`id_alumno`= ".$id_alumno;
+        $this->connect();
+        $datos = $this->getData($query);
+        $this->close();
+        return $datos;
     }
 
 
@@ -304,10 +362,10 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
             al.id_alumno, p.nombre, p.app, 
             p.apm, p.telefono, p.sexo, 
             p.estatus AS estatus_p, al.id_municipio, 
-            al.id_universidad, al.id_persona, al.matricula, 
-            al.nombre_uni, al.carrera_especialidad, al.email, 
-            al.fecha_registro, al.perfil_image, al.estatus AS estatus_al ,
-            tp.id_tipo_procedencia, tp.tipo_procedencia
+            al.id_universidad, al.id_persona, 
+            al.matricula, al.nombre_uni, al.carrera_especialidad, 
+            al.email, al.fecha_registro, al.perfil_image, al.estatus 
+            AS estatus_al, tp.id_tipo_procedencia, tp.tipo_procedencia
             FROM alumno al,persona p , tipo_procedencia tp
             WHERE al.id_persona = p.id_persona 
             AND al.id_tipo_procedencia_fk = tp.id_tipo_procedencia
@@ -318,55 +376,90 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
         return $result;
     }
 
-    function agregaAlumno()
+    function updateEstatusAlumno($id_alumno, $estatus)
     {
-        $query ="INSERT INTO `alumno` (
-            `id_alumno`, `id_municipio`, 
-            `id_universidad`, `id_persona`, 
-            `id_tipo_procedencia_fk`, `matricula`, 
-            `nombre_uni`, `carrera_especialidad`, 
-            `email`, `pw`, `fecha_registro`, 
-            `perfil_image`, `estatus`) 
-            VALUES (NULL, '".$this->getIdMunicipio()."', '"
-            .$this->id_universidad."','".$this->getIdPersona()."', '"
-            .$this->getIdProcedencia()."', '".$this->getMatricula()."', '"
-            .$this->getNombreUni()."','".$this->getCarreraEspecialidad()."',
-            '".$this->getEmail()."', '".$this->getPw()."', '"
-            .date('Y-m-d H:i:s')."', '', '".$this->getEstatusAlumno()."')";
+        $filtro = $id_alumno > 0 ? " WHERE `alumno`.`id_alumno`=" . $id_alumno : "";
+        $query = "UPDATE `alumno` SET `alumno`.`estatus` = '$estatus' ".$filtro;
         $this->connect();
-        $result = $this->executeInstruction($query);
+        $response = $this->executeInstruction($query);
         $this->close();
-        return $result;
+        return $response;
     }
 
     function modificaAlumno()
     {
-        // TODO: Implement modificaAlumno() method.
+        $query = "";
+        $this->connect();
+        $datos = $this->executeInstruction($query);
+        $this->close();
+        return $datos;
     }
 
-    function modifcaPw()
+    function modifcaPw($id_alumn,$pwd)
     {
-        // TODO: Implement modifcaPw() method.
+        $query =    "UPDATE `alumno` 
+                    SET `pw` = '".$pwd."' 
+                    WHERE `alumno`.`id_alumno` = ".$this->id_alumno;
+        $this->connect();
+        $datos = $this->executeInstruction($query);
+        $this->close();
+        return $datos;
+
     }
 
     function eliminaAlumno($id_alumno)
     {
-        // TODO: Implement eliminaAlumno() method.
+        $query = "DELETE FROM `alumno` WHERE `alumno`.`id_alumno` =".$id_alumno;
+        $this->connect();
+        $datos = $this->executeInstruction($query);
+        $this->close();
+        return $datos;
     }
 
-    function consultaCuentaServSoc()
+    function consultaCuentaServSoc($id_alumn)
     {
         include_once "SERVICIO_SOCIAL.php";
         $obj_serv = new SERVICIO_SOCIAL();
         $obj_serv->setIdAlumno($this->getIdAlumno());
         return $obj_serv->consultaCuenta();
     }
-
+    /****************************************************
+     *
+     *          P E N D I E N T E
+     *
+     *  CREAR CUENTA SERVICIO SOCIAL
+     *
+     * **************************************************/
     function crearCuentaServSoc()
     {
-        // TODO: Implement crearCuentaServSoc() method.
-    }
+        include_once "../model/SERVICIO_SOCIAL.php";
+        $objServSoc = new SERVICIO_SOCIAL();
+        $query = "INSERT INTO `servicio_social` (
+                               `id_alumno`, 
+                               `clave_acceso`, 
+                               `fecha_alta`, 
+                               `fecha_inicio_serv`, 
+                               `fecha_termino_serv`, 
+                               `notas`, 
+                               `permisos`, 
+                               `estatus`) 
+                               VALUES ('".$objServSoc->getIdAlumno($this->getIdAlumno())."', 
+                               '".$objServSoc->getClaveAcceso()."', 
+                               '".date('Y-m-d H:i:s')."', 
+                               '".$objServSoc->getFechaInicioServ()."', 
+                               '".$objServSoc->getFechaTerminoServ()."', 
+                               '".$objServSoc->getNotas()."', 
+                               '".$objServSoc->getPermisos()."', 
+                               '".$objServSoc->getEstatus()."')";
 
+    }
+    /****************************************************
+     *
+     *          P E N D I E N T E
+     *
+     *  CREAR CUENTA SERVICIO SOCIAL
+     *
+     * **************************************************/
     function modificarCuentaServSoc()
     {
         // TODO: Implement modificarCuentaServSoc() method.
@@ -382,13 +475,8 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
         // TODO: Implement cambiarClaveServSoc() method.
     }
 
-    function updateEstatusAlumno($id_alumno, $estatus)
-    {
-        $filtro = $id_alumno > 0 ? " WHERE `alumno`.`id_alumno`=" . $id_alumno : "";
-        $query = "UPDATE `alumno` SET `alumno`.`estatus` = '$estatus' ".$filtro;
-        $this->connect();
-        $response = $this->executeInstruction($query);
-        $this->close();
-        return $response;
-    }
+    /*******************************************************************************
+     * Terminan Funciones de Interfaz
+     *******************************************************************************/
+
 }
