@@ -11,8 +11,18 @@
         <div class="modal-body">
             <div class="col-lg-12">
                 <div class="form-group row">
-                    <label class="label" for="grupo">Número de índice:</label>
-                    <input class="form-control" type="number" value="0" id="numIndice">
+                    <label class="label" for="grupo">Indice:</label>
+                    <div class="row">
+                        <div class="col-md-4 d-flex">
+                            <input class="form-control" type="number" value="1" id="example-number-input"> <p>.</p>
+                        </div>
+                        <div class="col-md-4 d-flex">
+                            <input class="form-control" type="number" value="0" id="example-number-input"> <p>.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="number" value="0" id="example-number-input">
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group row">
                     <label class="label" for="grupo">Tema: </label>
