@@ -5,7 +5,7 @@ require_once "./control/vistasControlador.php";
 #Definimos una nueva instancia de vista
 $IV = new vistasControlador();
 #Nombre de la vista que se va a mostyrar
-$vistas =  $IV->obtener_vistas_controlador_admin();
+$vistas =  $IV->obtener_vistas_controlador();
 #verificamos si es un login o 404
 if ($vistas=="login"||$vistas=="404")
 {
