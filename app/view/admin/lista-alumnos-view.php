@@ -35,7 +35,7 @@
 
                         <!--INICIA SECCION DE HISTORIAL DE CURSOS EN EL SISTEMA-->
                         <section class="container py-3 bg-grey">
-                            <div class="row">
+                            <div class="row" id="tbl-container">
                                 <div class="col-lg-12 overflow-auto table-responsive">
                                     <table class="table table-hover table-striped table-sm bg-light">
                                         <thead>
@@ -88,6 +88,7 @@
     <script>
         let pagList = true;
     </script>
+    <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
     <script src="./ajax/alumno_ajax.js"></script>
     </body>
 </html>
