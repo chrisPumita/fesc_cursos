@@ -9,6 +9,15 @@ function consultaListaProfesores()
     return $json_data;
 }
 
+function consultaListaProfesoresActivos()
+{
+    include_once "../model/PROFESOR.php";
+    $obj_prof = new PROFESOR();
+    $result = $obj_prof -> getListaProfesoresActivos();
+    $json_data = json_encode($result);
+    return $json_data;
+}
+
 function actualizaestatusProfesor($id_profesor, $estatus)
 {
     include_once "../model/PROFESOR.php";

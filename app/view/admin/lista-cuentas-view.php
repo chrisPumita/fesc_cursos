@@ -104,5 +104,8 @@
             ./     =====>2
         -->
         <script src="./ajax/admin_ajax.js"></script>
+        <script>
+            let pagList = true;
+        </script>
     </body>
 </html>

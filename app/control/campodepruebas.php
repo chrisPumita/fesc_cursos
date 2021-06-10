@@ -3,8 +3,12 @@
 //include_once "inscripciones_control.php";
 //echo acreditarPagoInscripcion("1","0000","987654321","100","SOLO PAGO","2021-05-27");
 
-include_once "./alumno_control.php";
-echo consultaAlumno(8);
+include_once "./profesores_control.php";
+echo consultaListaProfesores();
+echo ("***********************************************************
+******************************************************************
+******************************************************************");
+echo consultaListaProfesoresActivos();
 
 ?>
 <!--

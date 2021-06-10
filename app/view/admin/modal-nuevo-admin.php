@@ -17,9 +17,8 @@
                         </div>
                         <div class="col-sm-8 mb-3 mb-sm-0">
                             <select class="form-control" name="profesor"  id="profesor">
-                                <option value="1">Juan Pérez Sánchez</option>
-                                <option value="2">Roberto Gomez Ramírez</option>
-                                <option value="3">Maricela Lara Martínez</option>
+                                <!--ajax response-->
+
                             </select>
                         </div>
                     </div>
@@ -92,6 +91,7 @@
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Asignar</button>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

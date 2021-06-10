@@ -1,6 +1,6 @@
 //Activar el escucha
 $(document).ready(function () {
-    if (pagList) {
+        if (pagList) {
         consultaListaAlumnos();
     }else {
         consultaUniversidades();

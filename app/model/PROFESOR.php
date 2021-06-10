@@ -241,6 +241,27 @@ class PROFESOR extends PERSONA implements I_PROFESOR
         $this->close();
         return $datos;
     }
+    public function getListaProfesoresActivos()
+    {
+        $query = "SELECT DISTINCT per.`id_persona`, per.`nombre`, 
+        per.`app`, per.`apm`, per.`telefono`, 
+        per.`estatus` AS estatus_persona, prof.`id_profesor`, 
+        prof.`no_trabajador`, prof.`prefijo`, prof.`email`, 
+        prof.`fecha_registro`, prof.`estatus` AS estatus_profesor, 
+        depto.`id_depto`, depto.`nombre` AS depto_name 
+        FROM `profesor` prof, `persona` per,`departamentos` depto 
+        WHERE per.`id_persona` = prof.`id_persona_fk` 
+        AND prof.`estatus` = 1 AND per.`estatus`=1 
+        AND depto.`id_depto`= prof.`id_depto_fk` 
+        AND prof.`id_profesor` NOT IN 
+            (SELECT admin.`id_profesor_admin_fk` 
+            FROM `administrador` admin) 
+        ORDER BY `per`.`app`,`per`.`apm`,`per`.`nombre` ASC";
+        $this->connect();
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;
+    }
 
     function updateEstatusProf($id_profesor, $estatus)
     {

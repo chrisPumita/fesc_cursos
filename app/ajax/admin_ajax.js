@@ -1,13 +1,20 @@
 // lo que sejecuta primero
 $(document).ready(function () {
-    consultaListaAdmins();
+    consultaProfesoresActivos();
+    if (pagList) {
+        consultaListaAdmins();
+    }else {
+        consultaProfesoresActivos();
+    }
 });
 
 function consultaListaAdmins() {
     //abrir ajax
     $.ajax({
-       url: "./control/list_admin.php",
+        url: "./control/list_admin.php",
         success: function (response) {
+            echo("vvvvvvvv");
+            console.log(response);
             //Convertir a JSNON el response que viene del servidor
            let obj_result = JSON.parse(response);
            let template = "";
@@ -96,3 +103,25 @@ $(document).on("click",".admin-estatus",function () {
         )
     }
 })
+function consultaProfesoresActivos() {
+    $.ajax({
+        url:"./control/list_profesores_activos.php",
+        success: function (response) {
+            echo("vvvvvvvv");
+            console.log(response);
+            let obj_result = JSON.parse(response);
+            console.log(obj_result);
+            let template = "";
+            if (obj_result.length>0) {
+                var cont = 0;
+                obj_result.forEach(
+                    (obj_result=>{
+                        cont++;
+                        template += `<option value="${obj_result.id_profesor_admin_fk}">${obj_result.nombre+obj_result.app+obj_result.apm}</option>`;
+                    })
+                );
+                $("#profesor").html(template);
+            }
+        }
+    });
+}

@@ -5,6 +5,8 @@ interface I_PROFESOR
 {
     public function getListaProfesores();
 
+    public function getListaProfesoresActivos();
+
     function updateEstatusProf($id_profesor, $estatus);
 
     function consultaProfesor($id_profesor);
