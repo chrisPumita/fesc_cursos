@@ -61,9 +61,7 @@
                            <div class="form-group row">
                               <div class="col-sm-12 mb-3 mb-sm-0">
                                  <select class="form-control" id="depto" name="depto">
-                                    <option value="1">Informática</option>
-                                    <option value="2">Matemáticas</option>
-                                    <option value="3">Cómputo</option>
+                                    <!--AJAX-->
                                  </select>
                               </div>
                            </div>

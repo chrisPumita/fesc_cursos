@@ -11,7 +11,8 @@
             <div class="w-100">
                 <?php include("./view/includes/admin-menutel.php"); ?>
                 <div id="content">
-                    <!--Inicio contenido dinamico-->
+                    <!--Inicio contenido dinamico home
+                    -->
                     <div class="componet-dinamico bg-grey">
                         <!--INICIA ENCABEZADO DE DETALLES-->
                         <section class="container py-3 bg-grey">

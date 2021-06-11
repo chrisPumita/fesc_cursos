@@ -42,7 +42,8 @@ function consultaListaProfesoresA(){
                                 <td>${obj_result.email}</td>
                                 <td>${obj_result.fecha_registro}</td>
                                 <td><a href="" data-toggle="tooltip" data-placement="left" title="Cuenta ${edoCta}">
-                                    <img src="./assets/img/${img}" class="rounded float-left" alt="..." width="60"></a>
+                                    <img src="./asset
+                                    s/img/${img}" class="rounded float-left" alt="..." width="60"></a>
                                     <div class="blob ${colorBool}"></div>
                                 </td>
                                 <td>
@@ -60,13 +61,13 @@ function consultaListaProfesoresA(){
                                 </td>
                             </tr>`;
                 }));
-                //asigno a mi obj de html
+                //asignó a mi obj de html
                 $("#tbl-prof").html(template);
             }
             else{
                 $("#tbl-container").empty();
                 template =  `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Lo sentimos</strong> No hay registro de profesores aun, porfavor registra uno.
+                                <strong>Lo sentimos,</strong> por el momento no hay registros de profesores, por favor registre uno.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -103,7 +104,6 @@ $(document).on("click",".prof-estatus", function (){
     }
 })
 
-
 function consultadepartamentos() {
     $.ajax(
         {
@@ -136,17 +136,17 @@ $(function() {
         rules: { //iniciamos sección de reglas
             nombre_profesor: { //estas seras las reglas para el objeto que en su propiedad name tenga nameO
                 required: true, //indicamos que es requerido que contenga un valor
-                minlength: 4, //indicamos que debe de tener por lo menos 4 caracteres
+                minlength: 3, //indicamos que debe de tener por lo menos 4 caracteres
                 maxlength: 20 //indicamos que debe de tener maximo 20 caracteres
             },
             app: {
                 required: true,
-                minlength:4,
+                minlength:3,
                 maxlength:25
             },
             apm: {
                 required: true,
-                minlength:4,
+                minlength:3,
                 maxlength:25
             },
             correo_prof:{

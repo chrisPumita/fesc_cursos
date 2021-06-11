@@ -1,5 +1,5 @@
 <?php
-
+include_once "CONEXION_M.php";
 include_once "I_ASIG_GRUPO.php";
 
 class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
@@ -424,7 +424,6 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
 
     function consultaHorarioVirtual($id_asig)
     {
-        include_once "CONEXION_M.php";
         $query = "SELECT * FROM `horario_clase_virtual` WHERE `id_asignacion_fk`=" . $id_asig;
         $this->connect();
         $datos = $this->getData($query);
@@ -434,7 +433,6 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
 
     function consultaHorarioPresencial($id_asig)
     {
-        include_once "CONEXION_M.php";
         $query = "SELECT * FROM `horario_clase_presencial` WHERE `id_asignacion_fk`=" . $id_asig;
         $this->connect();
         $datos = $this->getData($query);
@@ -444,7 +442,6 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
 
     function consultaCostosDetalles($id_asignacion){
         //MPDIFICAR CONSULTA
-        include_once "CONEXION_M.php";
         $sql = "SELECT costo_real,descuento,nivel_aplicacion_desc FROM asignacion_grupo 
             WHERE id_asignacion = ".$id_asignacion;
         $this->connect();
@@ -454,7 +451,6 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
     }
 
     function consultaAsignacion($id_grupo){
-        include_once "CONEXION_M.php";
         $query="SELECT asig.id_asignacion,
                            gp.grupo, 
                            p.nombre,
@@ -488,9 +484,11 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
     }
     public function consultaAsignaciones()
     {
-        include_once "CONEXION_M.php";
         $query = "SELECT asig.id_asignacion,
-                           gp.grupo, 
+                           gp.grupo,
+                           crs.nombre_curso,
+                           crs.tipo_curso,
+                           crs.aprobado,
                            p.nombre,
                            p.app,
                            p.apm,
@@ -504,16 +502,15 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
                            asig.fecha_fin_actas,
                            asig.cupo,
                            asig.costo_real,
-                           asig.descuento,
-                           asig.notas,
-                           asig.modalidad  
-                    FROM asignacion_grupo asig, 
+                           asig.notas
+                    FROM asignacion_grupo asig, curso crs,
                          profesor pf, 
                          persona p,
                          grupo gp 
                     WHERE asig.id_profesor_fk=pf.id_profesor 
                       AND pf.id_persona_fk=p.id_persona 
-                      AND asig.id_grupo_fk=gp.id_grupo";
+                      AND asig.id_grupo_fk=gp.id_grupo
+                      AND gp.id_curso_fk=crs.id_curso";
         $this->connect();
         $datos = $this->getData($query);
         $this->close();
@@ -523,7 +520,6 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
 
     function crearasignacion()
     {
-        include_once "CONEXION_M.php";
         $query = "INSERT INTO `asignacion_grupo`(
                                `id_asignacion`, 
                                `id_grupo_fk`, 
@@ -558,7 +554,6 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
 
     function modificarasignacion()
     {
-        include_once "CONEXION_M.php";
         $query = "UPDATE `asignacion_grupo` SET `id_grupo_fk`='".$this->getIdGrupoFk()                                                      ."',`id_profesor_fk`='".$this->getIdProfesorFk()."',`generacion`='".$this->getGeneracion()."',`semestre`='".$this->getSemestre()."',`campus_cede`='".$this->getCampusCede()."',
                             `fecha_inicio`='".$this->getFechaInicio()."',`fecha_fin`='".$this->getFechaFin()."',`fecha_lim_inscripcion`='".$this->getFechaLimInscripcion()."',`fecha_inicio_actas`='".$this->getFechaInicioActas()."',
                             `fecha_fin_actas`='".$this->getFechaFinActas()."',`cupo`='".$this->getCupo()."',`costo_real`='".$this->getCostoReal()."',`descuento`='".$this->getDescuento()."',`nivel_aplicacion_desc`='".$this->getNivelAplicacionDesc()."',
@@ -571,7 +566,6 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
 
     function eliminarasignacion($id_asignacion)
     {
-        include_once "CONEXION_M.php";
         $query="DELETE FROM `asignacion_grupo` WHERE `id_asignacion`=".$id_asignacion;
         $this->connect();
         $result = $this-> executeInstruction($query);

@@ -57,7 +57,8 @@ include("./view/includes/header.php");
                                         <div class="mx-auto">
                                             <i class="icon ion-md-rocket mr-1 position-absolute paleta"></i>
                                             <h6 class="text-muted"></i><STrong>Cursos</STrong></h6>
-                                            <h3 class="font-weight-bold">50</h3>
+                                            <!-- esto se trae con AJAX-->
+                                            <h3 class="font-weight-bold" id="countCursos"></h3>
                                             <h6 class="text-success">Cursos activos</h6>
                                         </div>
                                     </div>
@@ -69,7 +70,8 @@ include("./view/includes/header.php");
                                         <div class="mx-auto">
                                             <i class="icon ion-md-checkmark mr-1 position-absolute paleta"></i>
                                             <h6 class="text-muted"><strong>Constancias</strong></h6>
-                                            <h3 class="font-weight-bold">150</h3>
+                                            <!-- esto se trae con AJAX-->
+                                            <h3 class="font-weight-bold" id="countConstancias"></h3>
                                             <h6 class="text-warning">Por revisar y acreditar</h6>
                                         </div>
                                     </div>
@@ -81,7 +83,8 @@ include("./view/includes/header.php");
                                         <div class="mx-auto">
                                             <i class="icon ion-md-stats mr-1 position-absolute paleta"></i>
                                             <h6 class="text-muted"><strong>Inscripciones</strong></h6>
-                                            <h3 class="font-weight-bold">70</h3>
+                                            <!-- esto se trae con AJAX-->
+                                            <h3 class="font-weight-bold" id="countInscripciones"></h3>
                                             <h6 class="text-warning">Pendientes de revisión</h6>
                                         </div>
                                     </div>
@@ -93,7 +96,8 @@ include("./view/includes/header.php");
                                         <div class="mx-auto">
                                             <i class="icon ion-md-contacts mr-1 position-absolute paleta"></i>
                                             <h6 class="text-muted"><strong>Alumnos</strong></h6>
-                                            <h3 class="font-weight-bold">700</h3>
+                                            <!-- esto se trae con AJAX-->
+                                            <h3 class="font-weight-bold" id="countAlumnos"></h3>
                                             <h6 class="text-success">Registrados</h6>
                                         </div>
                                     </div>
@@ -113,7 +117,7 @@ include("./view/includes/header.php");
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12 overflow-auto table-responsive">
+                                <div id="tbl-containerGrupos" class="col-lg-12 overflow-auto table-responsive">
                                     <table class="table table-hover table-striped table-sm bg-light">
                                         <thead>
                                         <tr>
@@ -128,96 +132,15 @@ include("./view/includes/header.php");
                                             <th scope="col">Acciones</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>5110</td>
-                                            <td>Curso Diseño UIX</td>
-                                            <td>Juan Perez Sanchez</td>
-                                            <td>5/30</td>
-                                            <td>29 de Junio del 2021</td>
-                                            <td>Online</td>
-                                            <td>23 solicitudes pendientes</td>
-                                            <td> <!-- BOTON ACCIONES -->
-                                                <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <a href="#" data-toggle="modal" data-target="#verHorario">
-                                                            <button class="dropdown-item" type="button">Ver Horario</button>
-                                                        </a>                                                        
-                                                        <button class="dropdown-item" type="button">Editar grupo</button>
-                                                        <a href="#" data-toggle="modal" data-target="#verSolicitudes">
-                                                            <button class="dropdown-item" type="button">Ver solicitudes</button>
-                                                        </a>                                                        
-                                                        <button class="dropdown-item" type="button">Terminar grupo</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>2603</td>
-                                            <td>Curso Excel Avanzado con Macros</td>
-                                            <td>Alejandro Navarrete Perez</td>
-                                            <td>20/20</td>
-                                            <td>27 de Noviembre del 2021</td>
-                                            <td>Online</td>
-                                            <td>Grupo lleno</td>
-                                            <td> <!-- BOTON ACCIONES -->
-                                                <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <<a href="#" data-toggle="modal" data-target="#verHorario">
-                                                            <button class="dropdown-item" type="button">Ver Horario</button>
-                                                        </a>
-                                                        <button class="dropdown-item" type="button">Editar grupo</button>
-                                                        <a href="#" data-toggle="modal" data-target="#verSolicitudes">
-                                                            <button class="dropdown-item" type="button">Ver solicitudes</button>
-                                                        </a>
-                                                        <button class="dropdown-item" type="button">Terminar grupo</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>2603</td>
-                                            <td>Iniciación al cómputo I</td>
-                                            <td>Ana Gabriela Guevara Espinoza</td>
-                                            <td>26/30</td>
-                                            <td>11 de Julio del 2021</td>
-                                            <td>Online</td>
-                                            <td>Sin solicitudes pendientes</td>
-                                            <!-- BOTON ACCIONES -->
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <a href="#" data-toggle="modal" data-target="#verHorario">
-                                                            <button class="dropdown-item" type="button">Ver Horario</button>
-                                                        </a>
-                                                        <button class="dropdown-item" type="button">Editar grupo</button>
-                                                        <a href="#" data-toggle="modal" data-target="#verSolicitudes">
-                                                            <button class="dropdown-item" type="button">Ver solicitudes</button>
-                                                        </a>
-                                                        <button class="dropdown-item" type="button">Terminar grupo</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <tbody id="tbl-grupos">
+                                        <!-- AJAX -->
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <!-- PAGINADOR DE TABLA -->
                             <div class="row">
-                                <div class="col-lg-12 my-2">
+                                <div class="col-lg-12 my-2" id="tbl-container2Grupos>
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination justify-content-center">
                                             <li class="page-item disabled">
@@ -244,7 +167,7 @@ include("./view/includes/header.php");
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12 overflow-auto table-responsive">
+                                <div id="tbl-containerCursos" class="col-lg-12 overflow-auto table-responsive">
                                     <table class="table table-hover table-striped table-sm bg-light">
                                         <thead>
                                         <tr>
@@ -256,80 +179,18 @@ include("./view/includes/header.php");
                                             <th scope="col">Cupo</th>
                                             <th scope="col">Modalidad</th>
                                             <th scope="col">Costo</th>
-                                            <th scope="col">Estado</th>
                                             <th scope="col">Acciones</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>28054</td>
-                                            <td>Iniciacion al computo II</td>
-                                            <td>alberto Suarez Mendiola</td>
-                                            <td>15</td>
-                                            <td>25</td>
-                                            <td>Presencial</td>
-                                            <td>$1350</td>
-                                            <td>Sin revisar</td>
-                                            <!-- BOTON ACCIONES -->
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <a href="#" data-toggle="modal" data-target="#nuevoGrupo">
-                                                            <button class="dropdown-item" type="button">Nuevo grupo</button>
-                                                        </a>
-                                                        <a href="./detalles-curso">
-                                                            <button class="dropdown-item" type="button">Ver Detalles</button>
-                                                        </a>
-                                                        <a href="#" data-toggle="modal" data-target="#histCurso">
-                                                            <button class="dropdown-item" type="button">Historial</button>
-                                                        </a>                                                        
-                                                        <button class="dropdown-item" type="button">Acreditar curso</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                        <th scope="row">2</th>
-                                            <td>27521</td>
-                                            <td>Introducción a Figma</td>
-                                            <td>Adriana Pascual Benitez</td>
-                                            <td>30</td>
-                                            <td>20</td>
-                                            <td>A distancia</td>
-                                            <td>$2500</td>
-                                            <td>Sin revisar</td>
-                                            <!-- BOTON ACCIONES -->
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <a href="#" data-toggle="modal" data-target="#nuevoGrupo">
-                                                            <button class="dropdown-item" type="button">Nuevo grupo</button>
-                                                        </a>
-                                                        <a href="./detalles-curso">
-                                                            <button class="dropdown-item" type="button">Ver Detalles</button>
-                                                        </a>
-                                                        <a href="#" data-toggle="modal" data-target="#histCurso">
-                                                            <button class="dropdown-item" type="button">Historial</button>
-                                                        </a> 
-                                                        <button class="dropdown-item" type="button">Acreditar curso</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <tbody id="tbl-cursos">
+                                        <!-- AJAX-->
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <!-- PAGINADOR DE TABLA -->
                             <div class="row">
-                                <div class="col-lg-12 my-2">
+                                <div id="tbl-container2Cursos" class="col-lg-12 my-2">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination justify-content-center">
                                             <li class="page-item disabled">
@@ -356,7 +217,7 @@ include("./view/includes/header.php");
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12 overflow-auto table-responsive">
+                                <div id="tbl-containerDocs" class="col-lg-12 overflow-auto table-responsive">
                                     <table class="table table-hover table-striped table-sm bg-light">
                                         <thead>
                                         <tr>
@@ -365,90 +226,18 @@ include("./view/includes/header.php");
                                             <th scope="col">Alumno</th>
                                             <th scope="col">Inscripción</th>
                                             <th scope="col">Grupo</th>
-                                            <th scope="col">Estado</th>
                                             <th scope="col">Acciones</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Ficha de inscripción</td>
-                                            <td>Jennifer Morales Rosas</td>
-                                            <td>158769</td>
-                                            <td>2601</td>
-                                            <td>Pendiente</td>
-                                            <!-- BOTON ACCIONES -->
-                                            <td> 
-                                                <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <button class="dropdown-item" type="button">Ver documento</button>
-                                                        <button class="dropdown-item" type="button">Rechazar</button>
-                                                        <button class="dropdown-item" type="button">Aceptar</button>
-                                                        <a href="./ficha-insc">
-                                                            <button class="dropdown-item" type="button">Detalles Inscripción</button>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Copia de credencial</td>
-                                            <td>Jennifer Morales Rosas</td>
-                                            <td>158769</td>
-                                            <td>2601</td>
-                                            <td>Pendiente</td>
-                                            <!-- BOTON ACCIONES -->
-                                            <td> 
-                                                <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <button class="dropdown-item" type="button">Ver documento</button>
-                                                        <button class="dropdown-item" type="button">Rechazar</button>
-                                                        <button class="dropdown-item" type="button">Aceptar</button>
-                                                        <<a href="./ficha-insc">
-                                                            <button class="dropdown-item" type="button">Detalles Inscripción</button>
-                                                        </a>                                                        
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Baucher de pago</td>
-                                            <td>Jennifer Morales Rosas</td>
-                                            <td>158769</td>
-                                            <td>2601</td>
-                                            <td>Pendiente</td>
-                                            <!-- BOTON ACCIONES -->
-                                            <td> 
-                                                <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <button class="dropdown-item" type="button">Ver documento</button>
-                                                        <button class="dropdown-item" type="button">Rechazar</button>
-                                                        <button class="dropdown-item" type="button">Aceptar</button>
-                                                        <a href="./ficha-insc">
-                                                            <button class="dropdown-item" type="button">Detalles Inscripción</button>
-                                                        </a>                                                        
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <tbody id="tbl-docs">
+                                        <!-- AJAX-->
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <!-- PAGINADOR DE TABLA -->
                             <div class="row">
-                                <div class="col-lg-12 my-2">
+                                <div class="col-lg-12 my-2" id="tbl-container2Docs" >
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination justify-content-center">
                                             <li class="page-item disabled">
@@ -557,7 +346,7 @@ include("./view/includes/header.php");
                                                     </div>
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="https://kmmx.mx/wp-content/uploads/2020/04/Curso-de-Prototipado-y-UX-UI-Design-con-Adobe-XD.png"  alt="..." class="d-block w-100" alt="...">
+                                                    <img src="https://kmmx.mx/wp-content/uploads/2020/04/Curso-de-Prototipado-y-UX-UI-Design-con-Adobe-XD.png"  alt="..." class="d-block w-100" >
                                                     <div class="carousel-caption d-none d-md-block">
                                                         <h5>Introduccion a Adobe XD</h5>
                                                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
@@ -584,34 +373,8 @@ include("./view/includes/header.php");
                                         <h6 class="font-weight-bold mb-0">Pagos recientes</h6>
                                     </div>
 
-                                    <div class="card-body py-2">
-                                        <!--Pagos-->
-                                        <div class="d-flex border-bottom py-2">
-                                            <div class="d-flex mr-3">
-                                                <h2 class="align-self-center mb-0"><i class="icon ion-md-pricetag"></i></h2>
-                                            </div>
-                                            <div class="align-self-center">
-                                                <h6 class="d-inline-block mb-0">Inscripcion No 4564</h6>
-                                                <span class="badge badge-success ml-2">$250</span>
-                                                <small class="d-block text-muted">22-06-2021 6:50 PM.</small>
-                                            </div>
-                                        </div>
-                                        <!--Pagos-->
-                                        <!--Pagos-->
-                                        <div class="d-flex border-bottom py-2">
-                                            <div class="d-flex mr-3">
-                                                <h2 class="align-self-center mb-0"><i class="icon ion-md-pricetag"></i></h2>
-                                            </div>
-                                            <div class="align-self-center">
-                                                <h6 class="d-inline-block mb-0">Credito No 4584</h6>
-                                                <span class="badge badge-success ml-2">$480</span>
-                                                <small class="d-block text-muted">22-06-2021 6:50 PM.</small>
-                                            </div>
-                                        </div>
-                                        <!--Pagos-->
-                                        <button class="btn btn-primary w-100">
-                                            Ver todos
-                                        </button >
+                                    <div class="card-body py-2" id="pagosrecientes">
+                                        <!-- AJAX -->
                                     </div>
                                 </div>
                             </div>
@@ -624,6 +387,9 @@ include("./view/includes/header.php");
         </div>
     </div>
 </div>
+<script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+<script src="./ajax/home_ajax.js"></script>
+
 <?php include "modal-nuevo-profesor.php";?>
 <?php include "modal-lista-servicio.php";?>
 <?php include "modal-historico-curso.php";?>

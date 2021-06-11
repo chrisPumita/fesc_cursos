@@ -138,7 +138,7 @@ function VerHorarioPresencial($id_asignacion){
     $json_data=json_encode($result);
     return $json_data;
 }
-function consultaAsignaciones()
+function consultarAsignaciones()
 {
     include_once "../model/ASIGNACION_GRUPO.php";
     $obj_asignacion = new ASIGNACION_GRUPO();

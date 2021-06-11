@@ -239,7 +239,29 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
        return $result;
     }
 
+    function listaArchivos(){
+        $query=" SELECT per.nombre,per.app,per.apm,insc.id_inscripcion,gpo.grupo,ar.estado_revision,docs.nombre_doc,ar.id_archivo
+                    FROM persona per,inscripcion insc,alumno al, grupo gpo,asignacion_grupo ag,archivo ar,docs_solicitados_curso docsol,documento docs
+                        WHERE per.id_persona=al.id_persona
+                        and al.id_alumno= insc.id_alumno_fk
+                        and insc.id_asignacion_fk= ag.id_asignacion
+                        and ag.id_grupo_fk=gpo.id_grupo
+                        and ar.id_inscripcion_fk=insc.id_inscripcion
+                        and ar.id_doc_sol_fk=docsol.id_doc_sol
+                        and docsol.id_documento_fk=docs.id_documento";
+        $this->connect();
+        $datos = $this-> getData($query);
+        $this->close();
+        return $datos;
 
+    }
+    function modificaEstadoArchivo($id,$estatus){
+        $query="UPDATE `archivo` SET `estado_revision`='$estatus' WHERE `id_archivo`='$id'";
+        $this->connect();
+        $datos = $this-> executeInstruction($query);
+        $this->close();
+        return $datos;
+    }
 
     function crearArchivoPath($nombreArchivo,$Archivo)
     {

@@ -331,5 +331,13 @@ class INSCRIPCION extends CONEXION_M implements I_INSCRIPCION
         $this->close();
         return $result;
     }
+    function  consultaPagosRealizados(){
+        $sql = "SELECT `id_inscripcion_fk`, `id_profesor_admin_fk`, `fecha_validacion`,`fecha_pago`, `monto_pago_realizado`, `descripcion`, `notas` 
+                FROM `validacion_inscripcion` WHERE `fecha_validacion` IS NOT NULL ORDER BY `fecha_pago` DESC ";
+        $this->connect();
+        $result = $this->getData($sql);
+        $this->close();
+        return $result;
+    }
 
 }

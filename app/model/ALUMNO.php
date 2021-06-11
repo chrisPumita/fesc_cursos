@@ -254,8 +254,9 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
      * Inician Funciones de Interfaz
      *******************************************************************************/
 
-    public function consultaListaAlumnos()
+    public function consultarListaAlumnos()
     {
+
         $this->connect();
         $datos = $this->getData("SELECT al.`id_alumno`, 
         al.`matricula`, al.`id_persona`, al.`carrera_especialidad`, 
@@ -265,12 +266,13 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
         tipproc.`tipo_procedencia` AS nameproc FROM `alumno` al, 
        `persona` per , `tipo_procedencia` tipproc 
         WHERE al.`id_persona` = per.`id_persona` 
-        AND al.`id_tipo_procedencia_fk`= tipproc.`id_tipo_procedencia` 
-        AND per.`estatus` =1 
+        AND al.`tipo_procedencia`= tipproc.`id_tipo_procedencia` 
         ORDER BY per.`app`, per.`apm`,per.`nombre` ASC");
         $this->close();
         return $datos;
     }
+
+
 
     function agregaAlumno()
     {

@@ -142,3 +142,17 @@ function subirarchivo($nombreArchivo,$Archivo,$id_inscripcion){
     //regresa la ruta del archivo
     return $obj_archivo->crearArchivoPath($nombreArchivo,$Archivo);
 }
+
+function ListaDocs(){
+    include_once "../model/ARCHIVO.php";
+    $obj_archivo=new ARCHIVO();
+    $result=$obj_archivo->listaArchivos();
+    $json_data=json_encode($result);
+    return $json_data;
+}
+
+function modificaEstatusAr($id,$estatus){
+    include_once "../model/ARCHIVO.php";
+    $obj_archivo = new ARCHIVO();
+    return $obj_archivo->modificaEstadoArchivo($id,$estatus) ;
+}

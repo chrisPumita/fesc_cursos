@@ -13,7 +13,7 @@ function consultaListaAdmins() {
     $.ajax({
         url: "./control/list_admin.php",
         success: function (response) {
-            echo("vvvvvvvv");
+
             console.log(response);
             //Convertir a JSNON el response que viene del servidor
            let obj_result = JSON.parse(response);
@@ -107,7 +107,7 @@ function consultaProfesoresActivos() {
     $.ajax({
         url:"./control/list_profesores_activos.php",
         success: function (response) {
-            echo("vvvvvvvv");
+
             console.log(response);
             let obj_result = JSON.parse(response);
             console.log(obj_result);

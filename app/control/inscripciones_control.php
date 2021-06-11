@@ -123,11 +123,12 @@ function confirmarPago($id_incripcion, $monto)
     }
 }
 
-function consultaFichaInscripcion($id_inscripcion){
+function consultaFichaInscripcion($filtro,$id_inscripcion){
     include_once "../model/INSCRIPCION.php";
     //INSCRIPCION
     $obj_inscripcion = new INSCRIPCION();
-    $detalles_insc = $obj_inscripcion -> consultaInscripciones("1",$id_inscripcion);
+    $result = $obj_inscripcion -> consultaInscripciones($filtro,$id_inscripcion);
+    $detalles_insc=json_encode($result);
     return $detalles_insc;
 }
 
@@ -142,3 +143,12 @@ function consultaPagosRealidos($idInscripcion){
     $obj_insc->setIdInscripcion($idInscripcion);
     return $obj_insc->consultaValidacionesInscripciones();
 }
+
+function consultarPagos(){
+    include_once "../model/INSCRIPCION.php";
+    $obj_insc= new INSCRIPCION();
+    $result=$obj_insc->consultaPagosRealizados();
+    $detalles=json_encode($result);
+    return $detalles;
+}
+
