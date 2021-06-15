@@ -90,17 +90,15 @@
                         <!-- FIN SECCION ENCABEZADO Y ESTA -->
 
                         <!-- INICIA IMAG DEGRADADO -->
-                        <section>
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-md-12 text-center">
-                                        <div class="img" style="background-image: url(./assets/img/reposit-img/curso-excel.jpg); ">
-                                            <div class="overlay"></div>
-                                            <h4 class="text-light text-left"><strong> Grupo 2210 Paginas Web Sem. 2021-1 Gen 15</strong></h4>
-                                            <h5 class="text-secondary text-left">Profesor: <strong> Martha Areyano Felix</strong></h5>
-                                            <h5 class="text-secondary text-left">Departamento de Cómputo</h5>
-                                            <h5 class="text-secondary text-left">Inicio:<strong> 5 de Mayo de 2021</strong></h5>
-                                        </div>
+                        <section class="container bg-grey">
+                            <div class="row justify-content-center">
+                                <div class="col-md-12 text-center">
+                                    <div class="img" style="background-image: url(./assets/img/reposit-img/curso-excel.jpg); ">
+                                        <div class="overlay"></div>
+                                        <h4 class="text-light text-left"><strong> Grupo 2210 Paginas Web Sem. 2021-1 Gen 15</strong></h4>
+                                        <h5 class="text-secondary text-left">Profesor: <strong> Martha Areyano Felix</strong></h5>
+                                        <h5 class="text-secondary text-left">Departamento de Cómputo</h5>
+                                        <h5 class="text-secondary text-left">Inicio:<strong> 5 de Mayo de 2021</strong></h5>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +106,7 @@
                         <!-- FIN IMAG DEGRADADO -->
 
                         <!-- SECCION CALLOUT IMPORTANTE Y DETALLES-->
-                        <section>
+                        <section class="container bg-grey estadisticas">
                             <div class="card bg-grey estadisticas">
                                 <div class="card-body py-1">
                                     <div class="row">
@@ -283,31 +281,12 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-                            <!-- PAGINADOR DE TABLA -->
-                            <div class="row">
-                                <div class="col-lg-12 my-2">
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center">
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">Siguiente</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <!-- FIN PAGINADOR -->
+                            </div>                            
                         </section>
                         <!-- FIN TABLA HORARIO PRESENCIAL -->
 
                         <!-- INICIO TABLA HORARIO VIRTUAL -->
-                        <section class="container bg-grey">
+                        <section class="container bg-grey py-3">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <h3>Horario Virtual</h3>
@@ -364,25 +343,6 @@
                                     </table>
                                 </div>
                             </div>
-                            <!-- PAGINADOR DE TABLA -->
-                            <div class="row">
-                                <div class="col-lg-12 my-2">
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center">
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">Siguiente</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <!-- FIN PAGINADOR -->
                         </section>
                         <!-- FIN TABLA HORARIO VIRTUAL -->
 
