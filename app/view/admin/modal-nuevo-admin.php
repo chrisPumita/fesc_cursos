@@ -30,10 +30,18 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-4 mb-3 mb-sm-0">
+                            <label class="col-form-label">Nombre:</label>  
+                        </div>
+                        <div class="col-sm-8 mb-3 mb-sm-0">
+                            <label class="col-form-label" id="lbl-nombre"></label> 
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-4 mb-3 mb-sm-0">
                             <label class="col-form-label">Número de Trabajador:</label>  
                         </div>
                         <div class="col-sm-8 mb-3 mb-sm-0">
-                            <label class="col-form-label"></label> 
+                            <label class="col-form-label" id="lbl-num-trabajador"></label> 
                         </div>
                     </div>
                     <div class="form-group row">
@@ -41,7 +49,7 @@
                             <label class="col-form-label">Correo Electrónico:</label>  
                         </div>
                         <div class="col-sm-8 mb-3 mb-sm-0">
-                            <label class="col-form-label"></label> 
+                            <label class="col-form-label" id="lbl-correo"></label> 
                         </div>
                     </div>
                     <div class="form-group row">
@@ -49,13 +57,13 @@
                             <label class="col-form-label">Departamento:</label>  
                         </div>
                         <div class="col-sm-3 mb-3 mb-sm-0">
-                            <label class="col-form-label"></label> 
+                            <label class="col-form-label" id="lbl-depto"></label> 
                         </div>
                         <div class="col-sm-3 mb-3 mb-sm-0">
                             <label class="col-form-label">Fecha de Registro:</label>  
                         </div>
                         <div class="col-sm-3 mb-3 mb-sm-0">
-                            <label class="col-form-label"></label> 
+                            <label class="col-form-label" id="lbl-fecha"></label> 
                         </div>
                     </div>
                     <hr>
@@ -86,9 +94,10 @@
                 <!--FINALIZA FORMULARIO-->
             </div>
             <div class="modal-footer">
-                <div class="col-sm-8"></div>
-                <div class="col-sm-4 text-align-right">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Asignar</button>
+                <div class="row">
+                    <a href="#" data-toggle="modal" data-target="#verAdmin">
+                        <button type="button" class="btn btn-primary mr-4">Asignar</button>
+                    </a>
                 </div>
             </div>
 

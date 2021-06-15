@@ -25,6 +25,10 @@ include("./view/includes/header.php");
                                         <li class="breadcrumb-item active" aria-current="page">Detalles del Profesor</li>
                                     </ol>
                                 </nav>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
                                 <h2 class="font-weight-bold mb-0">Detalles del Profesor</h2>
                             </div>
                         </div>
@@ -38,7 +42,7 @@ include("./view/includes/header.php");
                                                 Verifique su información, ya que ésta se utilizará para fines de Constancias y Enlace con los alumnos inscritos en los grupos que le sean asignados.
                                             </div>
                                             <div class="col-lg-3 text-align-right">
-                                                <button class="btn btn-danger w-100 aling-self-center mt-3 ml-5">DESACTIVAR CUENTA</button>
+                                                <button class="btn btn-danger w-100 aling-self-center mt-3">DESACTIVAR CUENTA</button>
                                             </div>
                                         </div>
                                     </div>
@@ -74,18 +78,18 @@ include("./view/includes/header.php");
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-3 mb-1 text-right">
-                                        <label class="col-form-label">Apellido Paterno: </label>
+                                        <label class="col-form-label">Primer Apellido: </label>
                                     </div>
                                     <div class="col-lg-8 mb-1">
-                                        <input type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Primer Apellido">
+                                        <input type="text" class="form-control" placeholder="Primer Apellido" aria-label="Primer Apellido">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-3 mb-1 text-right">
-                                        <label class="col-form-label">Apellido Materno: </label>
+                                        <label class="col-form-label">Segundo Apellido: </label>
                                     </div>
                                     <div class="col-lg-8 mb-1">
-                                        <input type="text" class="form-control" placeholder="Apellido Materno" aria-label="Segundo Apellido">
+                                        <input type="text" class="form-control" placeholder="Segundo Apellido" aria-label="Segundo Apellido">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -181,10 +185,10 @@ include("./view/includes/header.php");
                                         <div class="mx-auto">
                                             <div class="row">
                                                 <div class="col-lg-9">
-                                                    <h3>Historial de grupos asociados a este profesor</h3>
+                                                    <h3 class="mb-3">Historial de grupos asociados a este profesor</h3>
                                                 </div>
                                                 <div class="col-lg-3">
-                                                    <select class="form-control" id="filtroHistorial">
+                                                    <select class="form-control mb-3" id="filtroHistorial">
                                                         <option>Todos</option>
                                                         <option>Presencial</option>
                                                         <option>Mixto</option>

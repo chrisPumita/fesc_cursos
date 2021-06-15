@@ -13,7 +13,7 @@
                         <div id="content">
                         <!--Inicio contenido dinamico-->
                             <div class="componet-dinamico bg-grey">
-                            <!--INICIA SECCION DE ENCABEZADO-->
+                            <!--INICIA SECCION DE NEVEGACIÓN-->
                                <section class="container py-2 bg-grey">
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -28,7 +28,7 @@
                                         </div>
                                     </div>
                                </section>
-                                <!--FINALIZA SECCION DE ENCABEZADO-->
+                                <!--FINALIZA SECCION DE NAVEGACIÓN-->
 
                                 <!--INICIA SECCION DEL BANNER-->
                                 <section>
@@ -41,7 +41,7 @@
                                                             <div class="col-md-8">
                                                                 <div class="card-body">
                                                                     <div class="mx-auto">
-                                                                        <h4 class="text-light text-left"><strong>Juan Álvarez Romo</strong><i class="icon ion-md-create ml-3"></i></h4>
+                                                                        <h4 class="text-light text-left"><strong>Juan Álvarez Romo</strong><a href="./detalles-alumno"><i class="icon ion-md-create ml-3"></i></a></h4>
                                                                         <h5 class="text-secondary text-left">Inscripción realizada el 22 de Febrero de 2021</h5>
                                                                         <h5 class="text-secondary text-left">Concluida el 22 de Agosto de 2021</h5>
                                                                     </div>
@@ -87,13 +87,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-2 mb-3">
-                                            <a href="#" data-toggle="modal" data-target="#mod-edit-alum">
-                                                <button class="btn btn-primary w-100 aling-self-center">Editar</button>
-                                            </a>
-                                        </div>
-                                    </div> 
                                 </section>
                                 <!--FINALIZA SECCION DE DATOS E INFORMACIÓN PERSONAL DEL ALUMNO-->
 
@@ -282,9 +275,13 @@
                                                         <p class="mb-3 align-self-center">Asignar calificación del curso:</p>
                                                         <div class="mt-2">
                                                             <select class="form-control" id="calificacion">
-                                                                <option>10</option>
-                                                                <option>9</option>
-                                                                <option>8</option>
+                                                                <option value="10">10</option>
+                                                                <option value="9">9</option>
+                                                                <option value="8">8</option>
+                                                                <option value="7">7</option>
+                                                                <option value="6">6</option>
+                                                                <option value="5">5</option>
+                                                                <option value="np">N/P</option>
                                                             </select>
                                                         </div>
                                                         <button class="btn btn-primary w-100 align-self-center mt-2 mb-1">Calificar</button>

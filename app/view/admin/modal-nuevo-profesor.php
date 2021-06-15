@@ -29,10 +29,10 @@
                            </div>
                            <div class="form-group row">
                               <div class="col-sm-6 mb-3 mb-sm-0">
-                                 <input type="text" id="app" name="app" class="form-control" placeholder="Apellido Paterno" aria-label="Primer Apellido">
+                                 <input type="text" id="app" name="app" class="form-control" placeholder="Primer Apellido" aria-label="Primer Apellido">
                               </div>
                               <div class="col-sm-6 mb-3 mb-sm-0">
-                                 <input type="text" id="apm" name="apm" class="form-control" placeholder="Apellido Materno" aria-label="Segundo Apellido">
+                                 <input type="text" id="apm" name="apm" class="form-control" placeholder="Segundo Apellido" aria-label="Segundo Apellido">
                               </div>
                            </div>
                            <div class="form-group row">

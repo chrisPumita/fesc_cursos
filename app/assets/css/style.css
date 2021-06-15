@@ -28,7 +28,6 @@ a:hover{
 .text-primary{
     color: var(--primary) !important;
 }
-
 .text-secondary{
     color: var(--second) !important;
 }
@@ -151,7 +150,9 @@ a:hover{
     width: 100%;
   }
 
-
+.modal-body{
+    padding: 2rem !important;
+}
 /*ESTILOS LOGIN*/
 .body-login {
     color: #000;
@@ -366,7 +367,7 @@ a {
     right: 0;
     bottom: 0;
     content: '';
-    opacity: .6;
+    opacity: .7;
     background:#000000;
     z-index: -1;
 }

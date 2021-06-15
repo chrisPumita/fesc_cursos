@@ -99,6 +99,7 @@
             </div>
         </div>
         <?php include "modal-nuevo-admin.php";?>
+        <?php include "modal-verificacion-admin.php";?>
         <!-- script_js
             ../../ =====>1
             ./     =====>2
