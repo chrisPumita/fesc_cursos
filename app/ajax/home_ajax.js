@@ -361,6 +361,7 @@ function Conteos(){
             }
         }
     });
+    
 
     // Inscripciones
     $.ajax({
