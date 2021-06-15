@@ -117,7 +117,7 @@ function consultaProfesoresActivos() {
                 obj_result.forEach(
                     (obj_result=>{
                         cont++;
-                        template += `<option value="${obj_result.id_profesor_admin_fk}">${obj_result.nombre+obj_result.app+obj_result.apm}</option>`;
+                        template += `<option value="${obj_result.id_profesor_admin_fk}">${obj_result.app+" "+obj_result.apm+" "+obj_result.nombre}</option>`;
                     })
                 );
                 $("#profesor").html(template);

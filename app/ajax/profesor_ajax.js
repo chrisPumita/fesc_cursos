@@ -42,8 +42,7 @@ function consultaListaProfesoresA(){
                                 <td>${obj_result.email}</td>
                                 <td>${obj_result.fecha_registro}</td>
                                 <td><a href="" data-toggle="tooltip" data-placement="left" title="Cuenta ${edoCta}">
-                                    <img src="./asset
-                                    s/img/${img}" class="rounded float-left" alt="..." width="60"></a>
+                                    <img src="./assets/img/${img}" class="rounded float-left" alt="..." width="60"></a>
                                     <div class="blob ${colorBool}"></div>
                                 </td>
                                 <td>
