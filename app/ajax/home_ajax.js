@@ -352,11 +352,10 @@ function Conteos(){
                     if(Alumno_Act.estatus_alumno==1){
                         cont++;
                     }
-            })
+            });
             if (cont>0){
                 $("#countAlumnos").html(cont);
             }else{
-
                 $("#countAlumnos").html(0);
             }
         }
