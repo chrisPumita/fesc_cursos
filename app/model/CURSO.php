@@ -423,7 +423,8 @@ class CURSO extends CONEXION_M implements I_CURSO
                    pr.nombre , pr.app , pr.apm,c.aprobado
                         FROM curso c, profesor prof, persona pr,grupo gr,asignacion_grupo asig
                             WHERE c.id_profesor_autor = prof.id_profesor 
-                            and prof.id_persona_fk=pr.id_persona
+                            and prof.id_persona_fk = pr.id_persona
+                            and prof.id_profesor = asig.id_profesor_fk
                             and c.id_curso=gr.id_curso_fk
                             and gr.id_grupo=asig.id_grupo_fk";
         $this->connect();
