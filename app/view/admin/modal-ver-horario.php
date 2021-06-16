@@ -10,7 +10,6 @@
             </div>
             <div class="modal-body">
                 <!-- INICIO TABLA HORARIO PRESENCIAL -->
-                <section class="container py-3 bg-grey">
                     <div class="row">
                         <div class="col-lg-12">
                             <h3>Horario Presencial</h3>
@@ -67,12 +66,10 @@
                             </table>
                         </div>
                     </div>
-                </section>
                 <!-- FIN TABLA HORARIO PRESENCIAL -->
 
                 <!-- INICIO TABLA HORARIO VIRTUAL -->
-                <section class="container bg-grey">
-                    <div class="row">
+                    <div class="row py-3">
                         <div class="col-lg-12">
                             <h3>Horario Virtual</h3>
                         </div>
@@ -128,7 +125,6 @@
                             </table>
                         </div>
                     </div>
-                </section>
                 <!-- FIN TABLA HORARIO VIRTUAL -->
             </div>
             <div class="modal-footer">
