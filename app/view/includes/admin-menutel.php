@@ -28,7 +28,7 @@
                 <i class="icon ion-md-contact mr-2 menu_icons lead align-middle"></i><span class="align-middle" >Nombre Usuario</span> 
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="account.php">Mi Perfil</a>
+                    <a class="dropdown-item" href="./perfil-admin">Mi Perfil</a>
                     <a class="dropdown-item" href="account.php">Cuenta</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="../../controller/c_logout.php">Cerrar Sesión</a>
@@ -43,7 +43,7 @@
             <li class="dropdown d-block nav-item">
                 <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#"><i class="icon ion-md-person mr-2 lead"></i>USUARIO<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="account.php">Mi Perfil</a></li>
+                    <li><a class="dropdown-item" href="./perfil-admin">Mi Perfil</a></li>
                     <li><a class="dropdown-item" href="account.php">Cuenta</a></li>
                     <div class="dropdown-divider"></div>
                     <li><a class="dropdown-item" href="../controller/c_logout.php">Cerrar Sesión</a></li>
@@ -63,6 +63,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="./lista-cuentas"><i class="icon ion-md-finger-print mr-2 lead"></i>Cuentas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="./lista-serviciosocial"><i class="icon ion-ios-attach mr-2 lead"></i>Servicio Social</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href=""><i class="icon ion-md-stats mr-2 lead"></i>Reportes</a>

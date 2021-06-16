@@ -110,6 +110,21 @@ include("./view/includes/header.php");
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-3 mb-1 text-right">
+                                        <label class="col-form-label">Sexo:</label>
+                                    </div>
+                                    <div class="col-lg-9 mb-1">
+                                        <div class="custom-control custom-radio custom-control-inline mt-2">
+                                            <input type="radio" id="rbnHombre" name="sexo" class="custom-control-input" value="0" checked>
+                                            <label class="custom-control-label" for="rbnHombre">Hombre</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline mt-2">
+                                            <input type="radio" id="rbnMujer" name="sexo" class="custom-control-input" value="1">
+                                            <label class="custom-control-label" for="rbnMujer">Mujer</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-3 mb-1 text-right">
                                         <label class="col-form-label">Correo Electrónico: </label>
                                     </div>
                                     <div class="col-lg-8 mb-1">
@@ -336,4 +351,5 @@ include("./view/includes/header.php");
     <?php include "modal-ver-solicitudes.php"; ?>
     <!-- script_js -->
 </body>
+
 </html>
