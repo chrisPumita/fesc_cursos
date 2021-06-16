@@ -12,7 +12,16 @@ include("./view/includes/header.php");
             <?php include("./view/includes/admin-menutel.php"); ?>
             <div id="content">
                 <!--Inicio contenido dinamico-->
-                <section class="container py-3 bg-grey">
+                <section class="container bg-grey">
+                    <div class="row">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb bg-grey">
+                                <li class="breadcrumb-item"><a href="./home">Inicio</a></li>
+                                <li class="breadcrumb-item"><a href="./lista-cursos">Cursos</a></li>
+                                <li class="breadcrumb-item"><a href="#">Nuevo curso</a></li>
+                            </ol>
+                        </nav>
+                    </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <h2 class="font-weight-bold mb-0">Envío de solicitud de curso</h2>

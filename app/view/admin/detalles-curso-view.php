@@ -16,15 +16,15 @@
                         <!-- INICIA ENCABEZADO CON ESTADISTICAS -->
                         <section class="container py-2 bg-grey">
                             <div class="row">
-                                <div class="col-lg-12">
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                            <li class="breadcrumb-item"><a href="#">Cursos</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Detalles</li>
-                                        </ol>
-                                    </nav>
-                                </div>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb bg-grey">
+                                        <li class="breadcrumb-item"><a href="./home">Inicio</a></li>
+                                        <li class="breadcrumb-item"><a href="./lista-cursos">Cursos</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Detalles</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                            <div class="row">
                                 <div class="col-lg-9 py-2">
                                     <h2 class="font-weight-bold mb-0">2658 - Iniciación al cómputo I</h2>
                                 </div>
@@ -87,6 +87,7 @@
                             <!-- FIN ESTADISTICAS-->
                         </section>
                         <!-- FIN ENCABEZADO CON ESTADISTICAS -->
+                        
                         <!-- INICIA SECCION INFO DEL CURSO -->
                         <section class="container bg-grey">
                             <div class="row">
@@ -325,6 +326,7 @@
                             </div>
                         </section>
                         <!-- FIN TABLA TEMARIO -->
+
                         <!-- INICIA INFO DE GRUPOS -->
                         <section class="container bg-grey">
                             <!-- INICIA TARJETA ASIG GRUPO -->
@@ -420,10 +422,17 @@
                                                                                 <td>--------</td>
                                                                                 <td>Finalizado</td>
                                                                                 <td>
-                                                                                    <!-- BOTON ACCIONES -->
-                                                                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                                                                        <button type="button" class="btn btn-primary">Modificar</button>
-                                                                                        <button type="button" class="btn btn-danger">Eliminar</button>
+                                                                                    <div class="dropdown">
+                                                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                        </button>
+                                                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                                                            <a href="./nueva-asignacion">
+                                                                                                <button class="dropdown-item" type="button">Modificar</button>
+                                                                                            </a>
+                                                                                            <a href="./detalles-asignacion">
+                                                                                                <button class="dropdown-item" type="button">Ver detalles</button>
+                                                                                            </a>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </td>
                                                                             </tr>
@@ -438,10 +447,17 @@
                                                                                 <td>--------</td>
                                                                                 <td>Activo</td>
                                                                                 <td>
-                                                                                    <!-- BOTON ACCIONES -->
-                                                                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                                                                        <button type="button" class="btn btn-primary">Modificar</button>
-                                                                                        <button type="button" class="btn btn-danger">Eliminar</button>
+                                                                                    <div class="dropdown">
+                                                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                        </button>
+                                                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                                                            <a href="./nueva-asignacion">
+                                                                                                <button class="dropdown-item" type="button">Modificar</button>
+                                                                                            </a>
+                                                                                            <a href="./detalles-asignacion">
+                                                                                                <button class="dropdown-item" type="button">Ver detalles</button>
+                                                                                            </a>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </td>
                                                                             </tr>
