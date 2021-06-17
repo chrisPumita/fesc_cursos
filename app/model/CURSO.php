@@ -419,14 +419,14 @@ class CURSO extends CONEXION_M implements I_CURSO
                    c.antecedentes, c.costo_sugerido, 
                    c.link_temario_pdf, c.fecha_creacion, 
                    c.fecha_acreditacion, c.banner_img, 
-                   c.tipo_curso, c.aprobado,asig.cupo,
+                   c.tipo_curso, c.aprobado,c.banner_img,asig.cupo,
                    pr.nombre , pr.app , pr.apm,c.aprobado
                         FROM curso c, profesor prof, persona pr,grupo gr,asignacion_grupo asig
                             WHERE c.id_profesor_autor = prof.id_profesor 
                             and prof.id_persona_fk = pr.id_persona
-                            and prof.id_profesor = asig.id_profesor_fk
                             and c.id_curso=gr.id_curso_fk
-                            and gr.id_grupo=asig.id_grupo_fk";
+                            and gr.id_grupo=asig.id_grupo_fk
+                            order by c.nombre_curso";
         $this->connect();
         $cursos=$this->getData($query);
         $this->close();

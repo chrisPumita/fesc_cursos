@@ -151,4 +151,10 @@ function consultarPagos(){
     $detalles=json_encode($result);
     return $detalles;
 }
-
+function conteosHome(){
+    include_once "../model/INSCRIPCION.php";
+    $obj_insc= new INSCRIPCION();
+    $result=$obj_insc->contarHome();
+    $detalles=json_encode($result);
+    return $detalles;
+}

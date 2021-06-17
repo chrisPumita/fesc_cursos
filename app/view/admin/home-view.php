@@ -325,13 +325,13 @@ include("./view/includes/header.php");
                                     <div class="card-body">
                                         <h4 class="card-title">Cursos Recientes</h4>
                                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                            <ol class="carousel-indicators">
-                                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                            <ol class="carousel-indicators" id="indicadores">
+                                                <!--<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
                                             </ol>
-                                            <div class="carousel-inner">
-                                                <div class="carousel-item active">
+                                            <div class="carousel-inner" id="carruceles">
+                                                <!--<div class="carousel-item active" >
                                                     <img src="https://www.diwebacademy.com/wp-content/uploads/2020/05/curso-online-de-excel-principiante-a-avanzado-diweb-academy.png" class="d-block w-100" alt="...">
                                                     <div class="carousel-caption d-none d-md-block">
                                                         <h5>Excel Básico para contadores</h5>
@@ -346,12 +346,12 @@ include("./view/includes/header.php");
                                                     </div>
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="https://kmmx.mx/wp-content/uploads/2020/04/Curso-de-Prototipado-y-UX-UI-Design-con-Adobe-XD.png"  alt="..." class="d-block w-100" >
+                                                    <img src="https://kmmx.mx/wp-content/uploads/2020/04/Curso-de-Prototipado-y-UX-UI-Design-con-Adobe-XD.png"  alt="..." class="d-block w-100" alt="...">
                                                     <div class="carousel-caption d-none d-md-block">
                                                         <h5>Introduccion a Adobe XD</h5>
                                                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                                                     </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -362,10 +362,11 @@ include("./view/includes/header.php");
                                                 <span class="sr-only">Siguiente</span>
                                             </a>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <!-- FIN PRESENTACION IMAGENES SLIDER -->
                                 </div>
                             </div>
+
                             <!-- INICIO SECCION PAGOS RECIENTES -->
                             <div class="col-lg-4 my-3">
                                 <div class="card rounded-0">

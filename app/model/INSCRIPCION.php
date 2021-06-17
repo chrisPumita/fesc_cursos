@@ -339,5 +339,19 @@ class INSCRIPCION extends CONEXION_M implements I_INSCRIPCION
         $this->close();
         return $result;
     }
+    function  contarHome(){
+        $sql="SELECT (SELECT COUNT(*) FROM curso WHERE curso.aprobado=1) as cursos, 
+                (SELECT COUNT(*) FROM inscripcion, inscripcion_acta
+                 WHERE inscripcion.validacion_constancia=0
+                AND inscripcion.id_inscripcion IN (SELECT inscripcion_acta.id_inscripcion_acta FROM inscripcion_acta)
+                AND inscripcion_acta.id_inscripcion_acta NOT IN (SELECT constancia_alumno.id_inscripcion_acta_fk FROM constancia_alumno)
+                ) as constancias,
+                (SELECT COUNT(*) FROM alumno, persona WHERE alumno.estatus=1 and persona.estatus=1 and persona.id_persona=alumno.id_persona) as alumno,
+                (SELECT COUNT(*) FROM inscripcion WHERE inscripcion.autorizacion_inscripcion=0) as inscripcion";
+        $this->connect();
+        $result = $this->getData($sql);
+        $this->close();
+        return $result;
+    }
 
 }

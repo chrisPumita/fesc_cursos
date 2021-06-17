@@ -284,7 +284,7 @@ $.ajax({
             var cont=0;
             obj_result.forEach((obj_result=>{
                     cont++;
-                    if(cont<5) {
+                    if(cont<10) {
                         template += `<!--Pagos-->
                     <div class="d-flex border-bottom py-2">
                         <div class="d-flex mr-3">
@@ -315,89 +315,75 @@ $.ajax({
 
 }
 function CursosRecientesIm(){
+$.ajax({
+    url:"./control/list_cursos.php",
+    success: function (response){
+        let obj_cursos= JSON.parse(response);
+        let conteo=0;
+        let template="";
+        let template2="";
+        if(obj_cursos.length>0) {
+            obj_cursos.forEach((obj_cursos) => {
+                    conteo++;
+                    template += `<div class="carousel-item ${conteo==1 ? "active": ""}">
+                                                    <img src="${obj_cursos.banner_img}"  alt="..." class="d-block w-100" alt="...">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <h5>${obj_cursos.nombre_curso}</h5>
+                                                        <p>${obj_cursos.objetivo}</p>
+                                                    </div>
+                                 </div>`;
 
-
+                    template2+=`<li data-target="#carouselExampleIndicators" data-slide-to="${conteo}" class="active"></li>`;
+                    $("#carruceles").html(template);
+                $("#indicadores").html(template2);
+                }
+            )
+        }else{
+            $("#carusel_img").empty();
+            template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Lo sentimos</strong> Aun no existen pagos realizados.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`;
+            $("#carusel_img").html(template);
+        }
+    }
+})
 }
 function Conteos(){
-    // Cursos Activos
     $.ajax({
-        url:"./control/list_cursos.php",
+        url:"./control/conteo_home.php",
         success: function (response){
-            let cursos_Act= JSON.parse(response);
-            var cont=0;
-            cursos_Act.forEach(cursos_Act=>{
-                    if(cursos_Act.aprobado==1){
-                        cont++;
-                    }
-            }
-        )
-            if (cont>0){
-                $("#countCursos").html(cont);
-            }else{
+            let conteo = JSON.parse(response);
+            var Cursos;
+            var alumnos;
+            var constancias;
+            var inscripciones;
+            Cursos=conteo[0]['cursos'];
+            alumnos=conteo[0]['alumno'];
+            constancias=conteo[0]['constancias'];
+            inscripciones=conteo[0]['inscripcion'];
 
+            if (Cursos>0){
+                $("#countCursos").html(Cursos);
+            }else{
                 $("#countCursos").html(0);
             }
-        }
-    });
-
-
-    // Alumnos Registrados
-    $.ajax({
-        url:"./control/list_alumnos.php",
-        success: function (response){
-            let Alumno_Act= JSON.parse(response);
-            var cont=0;
-            Alumno_Act.forEach(Alumno_Act=>{
-                // solo cuento los alumnos que estan activos
-                    if(Alumno_Act.estatus_alumno==1){
-                        cont++;
-                    }
-            });
-            if (cont>0){
-                $("#countAlumnos").html(cont);
+            if (alumnos>0){
+                $("#countAlumnos").html(alumnos);
             }else{
                 $("#countAlumnos").html(0);
             }
-        }
-    });
-    
-
-    // Inscripciones
-    $.ajax({
-        url:"./control/list_inscripciones.php",
-        success: function (response){
-            let inscripcion= JSON.parse(response);
-            var cont=0;
-            inscripcion.forEach(inscripcion=>{
-                // solo cuento Las inscripciones no autorizadas
-                if(inscripcion.autorizacion_inscripcion ==0){
-                    cont++;
-                }
-            })
-            if (cont>0){
-                $("#countInscripciones").html(cont);
-            }else{
-
-                $("#countInscripciones").html(0);
-            }
-        }
-    });
-
-    $.ajax({
-        url:"./control/list_constancias.php",
-        success: function (response){
-            let constancias=JSON.parse(response);
-            var cont=0;
-            // solo las constancias no acreditadas
-            constancias.forEach(constancias=>{
-                if(constancias.estatus == 0 ){
-                    cont++;
-                }
-            })
-            if(cont>0){
-                $("#countConstancias").html(cont);
+            if (constancias>0){
+                $("#countConstancias").html(constancias);
             }else{
                 $("#countConstancias").html(0);
+            }
+            if(inscripciones>0){
+                $("#countInscripciones").html(inscripciones);
+            }else{
+                $("#countInscripciones").html(0);
             }
         }
     })
