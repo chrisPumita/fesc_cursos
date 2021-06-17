@@ -163,7 +163,7 @@ include("./view/includes/header.php");
                     <section class="container bg-grey">
                             <div class="row">
                                 <div class="col-lg-12 py-3">
-                                    <h3>Cursos Registrados activos</h3>
+                                    <h3>Cursos Acreditados</h3>
                                 </div>
                             </div>
                             <div class="row">
@@ -176,7 +176,6 @@ include("./view/includes/header.php");
                                             <th scope="col">Descripción</th>
                                             <th scope="col">Autor</th>
                                             <th scope="col">Sesiones</th>
-                                            <th scope="col">Cupo</th>
                                             <th scope="col">Modalidad</th>
                                             <th scope="col">Costo</th>
                                             <th scope="col">Acciones</th>

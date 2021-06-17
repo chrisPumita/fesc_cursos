@@ -22,7 +22,7 @@ function ListaGruposActivos(){
 
                     var cont = 0;
                     obj_result.forEach((obj_result => {
-                        if (obj_result.aprobado == 1) {
+                        if (obj_result.estatus == 1) {
                             cont++;
                             let tipo_curso;
                             switch (obj_result.tipo_curso) {
@@ -103,6 +103,8 @@ function ListaGruposActivos(){
 function ListaCursosRegistradosACT() {
     $.ajax({
         url:"./control/list_cursos.php",
+        data: { estado_filtro : 1},
+        type: "POST",
         success: function (response){
             let obj_result=JSON.parse(response);
             let template="";
@@ -113,13 +115,13 @@ function ListaCursosRegistradosACT() {
                     let tipo_curso;
                     switch (obj_result.tipo_curso){
                         case "0":
-                            tipo_curso="Presencial";
+                            tipo_curso="Curso";
                             break;
                         case "1":
-                            tipo_curso="En linea";
+                            tipo_curso="Diplomado";
                             break;
                         case "2":
-                            tipo_curso="Mixto";
+                            tipo_curso="Seminario";
                             break;
                         default:
                             tipo_curso="No definido";
@@ -132,7 +134,6 @@ function ListaCursosRegistradosACT() {
                                     <td>${obj_result.nombre_curso}</td>
                                     <td>${obj_result.nombre+" "+obj_result.app+" "+obj_result.apm}</td>
                                     <td>${obj_result.no_sesiones}</td>
-                                    <td>${obj_result.cupo}</td>
                                     <td>${tipo_curso}</td>
                                     <td>${obj_result.costo_sugerido}</td>
                                     
@@ -143,7 +144,7 @@ function ListaCursosRegistradosACT() {
                                                 Opciones
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                <a href="#" data-toggle="modal" data-target="#nuevoGrupo">
+                                                <a href="./nueva-asignacion">
                                                     <button class="dropdown-item" type="button">Nuevo grupo</button>
                                                 </a>
                                                 <a href="./detalles-curso">

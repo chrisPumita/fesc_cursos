@@ -411,21 +411,21 @@ class CURSO extends CONEXION_M implements I_CURSO
      * Inician Funciones de Interfaz
      *******************************************************************************/
 
-    public function consultaCursos()
+    public function consultaCursos($estado_filtro)
     {
+        $filtro = $estado_filtro>=0 ? " AND c.aprobado = ".$estado_filtro: "";
+
         $query="SELECT c.codigo, c.nombre_curso, 
                    c.dirigido_a, c.objetivo, 
                    c.descripcion, c.no_sesiones, 
                    c.antecedentes, c.costo_sugerido, 
                    c.link_temario_pdf, c.fecha_creacion, 
                    c.fecha_acreditacion, c.banner_img, 
-                   c.tipo_curso, c.aprobado,c.banner_img,asig.cupo,
+                   c.tipo_curso, c.aprobado,c.banner_img,
                    pr.nombre , pr.app , pr.apm,c.aprobado
-                        FROM curso c, profesor prof, persona pr,grupo gr,asignacion_grupo asig
+                        FROM curso c, profesor prof, persona pr
                             WHERE c.id_profesor_autor = prof.id_profesor 
-                            and prof.id_persona_fk = pr.id_persona
-                            and c.id_curso=gr.id_curso_fk
-                            and gr.id_grupo=asig.id_grupo_fk
+                            and prof.id_persona_fk = pr.id_persona ".$filtro."
                             order by c.nombre_curso";
         $this->connect();
         $cursos=$this->getData($query);

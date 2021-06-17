@@ -488,7 +488,7 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
                            gp.grupo,
                            crs.nombre_curso,
                            crs.tipo_curso,
-                           crs.aprobado,
+                           asig.estatus,
                            p.nombre,
                            p.app,
                            p.apm,

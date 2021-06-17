@@ -2,10 +2,10 @@
 include_once "../model/CURSO.php";
 include_once "../model/TEMAS.php";
 
-function consultaListaCursos(){
+function consultaListaCursos($estado_filtro){
     include_once "../model/CURSO.php";
     $obj_curso= new CURSO();
-    $result=$obj_curso->consultaCursos();
+    $result=$obj_curso->consultaCursos($estado_filtro);
     $json_data= json_encode($result);
     return $json_data;
 }
