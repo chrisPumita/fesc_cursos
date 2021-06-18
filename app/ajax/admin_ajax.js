@@ -122,6 +122,7 @@ function consultaProfesoresActivos() {
                         template += `<option value="${obj_result.id_profesor}">${obj_result.app+" "+obj_result.apm+" "+obj_result.nombre}</option>`;
                     })
                 );
+                $("#elementos").collapse;
                 $("#profesor").html(template);
             }
         }
@@ -132,13 +133,17 @@ $("#profesor").change(function () {
     var profSelecc = $(this);
     var id = profSelecc.val();
     console.log(id);
-    if (id ==0) {
+    if (id ==0||profSelecc=="Seleccione...") {
+        $("#collapseExample").collapse(true);
+        $("#collapsebutton").collapse(true);
         $("#nombre").empty();
         $("#notrabajador").empty();
         $("#email").empty();
         $("#depto").empty();
         $("#fecharegis").empty();
     } else {
+        $("#collapseExample").collapse(false);
+        $("#collapsebutton").collapse(false);
         consultaDatosProfesorActivo(id);
     }
 });

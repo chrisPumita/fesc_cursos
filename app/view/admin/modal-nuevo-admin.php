@@ -22,85 +22,88 @@
                             </select>
                         </div>
                     </div>
-                    <hr>
-                    <div class="form-group row">
-                        <div class="col-sm-12 mb-3 mb-sm-0">
-                            <label class="col-form-label font-weight-bold">Datos del profesor: </label>
+                    <div class="collapse" data-toggle="collapse" data-target="collapseExample" id="collapseExample">
+                        <hr>
+                        <div class="form-group row">
+                            <div class="col-sm-12 mb-3 mb-sm-0">
+                                <label class="col-form-label font-weight-bold">Datos del profesor: </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-4 mb-3 mb-sm-0">
-                            <label class="col-form-label">Nombre:</label>  
+                        <div class="form-group row">
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <label class="col-form-label">Nombre:</label>
+                            </div>
+                            <div class="col-sm-8 mb-3 mb-sm-0">
+                                <div id="nombre"><strong></strong><!-- Ajax Data --></div>
+                            </div>
                         </div>
-                        <div class="col-sm-8 mb-3 mb-sm-0">
-                            <div id="nombre"><strong></strong><!-- Ajax Data --></div>
+                        <div class="form-group row">
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <label class="col-form-label">Número de Trabajador:</label>
+                            </div>
+                            <div class="col-sm-8 mb-3 mb-sm-0">
+                                <div id="notrabajador"><!-- Ajax Data --></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-4 mb-3 mb-sm-0">
-                            <label class="col-form-label">Número de Trabajador:</label>  
+                        <div class="form-group row">
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <label class="col-form-label">Correo Electrónico:</label>
+                            </div>
+                            <div class="col-sm-8 mb-3 mb-sm-0">
+                                <div id="email"><!-- Ajax Data --></div>
+                            </div>
                         </div>
-                        <div class="col-sm-8 mb-3 mb-sm-0">
-                            <div id="notrabajador"><!-- Ajax Data --></div>
+                        <div class="form-group row">
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <label class="col-form-label">Departamento:</label>
+                            </div>
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <div id="depto"><!-- Ajax Data --></div>
+                            </div>
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <label class="col-form-label">Fecha de Registro:</label>
+                            </div>
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <div id="fecharegis"><!-- Ajax Data --></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-4 mb-3 mb-sm-0">
-                            <label class="col-form-label">Correo Electrónico:</label>  
+                        <hr>
+                        <div class="form-group row">
+                            <div class="col-sm-12 mb-3 mb-sm-0">
+                                <label class="col-form-label font-weight-bold">Ingrese y seleccione los siguientes datos, al finalizar dé clic en el botón "Asignar":</label>
+                            </div>
                         </div>
-                        <div class="col-sm-8 mb-3 mb-sm-0">
-                            <div id="email"><!-- Ajax Data --></div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-3 mb-3 mb-sm-0">
-                            <label class="col-form-label">Departamento:</label>  
-                        </div>
-                        <div class="col-sm-3 mb-3 mb-sm-0">
-                            <div id="depto"><!-- Ajax Data --></div>
-                        </div>
-                        <div class="col-sm-3 mb-3 mb-sm-0">
-                            <label class="col-form-label">Fecha de Registro:</label>  
-                        </div>
-                        <div class="col-sm-3 mb-3 mb-sm-0">
-                            <div id="fecharegis"><!-- Ajax Data --></div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="form-group row">
-                        <div class="col-sm-12 mb-3 mb-sm-0">
-                            <label class="col-form-label font-weight-bold">Ingrese y seleccione los siguientes datos, al finalizar dé clic en el botón "Asignar":</label>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-2 mb-3 mb-sm-0">
-                            <label class="col-form-label">Cargo:</label>  
-                        </div>
-                        <div class="col-sm-4 mb-3 mb-sm-0">
-                            <input type="input" class="form-control" placeholder="" id="txtcargo" aria-label="Cargo">
-                        </div>
-                        <div class="col-sm-3 mb-3 mb-sm-0">
-                            <label class="col-form-label">Nivel de Permisos:</label>  
-                        </div>
-                        <div class="col-sm-3  mb-3 mb-sm-0">
-                            <select class="form-control" name="permisos" id="permisos">
-                                <option value="1">Bajo</option>
-                                <option value="2">Medio</option>
-                                <option value="3">Alto</option>
-                            </select>
+                        <div class="form-group row">
+                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                <label class="col-form-label">Cargo:</label>
+                            </div>
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <input type="input" class="form-control" placeholder="" id="txtcargo" aria-label="Cargo">
+                            </div>
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <label class="col-form-label">Nivel de Permisos:</label>
+                            </div>
+                            <div class="col-sm-3  mb-3 mb-sm-0">
+                                <select class="form-control" name="permisos" id="permisos">
+                                    <option value="1">Bajo</option>
+                                    <option value="2">Medio</option>
+                                    <option value="3">Alto</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </form>
                 <!--FINALIZA FORMULARIO-->
             </div>
-            <div class="modal-footer">
-                <div class="row">
-                    <a href="#" data-toggle="modal" data-target="#verAdmin">
-                        <button type="button" class="btn btn-primary mr-4">Asignar</button>
-                    </a>
+            <div class="collapse" data-toggle="collapse" id="collapsebutton">
+                <div class="modal-footer">
+                    <div class="row">
+                        <a href="#" data-toggle="modal" data-target="#verAdmin">
+                            <button type="button" class="btn btn-primary mr-4">Asignar</button>
+                        </a>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
