@@ -33,7 +33,7 @@
                             <label class="col-form-label">Nombre:</label>  
                         </div>
                         <div class="col-sm-8 mb-3 mb-sm-0">
-                            <label class="col-form-label" id="lbl-nombre"></label> 
+                            <div id="nombre"><strong></strong><!-- Ajax Data --></div>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -41,7 +41,7 @@
                             <label class="col-form-label">Número de Trabajador:</label>  
                         </div>
                         <div class="col-sm-8 mb-3 mb-sm-0">
-                            <label class="col-form-label" id="lbl-num-trabajador"></label> 
+                            <div id="notrabajador"><!-- Ajax Data --></div>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -49,7 +49,7 @@
                             <label class="col-form-label">Correo Electrónico:</label>  
                         </div>
                         <div class="col-sm-8 mb-3 mb-sm-0">
-                            <label class="col-form-label" id="lbl-correo"></label> 
+                            <div id="email"><!-- Ajax Data --></div>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -57,13 +57,13 @@
                             <label class="col-form-label">Departamento:</label>  
                         </div>
                         <div class="col-sm-3 mb-3 mb-sm-0">
-                            <label class="col-form-label" id="lbl-depto"></label> 
+                            <div id="depto"><!-- Ajax Data --></div>
                         </div>
                         <div class="col-sm-3 mb-3 mb-sm-0">
                             <label class="col-form-label">Fecha de Registro:</label>  
                         </div>
                         <div class="col-sm-3 mb-3 mb-sm-0">
-                            <label class="col-form-label" id="lbl-fecha"></label> 
+                            <div id="fecharegis"><!-- Ajax Data --></div>
                         </div>
                     </div>
                     <hr>

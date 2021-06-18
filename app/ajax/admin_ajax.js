@@ -5,6 +5,7 @@ $(document).ready(function () {
         consultaListaAdmins();
     }else {
         consultaProfesoresActivos();
+        consultaDatosProfesorActivo(1);
     }
 });
 
@@ -114,6 +115,7 @@ function consultaProfesoresActivos() {
             let template = "";
             if (obj_result.length>0) {
                 var cont = 0;
+                template += `<option value = "0">Seleccione...</option>`;
                 obj_result.forEach(
                     (obj_result=>{
                         cont++;
@@ -124,4 +126,51 @@ function consultaProfesoresActivos() {
             }
         }
     });
+}
+
+$("#profesor").change(function () {
+    var profSelecc = $(this);
+    var id = profSelecc.val();
+    console.log(id);
+    if (id ==0) {
+        $("#nombre").empty();
+        $("#notrabajador").empty();
+        $("#email").empty();
+        $("#depto").empty();
+        $("#fecharegis").empty();
+    } else {
+        consultaDatosProfesorActivo(id);
+    }
+});
+
+try {
+    function consultaDatosProfesorActivo(id_profesor) {
+        var profesor = $("#profesor");
+        $.ajax(
+            {
+                url: "./control/datosProfesorSelecc.php",
+                data: {id : id_profesor},
+                type: "POST",
+                success: function (response) {
+                    let obj_result = JSON.parse(response);
+                    console.log(obj_result);
+                    var nombre = obj_result[0]['nombre'];
+                    var app = obj_result[0]['app'];
+                    var apm = obj_result[0]['apm'];
+                    var notrabajador = obj_result[0]['no_trabajador'];
+                    var email = obj_result[0]['email'];
+                    var depto = obj_result[0]['depto_name'];
+                    var fecharegistro = obj_result[0]['fecha_registro'];
+                    $("#nombre").html("<strong>"+app+" "+apm+" "+nombre+"</strong>");
+                    $("#notrabajador").html(notrabajador);
+                    $("#email").html(email);
+                    $("#depto").html(depto);
+                    $("#fecharegis").html(fecharegistro);
+                }
+            }
+        )
+    }
+
+}catch (e) {
+
 }

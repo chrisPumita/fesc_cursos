@@ -100,7 +100,7 @@
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                     </div>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control form-control-user d-none" name="nombreUni"  id="nombreUni" placeholder="">
+                                        <input type="text" class="form-control form-control-user d-block" name="nombreUni"  id="nombreUni" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
