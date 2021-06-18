@@ -195,19 +195,13 @@ function ListaDocumentosPendientes(){
                                     <td>${obj_result.grupo}</td>
                                     <!-- BOTON ACCIONES -->
                                     <td>
-                                        <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <button class="dropdown-item" type="button">Ver documento</button>
-                                                        <button class="dropdown-item rechazar_doc" value_recha="2" type="button">Rechazar</button>
-                                                        <button class="dropdown-item aceptar_doc" value_apro="1" type="button">Aceptar</button>
-                                                        <a href="./ficha-insc">
-                                                            <button class="dropdown-item" type="button">Detalles Inscripción</button>
-                                                        </a>                                                        
-                                                    </div>
-                                         </div>
+                                   <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                      <button type="button" class="btn btn-secondary aceptar_doc" value_apro="1">Acreditar</button>
+                                      <button type="button" class="btn btn-secondary rechazar_doc" value_recha="2">Rechazar</button>
+                                      <button type="button" class="btn btn-secondary">Ver</button>
+                                     
+                                   </div>
+                                        
                                     </td>
                                </tr>`;
                     }
@@ -218,8 +212,8 @@ function ListaDocumentosPendientes(){
                 }else{
                     $("#tbl-containerDocs").empty();
                     $("#tbl-container2Docs").empty();
-                    template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Lo sentimos</strong> No hay documentos pendientes por revisar.
+                    template=`<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>¡Excelente!</strong> ya no hay documentos pendientes por revisar.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -231,7 +225,7 @@ function ListaDocumentosPendientes(){
                 $("#tbl-containerDocs").empty();
                 $("#tbl-container2Docs").empty();
                 template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Lo sentimos</strong> No hay documentos pendientes por revisar.
+                                <strong>¡Excelente!</strong> ya no hay documentos pendientes por revisar.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -245,9 +239,11 @@ function ListaDocumentosPendientes(){
 $(document).on("click",".aceptar_doc",function (){
     if(confirm("¿Esta seguro que desea aceptar este documento?")){
         let estatus=$(this)[0]
-        let element=$(this)[0].parentElement.parentElement.parentElement.parentElement
+        let element=$(this)[0].parentElement.parentElement.parentElement
         let id=$(element).attr("id_doc");
         let estatus_ap=$(estatus).attr("value_apro");
+       /*console.log(estatus);
+        console.log(element);*/
         $.post(
             "./control/update-estatus-doc.php",
             {id,estatus_ap},
@@ -261,7 +257,7 @@ $(document).on("click",".aceptar_doc",function (){
 $(document).on("click",".rechazar_doc",function (){
     if(confirm("¿Esta seguro que desea rechazár este documento?")){
         let estatus=$(this)[0]
-        let element=$(this)[0].parentElement.parentElement.parentElement.parentElement
+        let element=$(this)[0].parentElement.parentElement.parentElement
         let id=$(element).attr("id_doc");
         let estatus_ap=$(estatus).attr("value_recha");
          $.post(
@@ -301,6 +297,7 @@ $.ajax({
         }));
             //se asigna al cuerpo del div
            $("#pagosrecientes").html(template);
+            ListaDocumentosPendientes();
         }else{
             $("#pagosrecientes").empty();
             template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -318,6 +315,8 @@ $.ajax({
 function CursosRecientesIm(){
 $.ajax({
     url:"./control/list_cursos.php",
+    data: { estado_filtro : 1},
+    type: "POST",
     success: function (response){
         let obj_cursos= JSON.parse(response);
         let conteo=0;
@@ -342,7 +341,7 @@ $.ajax({
         }else{
             $("#carusel_img").empty();
             template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Lo sentimos</strong> Aun no existen pagos realizados.
+                                 <strong>Lo sentimos</strong> No hay cursos activos aun, porfavor Active uno.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>

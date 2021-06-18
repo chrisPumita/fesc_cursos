@@ -321,7 +321,7 @@ include("./view/includes/header.php");
                             <div class="col-lg-8 my-3">
                                 <div class="card text-left">
                                     <!-- INICIO PRESENTACION IMAGENES SLIDER -->
-                                    <div class="card-body">
+                                    <div class="card-body" id="carusel_img">
                                         <h4 class="card-title">Cursos Recientes</h4>
                                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                             <ol class="carousel-indicators" id="indicadores">
