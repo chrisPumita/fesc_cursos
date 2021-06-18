@@ -18,14 +18,6 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-5 mb-3 mb-sm-0">
-                            <label class="col-form-label" for="inicio">Fecha de Inicio del Servicio:</label>
-                        </div>
-                        <div class="col-sm-7 mb-3 mb-sm-0">
-                            <input type="date" name="inicio" max="3000-12-31" min="1000-01-01" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-5 mb-3 mb-sm-0">
                             <label class="col-form-label" for="termino">Fecha de Término del Servicio:</label>
                         </div>
                         <div class="col-sm-7 mb-3 mb-sm-0">

@@ -19,9 +19,9 @@ include("./view/includes/header.php");
                         <div class="row">
                             <div class="col-lg-12">
                                 <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                        <li class="breadcrumb-item"><a href="#">Profesores</a></li>
+                                    <ol class="breadcrumb bg-grey">
+                                        <li class="breadcrumb-item"><a href="./home">Inicio</a></li>
+                                        <li class="breadcrumb-item"><a href="./lista-profesores">Profesores</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Detalles del Profesor</li>
                                     </ol>
                                 </nav>
@@ -188,6 +188,37 @@ include("./view/includes/header.php");
                                 </div>
                             </div>
                         </div>
+                        <!-- ACCESOS RAPIDOS admin -->
+                        <div class="row">
+                            <div class="col-lg-12 py-3">
+                                <h3>Accesos Rápidos Admin</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title font-weight-bold">Cambiar Contraseña</h5>
+                                        <p class="card-text text-muted">En este apartado puede cambiar su contraseña actual.</p>
+                                        <a href="#" data-toggle="modal" data-target="#cambiopassword">
+                                            <button class="btn btn-primary w-100 aling-self-center mt-3">Cambiar</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title font-weight-bold">Cambiar Clave de Confirmación</h5>
+                                        <p class="card-text text-muted">En este apartado puede cambiar su clave de confirmación actual.</p>
+                                        <a href="#" data-toggle="modal" data-target="#cambioclaveconfirm">
+                                            <button class="btn btn-primary w-100 aling-self-center mt-3">Cambiar</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <!-- FIN ACCESOS RAPIDOS ADMIN -->
                     </section>
                     <!-- FIN DE SECCION ACCESOS RAPIDOS -->
 
@@ -347,6 +378,8 @@ include("./view/includes/header.php");
             </div>
         </div>
     </div>
+    <?php include "modal-cambiarpassword-admin.php"; ?>
+    <?php include "modal-cambiarclaveconfir-admin.php"; ?>
     <?php include "modal-ver-horario.php"; ?>
     <?php include "modal-ver-solicitudes.php"; ?>
     <!-- script_js -->

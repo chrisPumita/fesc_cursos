@@ -19,34 +19,39 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb bg-grey">
-                                            <li class="breadcrumb-item"><a href="./home">Inicio</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Perfil</li>
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Mi Perfil</li>
                                         </ol>
                                     </nav>
                                 </div>
                             </div>
-                            <div class="row py-2">
+                            <div class="row">
                                 <div class="col-lg-12">
-                                    <h2 class=""><strong>Lic. Marco Antonio Solis Olivares</strong></h2>                                    
-							    </div>                                
+                                    <h2 class="font-weight-bold mb-0">Mi Perfil</h2>
+                                </div>
                             </div>
-                            <div class="row py-1">
+                        <!--<div class="row py-2">
                                 <div class="col-lg-12">
                                     <div class="callout callout-second">
                                         <div class="contariner">
                                             <div class="row">
                                                 <div class="col-lg-9">
-                                                    <h4>Bienvenido a tu perfil</h4>
-                                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit facere illo quae sint, quaerat pariatur odio labore. Atque soluta expedita similique quod reiciendis fuga ad aperiam, voluptatibus esse omnis dolorum?z</p>
+                                                    <h4>Cambiar contraseña</h4>
+                                                        En este apartado puede cambiar su contraseña actual.
+                                                </div>
+                                                <div class="col-lg-3 text-align-right">
+                                                    <a href="#" data-toggle="modal" data-target="#cambiopassword">
+                                                        <button class="btn btn-primary w-100 aling-self-center mt-3">Cambiar</button>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>                       
+                            </div>-->
                         </section>
                         <!-- FIN ENCABEZADO DETALLES USUARIO BIENVENIDA -->
-
                         <!--INICIA FORMULARIO EDICION-->
                         <section class="container py-2 bg-grey">
                             <div class="container py-2 bg-white">
@@ -141,14 +146,13 @@
                                     <div class="form-group row">
                                         <div class="col-lg-8"></div>
                                         <div class="col-lg-3 text-align-right">
-                                            <button class="btn btn-primary w-100 aling-self-center mt-2 mb-3 ml-5">Modificar mis datos</button>
+                                            <button class="btn btn-primary w-100 aling-self-center mt-2 mb-3 ml-5">Actualizar</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </section>
                         <!-- FIN FORMULARIO EDICION-->
-                        
                         <!-- SECCION DE ACCESOS RAPIDOS -->
                         <section class="container bg-grey">
                             <div class="row">
@@ -182,7 +186,7 @@
                             </div>
                         </section>
                         <!-- FIN DE SECCION ACCESOS RAPIDOS -->
-                        <!--INICIA SECCION HISTORIAL DE GRUPOS ACREDITADOS-->
+                        <!--INICIA SECCION HISTORIAL DE GRUPOS ASOCIADOS-->
                         <section class="container bg-grey">
                             <div class="row">
                                 <div class="col-sm-12 py-4">
@@ -191,7 +195,7 @@
                                             <div class="mx-auto">
                                                 <div class="row">
                                                     <div class="col-lg-9">
-                                                        <h3 class="mb-3">Historial de grupos acreditados</h3>
+                                                        <h3 class="mb-3">Historial de grupos</h3>
                                                     </div>
                                                     <div class="col-lg-3">
                                                         <select class="form-control mb-3" id="filtroHistorial">
