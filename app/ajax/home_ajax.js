@@ -243,7 +243,7 @@ $.ajax({
 function CursosRecientesIm(){
 $.ajax({
     url:"./control/list_cursos.php",
-    data: { estado_filtro : 1},
+    data: { estado_filtro : 1,idCurso : 0},
     type: "POST",
     success: function (response){
         let obj_cursos= JSON.parse(response);

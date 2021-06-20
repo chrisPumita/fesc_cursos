@@ -65,6 +65,9 @@ a:hover{
     width: AUTO;
 }
 
+.card {
+    width: -webkit-fill-available !important;
+}
 .btn-search{
     right: 5px;
 }
