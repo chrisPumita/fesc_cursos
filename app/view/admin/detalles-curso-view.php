@@ -1,3 +1,9 @@
+<?php
+    if (!isset($_POST['id_curso'])){
+        header('Location: ./lista-cursos.php');
+    }
+    $id_curso = $_POST['id_curso'];
+?>
 <!doctype html>
 <html lang="en">
     <?php
@@ -26,7 +32,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-9 py-2">
-                                    <h2 class="font-weight-bold mb-0">2658 - Iniciación al cómputo I</h2>
+                                    <!-- id a cargar -->
+                                    <input type="hidden" id="id_curso" value="<?php echo $id_curso?>">
+                                    <span id="nombreCursoTitulo"></span>
+                                    <input type="text" id="nombreCurso" value="">
                                 </div>
                             </div>
                             <!--INICIA ESTADISTICAS-->
@@ -98,7 +107,7 @@
                                             <div class="col-lg-12">
                                                 <div class="callout callout-second">
                                                     <h4>Detalles del curso</h4>
-                                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus voluptatum illum odio quos laudantium enim ratione cupiditate accusantium officia quisquam, similique fuga ipsa consequatur? Sequi, consequuntur unde! Enim, dolor deserunt!
+                                                    <span id="detallesCurso"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -485,4 +494,12 @@
         </div>
         
     </body>
+    <!-- script_js -->
+    <script>
+        var lista = false;
+        var filtro_curso = -1
+    </script>
+    <script src="./ajax/cursos_ajax.js"></script>
+    <script src="./ajax/tools.js"></script>
+    <!-- end script_js -->
 </html>

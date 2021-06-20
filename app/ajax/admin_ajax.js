@@ -59,7 +59,7 @@ function consultaListaAdmins() {
                                         Opciones
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button">Ver Detalles</button>
+                                            <button class="dropdown-item detalles-admin" type="button">Ver Detalles</button>
                                             <button class="dropdown-item admin-estatus" type="button">${estatus}</button>
                                         </div>
                                     </div>
@@ -83,7 +83,8 @@ function consultaListaAdmins() {
     });
 }
 
-$(document).on("click",".admin-estatus",function () {
+$(document).on("click",".detalles-curso",function () {
+
     if (confirm("¿Esta seguro que desea cambiar el estado de la cuenta?")){
         //Obtengo los elmeentos html que contiene la informacion que requiero para actualizar
         let element = $(this)[0].parentElement.parentElement.parentElement.parentElement;
@@ -104,6 +105,8 @@ $(document).on("click",".admin-estatus",function () {
         )
     }
 })
+
+
 function consultaProfesoresActivos() {
     $.ajax({
         url:"./control/list_profesores_activos.php",

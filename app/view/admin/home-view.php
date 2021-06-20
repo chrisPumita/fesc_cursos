@@ -388,6 +388,11 @@ include("./view/includes/header.php");
     </div>
 </div>
 <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+<script>
+    var lista = true;
+    var filtro_curso = 1;
+</script>
+<script src="./ajax/cursos_ajax.js"></script>
 <script src="./ajax/home_ajax.js"></script>
 
 <?php include "modal-nuevo-profesor.php";?>

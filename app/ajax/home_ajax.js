@@ -1,14 +1,12 @@
 // Activamos escucha
 $(document).ready(function () {
-
     ListaGruposActivos();
-    ListaCursosRegistradosACT();
+    ListaCursosRegistrados(1);
     ListaDocumentosPendientes();
     ListaPagosRecientes();
     CursosRecientesIm();
     Conteos();
     consultadepartamentos();
-
 });
 
 function ListaGruposActivos(){
@@ -100,81 +98,10 @@ function ListaGruposActivos(){
     })
 
 }
-function ListaCursosRegistradosACT() {
-    $.ajax({
-        url:"./control/list_cursos.php",
-        data: { estado_filtro : 1},
-        type: "POST",
-        success: function (response){
-            let obj_result=JSON.parse(response);
-            let template="";
-            if(obj_result.length>0){
-                var cont=0;
-                obj_result.forEach((obj_result=>{
-                    cont++;
-                    let tipo_curso;
-                    switch (obj_result.tipo_curso){
-                        case "0":
-                            tipo_curso="Curso";
-                            break;
-                        case "1":
-                            tipo_curso="Diplomado";
-                            break;
-                        case "2":
-                            tipo_curso="Seminario";
-                            break;
-                        default:
-                            tipo_curso="No definido";
-                            break;
-                    }
 
-                    template+=`<tr>
-                                    <th scope="row">${cont}</th>
-                                    <td>${obj_result.codigo}</td>
-                                    <td>${obj_result.nombre_curso}</td>
-                                    <td>${obj_result.nombre+" "+obj_result.app+" "+obj_result.apm}</td>
-                                    <td>${obj_result.no_sesiones}</td>
-                                    <td>${tipo_curso}</td>
-                                    <td>${obj_result.costo_sugerido}</td>
-                                    
-                                    <!-- BOTON ACCIONES -->
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Opciones
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                <a href="./nueva-asignacion">
-                                                    <button class="dropdown-item" type="button">Nuevo grupo</button>
-                                                </a>
-                                                <a href="./detalles-curso">
-                                                    <button class="dropdown-item" type="button">Ver Detalles</button>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#histCurso">
-                                                    <button class="dropdown-item" type="button">Historial</button>
-                                                </a>                                                        
-                                                <button class="dropdown-item" type="button">Acreditar curso</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                               </tr>`;
-                }));
-                //se asigna al cuerpo de la tabla
-                $("#tbl-cursos").html(template);
-            }else{
-                $("#tbl-containerCursos").empty();
-                $("#tbl-container2Cursos").empty();
-                template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Lo sentimos</strong> No hay cursos activos aun, porfavor Active uno.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>`;
-                $("#tbl-containerCursos").html(template);
-            }
-        }
-    })
-}
+
+
+
 function ListaDocumentosPendientes(){
     $.ajax({
         url:"./control/list_documentos.php",
@@ -196,9 +123,10 @@ function ListaDocumentosPendientes(){
                                     <!-- BOTON ACCIONES -->
                                     <td>
                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                      <button type="button" class="btn btn-secondary aceptar_doc" value_apro="1">Acreditar</button>
-                                      <button type="button" class="btn btn-secondary rechazar_doc" value_recha="2">Rechazar</button>
-                                      <button type="button" class="btn btn-secondary">Ver</button>
+                                      <button type="button" class="btn btn-success aceptar_doc" value_apro="1">Acreditar</button>
+                                      <button type="button" class="btn btn-danger rechazar_doc" value_recha="2">Rechazar</button>
+                                      <button type="button" class="btn btn-primary">Ver Documento</button>
+                                      <button type="button" class="btn btn-primary">Ver Ficha</button>
                                      
                                    </div>
                                         
@@ -326,11 +254,11 @@ $.ajax({
             obj_cursos.forEach((obj_cursos) => {
                     conteo++;
                     template += `<div class="carousel-item ${conteo==1 ? "active": ""}">
-                                                    <img src="${obj_cursos.banner_img}"  alt="..." class="d-block w-100" alt="...">
-                                                    <div class="carousel-caption d-none d-md-block">
-                                                        <h5>${obj_cursos.nombre_curso}</h5>
-                                                        <p>${obj_cursos.objetivo}</p>
-                                                    </div>
+                                    <img src="${obj_cursos.banner_img}"  alt="..." class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>${obj_cursos.nombre_curso}</h5>
+                                        <p>${obj_cursos.objetivo}</p>
+                                    </div>
                                  </div>`;
 
                     template2+=`<li data-target="#carouselExampleIndicators" data-slide-to="${conteo}" class="active"></li>`;

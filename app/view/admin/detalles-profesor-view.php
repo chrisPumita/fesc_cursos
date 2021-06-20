@@ -153,7 +153,61 @@ include("./view/includes/header.php");
                         </div>
                     </section>
                     <!-- FIN FORMULARIO EDICION-->
-
+                    <section class="container py-2 bg-grey">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="callout callout-second">
+                                    <h5><strong>Cuenta de administrador</strong></h5>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="media mb-3">
+                                                    <div class="media-left media-middle">
+                                                        <img src="https://play-lh.googleusercontent.com/AeVwiUzhw9HVEg0s19qrGvyS40JuNBwzb94ZPaWiM529_gvC7RgOtObnsM2mgwT5CfY" class="mr-2 mt-0" width="40px" alt="">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mt-2">Este alumno tiene cuenta de Servicio Social</p>
+                                                    </div>
+                                                </div>
+                                                <div class="media mb-3">
+                                                    <div class="media-left media-middle">
+                                                        <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/calendar-check-o-512.png" class="mr-2 mt-0" width="40px" alt="">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mt-2">Fecha de Inicio: 22 de Febrero de 2021</p>
+                                                    </div>
+                                                </div>
+                                                <div class="media mb-3">
+                                                    <div class="media-left media-middle">
+                                                        <img src="https://png.pngitem.com/pimgs/s/607-6079670_delete-symbol-png-event-vector-icon-transparent-png.png" class="mr-2 mt-0" width="40px" alt="">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mt-2">Fecha de Término: 22 de Agosto de 2021</p>
+                                                    </div>
+                                                </div>
+                                                <div class="media mb-3">
+                                                    <div class="media-left media-middle">
+                                                        <img src="https://image.flaticon.com/icons/png/512/42/42288.png" class="mr-2 mt-0" width="40px" alt="">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mt-2">Fecha de Alta: 23 de Febrero de 2021</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="container">
+                                                    <div class="spinner-grow bg-success" role="status" style="width: 2rem; height: 2rem"></div>
+                                                    <span class="ml-3 mb-3 font-weight-bold">Servicio Activo</span>
+                                                    <h6 class="mb-0 mt-3"><strong>Notas:</strong></h6>
+                                                    <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur voluptas cum, vel repudiandae quibusdam consectetur dolorem, blanditiis incidunt laborum provident eum aspernatur voluptatibus non obcaecati mollitia! Cum eveniet rerum consectetur.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <!-- SECCION DE ACCESOS RAPIDOS -->
                     <section class="container bg-grey">
                         <div class="row">
