@@ -1,6 +1,6 @@
 <?php
     if (!isset($_POST['id_curso'])){
-        header('Location: ./lista-cursos.php');
+        header('Location: ./lista-cursos');
     }
     $id_curso = $_POST['id_curso'];
 ?>
@@ -35,7 +35,6 @@
                                     <!-- id a cargar -->
                                     <input type="hidden" id="id_curso" value="<?php echo $id_curso?>">
                                     <span id="nombreCursoTitulo"></span>
-                                    <input type="text" id="nombreCurso" value="">
                                 </div>
                             </div>
                             <!--INICIA ESTADISTICAS-->
@@ -196,7 +195,7 @@
                                             <div class="col-sm-6 py-2">
                                                 <div class="">
                                                     <div class="card">
-                                                        <img src="./assets/img/reposit-img/curso-excel.jpg" class="card-img-top" alt="img del curso">
+                                                        <span id="imgContainer"></span>
                                                         <div class="card-body">
                                                             <h6 class="card-title"><strong>Imagen del Banner</strong></h6>
                                                             <p class="card-text py-1">Debe tener una resolución de 600px por 300px</p>

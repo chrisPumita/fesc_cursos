@@ -112,8 +112,10 @@ function cargaDatosCurso(id_curso) {
                     {
                         $("#nombreCursoTitulo").html(`<h2 class="font-weight-bold mb-0">${obj_result.codigo} - ${obj_result.nombre_curso}</h2>`);
                         $("#detallesCurso").html(`${obj_result.descripcion}`);
-                        //inputs de forms
-                        $("#nombreCurso").val(obj_result.nombre_curso);
+
+                        let img = `<div class="img d-block w-100" style="background-image: url(${obj_result.banner_img}); height: 300px; ">
+                                 </div>`;
+                        $("#imgContainer").html(img);
                     }
                 );
             }

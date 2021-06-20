@@ -369,7 +369,19 @@ a {
     font-size: 1.5rem;
 }
 
-.img .overlay {
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .7;
+    background:#000000;
+    z-index: -1;
+}
+
+.overlay-carrucel{
     position: absolute;
     top: 0;
     left: 0;

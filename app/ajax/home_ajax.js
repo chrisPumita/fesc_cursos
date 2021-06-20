@@ -252,18 +252,20 @@ $.ajax({
         let template2="";
         if(obj_cursos.length>0) {
             obj_cursos.forEach((obj_cursos) => {
-                    conteo++;
-                    template += `<div class="carousel-item ${conteo==1 ? "active": ""}">
-                                    <img src="${obj_cursos.banner_img}"  alt="..." class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>${obj_cursos.nombre_curso}</h5>
-                                        <p>${obj_cursos.objetivo}</p>
-                                    </div>
+                    template += `<div class="carousel-item ${conteo==0 ? "active": ""}">
+                                    <div class="img d-block w-100" style="background-image: url(${obj_cursos.banner_img}); height: 600px; ">
+                                            <div class="overlay"></div>
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5>${obj_cursos.nombre_curso}</h5>
+                                                <p>${obj_cursos.objetivo}</p>
+                                            </div>
+                                        </div>
                                  </div>`;
 
                     template2+=`<li data-target="#carouselExampleIndicators" data-slide-to="${conteo}" class="active"></li>`;
                     $("#carruceles").html(template);
                 $("#indicadores").html(template2);
+                conteo++;
                 }
             )
         }else{
