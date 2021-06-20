@@ -114,6 +114,12 @@ a:hover{
     margin-bottom: 2rem;
 }
 
+.label_info{
+    font-weight: bold;
+    font-size: larger;
+    color: dimgrey;
+}
+
 .table-content{
     background: var(--ligth);
 }

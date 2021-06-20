@@ -158,19 +158,17 @@ try {
                 type: "POST",
                 success: function (response) {
                     let obj_result = JSON.parse(response);
-                    console.log(obj_result);
-                    var nombre = obj_result[0]['nombre'];
-                    var app = obj_result[0]['app'];
-                    var apm = obj_result[0]['apm'];
-                    var notrabajador = obj_result[0]['no_trabajador'];
-                    var email = obj_result[0]['email'];
-                    var depto = obj_result[0]['depto_name'];
-                    var fecharegistro = obj_result[0]['fecha_registro'];
-                    $("#nombre").html("<strong>"+app+" "+apm+" "+nombre+"</strong>");
-                    $("#notrabajador").html(notrabajador);
-                    $("#email").html(email);
-                    $("#depto").html(depto);
-                    $("#fecharegis").html(fecharegistro);
+                    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                    obj_result.forEach(
+                        (obj_result=>{
+                            //<span>Busmante Perez Abril</span>
+                            $("#nombre").html(`<span class="label_info">${obj_result.prefijo+" "+obj_result.nombre+" "+obj_result.app+" "+obj_result.apm}</span>`);
+                            $("#notrabajador").html(`<span class="label_info">${obj_result.no_trabajador}</span>`);
+                            $("#email").html(`<span class="label_info">${obj_result.email}</span>`);
+                            $("#depto").html(`<span class="label_info">${obj_result.depto_name}</span>`);
+                            $("#fecharegis").html(`<span class="label_info">${obj_result.fecha_registro}</span>`);
+                        })
+                    );
                 }
             }
         )

@@ -11,7 +11,7 @@
         <a href="./lista-cuentas" class="menuDesk d-block  p-3"><i class="icon ion-md-finger-print mr-2 lead"></i>Cuentas</a>
         <a href="./lista-servicio-social" class="menuDesk d-block  p-3"><i class="icon ion-ios-attach mr-2 lead"></i>Servicio Social</a>
         <a href="" class="menuDesk d-block  p-3"><i class="icon ion-md-stats mr-2 lead"></i>Reportes</a>
-        <a href="" class="menuDesk d-block  p-3"><i class="icon ion-md-add mr-2 lead"></i>Más</a>
+        <a href="./general" class="menuDesk d-block  p-3"><i class="icon ion-md-add mr-2 lead"></i>General</a>
     </div>
     <cite class="text-gray p-4">V.1.0</cite>
 </div>

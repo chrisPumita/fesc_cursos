@@ -71,7 +71,7 @@
                 <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href=""><i class="icon ion-md-stats mr-2 lead"></i>Reportes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href=""><i class="icon ion-md-add mr-2 lead"></i>Más</a>
+                <a class="nav-link navbar-nav mr-auto d-block d-sm-block d-md-none" href="./general"><i class="icon ion-md-add mr-2 lead"></i>General</a>
             </li>
         </ul>
     </div>
