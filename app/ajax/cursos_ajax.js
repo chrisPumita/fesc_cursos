@@ -104,7 +104,6 @@ function cargaDatosCurso(id_curso) {
             type: "POST",
             success: function (response)
             {
-                console.log(response)
                 let obj_result = JSON.parse(response);
                 console.log(obj_result);
                 obj_result.forEach(
@@ -112,10 +111,19 @@ function cargaDatosCurso(id_curso) {
                     {
                         $("#nombreCursoTitulo").html(`<h2 class="font-weight-bold mb-0">${obj_result.codigo} - ${obj_result.nombre_curso}</h2>`);
                         $("#detallesCurso").html(`${obj_result.descripcion}`);
-
-                        let img = `<div class="img d-block w-100" style="background-image: url(${obj_result.banner_img}); height: 300px; ">
-                                 </div>`;
+                        $("#nombreAutor").html(`${obj_result.nombre} ${obj_result.app} ${obj_result.apm}`);
+                        $("#fechaCreacion").html(`${obj_result.fecha_creacion}`);
+                        $("#dirigido_a").html(`${obj_result.dirigido_a}`);
+                        $("#modalidad").html(getTipoCurso(obj_result.tipo_curso));
+                        $("#objetivo").html(obj_result.objetivo);
+                        $("#antecedentes").html(obj_result.antecedentes);
+                        let pdfFile = `<a href="${obj_result.link_temario_pdf}" download target="_blank"  class="btn btn-primary btn-block"> Descargar</a>`;
+                        let img = `<div class="img d-block w-100" style="background-image: url(${obj_result.banner_img}); height: 300px; "></div>`;
                         $("#imgContainer").html(img);
+                        $("#filePDF").html(pdfFile);
+                        $("#filePDF").html(pdfFile);
+                        let tmpPdf = `<embed src="${obj_result.link_temario_pdf}" type="application/pdf" width="100%" height="600px" />`;
+                        $("#filePdfView").html(tmpPdf);
                     }
                 );
             }

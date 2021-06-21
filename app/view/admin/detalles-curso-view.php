@@ -11,6 +11,7 @@
         $tittle = "Detalle del curso";
         include("./view/includes/header.php");
         ?>
+
     <body class="body-home">
         <div class="d-flex">
             <?php include("./view/includes/admin-menupc.php"); ?>
@@ -105,7 +106,7 @@
                                             <!-- DETALLE DEL CURSO CALLOUT -->
                                             <div class="col-lg-12">
                                                 <div class="callout callout-second">
-                                                    <h4>Detalles del curso</h4>
+                                                    <h4>Descripcion del curso</h4>
                                                     <span id="detallesCurso"></span>
                                                 </div>
                                             </div>
@@ -117,53 +118,55 @@
                                                     <div class="card-body">
                                                         <div class="mx-auto">
                                                             <div>
-                                                                <h5><strong>Creado por: </strong>Juan Perez Sanchez</h5>
-                                                                <p>15 de Mayo de 2020</p>
+                                                                <h6><strong>Creado por: </strong></h6>
+                                                                <p><strong><span id="nombreAutor"></strong></span></p>
+                                                                <h6><strong>Registrado desde: </strong><span id="fechaCreacion"></span></h6>
+                                                                <p></p>
                                                             </div>
                                                             <div class="px-1">
                                                                 <div id="accordion">
                                                                     <div class="card">
-                                                                        <div class="card-header" id="headingOne">
+                                                                        <div class="card-header collapsed" id="headingOne"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                                                             <h5 class="mb-0">
-                                                                                <button class="btn text-primary collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                                                                Detalles
+                                                                                <button class="btn text-primary ">
+                                                                                    Detalles
                                                                                 </button>
                                                                             </h5>
                                                                         </div>
                                                                         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                                                             <div class="card-body">
-                                                                                <h6><strong>Dirigido a: </strong> Estudiantes</h6>
-                                                                                <h6><strong>Modalidad: </strong> A distancia</h6>
+                                                                                <h6><strong>Dirigido a: </strong> <span id="dirigido_a"></span></h6>
+                                                                                <h6><strong>Tipo: </strong> <span id="modalidad"></span></h6>
                                                                                 <h6><strong>Cupo: </strong>30</h6>
                                                                                 <h6><strong>Sesiones: </strong> 20</h6>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="card">
-                                                                        <div class="card-header" id="headingTwo">
+                                                                        <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                                             <h5 class="mb-0">
-                                                                                <button class="btn text-primary collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                                <button class="btn text-primary" >
                                                                                 Objetivo
                                                                                 </button>
                                                                             </h5>
                                                                         </div>
                                                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                                                             <div class="card-body">
-                                                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                                                                <span id="objetivo"></span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="card">
-                                                                        <div class="card-header" id="headingThree">
+                                                                        <div class="card-header collapsed" id="headingThree"  data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                                                             <h5 class="mb-0">
-                                                                                <button class="btn text-primary collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                                                <button class="btn text-primary">
                                                                                 Antecedentes
                                                                                 </button>
                                                                             </h5>
                                                                         </div>
                                                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                                                             <div class="card-body">
-                                                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                                                                <span id="antecedentes"></span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -171,20 +174,20 @@
                                                             </div>
                                                         </div>
                                                         <div class="mx-auto py-2">
-                                                        <a href="#" data-toggle="modal" data-target="#infoCurso">
-                                                            <button class="btn btn-primary w-100 m-3">Editar información</button>
-                                                        </a>
+                                                            <!-- Button trigger modal -->
+                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalUpdateInfroCurso">
+                                                                Editar información
+                                                            </button>
                                                             <hr>
                                                             <h6><strong>PDF del temario descargable</strong></h6>
                                                             <div class="row">
-                                                                <div class="col-md-4">
-                                                                    <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-download"></i> Descargar</a>
+                                                                <div class="col-md-4" id="filePDF">
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-cloud"></i> Subir</a>
                                                                 </div>
                                                                 <div class="col-md-4">
-                                                                    <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-eye"></i> Ver</a>
+                                                                    <a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalPDF"><i class="icon ion-md-eye"></i> Ver</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -432,6 +435,7 @@
                                                                                 <td>
                                                                                     <div class="dropdown">
                                                                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                        Acciones
                                                                                         </button>
                                                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                                                                             <a href="./nueva-asignacion">
@@ -457,6 +461,7 @@
                                                                                 <td>
                                                                                     <div class="dropdown">
                                                                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                        Acciones
                                                                                         </button>
                                                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                                                                             <a href="./nueva-asignacion">
@@ -488,17 +493,19 @@
                     <?php include("./view/includes/footer.php"); ?>
                 </div>
             </div>
-            <?php include "modal-editar-cursoinfo.php";?> 
             <?php include "modal-editar-tema.php";?>
         </div>
-        
+        <?php include_once "modal-detalles-curso-pdf.php"; ?>
+        <?php include_once "modal-editar-detalles-curso.php";?>
+
     </body>
     <!-- script_js -->
     <script>
         var lista = false;
-        var filtro_curso = -1
+        var filtro_curso = -1;
     </script>
-    <script src="./ajax/cursos_ajax.js"></script>
+
     <script src="./ajax/tools.js"></script>
+    <script src="./ajax/cursos_ajax.js"></script>
     <!-- end script_js -->
 </html>
