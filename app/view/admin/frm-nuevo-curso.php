@@ -271,7 +271,7 @@
                                                 </div>
                                             </div>
                                             <div class="mt-1 mb-1 overflow-auto">
-                                                <table class="table table-hover table-sm " style="min-width: 600px;>
+                                                <table class="table table-hover table-sm " style="min-width: 600px;">
                                                     <thead>
                                                     <tr>
                                                         <th scope="col">Indice</th>

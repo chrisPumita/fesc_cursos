@@ -50,7 +50,7 @@ FINALIZA SECCIÓN DEL MODAL DE CLAVE DE VERIFICACIÓN-->
                     <label class="col-form-label">Clave de verificación:</label>
                 </div>
                 <div class="col-sm-7 mb-3 mb-sm-0">
-                    <input type="text" class="form-control" placeholder="" aria-label="Clave_Verif">
+                    <input type="password" class="form-control" placeholder="" aria-label="Clave_Verif">
                 </div>
             </div>
         </form>

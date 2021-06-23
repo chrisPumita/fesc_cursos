@@ -1,32 +1,32 @@
-<!--INICIA SECCION DEL MODAL DE ASIGNACIÓN A NUEVO ADMIN-->
-<div class="modal fade" id="nuevoAdmin" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!--INICIA SECCION DEL MODAL DE ASIGNACIÓN DE ALUMNO AL SERVICIO SOCIAL-->
+<div class="modal fade" id="addAlumnoServSocial" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
-                <h2>Asignación de un nuevo Administrador</h2>
-                <p>Al asignar a un nuevo administrador, le llegará una notificación por correo electrónico con su clave de confirmación.</p>
+                <h2>Asignación de alumno al Servicio Social</h2>
+                <p>Al asignar a un alumno al servicio social, le llegará una notificación por correo electrónico con su clave de acceso.</p>
                 <hr>
                 <!--INICIA FORMULARIO-->
-                <form class="user needs-validation" id="frm-add-admin" role="form" autocomplete="off">
+                <form class="user needs-validation" id="frm-add-alumno" role="form" autocomplete="off">
                     <div class="form-group row">
                         <div class="col-sm-4 mb-3 mb-sm-0">
-                            <label class="col-form-label font-weight-bold">Seleccione a un profesor: </label>
+                            <label class="col-form-label font-weight-bold">Ingrese número de cuenta:</label>
                         </div>
-                        <div class="col-sm-8 mb-3 mb-sm-0">
-                            <select class="form-control" name="profesor"  id="profesor">
-                                <!--ajax response-->
-
-                            </select>
+                        <div class="col-sm-7 mb-3 mb-sm-0">
+                            <input type="input" class="form-control" placeholder="" id="txtnocuenta" aria-label="Numcuenta">
+                        </div>
+                        <div class="col-sm-1 mb-3 mb-sm-0">
+                            <button class="btn"><img src="./assets/img/search.png" class="lead" alt="..." width="24px"></button>                            
                         </div>
                     </div>
-                    <div class="collapse" data-toggle="collapse" data-target="collapseExample" id="collapseExample">
+                    <!--<div class="collapse" data-toggle="collapse" data-target="collapseExample" id="collapseExample">-->
                         <hr>
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-form-label font-weight-bold">Datos del profesor: </label>
+                                <label class="col-form-label font-weight-bold">Datos del alumno:</label>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -44,10 +44,18 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-4 mb-3 mb-sm-0">
-                                <label class="col-form-label">Número de Trabajador:</label>
+                                <label class="col-form-label">Número de Cuenta:</label>
                             </div>
                             <div class="col-sm-8 mb-3 mb-sm-0">
-                                <div id="notrabajador"><!-- Ajax Data --></div>
+                                <div id="nocuenta"><!-- Ajax Data --></div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <label class="col-form-label">Universidad:</label>
+                            </div>
+                            <div class="col-sm-8 mb-3 mb-sm-0">
+                                <div id="universidad"><!-- Ajax Data --></div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -60,10 +68,10 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-3 mb-3 mb-sm-0">
-                                <label class="col-form-label">Departamento:</label>
+                                <label class="col-form-label">Carrera:</label>
                             </div>
                             <div class="col-sm-3 mb-3 mb-sm-0">
-                                <div id="depto"><!-- Ajax Data --></div>
+                                <div id="carrera"><!-- Ajax Data --></div>
                             </div>
                             <div class="col-sm-3 mb-3 mb-sm-0">
                                 <label class="col-form-label">Fecha de Registro:</label>
@@ -76,6 +84,20 @@
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label class="col-form-label font-weight-bold">Ingrese y seleccione los siguientes datos, al finalizar dé clic en el botón "Asignar":</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                <label class="col-form-label" for="inicio">Inicio del Servicio:</label>
+                            </div>
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <input type="date" name="inicio" max="3000-12-31" min="1000-01-01" class="form-control">
+                            </div>
+                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                <label class="col-form-label" for="termino">Término del Servicio:</label>
+                            </div>
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <input type="date" name="fin" max="3000-12-31" min="1000-01-01" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -96,7 +118,15 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
+                        <div class="form-group row">
+                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                <label class="col-form-label" for="txtnotas">Notas:</label>
+                            </div>
+                            <div class="col-sm-10 mb-3 mb-sm-0">
+                                <textarea class="form-control" id="txtnotas" rows="3" name="notas"></textarea>
+                            </div>
+                        </div>
+                    <!--</div>-->
                 </form>
                 <!--FINALIZA FORMULARIO-->
             </div>
@@ -112,4 +142,4 @@
         </div>
     </div>
 </div>
-<!--FINALIZA SECCIÓN DEL MODAL DE ASIGNACIÓN A NUEVO ADMIN-->
+<!--FINALIZA SECCIÓN DEL MODAL DE ASIGNACIÓN DE ALUMNO AL SERVICIO SOCIAL-->

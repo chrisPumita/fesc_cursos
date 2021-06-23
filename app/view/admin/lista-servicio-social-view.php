@@ -30,8 +30,8 @@
                                                     En este apartado puede asignar los permisos necesarios para dar de alta a un alumno perteneciente al servicio social.
                                                 </div>
                                                 <div class="col-lg-3">
-                                                    <a href="#" data-toggle="modal" data-target="#altaServicioSocial">
-                                                    <button class="btn btn-primary w-100 m-3">Crear</button>
+                                                    <a href="#" data-toggle="modal" data-target="#addAlumnoServSocial">
+                                                        <button class="btn btn-primary w-100 m-3">Crear</button>
                                                     </a>
                                                 </div>
                                             </div>
@@ -90,7 +90,7 @@
                                                             <a href="./detalles-alumno">
                                                                 <button class="dropdown-item" type="button">Ver Detalles</button>
                                                             </a>
-                                                            <button class="dropdown-item" type="button">Inhabilitar</button>
+                                                            <button class="dropdown-item" type="button">Terminar</button>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -117,7 +117,7 @@
                                                             <a href="./detalles-alumno">
                                                                 <button class="dropdown-item" type="button">Ver Detalles</button>
                                                             </a>
-                                                            <button class="dropdown-item" type="button">Inhabilitar</button>
+                                                            <button class="dropdown-item" type="button">Terminar</button>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -144,7 +144,7 @@
                                                             <a href="./detalles-alumno">
                                                                 <button class="dropdown-item" type="button">Ver Detalles</button>
                                                             </a>
-                                                            <button class="dropdown-item" type="button">Inhabilitar</button>
+                                                            <button class="dropdown-item" type="button">Terminar</button>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -180,6 +180,7 @@
                 </div>
             </div>
         </div>
-        <?php include "modal-serviciosocial-alumno.php"; ?>
+        <?php include "modal-asignarservsocial-alumno.php"; ?>
+        <?php include "modal-verificacion-admin.php";?>
     </body>
 </html>
