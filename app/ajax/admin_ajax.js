@@ -83,7 +83,7 @@ function consultaListaAdmins() {
     });
 }
 
-$(document).on("click",".detalles-curso",function () {
+$(document).on("click",".admin-estatus",function () {
 
     if (confirm("¿Esta seguro que desea cambiar el estado de la cuenta?")){
         //Obtengo los elmeentos html que contiene la informacion que requiero para actualizar

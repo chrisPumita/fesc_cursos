@@ -9,6 +9,17 @@ function consultaListaCursos($estado_filtro,$id_Curso){
     $json_data= json_encode($result);
     return $json_data;
 }
+
+
+function consultaAcredita($idCurso){
+    include_once "../model/CURSO.php";
+    $obj_curso= new CURSO();
+    $result = $obj_curso->consultaAcreditacion($idCurso);
+    $json_data = json_encode($result);
+    return $json_data;
+}
+
+
 function registraCurso( $id_profesor_autor, $codigo_curso, $nombre_curso, $dirigido_a,
                         $objetivo_curso, $descripcion_curso, $no_sesiones, $antecedentes_curso,
                         $costo_sugerido_curso, $link_temario_curso, $bannerImg_curso)
@@ -114,3 +125,4 @@ function cambiaObligacion($idDocSol,$estatus){
     require_once "./documentos_control.php";
     return modificaObligacionDocSol($idDocSol,$estatus);
 }
+

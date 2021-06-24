@@ -253,11 +253,13 @@ $.ajax({
         if(obj_cursos.length>0) {
             obj_cursos.forEach((obj_cursos) => {
                     template += `<div class="carousel-item ${conteo==0 ? "active": ""}">
-                                    <div class="img d-block w-100" style="background-image: url(${obj_cursos.banner_img}); height: 600px; ">
+                                    <div class="img d-block w-100" style="background-image: url(${obj_cursos.banner_img}); height: 300px; ">
                                             <div class="overlay"></div>
-                                            <div class="carousel-caption d-none d-md-block">
+                                            <div class="carousel-caption d-md-block">
                                                 <h5>${obj_cursos.nombre_curso}</h5>
-                                                <p>${obj_cursos.objetivo}</p>
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-primary btn-sm">Mas Detalles</button>
+                                                </a>
                                             </div>
                                         </div>
                                  </div>`;

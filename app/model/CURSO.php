@@ -30,9 +30,12 @@ class CURSO extends CONEXION_M implements I_CURSO
     private $obj_profesor_autor;
     private $obj_profesor_admin_acredita;
 
+    /* asociacion */
+
     /*******************************************************************************
      * Inician Getters and Setters
      *******************************************************************************/
+
     /**
      * @return mixed
      */
@@ -417,7 +420,7 @@ class CURSO extends CONEXION_M implements I_CURSO
         $filtro = $estado_filtro>=0 ? " AND c.aprobado = ".$estado_filtro: "";
         $filtroidCurso = $id_curso > 0 ? " AND c.id_curso = ".$id_curso : "";
 
-        $query="SELECT c.id_curso, c.codigo, c.nombre_curso, 
+        $query="SELECT c.id_profesor_admin_acredita, c.id_curso, c.codigo, c.nombre_curso, 
                    c.dirigido_a, c.objetivo, 
                    c.descripcion, c.no_sesiones, 
                    c.antecedentes, c.costo_sugerido, 
@@ -433,6 +436,22 @@ class CURSO extends CONEXION_M implements I_CURSO
         $cursos=$this->getData($query);
         $this->close();
         return $cursos;
+    }
+
+    public function consultaAcreditacion($idCurso){
+        $this->connect();
+        $query = "select curso.id_profesor_admin_acredita, 
+       admin.permisos, admin.cargo, prof.prefijo, prof.no_trabajador, 
+       depto.nombre as departamento, per.nombre, per.app, per.apm from curso, administrador 
+        admin, profesor prof, persona per ,departamentos depto 
+        where curso.id_profesor_admin_acredita = admin.id_profesor_admin_fk 
+          and admin.id_profesor_admin_fk = prof.id_profesor 
+          and prof.id_depto_fk = depto.id_depto 
+          and prof.id_persona_fk = per.id_persona 
+          and `id_curso` = ". $idCurso;
+        $detalles = $this-> getData($query);
+        $this->close();
+        return $detalles;
     }
 
     public function consultaGroupKeys($id_curso)
@@ -554,5 +573,7 @@ class CURSO extends CONEXION_M implements I_CURSO
         include_once "./TEMAS.php";
         return TEMAS::class(consultaTemas($this->getIdCurso()));
     }
+
+
 
 }

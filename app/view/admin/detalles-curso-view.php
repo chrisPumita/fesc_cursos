@@ -218,20 +218,10 @@
                                                     <div class="container">
                                                         <div class="">
                                                             <div class="callout callout-primary">
-                                                                <h5>Detalles de Aprobación</h5>
-                                                                <div class="d-flex">
-                                                                    <div class="m-auto">
-                                                                        <img src="./assets/img/ok.svg" width="60" alt="svg ok">
-                                                                    </div>
-                                                                    <div class="m-auto">
-                                                                        <h6>Aprobado por:</h6>
-                                                                        <h6><strong> Felipe Moran Suarez</strong></h6>
-                                                                        <h6>Jefe de Departamento de Informática</h6>
-                                                                    </div>
+                                                                <div id="detallesAprobacionCurso">
+                                                                <!-- ajax response -->
                                                                 </div>
-                                                                <div class="m-auto">
-                                                                    <a href="#" class="btn btn-danger btn-block">Inhabilitar</a>
-                                                                </div>
+
                                                             </div>
                                                         </div>
                                                     </div>

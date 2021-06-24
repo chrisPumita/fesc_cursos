@@ -94,6 +94,7 @@ function ListaCursosRegistrados(tipo) {
 
 //fuincion que me carga los datos del curso
 function cargaDatosCurso(id_curso) {
+    let acreditado = false;
     $.ajax(
         {
             url:"./control/list_cursos.php",
@@ -105,7 +106,6 @@ function cargaDatosCurso(id_curso) {
             success: function (response)
             {
                 let obj_result = JSON.parse(response);
-                console.log(obj_result);
                 obj_result.forEach(
                     (obj_result)=>
                     {
@@ -121,14 +121,74 @@ function cargaDatosCurso(id_curso) {
                         let img = `<div class="img d-block w-100" style="background-image: url(${obj_result.banner_img}); height: 300px; "></div>`;
                         $("#imgContainer").html(img);
                         $("#filePDF").html(pdfFile);
-                        $("#filePDF").html(pdfFile);
                         let tmpPdf = `<embed src="${obj_result.link_temario_pdf}" type="application/pdf" width="100%" height="600px" />`;
                         $("#filePdfView").html(tmpPdf);
+                        //consulto los detalles de la acredsitacion del curso
+                        acreditado = obj_result.id_profesor_admin_acredita != null ? true:false;
+                        detallesAcreditacion(id_curso,acreditado);
                     }
                 );
+
             }
         }
     );
+
+}
+
+
+function detallesAcreditacion(id_Curso,acreditado) {
+    let tmplate;
+    if(acreditado){
+        $.ajax(
+            {
+                url:"./control/acreditacion_curso.php",
+                data: {
+                    idCurso : id_Curso
+                },
+                type: "POST",
+                success: function (response)
+                {
+                    console.log(obj_result);
+                    if (obj_result.length == 1){
+                        tmplate =`
+                            <div class="d-flex">
+                                <div class="m-auto">
+                                    <img src="./assets/img/icons/ok.svg" width="80" alt="svg ok">
+                                </div>
+                                <div class="m-auto">
+                                    <h5>Aprobado por:</h5>
+                                    <h5><strong>${obj_result[0].prefijo} ${obj_result[0].nombre} ${obj_result[0].app} ${obj_result[0].apm}</strong></h5>
+                                    <h6>No Trabajador: ${obj_result[0].no_trabajador}</h6>
+                                    <h6>${obj_result[0].cargo} de Departamento de ${obj_result[0].departamento}</h6>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex text-align-right">
+                                    <a href="#" class="btn btn-danger btn-block ">Inhabilitar</a>
+                            </div>`;
+                        $("#detallesAprobacionCurso").html(tmplate);
+                    }
+                }
+            }
+        );
+    }
+    else{
+        tmplate =`
+            <div class="d-flex">
+                <div class="m-auto">
+                    <img src="./assets/img/icons/cancel.svg" width="80" alt="svg ok">
+                </div>
+                <div class="m-auto">
+                    <h5>Sin acreditar</h5>
+                    <h6><strong>Este curso aun no se ha acreditado.</strong></h6>
+                    <h6>Si este curso cumple con los requerimentos, puede aprovar este curso y comenzar a asignar grupos</h6>
+                </div>
+            </div>
+            <div class="card-body d-flex text-align-right">
+                <a href="#" class="btn btn-success btn-block ">Acreditar</a>
+            </div>`;
+        $("#detallesAprobacionCurso").html(tmplate);
+    }
+
 }
 
 //escucha que se acciona al dar clic al boton
