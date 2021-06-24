@@ -148,7 +148,7 @@ function detallesAcreditacion(id_Curso,acreditado) {
                 type: "POST",
                 success: function (response)
                 {
-                    console.log(obj_result);
+                    let obj_result = JSON.parse(response);
                     if (obj_result.length == 1){
                         tmplate =`
                             <div class="d-flex">
