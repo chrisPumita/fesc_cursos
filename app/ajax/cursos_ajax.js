@@ -180,7 +180,7 @@ function detallesAcreditacion(id_Curso,acreditado) {
                 <div class="m-auto">
                     <h5>Sin acreditar</h5>
                     <h6><strong>Este curso aun no se ha acreditado.</strong></h6>
-                    <h6>Si este curso cumple con los requerimentos, puede aprovar este curso y comenzar a asignar grupos</h6>
+                    <h6>Si este curso cumple con los requerimentos, puede aprobar este curso y comenzar a asignar grupos</h6>
                 </div>
             </div>
             <div class="card-body d-flex text-align-right">
