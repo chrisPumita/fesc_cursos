@@ -394,7 +394,7 @@ include("./view/includes/header.php");
 </script>
 <script src="./ajax/cursos_ajax.js"></script>
 <script src="./ajax/home_ajax.js"></script>
-
+<script src="./ajax/tools.js"></script>
 <?php include "modal-nuevo-profesor.php";?>
 <?php include "modal-lista-servicio.php";?>
 <?php include "modal-historico-curso.php";?>

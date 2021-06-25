@@ -4,7 +4,6 @@ $(document).ready(function () {
     ListaCursosRegistrados(1);
     ListaDocumentosPendientes();
     ListaPagosRecientes();
-    CursosRecientesIm();
     Conteos();
     consultadepartamentos();
 });
@@ -22,22 +21,6 @@ function ListaGruposActivos(){
                     obj_result.forEach((obj_result => {
                         if (obj_result.estatus == 1) {
                             cont++;
-                            let tipo_curso;
-                            switch (obj_result.tipo_curso) {
-                                case "0":
-                                    tipo_curso = "Presencial";
-                                    break;
-                                case "1":
-                                    tipo_curso = "En linea";
-                                    break;
-                                case "2":
-                                    tipo_curso = "Mixto";
-                                    break;
-                                default:
-                                    tipo_curso = "No definido";
-                                    break;
-                            }
-
                             template += `<tr>
                                 <th scope="row">${cont}</th>
                                     <td>${obj_result.grupo}</td>
@@ -45,7 +28,7 @@ function ListaGruposActivos(){
                                     <td>${obj_result.nombre + " " + obj_result.app + " " + obj_result.apm}</td>
                                     <td>${obj_result.cupo}</td>
                                     <td>${obj_result.fecha_inicio}</td>
-                                    <td>${tipo_curso}</td>
+                                    <td>${getModalidad(obj_result.tipo_curso)}</td>
                                     <td>${obj_result.notas}</td>
                                     <!-- BOTON ACCIONES -->
                                     <td>
@@ -239,49 +222,6 @@ $.ajax({
     }
 })
 
-}
-function CursosRecientesIm(){
-$.ajax({
-    url:"./control/list_cursos.php",
-    data: { estado_filtro : 1,idCurso : 0},
-    type: "POST",
-    success: function (response){
-        let obj_cursos= JSON.parse(response);
-        let conteo=0;
-        let template="";
-        let template2="";
-        if(obj_cursos.length>0) {
-            obj_cursos.forEach((obj_cursos) => {
-                    template += `<div class="carousel-item ${conteo==0 ? "active": ""}">
-                                    <div class="img d-block w-100" style="background-image: url(${obj_cursos.banner_img}); height: 300px; ">
-                                            <div class="overlay"></div>
-                                            <div class="carousel-caption d-md-block">
-                                                <h5>${obj_cursos.nombre_curso}</h5>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-primary btn-sm">Mas Detalles</button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                 </div>`;
-
-                    template2+=`<li data-target="#carouselExampleIndicators" data-slide-to="${conteo}" class="active"></li>`;
-                    $("#carruceles").html(template);
-                $("#indicadores").html(template2);
-                conteo++;
-                }
-            )
-        }else{
-            $("#carusel_img").empty();
-            template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                 <strong>Lo sentimos</strong> No hay cursos activos aun, porfavor Active uno.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>`;
-            $("#carusel_img").html(template);
-        }
-    }
-})
 }
 function Conteos(){
     $.ajax({

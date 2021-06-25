@@ -5,6 +5,7 @@ let id_curso = 0;
 $(document).ready(function () {
     if (lista)
         ListaCursosRegistrados(filtro_curso);
+
     else {
        id_curso = $("#id_curso").val();
        cargaDatosCurso(id_curso);
@@ -24,26 +25,12 @@ function ListaCursosRegistrados(tipo) {
         success: function (response){
             let obj_result=JSON.parse(response);
             let template="";
+            let templateIMG="";
+            let template2="";
             if(obj_result.length>0){
                 var cont=0;
                 obj_result.forEach((obj_result=>{
                     cont++;
-                    let tipo_curso;
-                    switch (obj_result.tipo_curso){
-                        case "0":
-                            tipo_curso="Curso";
-                            break;
-                        case "1":
-                            tipo_curso="Diplomado";
-                            break;
-                        case "2":
-                            tipo_curso="Seminario";
-                            break;
-                        default:
-                            tipo_curso="No definido";
-                            break;
-                    }
-
                     let status_msg = obj_result.aprobado == 1 ? "Inhabilitar": "Acreditar";
 
                     template+=`<tr id_curso =${"'"+obj_result.id_curso+"' "}>
@@ -52,7 +39,7 @@ function ListaCursosRegistrados(tipo) {
                                     <td>${obj_result.nombre_curso}</td>
                                     <td>${obj_result.nombre+" "+obj_result.app+" "+obj_result.apm}</td>
                                     <td>${obj_result.no_sesiones}</td>
-                                    <td>${tipo_curso}</td>
+                                    <td>${getTipoCurso(obj_result.tipo_curso)}</td>
                                     <td>${obj_result.costo_sugerido}</td>
                                     
                                     <!-- BOTON ACCIONES -->
@@ -74,8 +61,24 @@ function ListaCursosRegistrados(tipo) {
                                         </div>
                                     </td>
                                </tr>`;
+                    templateIMG += `<div class="carousel-item ${(cont-1)==0 ? "active": ""}">
+                                    <div class="img d-block w-100" style="background-image: url(${obj_result.banner_img}); height: 300px; ">
+                                            <div class="overlay"></div>
+                                            <div class="carousel-caption d-md-block">
+                                                <h5>${obj_result.nombre_curso}</h5>
+                                                <a href="#">
+                                                    <button type="button" class="btn btn-primary btn-sm">Mas Detalles</button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                 </div>`;
+                    template2+=`<li data-target="#carouselExampleIndicators" data-slide-to="${cont}" class="active"></li>`;
+
+
                 }));
                 //se asigna al cuerpo de la tabla
+                $("#carruceles").html(templateIMG);
+                $("#indicadores").html(template2);
                 $("#tbl-cursos").html(template);
             }else{
                 $("#tbl-containerCursos").empty();
@@ -87,6 +90,14 @@ function ListaCursosRegistrados(tipo) {
                                 </button>
                             </div>`;
                 $("#tbl-containerCursos").html(template);
+                $("#carusel_img").empty();
+                template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                 <strong>Lo sentimos</strong> No hay cursos activos aun, porfavor Active uno.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`;
+                $("#carusel_img").html(template);
             }
         }
     })
