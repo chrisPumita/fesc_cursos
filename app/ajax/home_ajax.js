@@ -1,27 +1,35 @@
 // Activamos escucha
 $(document).ready(function () {
-    ListaGruposActivos();
-    ListaCursosRegistrados(1);
-    ListaDocumentosPendientes();
-    ListaPagosRecientes();
-    Conteos();
-    consultadepartamentos();
+    if(pagList){
+        ListaGruposActivos(0);
+        ListaCursosRegistrados(1);
+        ListaDocumentosPendientes();
+        ListaPagosRecientes();
+        Conteos();
+        consultadepartamentos();
+        validar_formulario()
+    }else{
+        id_profesor = $("#id_profe").val();
+        ListaGruposActivos(id_profesor);
+    }
+
 });
 
-function ListaGruposActivos(){
+function ListaGruposActivos(id){
     $.ajax({
         url:"./control/list_grupos.php",
+        data: {idPr:id},
+        type: "POST",
         success: function (response){
             let obj_result=JSON.parse(response);
             let template="";
 
             if(obj_result.length>0) {
-
                     var cont = 0;
                     obj_result.forEach((obj_result => {
-                        if (obj_result.estatus == 1) {
-                            cont++;
-                            template += `<tr>
+                            if (obj_result.estatus == 1) {
+                                cont++;
+                                template += `<tr>
                                 <th scope="row">${cont}</th>
                                     <td>${obj_result.grupo}</td>
                                     <td>${obj_result.nombre_curso}</td>
@@ -49,24 +57,48 @@ function ListaGruposActivos(){
                                                 </div>
                                     </td>
                                </tr>`;
-                        }
+                            }
+
                     }));
                     //se asigna al cuerpo de la tabla
                     if(cont>0){
                         $("#tbl-grupos").html(template);
                     }else{
-                        $("#tbl-containerGrupos").empty();
-                        $("#tbl-container2Grupos").empty();
-                        template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        if(id){
+                            $("#tbl-containerGrupos").empty();
+                            $("#tbl-container2Grupos").empty();
+                            template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Lo sentimos</strong> No hay grupos registrados para este profesor.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`;
+                            $("#tbl-containerGrupos").html(template);
+                        }else {
+                            $("#tbl-containerGrupos").empty();
+                            $("#tbl-container2Grupos").empty();
+                            template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
                                 <strong>Lo sentimos</strong> No hay grupos activos aun, porfavor Active uno.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>`;
-                        $("#tbl-containerGrupos").html(template);
+                            $("#tbl-containerGrupos").html(template);
+                        }
                     }
 
                 } else {
+                if(id){
+                    $("#tbl-containerGrupos").empty();
+                    $("#tbl-container2Grupos").empty();
+                    template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Lo sentimos</strong> No hay grupos registrados para este profesor.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`;
+                    $("#tbl-containerGrupos").html(template);
+                }else {
                     $("#tbl-containerGrupos").empty();
                     $("#tbl-container2Grupos").empty();
                     template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -77,7 +109,9 @@ function ListaGruposActivos(){
                             </div>`;
                     $("#tbl-containerGrupos").html(template);
                 }
-            }
+                }
+        }
+
     })
 
 }
@@ -281,107 +315,107 @@ function consultadepartamentos() {
         }
     );
 }
-
+function validar_formulario() {
 //Inciacia envio de formulario
-$(function() {
-    jQuery("#frm-add-profesor").validate({
-        onfocusout: false,  //Si un objeto no cumple con la validación, tomara el foco
-        rules: { //iniciamos sección de reglas
-            nombre_profesor: { //estas seras las reglas para el objeto que en su propiedad name tenga nameO
-                required: true, //indicamos que es requerido que contenga un valor
-                minlength: 3, //indicamos que debe de tener por lo menos 4 caracteres
-                maxlength: 20 //indicamos que debe de tener maximo 20 caracteres
-            },
-            app: {
-                required: true,
-                minlength:3,
-                maxlength:25
-            },
-            apm: {
-                required: true,
-                minlength:3,
-                maxlength:25
-            },
-            correo_prof:{
-                required: true,
-                email: true
-            },
-            notrabajador:{
-                required: true
-
-            }
-        },
-        messages: {//estos seran los mensaje que aparezcan segun el objeto y la reque que espeficiquemos en la sección de reglas
-            nombre_profesor: {
-                required: "Porfavor indicanos tu nombre",
-                minlength: $.format("Necesitamos por lo menos {0} caracteres"),
-                maxlength: $.format("{0} caracteres son demasiados!")
-            },
-            app: {
-                required: "Porfavor indicanos tu apellido paterno",
-                minlength: $.format("Necesitamos por lo menos {0} caracteres"),
-                maxlength: $.format("{0} caracteres son demasiados!")
-            },
-            apm: {
-                required: "Porfavor indicanos tu apellido materno",
-                minlength: $.format("Necesitamos por lo menos {0} caracteres"),
-                maxlength: $.format("{0} caracteres son demasiados!")
-            },
-            correo_prof:{
-                required: "Hey vamos, por favor, d&aacute;nos tu email",
-                email: "La estructura del correo es incorrecta"
-            },
-            notrabajador:{
-                required:"Por favor ingrese su numero de trabajador"
-            }
-
-        },
-        submitHandler: function(form){ //si todos los controles cumplen con las validaciones, se ejecuta este codigo
-            $("#formError").addClass("hidden"); //para ocultar el mensaje, le agregamos la clase de Bootstrap 3
-            var btnEnviar = $("#btnEnviar");
-            var formulario = $('#frm-add-profesor');
-            // start ajax
-            $.ajax({
-                /*
-                    // variables Profesor
-                    $id_depto = $_POST['id_depto'];
-                    $no_trabajador = $_POST['no_trabajador'];
-                    $prefijo= $_POST['prefijo'];
-                * */
-                url: "./control/profesor_add.php",
-                type: "POST",
-                dataType: 'html', //tipo de respuesta del servidor
-                data:{
-                    nombre:     $('#nombre_profesor').val(),
-                    app:        $('#app').val(),
-                    apm:        $('#apm').val(),
-                    telefono:   $('#telefono').val(),
-                    sexo:       $('#sexo').val(),
-                    email:      $('#correo').val(),
-                    no_trabajador: $('#notrabajador').val(),
-                    id_depto:    $('#depto').val(),
-                    prefijo:    $('#prefijo').val()
-                }, //parametros (valores) en formato llaver:valor, que se enviaran con la solicitud
-                beforeSend: function(){
-                    /** Esta función se ejecuta durante el envió de la petición al
-                     * servidor.* */
-                    formulario.css("opacity",".5");
-                    btnEnviar.val("Enviando..."); // Para input de tipo button
-                    btnEnviar.attr("disabled","disabled");
+    $(function () {
+        jQuery("#frm-add-profesor").validate({
+            onfocusout: false,  //Si un objeto no cumple con la validación, tomara el foco
+            rules: { //iniciamos sección de reglas
+                nombre_profesor: { //estas seras las reglas para el objeto que en su propiedad name tenga nameO
+                    required: true, //indicamos que es requerido que contenga un valor
+                    minlength: 3, //indicamos que debe de tener por lo menos 4 caracteres
+                    maxlength: 20 //indicamos que debe de tener maximo 20 caracteres
                 },
-                complete: function(xhr, textStatus) {
-                    //se llama cuando se recibe la respuesta (no importa si es error o exito)
-                    btnEnviar.val("Crear Cuenta");
-                    btnEnviar.removeAttr("disabled");
-
-                    $('#nuevoProfesor').modal('hide');
-                    formulario.trigger("reset");
-                    formulario.css("opacity","");
-                    btnEnviar.removeAttr("disabled");
+                app: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 25
                 },
-                success: function(msg) {
-                    $('.statusMsg').html('');
-                    var toast = `
+                apm: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 25
+                },
+                correo_prof: {
+                    required: true,
+                    email: true
+                },
+                notrabajador: {
+                    required: true
+
+                }
+            },
+            messages: {//estos seran los mensaje que aparezcan segun el objeto y la reque que espeficiquemos en la sección de reglas
+                nombre_profesor: {
+                    required: "Porfavor indicanos tu nombre",
+                    minlength: $.format("Necesitamos por lo menos {0} caracteres"),
+                    maxlength: $.format("{0} caracteres son demasiados!")
+                },
+                app: {
+                    required: "Porfavor indicanos tu apellido paterno",
+                    minlength: $.format("Necesitamos por lo menos {0} caracteres"),
+                    maxlength: $.format("{0} caracteres son demasiados!")
+                },
+                apm: {
+                    required: "Porfavor indicanos tu apellido materno",
+                    minlength: $.format("Necesitamos por lo menos {0} caracteres"),
+                    maxlength: $.format("{0} caracteres son demasiados!")
+                },
+                correo_prof: {
+                    required: "Hey vamos, por favor, d&aacute;nos tu email",
+                    email: "La estructura del correo es incorrecta"
+                },
+                notrabajador: {
+                    required: "Por favor ingrese su numero de trabajador"
+                }
+
+            },
+            submitHandler: function (form) { //si todos los controles cumplen con las validaciones, se ejecuta este codigo
+                $("#formError").addClass("hidden"); //para ocultar el mensaje, le agregamos la clase de Bootstrap 3
+                var btnEnviar = $("#btnEnviar");
+                var formulario = $('#frm-add-profesor');
+                // start ajax
+                $.ajax({
+                    /*
+                        // variables Profesor
+                        $id_depto = $_POST['id_depto'];
+                        $no_trabajador = $_POST['no_trabajador'];
+                        $prefijo= $_POST['prefijo'];
+                    * */
+                    url: "./control/profesor_add.php",
+                    type: "POST",
+                    dataType: 'html', //tipo de respuesta del servidor
+                    data: {
+                        nombre: $('#nombre_profesor').val(),
+                        app: $('#app').val(),
+                        apm: $('#apm').val(),
+                        telefono: $('#telefono').val(),
+                        sexo: $('#sexo').val(),
+                        email: $('#correo').val(),
+                        no_trabajador: $('#notrabajador').val(),
+                        id_depto: $('#depto').val(),
+                        prefijo: $('#prefijo').val()
+                    }, //parametros (valores) en formato llaver:valor, que se enviaran con la solicitud
+                    beforeSend: function () {
+                        /** Esta función se ejecuta durante el envió de la petición al
+                         * servidor.* */
+                        formulario.css("opacity", ".5");
+                        btnEnviar.val("Enviando..."); // Para input de tipo button
+                        btnEnviar.attr("disabled", "disabled");
+                    },
+                    complete: function (xhr, textStatus) {
+                        //se llama cuando se recibe la respuesta (no importa si es error o exito)
+                        btnEnviar.val("Crear Cuenta");
+                        btnEnviar.removeAttr("disabled");
+
+                        $('#nuevoProfesor').modal('hide');
+                        formulario.trigger("reset");
+                        formulario.css("opacity", "");
+                        btnEnviar.removeAttr("disabled");
+                    },
+                    success: function (msg) {
+                        $('.statusMsg').html('');
+                        var toast = `
                         <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"  data-autohide="false">
                             <div class="toast-header">
                                 <img src="./app/assets/img/icon_logo.png" class="rounded mr-2" alt="logo" width="30">
@@ -392,41 +426,42 @@ $(function() {
                                 </button>
                             </div>
                             <div class="toast-body">
-                                `+msg+`
+                                ` + msg + `
                             </div>
                         </div>`;
 
-                    $("#toast").html(toast);
-                    $('.toast').toast('show');
-                    ListaGruposActivos();
-                    ListaCursosRegistradosACT();
-                    ListaDocumentosPendientes();
-                    ListaPagosRecientes();
-                    CursosRecientes();
-                    Conteos();
-                    consultadepartamentos();
-                },
-                error: function(xhr, textStatus, errorThrown) {
-                    //called when there is an error
-                    alert("La respuesta fue con error");
+                        $("#toast").html(toast);
+                        $('.toast').toast('show');
+                        ListaGruposActivos();
+                        ListaCursosRegistradosACT();
+                        ListaDocumentosPendientes();
+                        ListaPagosRecientes();
+                        CursosRecientes();
+                        Conteos();
+                        consultadepartamentos();
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        //called when there is an error
+                        alert("La respuesta fue con error");
+                    }
+                }); //end ajax
+            },
+            invalidHandler: function (event, validator) { //si por lo menos uno control no cumplen con las validaciones, se ejecuta este codigo
+                var errors = validator.numberOfInvalids(); // número de errores encontrados al validar el formulario
+                if (errors) { //si errors = 0 no se ejecuta el if, de ser mayor que cero se ejecuta
+                    //la linea de abajo es un if ternario
+                    var message = errors == 1 ? ' Error: Te perdiste 1 campo. Ha sido destacado' : ' Error: Te perdiste ' + errors + ' campos. Se han destacado';
+                    $("div#formError span#Mensaje").html(message); //agregamos el valor de message a objeto seleccionado
+                    $("div#formError").removeClass("hidden"); //para que se muestre el mensaje, le quitamos la clase que lo oculta
                 }
-            }); //end ajax
-        },
-        invalidHandler: function(event, validator) { //si por lo menos uno control no cumplen con las validaciones, se ejecuta este codigo
-            var errors = validator.numberOfInvalids(); // número de errores encontrados al validar el formulario
-            if (errors) { //si errors = 0 no se ejecuta el if, de ser mayor que cero se ejecuta
-                //la linea de abajo es un if ternario
-                var message = errors == 1 ? ' Error: Te perdiste 1 campo. Ha sido destacado' : ' Error: Te perdiste '+ errors +' campos. Se han destacado';
-                $("div#formError span#Mensaje").html(message); //agregamos el valor de message a objeto seleccionado
-                $("div#formError").removeClass("hidden"); //para que se muestre el mensaje, le quitamos la clase que lo oculta
-            }
-        },
-        highlight: function(element, errorClass) {//los objetos que no cumplan con la validación parpadearan
-            $(element).fadeOut(function() {
-                $(element).fadeIn();
-            });
-        },
-        errorElement: "div", //indicamos en qué tipo de objeto DOM se agregarán las alertas. El valor por default es "label"
-        errorClass: "alert alert-danger", //indicamos la clase que se agregara a las alertas. El valor por default es "error"
+            },
+            highlight: function (element, errorClass) {//los objetos que no cumplan con la validación parpadearan
+                $(element).fadeOut(function () {
+                    $(element).fadeIn();
+                });
+            },
+            errorElement: "div", //indicamos en qué tipo de objeto DOM se agregarán las alertas. El valor por default es "label"
+            errorClass: "alert alert-danger", //indicamos la clase que se agregara a las alertas. El valor por default es "error"
+        });
     });
-});
+}

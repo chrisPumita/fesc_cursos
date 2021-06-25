@@ -120,6 +120,7 @@
         <!-- script_js -->
         <script src="./ajax/profesor_ajax.js"></script>
         <script src="./ajax/validar-form.js"></script>
+        <script src="./ajax/tools.js"></script>
         <script>
             let pagList = true;
             $(function () {

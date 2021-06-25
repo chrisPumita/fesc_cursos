@@ -3,7 +3,7 @@
 //variable global
 let id_curso = 0;
 $(document).ready(function () {
-    if (lista)
+    if (pagList)
         ListaCursosRegistrados(filtro_curso);
 
     else {

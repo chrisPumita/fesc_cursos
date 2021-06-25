@@ -482,8 +482,9 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
         $this->close();
         return $datos;
     }
-    public function consultaAsignaciones()
+    public function consultaAsignaciones($id)
     {
+        $filtro=$id>0? "AND pf.id_profesor = ".$id :"";
         $query = "SELECT asig.id_asignacion,
                            gp.grupo,
                            crs.nombre_curso,
@@ -510,7 +511,7 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
                     WHERE asig.id_profesor_fk=pf.id_profesor 
                       AND pf.id_persona_fk=p.id_persona 
                       AND asig.id_grupo_fk=gp.id_grupo
-                      AND gp.id_curso_fk=crs.id_curso";
+                      AND gp.id_curso_fk=crs.id_curso ".$filtro;
         $this->connect();
         $datos = $this->getData($query);
         $this->close();

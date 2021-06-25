@@ -389,7 +389,7 @@ include("./view/includes/header.php");
 </div>
 <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
 <script>
-    var lista = true;
+    var pagList = true;
     var filtro_curso = 1;
 </script>
 <script src="./ajax/cursos_ajax.js"></script>
