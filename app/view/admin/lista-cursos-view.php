@@ -102,7 +102,7 @@
         </div>
         <!-- script_js -->
         <script>
-            var lista = true;
+            var pagList= true;
             var filtro_curso = -1
         </script>
         <script src="./ajax/cursos_ajax.js"></script>
