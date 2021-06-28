@@ -11,7 +11,68 @@ $(document).ready(function () {
     consultadepartamentos();
 });
 
+function DatoscuentaAdmin(id_profesor){
+    $.ajax(
+        {
+            url:"./control/list_admin.php",
+            data: { id_profesor : id_profesor},
+            type: "POST",
+            success: function (response){
+                //console.log(response);
+                let obj_result = JSON.parse(response);
+                if (obj_result.length>0){
+                let template="";
+                obj_result.forEach(
+                    (obj_result)=>{
+                        template +=`
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="callout callout-second">
+                                    <h5><strong>Cuenta de administrador</strong></h5>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="media mb-3">
+                                                    <div class="media-left media-middle">
+                                                        <img src="https://play-lh.googleusercontent.com/AeVwiUzhw9HVEg0s19qrGvyS40JuNBwzb94ZPaWiM529_gvC7RgOtObnsM2mgwT5CfY" class="mr-2 mt-0" width="40px" alt="">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mt-2">Este profesor tiene cuenta de adminsitrador</p>
+                                                    </div>
+                                                </div>
+                                                <div class="media mb-3">
+                                                    <div class="media-left media-middle">
+                                                        <img src="https://image.flaticon.com/icons/png/512/42/42288.png" class="mr-2 mt-0" width="40px" alt="">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mt-2">Cargo: ${obj_result.cargo}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="container">
+                                                    <div class="spinner-grow bg-success" role="status" style="width: 2rem; height: 2rem"></div>
+                                                    <span class="ml-3 mb-3 font-weight-bold">Cuenta administrador activa</span>
+                                                    <h6 class="mb-0 mt-3"><strong>Notas:</strong></h6>
+                                                    <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur voluptas cum, vel repudiandae quibusdam consectetur dolorem, blanditiis incidunt laborum provident eum aspernatur voluptatibus non obcaecati mollitia! Cum eveniet rerum consectetur.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+                        $("#detalles_cuenta").html(template);
+                    }
+                )
+                }else{
 
+                }
+            }
+        }
+    );
+}
 function cargadatosProfesor(id_profesor){
     $.ajax(
         {
@@ -23,7 +84,6 @@ function cargadatosProfesor(id_profesor){
             type: "POST",
             success: function (response)
             {
-                console.log(id_profesor);
                 let obj_result = JSON.parse(response);
                 obj_result.forEach(
                     (obj_result)=>
@@ -48,7 +108,7 @@ function cargadatosProfesor(id_profesor){
                                             <label class="custom-control-label" for="rbnMujer">Mujer</label>
                                         </div>`);
                         $("#correo").html(`<input type="text" class="form-control" value="${obj_result.email}" aria-label="Correo">`);
-
+                        DatoscuentaAdmin(id_profesor);
                     }
                 );
 

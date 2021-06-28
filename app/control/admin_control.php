@@ -19,5 +19,12 @@
         $objAdmin = new ADMIN();
         return $objAdmin->updateStatusAdmin($idAdmin,$statusActual=="1"?"0":"1");
     }
-
+function consultaAdministrador($id_admin){
+    //incluir el modelo de ADMIN
+    include_once "../model/ADMIN.php";
+    $objAdmin = new ADMIN();
+    $result = $objAdmin -> buscaCuentaAdmin($id_admin);
+    $json_data = json_encode($result);
+    return $json_data;
+}
 
