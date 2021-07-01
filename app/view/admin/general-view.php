@@ -168,48 +168,12 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
-                                                                        <th scope="col">ID</th>
                                                                         <th scope="col">Nombre</th>
                                                                         <th scope="col">Acciones</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="tbl-cursos">
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>003</td>
-                                                                        <td>Informatica</td>
-                                                                        <!-- BOTON ACCIONES -->
-                                                                        <td>
-                                                                            <div class="btn-group" role="group" aria-label="acciones">
-                                                                                <button type="button" class="btn btn-primary">Editar</button>
-                                                                                <button type="button" class="btn btn-danger">Quitar</button>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>003</td>
-                                                                        <td>Matematicas</td>
-                                                                        <!-- BOTON ACCIONES -->
-                                                                        <td>
-                                                                            <div class="btn-group" role="group" aria-label="acciones">
-                                                                                <button type="button" class="btn btn-primary">Editar</button>
-                                                                                <button type="button" class="btn btn-danger">Quitar</button>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>003</td>
-                                                                        <td>Contabilidad</td>
-                                                                        <!-- BOTON ACCIONES -->
-                                                                        <td>
-                                                                            <div class="btn-group" role="group" aria-label="acciones">
-                                                                                <button type="button" class="btn btn-primary">Editar</button>
-                                                                                <button type="button" class="btn btn-danger">Quitar</button>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
+
                                                                 </tbody>
                                                             </table>
                                                             <!-- Button trigger modal -->
@@ -237,52 +201,13 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
-                                                                        <th scope="col">ID</th>
                                                                         <th scope="col">Nombre</th>
                                                                         <th scope="col">Siglas</th>
                                                                         <th scope="col">Acciones</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="tbl-universidades">
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>001</td>
-                                                                        <td>Universidad Nacional Autónoma de México</td>
-                                                                        <td>UNAM</td>
-                                                                        <!-- BOTON ACCIONES -->
-                                                                        <td>
-                                                                            <div class="btn-group" role="group" aria-label="acciones">
-                                                                                <button type="button" class="btn btn-primary">Editar</button>
-                                                                                <button type="button" class="btn btn-danger">Quitar</button>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">2</th>
-                                                                        <td>002</td>
-                                                                        <td>Instituto Politécnico Nacional</td>
-                                                                        <td>IPN</td>
-                                                                        <!-- BOTON ACCIONES -->
-                                                                        <td>
-                                                                            <div class="btn-group" role="group" aria-label="acciones">
-                                                                                <button type="button" class="btn btn-primary">Editar</button>
-                                                                                <button type="button" class="btn btn-danger">Quitar</button>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>003</td>
-                                                                        <td>Universidad Autónoma Metropolitana</td>
-                                                                        <td>UAM</td>
-                                                                        <!-- BOTON ACCIONES -->
-                                                                        <td>
-                                                                            <div class="btn-group" role="group" aria-label="acciones">
-                                                                                <button type="button" class="btn btn-primary">Editar</button>
-                                                                                <button type="button" class="btn btn-danger">Quitar</button>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
+
                                                                 </tbody>
                                                             </table>
                                                             <!-- Button trigger modal -->
@@ -460,7 +385,6 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
-                                                                        <th scope="col">ID</th>
                                                                         <th scope="col">Nombre</th>
                                                                         <th scope="col">Formato</th>
                                                                         <th scope="col">Peso máximo</th>
@@ -468,48 +392,7 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="tbl-docs">
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>001</td>
-                                                                        <td>Credencial Escolar</td>
-                                                                        <td>PDF</td>
-                                                                        <td>1 MB</td>
-                                                                        <!-- BOTON ACCIONES -->
-                                                                        <td>
-                                                                            <div class="btn-group" role="group" aria-label="acciones">
-                                                                                <button type="button" class="btn btn-primary">Editar</button>
-                                                                                <button type="button" class="btn btn-danger">Quitar</button>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">2</th>
-                                                                        <td>002</td>
-                                                                        <td>Historial Académico</td>
-                                                                        <td>PDF</td>
-                                                                        <td>1 MB</td>
-                                                                        <!-- BOTON ACCIONES -->
-                                                                        <td>
-                                                                            <div class="btn-group" role="group" aria-label="acciones">
-                                                                                <button type="button" class="btn btn-primary">Editar</button>
-                                                                                <button type="button" class="btn btn-danger">Quitar</button>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>003</td>
-                                                                        <td>CURP</td>
-                                                                        <td>PDF</td>
-                                                                        <td>1 MB</td>
-                                                                        <!-- BOTON ACCIONES -->
-                                                                        <td>
-                                                                            <div class="btn-group" role="group" aria-label="acciones">
-                                                                                <button type="button" class="btn btn-primary">Editar</button>
-                                                                                <button type="button" class="btn btn-danger">Quitar</button>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
+             <!-- AJAX CONSILT-->
                                                                 </tbody>
                                                             </table>
                                                             <!-- Button trigger modal -->
@@ -708,6 +591,10 @@
         <!-- Finaliza Modal Documentos -->
         <!-- end modal zone-->
         <!-- script_js -->
+        <script src="./ajax/general_ajax.js"></script>
+        <script src="./ajax/consultasGenerales.js"></script>
+
+
         <script>
             $(document).ready(function() {
                 $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {

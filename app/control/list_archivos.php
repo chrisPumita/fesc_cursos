@@ -1,3 +1,3 @@
 <?php
 include_once "documentos_control.php";
-echo listaDocumentos();
+echo listaArchivos();

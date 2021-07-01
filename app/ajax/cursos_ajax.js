@@ -12,7 +12,6 @@ $(document).ready(function () {
     }
 });
 
-
 // 0 inactivos, 1 activos, -x todos
 function ListaCursosRegistrados(tipo) {
     $.ajax({
@@ -32,15 +31,16 @@ function ListaCursosRegistrados(tipo) {
                 obj_result.forEach((obj_result=>{
                     cont++;
                     let status_msg = obj_result.aprobado == 1 ? "Inhabilitar": "Acreditar";
-
+                    let aprobado = obj_result.aprobado == 1 ? "Aprobado" : "Por revisar";
+                    let tipoAprobado = obj_result.aprobado == 1 ? "success" : "warning";
                     template+=`<tr id_curso =${"'"+obj_result.id_curso+"' "}>
                                     <th scope="row">${cont}</th>
                                     <td>${obj_result.codigo}</td>
-                                    <td>${obj_result.nombre_curso}</td>
+                                    <td>${obj_result.nombre_curso} <span class="badge badge-${tipoAprobado}">${aprobado}</span></td>
                                     <td>${obj_result.nombre+" "+obj_result.app+" "+obj_result.apm}</td>
-                                    <td>${obj_result.no_sesiones}</td>
+                                    <td>${obj_result.fecha_creacion}</td>
                                     <td>${getTipoCurso(obj_result.tipo_curso)}</td>
-                                    <td>${obj_result.costo_sugerido}</td>
+                                    <td><a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalPDF"><i class="icon ion-md-eye"></i> Ver</a></td>
                                     
                                     <!-- BOTON ACCIONES -->
                                     <td>
@@ -128,9 +128,9 @@ function cargaDatosCurso(id_curso) {
                         $("#modalidad").html(getTipoCurso(obj_result.tipo_curso));
                         $("#objetivo").html(obj_result.objetivo);
                         $("#antecedentes").html(obj_result.antecedentes);
-                        let pdfFile = `<a href="${obj_result.link_temario_pdf}" download target="_blank"  class="btn btn-primary btn-block"> Descargar</a>`;
                         let img = `<div class="img d-block w-100" style="background-image: url(${obj_result.banner_img}); height: 300px; "></div>`;
                         $("#imgContainer").html(img);
+                        let pdfFile = `<a href="${obj_result.link_temario_pdf}" download target="_blank"  class="btn btn-primary btn-block"> Descargar</a>`;
                         $("#filePDF").html(pdfFile);
                         let tmpPdf = `<embed src="${obj_result.link_temario_pdf}" type="application/pdf" width="100%" height="600px" />`;
                         $("#filePdfView").html(tmpPdf);

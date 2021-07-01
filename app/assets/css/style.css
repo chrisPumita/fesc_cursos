@@ -64,7 +64,9 @@ a:hover{
 #sidebar-container .menu{
     width: AUTO;
 }
-
+.alert {
+    width: 100% !important;
+}
 .card {
     width: -webkit-fill-available !important;
 }

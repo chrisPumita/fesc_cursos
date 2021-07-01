@@ -133,8 +133,6 @@ class DOCUMENTO extends CONEXION_M implements I_DOCUMENTOS
 
     function crearDocumento()
     {
-
-        
         $sql = "INSERT INTO `documento`(`id_documento`,`nombre_doc`,`formato_admitido`,`tipo`,`peso_max_mb`,`estatus`)
             VALUES (NULL,'".$this->getNombreDoc()."','".$this->getFormatoAdmitido()."','".$this->getTipo()."','".$this->getPesoMaxMb()."','".$this->getEstatusDocumento()."');";
         $this->connect();

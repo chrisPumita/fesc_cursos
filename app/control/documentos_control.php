@@ -143,7 +143,7 @@ function subirarchivo($nombreArchivo,$Archivo,$id_inscripcion){
     return $obj_archivo->crearArchivoPath($nombreArchivo,$Archivo);
 }
 
-function ListaDocs(){
+function listaArchivos(){
     include_once "../model/ARCHIVO.php";
     $obj_archivo=new ARCHIVO();
     $result=$obj_archivo->listaArchivos();
@@ -155,4 +155,14 @@ function modificaEstatusAr($id,$estatus){
     include_once "../model/ARCHIVO.php";
     $obj_archivo = new ARCHIVO();
     return $obj_archivo->modificaEstadoArchivo($id,$estatus) ;
+}
+
+
+
+function listaDocumentos(){
+    include_once "../model/DOCUMENTO.php";
+    $obj_doc =new DOCUMENTO();
+    $result=$obj_doc->consultaDocumentos();
+    $json_data=json_encode($result);
+    return $json_data;
 }

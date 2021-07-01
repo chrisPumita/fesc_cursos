@@ -3,7 +3,7 @@ $(document).ready(function () {
     if(pagList){
         ListaGruposActivos(0);
         ListaCursosRegistrados(1);
-        ListaDocumentosPendientes();
+        ListaArchivosPendientes();
         ListaPagosRecientes();
         Conteos();
         consultadepartamentos();
@@ -119,9 +119,9 @@ function ListaGruposActivos(id){
 
 
 
-function ListaDocumentosPendientes(){
+function ListaArchivosPendientes(){
     $.ajax({
-        url:"./control/list_documentos.php",
+        url:"./control/list_archivos.php",
         success: function (response){
             let obj_result=JSON.parse(response);
             let template="";
@@ -242,7 +242,7 @@ $.ajax({
         }));
             //se asigna al cuerpo del div
            $("#pagosrecientes").html(template);
-            ListaDocumentosPendientes();
+            ListaArchivosPendientes();
         }else{
             $("#pagosrecientes").empty();
             template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
