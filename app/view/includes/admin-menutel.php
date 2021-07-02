@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom navbar-static-top" role="navigation">
     <!-- Just an image -->
     <a class="navbar-brand" href="./home">
-        <img src="./assets/img/logo.png" width="auto" height="60" alt="" class="d-block d-sm-block d-md-none">
+        <img src="./assets/img/logo.png" width="auto" height="40" alt="" class="d-block d-sm-block d-md-none">
     </a>
 
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
