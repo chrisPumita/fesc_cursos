@@ -25,7 +25,8 @@
                                                     <div class="card-body">
                                                         <div class="mx-auto">
                                                             <h4 class="text-light text-left">
-                                                            <strong>Crear nueva asignacion de grupo</strong>
+                                                                <strong>Crear nueva asignacion de grupo</strong>
+                                                            </h4>
                                                             <h5 class="text-light text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
                                                         </div>
                                                     </div>
@@ -52,14 +53,20 @@
                                             <form class="user needs-validation" id="frm-add-asignacion" role="form" autocomplete="off" novalidate>
                                                 <div class="form-group row">
                                                     <div class="col-sm-2 mb-3 mb-sm-0">
-                                                        <label class="label" for="profesorAsig">Profesor asignado</label>
+                                                        <label class="label" for="profesorAsig">Profesor asignado:</label>
                                                     </div>
-                                                    <div class="col-sm-10 mb-3 mb-sm-0">
+                                                    <div class="col-sm-4 mb-3 mb-sm-0">
                                                         <select class="form-control" id="profesorAsig">
                                                             <option>Dorotea Alvarez Soto</option>
                                                             <option>Juan Manuel Perez Sanchez</option>
                                                             <option>Adrian Uribe Peña</option>
                                                         </select>
+                                                    </div>
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label class="label" for="fecha-creacion">Fecha de creación:</label>
+                                                    </div>
+                                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                                        <input class="form-control" type="text" name="fecha-creacion" id="fecha-creacion" disabled>
                                                     </div>
                                                     <!-- <div class="col-sm-6 row mb-3">
                                                         <div class="custom-control custom-radio custom-control-inline">
@@ -70,7 +77,7 @@
                                                             <input type="radio" id="rbnMujer" name="sexo" class="custom-control-input"  value="1">
                                                             <label class="custom-control-label" for="rbnMujer">Mujer</label>
                                                         </div>
-                                                        </div> -->
+                                                    </div> -->
                                                 </div>
                                                 <div class="form-group row vertical-align-center">
                                                     <div class="col-sm-2 mb-3 mb-sm-0">
@@ -84,7 +91,7 @@
                                                             <option>1507</option>
                                                         </select>
                                                         <a href="#" data-toggle="modal" data-target="#nuevoGrupo">
-                                                        <img class="image mx-2 aling-center" src="https://img.icons8.com/flat-round/452/plus.png" width="30" height="30">
+                                                        <img class="image mx-2 aling-center" src="./assets/img/icons/plus2.svg" width="30" height="30">
                                                         </a>                                                    
                                                     </div>
                                                     <div class="col-sm-2 mb-3 mb-sm-0">
@@ -93,9 +100,9 @@
                                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                                         <!-- <input type="text" class="form-control form-control-user"  name="grupo" id="Grupo" required="" placeholder="Grupo"> -->
                                                         <select class="form-control" id="modalidad">
-                                                            <option>Mixto</option>
-                                                            <option>Presencial</option>
-                                                            <option>A distancia</option>
+                                                            <option value="0">Presencial</option>
+                                                            <option value="1">En Línea</option>
+                                                            <option value="2">Mixto</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -123,6 +130,24 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label class="label" for="campo">Campo:</label>
+                                                    </div>
+                                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                                        <select class="form-control" id="campus">
+                                                            <option value="0">1</option>
+                                                            <option value="1">4</option>
+                                                            <option value="2">Otro</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label class="label" for="costo">Costo:</label>
+                                                    </div>
+                                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                                        <input class="form-control" type="text" name="costo" id="costo">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
                                                         <label class="label" for="inicio">Inicio: </label>
                                                     </div>
                                                     <div class="col-sm-4 mb-3 mb-sm-0">
@@ -136,10 +161,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <div class="col-sm-3 mb-3 mb-sm-0">
-                                                        <label class="label" for="dateLimite">Limite de inscripciones: </label>
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label class="label" for="dateLimite">Límite de inscripciones: </label>
                                                     </div>
-                                                    <div class="col-sm-3 mb-3 mb-sm-0">
+                                                    <div class="col-sm-4 mb-3 mb-sm-0">
                                                         <!-- <input type="text" class="form-control form-control-user"  name="grupo" id="Grupo" required="" placeholder="Grupo"> -->
                                                         <input type="date" name="dateLimite" max="3000-12-31" min="2021-05-25" class="form-control">
                                                     </div>
@@ -148,6 +173,20 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <input class="form-control" type="number" value="150" id="numCupo">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label class="label" for="inicio-actas">Inicio Actas: </label>
+                                                    </div>
+                                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                                        <input type="date" name="inicio" max="3000-12-31" min="1000-01-01" class="form-control" id="inicio-actas">
+                                                    </div>
+                                                    <div class="col-sm-2 mb-3 mb-sm-0">
+                                                        <label class="label" for="fin-actas">Fin Actas: </label>
+                                                    </div>
+                                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                                        <input type="date" name="fin-actas" max="3000-12-31" min="1000-01-01" class="form-control" id="fin-actas">
                                                     </div>
                                                 </div>
                                                 <hr>
@@ -244,25 +283,24 @@
                                                         </div>
                                                         <div class="col text-right">
                                                             <div class="btn btn-primary w-100 col-lg-8 text-center">
-                                                                <a href="./nuevo-curso">Nuevo</a>
+                                                                <a href="./nuevo-curso">Crear</a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </form>
+                                            <!-- termina el formulario-->
                                         </div>
                                     </div>
-                                    </form>
-                                    <!-- termina el formulario-->
                                 </div>
                             </div>
+                        </section>
+                        <!-- FIN FORMULARIO EDICION-->
                     </div>
-                    </section>
-                    <!-- FIN FORMULARIO EDICION-->
+                    <!--FIN contenido dinamico-->
+                    <?php include("./view/includes/footer.php");?>
                 </div>
-                <!--FIN contenido dinamico-->
-                <?php include("./view/includes/footer.php");?>
             </div>
-        </div>
         </div>
         <?php include "modal-nuevo-grupo.php";?>
         <!-- script_js -->

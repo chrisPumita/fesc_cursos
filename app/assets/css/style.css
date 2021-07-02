@@ -4,6 +4,7 @@
     --ligth : #ffffff;
     --grey: #efefef;
     --alert:  indianred;
+    --gray: #616A6B;
 }
 
 .body-home{
@@ -48,6 +49,10 @@ a:hover{
 
 .btn-primary:hover{
     background-color: var(--second) !important;
+}
+
+.btn-gray{
+    background-color: var(--gray) !important;
 }
 
 #sidebar-container{

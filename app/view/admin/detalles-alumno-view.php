@@ -337,8 +337,8 @@
                                                                             Opciones
                                                                             </button>
                                                                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                                                <a href="#" data-toggle="modal" data-target="#verHorario">
-                                                                                <button class="dropdown-item" type="button">Ver Detalles</button>
+                                                                                <a href="./ficha-inscripcion">
+                                                                                    <button class="dropdown-item" type="button">Ficha de Incripción</button>
                                                                                 </a>
                                                                                 <button class="dropdown-item" type="button">Editar grupo</button>
                                                                                 <a href="#" data-toggle="modal" data-target="#verSolicitudes">
@@ -368,8 +368,8 @@
                                                                             Opciones
                                                                             </button>
                                                                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                                                <a href="#" data-toggle="modal" data-target="#verHorario">
-                                                                                <button class="dropdown-item" type="button">Ver Detalles</button>
+                                                                                <a href="./ficha-inscripcion">
+                                                                                    <button class="dropdown-item" type="button">Ficha de Incripción</button>
                                                                                 </a>
                                                                                 <button class="dropdown-item" type="button">Editar grupo</button>
                                                                                 <a href="#" data-toggle="modal" data-target="#verSolicitudes">
@@ -399,8 +399,8 @@
                                                                             Opciones
                                                                             </button>
                                                                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                                                <a href="#" data-toggle="modal" data-target="#verHorario">
-                                                                                <button class="dropdown-item" type="button">Ver Detalles</button>
+                                                                                <a href="./ficha-inscripcion">
+                                                                                    <button class="dropdown-item" type="button">Ficha de Incripción</button>
                                                                                 </a>
                                                                                 <button class="dropdown-item" type="button">Editar grupo</button>
                                                                                 <a href="#" data-toggle="modal" data-target="#verSolicitudes">

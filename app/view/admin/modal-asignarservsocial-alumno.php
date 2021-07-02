@@ -6,7 +6,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
-                <h2>Asignación de alumno al Servicio Social</h2>
+                <h2><strong>Asignación de alumno al Servicio Social</strong></h2>
                 <p>Al asignar a un alumno al servicio social, le llegará una notificación por correo electrónico con su clave de acceso.</p>
                 <hr>
                 <!--INICIA FORMULARIO-->
@@ -24,66 +24,66 @@
                     </div>
                     <!--<div class="collapse" data-toggle="collapse" data-target="collapseExample" id="collapseExample">-->
                         <hr>
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-form-label font-weight-bold">Datos del alumno:</label>
+                        <h5><strong>Datos del alumno:</strong></h5>
+                        <div class="row">
+                            <div class="col-sm-3 mt-2 mb-sm-0">
+                                <img src="https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png" alt="" class="rounded-circle" id="profile-img" width="150px">
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-2 mb-3 mb-sm-0">
-                                <div class="mb-2">
-                                    <img src="https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png" alt="" class="rounded-circle" id="profile-img" width="100px">
+                            <div class="col-sm-9 mt-2 mb-sm-0">
+                                <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                        <label class="col-form-label">Nombre:</label>
+                                    </div>
+                                    <div class="col-sm-8 mb-3 mb-sm-0">
+                                        <div id="nombre"><strong></strong><!-- Ajax Data --></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-2 mb-3 mb-sm-0">
-                                <label class="col-form-label ml-2">Nombre:</label>
-                            </div>
-                            <div class="col-sm-8 mb-3 mb-sm-0">
-                                <div id="nombre"><strong></strong><!-- Ajax Data --></div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4 mb-3 mb-sm-0">
-                                <label class="col-form-label">Número de Cuenta:</label>
-                            </div>
-                            <div class="col-sm-8 mb-3 mb-sm-0">
-                                <div id="nocuenta"><!-- Ajax Data --></div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4 mb-3 mb-sm-0">
-                                <label class="col-form-label">Universidad:</label>
-                            </div>
-                            <div class="col-sm-8 mb-3 mb-sm-0">
-                                <div id="universidad"><!-- Ajax Data --></div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-4 mb-3 mb-sm-0">
-                                <label class="col-form-label">Correo Electrónico:</label>
-                            </div>
-                            <div class="col-sm-8 mb-3 mb-sm-0">
-                                <div id="email"><!-- Ajax Data --></div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-3 mb-3 mb-sm-0">
-                                <label class="col-form-label">Carrera:</label>
-                            </div>
-                            <div class="col-sm-3 mb-3 mb-sm-0">
-                                <div id="carrera"><!-- Ajax Data --></div>
-                            </div>
-                            <div class="col-sm-3 mb-3 mb-sm-0">
-                                <label class="col-form-label">Fecha de Registro:</label>
-                            </div>
-                            <div class="col-sm-3 mb-3 mb-sm-0">
-                                <div id="fecharegis"><!-- Ajax Data --></div>
+                                <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                        <label class="col-form-label">Número de Cuenta:</label>
+                                    </div>
+                                    <div class="col-sm-8 mb-3 mb-sm-0">
+                                        <div id="nocuenta"><!-- Ajax Data --></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                        <label class="col-form-label">Universidad:</label>
+                                    </div>
+                                    <div class="col-sm-8 mb-3 mb-sm-0">
+                                        <div id="universidad"><!-- Ajax Data --></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                        <label class="col-form-label">Correo Electrónico:</label>
+                                    </div>
+                                    <div class="col-sm-8 mb-3 mb-sm-0">
+                                        <div id="email"><!-- Ajax Data --></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                        <label class="col-form-label">Carrera:</label>
+                                    </div>
+                                    <div class="col-sm-8 mb-3 mb-sm-0">
+                                        <div id="carrera"><!-- Ajax Data --></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                        <label class="col-form-label">Fecha de Registro:</label>
+                                    </div>
+                                    <div class="col-sm-8 mb-3 mb-sm-0">
+                                        <div id="fecharegis"><!-- Ajax Data --></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <hr>
-                        <div class="form-group row">
+                        <div class="row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-form-label font-weight-bold">Ingrese y seleccione los siguientes datos, al finalizar dé clic en el botón "Asignar":</label>
+                                <p class="font-weight-bold">Ingrese y seleccione los siguientes datos, al finalizar dé clic en el botón "Asignar":</p>                            
                             </div>
                         </div>
                         <div class="form-group row">
@@ -130,7 +130,7 @@
                 </form>
                 <!--FINALIZA FORMULARIO-->
             </div>
-            <div class="collapse" data-toggle="collapse" id="collapsebutton">
+            <!--<div class="collapse" data-toggle="collapse" id="collapsebutton">-->
                 <div class="modal-footer">
                     <div class="row">
                         <a href="#" data-toggle="modal" data-target="#verAdmin">
@@ -138,7 +138,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            <!--</div>-->
         </div>
     </div>
 </div>

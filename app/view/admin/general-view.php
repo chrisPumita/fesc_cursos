@@ -101,7 +101,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="callout callout-second">
-                                        <div class="contariner">
+                                        <div class="container">
                                             <div class="row align-items-center justify-content-center">
                                                 <div class="col-lg-9">
                                                     <h4>Administre la informacion general del sistema</h4>
@@ -144,7 +144,11 @@
                                                 </a>
                                                 <a href="#" class="list-group-item text-center">
                                                     <img src="./assets/img/icons/constancia1.svg" class="card-img-top img-config" alt="">
-                                                    <h6>Constancias</h6>
+                                                    <h6>Constancias Profesores</h6>
+                                                </a>
+                                                <a href="#" class="list-group-item text-center">
+                                                    <img src="./assets/img/icons/constancia1.svg" class="card-img-top img-config" alt="">
+                                                    <h6>Constancias Alumnos</h6>
                                                 </a>
                                             </div>
                                         </div>
@@ -407,9 +411,34 @@
                                             <div class="bhoechie-tab-content">
                                                 <div class="text-center">
                                                     <img src="./assets/img/icons/constancia2.svg" class="card-img-top img-config" alt="">
-                                                    <h2 style="margin-top: 0;color:#55518a">Configuración de Constancias</h2>
+                                                    <h2 style="margin-top: 0;color:#55518a">Constancias de los Profesores</h2>
                                                     <p>
-                                                        Modifique el estilo de las constancia que se le entregaran al alumno y al profesor
+                                                        Modifique el estilo de la constancia que se le entregará al profesor.
+                                                    </p>
+                                                </div>
+                                                <img src="./assets/img/reposit-img/curso-excel.jpg" class="card-img-top img-thumbnail img-preview" alt="img del curso" id="preview">
+                                                <div class="card-body">
+                                                    <h6 class="card-title"><strong>Plantilla de la Constancia</strong></h6>
+                                                    <p class="card-text py-1">Debe tener una resolución de 600px por 300px</p>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <input type="file" class="custom-file-input" id="preview" accept="image/*">
+                                                            <label class="custom-file-label" for="preview" data-browse="Elegir">Seleccione una imagen</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <a href="#"><button type="button" class="btn btn-warning btn-sec btn-block">Quitar</button></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn btn-primary">Guardar</button>
+                                            </div>
+                                            <!-- Constancias alumno section -->
+                                            <div class="bhoechie-tab-content">
+                                                <div class="text-center">
+                                                    <img src="./assets/img/icons/constancia2.svg" class="card-img-top img-config" alt="">
+                                                    <h2 style="margin-top: 0;color:#55518a">Constancias de los Alumnos</h2>
+                                                    <p>
+                                                        Modifique el estilo de la constancia que se le entregará al alumno.
                                                     </p>
                                                 </div>
                                                 <img src="./assets/img/reposit-img/curso-excel.jpg" class="card-img-top img-thumbnail img-preview" alt="img del curso" id="preview">

@@ -21,7 +21,7 @@
                                     <th scope="col">Incripción</th>
                                     <th scope="col">Estado</th>
                                     <th scope="col">Notas</th>
-                                    <th scope="col"></th>
+                                    <th scope="col">Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,10 +39,12 @@
                                             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                <button class="dropdown-item" type="button">Ficha de Insc.</button>
+                                                <a href="./ficha-inscripcion">
+                                                    <button class="dropdown-item" type="button">Ficha de Inscripción</button>
+                                                </a>
                                                 <button class="dropdown-item" type="button">Generar Constancia</button>
-                                                <button class="dropdown-item" type="button">Revisar Doc.</button>
-                                                <button class="dropdown-item" type="button">Cancelar Insc.</button>
+                                                <button class="dropdown-item" type="button">Revisar Documentación</button>
+                                                <button class="dropdown-item" type="button">Cancelar Inscripción</button>
                                             </div>
                                         </div>
                                     </td>
@@ -61,10 +63,12 @@
                                             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                <button class="dropdown-item" type="button">Ficha de Insc.</button>
+                                                <a href="./ficha-inscripcion">
+                                                    <button class="dropdown-item" type="button">Ficha de Inscripción</button>
+                                                </a>
                                                 <button class="dropdown-item" type="button">Generar Constancia</button>
-                                                <button class="dropdown-item" type="button">Revisar Doc.</button>
-                                                <button class="dropdown-item" type="button">Cancelar Insc.</button>
+                                                <button class="dropdown-item" type="button">Revisar Documentación</button>
+                                                <button class="dropdown-item" type="button">Cancelar Inscripción</button>
                                             </div>
                                         </div>
                                     </td>

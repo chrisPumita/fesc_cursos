@@ -40,7 +40,7 @@
                                                 <div class="col-md-8">
                                                     <div class="card-body">
                                                         <div class="mx-auto">
-                                                            <h4 class="text-light text-left"><strong>Juan Álvarez Romo</strong><a href="./detalles-alumno"><i class="icon ion-md-create ml-3"></i></a></h4>
+                                                            <h4 class="text-light text-left"><strong>Juan Álvarez Romo</strong><a href="./detalles-alumno"><img src="./assets/img/icons/edit3.svg" class="mr-2 mb-1" width="40px"></a></h4>
                                                             <h5 class="text-secondary text-left">Inscripción realizada el 22 de Febrero de 2021</h5>
                                                             <h5 class="text-secondary text-left">Concluida el 22 de Agosto de 2021</h5>
                                                         </div>
@@ -97,7 +97,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="media">
                                                         <div class="media-left media-middle">
-                                                            <img src="https://media.istockphoto.com/vectors/blue-flat-checkmark-icon-vector-id1177664322?k=6&m=1177664322&s=612x612&w=0&h=pVTQKGn-b8GGDzJo17qAQOYZuwiSPG9Hw0gYE6ZHgTY=" class="mr-5 mt-2" width=60px alt="">
+                                                            <img src="./assets/img/icons/ok2.svg" class="mr-5 mt-2" width=80px alt="">
                                                         </div>
                                                         <div class="media-body">
                                                             <h6><strong>Inscripción:</strong></h6>
@@ -109,7 +109,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="media">
                                                         <div class="media-left media-middle">
-                                                            <img src="https://i.pinimg.com/originals/da/e1/ee/dae1eec1579cf1d1e5f156933e2b05fb.png" class="mr-5 mt-2" width=60px alt="">
+                                                            <img src="./assets/img/icons/calendar2.svg" class="mr-5 mt-2" width=80px alt="">
                                                         </div>
                                                         <div class="media-body">
                                                             <h6><strong>Fecha:</strong></h6>
@@ -136,7 +136,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="media mb-3">
                                                         <div class="media-left media-middle">
-                                                            <img src="https://play-lh.googleusercontent.com/AeVwiUzhw9HVEg0s19qrGvyS40JuNBwzb94ZPaWiM529_gvC7RgOtObnsM2mgwT5CfY" class="mr-2 mt-0" width=40px alt="">
+                                                            <img src="./assets/img/icons/user1.svg" class="mr-2 mt-0" width=40px alt="">
                                                         </div>
                                                         <div class="media-body">
                                                             <p class="mt-2">Este alumno tiene cuenta de Servicio Social</p>
@@ -144,7 +144,7 @@
                                                     </div>
                                                     <div class="media mb-3">
                                                         <div class="media-left media-middle">
-                                                            <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/calendar-check-o-512.png" class="mr-2 mt-0" width=40px alt="">
+                                                            <img src="./assets/img/icons/check-calendar1.svg" class="mr-2 mt-0" width=40px alt="">
                                                         </div>
                                                         <div class="media-body">
                                                             <p class="mt-2">Inicio: 22 de Febrero de 2021</p>
@@ -152,7 +152,7 @@
                                                     </div>
                                                     <div class="media mb-3">
                                                         <div class="media-left media-middle">
-                                                            <img src="https://png.pngitem.com/pimgs/s/607-6079670_delete-symbol-png-event-vector-icon-transparent-png.png" class="mr-2 mt-0" width=40px alt="">
+                                                            <img src="./assets/img/icons/cross-calendar1.svg" class="mr-2 mt-0" width=40px alt="">
                                                         </div>
                                                         <div class="media-body">
                                                             <p class="mt-2">Fin: 22 de Agosto de 2021</p>
@@ -201,10 +201,10 @@
                                 <div class="col-lg-6">
                                     <div class="media">
                                         <div class="media-left media-middle">
-                                            <img src="https://img1.freepng.es/20180403/lkq/kisspng-solar-calendar-symbol-computer-icons-encapsulated-calendar-icon-5ac41db82504c0.0773126515228021041516.jpg" class="mr-2 ml-2" width=40px alt="">
+                                            <img src="./assets/img/icons/cross-calendar3.svg" class="mr-2 ml-2" width="70px" alt="">
                                         </div>
                                         <div class="media-body">
-                                            <p class="mb-0">Este curso iniciará el día: <span class="font-weight-bold">15 de Junio de 2021</span></p>
+                                            <p class="mb-0 mt-2">Este curso iniciará el día: <span class="font-weight-bold">15 de Junio de 2021</span></p>
                                             <p class="mb-3">Y finalizará el día: <span class="font-weight-bold">15 de Agosto de 2021</span></p>
                                         </div>
                                     </div>
@@ -212,11 +212,11 @@
                                 <div class="col-lg-6">
                                     <div class="media">
                                         <div class="media-left media-middle">
-                                            <img src="https://c0.klipartz.com/pngpicture/490/376/gratis-png-iconos-de-computadora-microbiota-sustantivo-regalo-espiritual-reloj-de-arena-real-thumbnail.png" class="mr-2 mt-1" width=40px alt="">
+                                            <img src="./assets/img/icons/timer3.svg" class="mr-2 ml-2" width="70px" alt="">
                                         </div>
                                         <div class="media-body">
-                                            <p class="mb-0">Límite de Inscripciones</p>
-                                            <p class="mb-0 font-weight-bold">15 de Julio de 2021</p>
+                                            <p class="mb-0 mt-2">Límite de Inscripciones</p>
+                                            <p class="mb-3 font-weight-bold">15 de Julio de 2021</p>
                                         </div>
                                     </div>
                                 </div>
@@ -314,13 +314,21 @@
                                                     <div class="col-lg-3">
                                                         <div class="form-group">
                                                             <select class="form-control" id="sel1">
-                                                                <option>Todos</option>
-                                                                <option>Inscritos</option>
-                                                                <option>Pendientes de Pago</option>
-                                                                <option>Rechazados</option>
-                                                                <option>Constancia Acreditada</option>
-                                                                <option>Constancias Pendiente</option>
+                                                                <option value="0">Todos</option>
+                                                                <option value="1">Aprobados</option>
+                                                                <option value="2">Incorrectos</option>
+                                                                <option value="3">Caducados</option>
+                                                                <option value="4">Rechazados</option>
+                                                                <option value="5">Falsos</option>
+                                                                <option value="6">Eliminados</option>
                                                             </select>
+                                                                <!--<option>Enviado para Verificar</option>
+                                                                <option>Verificado y Aprobado</option>
+                                                                <option>Revisado y en Espera</option>
+                                                                <option>Revisado y Rechazado</option>
+                                                                <option>Incorrecto</option>
+                                                                <option>Falso</option>
+                                                                <option>Eliminado</option>-->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -347,19 +355,7 @@
                                                                     </td>
                                                                     <td>Credencial</td>
                                                                     <td>2 de Febrero de 2021</td>
-                                                                    <td>
-                                                                        <div class="form-group">
-                                                                            <select class="form-control" id="sel1">
-                                                                                <option>Enviado para Verificar</option>
-                                                                                <option>Verificado y Aprobado</option>
-                                                                                <option>Revisado y en Espera</option>
-                                                                                <option>Revisado y Rechazado</option>
-                                                                                <option>Incorrecto</option>
-                                                                                <option>Falso</option>
-                                                                                <option>Eliminado</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </td>
+                                                                    <td>Aceptado</td>
                                                                     <td>PDF</td>
                                                                     <td></td>
                                                                     <td>
@@ -385,19 +381,7 @@
                                                                     </td>
                                                                     <td>Comprobante de Pago</td>
                                                                     <td>15 de Febrero de 2021</td>
-                                                                    <td>
-                                                                        <div class="form-group">
-                                                                            <select class="form-control" id="sel1">
-                                                                                <option>Enviado para Verificar</option>
-                                                                                <option>Verificado y Aprobado</option>
-                                                                                <option>Revisado y en Espera</option>
-                                                                                <option>Revisado y Rechazado</option>
-                                                                                <option>Incorrecto</option>
-                                                                                <option>Falso</option>
-                                                                                <option>Eliminado</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </td>
+                                                                    <td>Rechazado</td>
                                                                     <td>Imagen</td>
                                                                     <td></td>
                                                                     <td>
@@ -423,19 +407,7 @@
                                                                     </td>
                                                                     <td>CURP</td>
                                                                     <td>02 de Febrero de 2021</td>
-                                                                    <td>
-                                                                        <div class="form-group">
-                                                                            <select class="form-control" id="sel1">
-                                                                                <option>Enviado para Verificar</option>
-                                                                                <option>Verificado y Aprobado</option>
-                                                                                <option>Revisado y en Espera</option>
-                                                                                <option>Revisado y Rechazado</option>
-                                                                                <option>Incorrecto</option>
-                                                                                <option>Falso</option>
-                                                                                <option>Eliminado</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </td>
+                                                                    <td>Caducado</td>
                                                                     <td>Documento</td>
                                                                     <td></td>
                                                                     <td>

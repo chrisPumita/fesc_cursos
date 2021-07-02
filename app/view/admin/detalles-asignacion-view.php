@@ -127,9 +127,9 @@
                                                 <div class="px-1">
                                                     <div id="accordion">
                                                         <div class="card">
-                                                            <div class="card-header" id="headingOne">
+                                                            <div class="card-header collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                                                 <h5 class="mb-0">
-                                                                    <button class="btn text-primary collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                                    <button class="btn text-primary">
                                                                     Detalles
                                                                     </button>
                                                                 </h5>
@@ -144,9 +144,9 @@
                                                             </div>
                                                         </div>
                                                         <div class="card">
-                                                            <div class="card-header" id="headingTwo">
+                                                            <div class="card-header collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                                 <h5 class="mb-0">
-                                                                    <button class="btn text-primary collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                    <button class="btn text-primary">
                                                                     Objetivo
                                                                     </button>
                                                                 </h5>
@@ -158,9 +158,9 @@
                                                             </div>
                                                         </div>
                                                         <div class="card">
-                                                            <div class="card-header" id="headingThree">
+                                                            <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                                                 <h5 class="mb-0">
-                                                                    <button class="btn text-primary collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                                    <button class="btn text-primary">
                                                                     Antecedentes
                                                                     </button>
                                                                 </h5>
@@ -180,13 +180,13 @@
                                                 <h6><strong>PDF del temario descargable</strong></h6>
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-download"></i> Descargar</a>
+                                                        <a href="#" class="btn btn-primary btn-block"><img src="./assets/img/icons/download3.svg" class="mr-2 mb-1" width="20px">Descargar</a>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-cloud"></i> Subir</a>
+                                                        <a href="#" class="btn btn-primary btn-block"><img src="./assets/img/icons/upload3.svg" class="mr-2 mb-1" width="20px">Subir</a>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-eye"></i> Ver</a>
+                                                        <a href="#" class="btn btn-primary btn-block"><img src="./assets/img/icons/see3.svg" class="mr-1 mb-1" width="24px">Ver</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -223,6 +223,15 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <h3>Horario Presencial</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-10">
+                                </div>
+                                <div class="col-lg-2">
+                                    <a href="#" data-toggle="modal" data-target="#horarioPresencial">
+                                        <button class="btn btn-primary mb-2 w-100" type="button">Agregar</button>
+                                    </a>
                                 </div>
                             </div>
                             <div class="row">
@@ -287,6 +296,15 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-lg-10">
+                                </div>
+                                <div class="col-lg-2">
+                                    <a href="#" data-toggle="modal" data-target="#horarioVirtual">
+                                        <button class="btn btn-primary mb-2 w-100" type="button">Agregar</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-lg-12 overflow-auto table-responsive">
                                     <table class="table table-hover table-striped table-sm bg-light">
                                         <thead>
@@ -340,11 +358,11 @@
                         </section>
                         <!-- FIN TABLA HORARIO VIRTUAL -->
 
-                        <!-- INICIO TABLA ALUMNOS INSCRITOS-->
+                        <!-- INICIA TABLA DE SOLICITUDES DE INSCRIPCIÓN-->
                         <section class="container py-3 bg-grey">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h3>Alumnos Inscritos</h3>
+                                    <h3>Solicitudes de Inscripción</h3>
                                 </div>
                             </div>
                             <div class="row">
@@ -355,12 +373,10 @@
                                                 <th scope="col">Matricula</th>
                                                 <th scope="col">Nombre</th>
                                                 <th scope="col">Pago</th>
-                                                <th scope="col">Constancia</th>
                                                 <th scope="col">Incripción</th>
                                                 <th scope="col">Estado</th>
-                                                <th scope="col">Cal.</th>
                                                 <th scope="col">Notas</th>
-                                                <th scope="col"></th>
+                                                <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -369,20 +385,22 @@
                                                 <td>Jennifer Morales Rosas</td>
                                                 <td>Acreditado</td>
                                                 <td>Pendiente</td>
-                                                <td>Acreditada</td>
                                                 <td>Activo</td>
-                                                <td>8</td>
                                                 <td>-------------------</td>
                                                 <td>
                                                     <!-- BOTON ACCIONES -->
                                                     <div class="dropdown">
                                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                                        
+                                                            Opciones
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <button class="dropdown-item" type="button">Ficha de Insc.</button>
-                                                            <button class="dropdown-item" type="button">Generar Constancia</button>
-                                                            <button class="dropdown-item" type="button">Revisar Doc.</button>
-                                                            <button class="dropdown-item" type="button">Cancelar Insc.</button>
+                                                            <a href="./ficha-inscripcion">
+                                                                <button class="dropdown-item" type="button">Ficha de inscripción</button>
+                                                            </a>
+                                                            <a href="./ficha-inscripcion">
+                                                                <button class="dropdown-item" type="button">Revisar Documentación</button>
+                                                            </a>
+                                                            <button class="dropdown-item" type="button">Cancelar Inscripción</button>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -392,20 +410,122 @@
                                                 <td>Luis Bautista Miranda</td>
                                                 <td>Acreditado</td>
                                                 <td>Pendiente</td>
-                                                <td>Acreditada</td>
                                                 <td>Activo</td>
-                                                <td>10</td>
                                                 <td>-------------------</td>
                                                 <td>
                                                     <!-- BOTON ACCIONES -->
                                                     <div class="dropdown">
                                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                                        
+                                                            Opciones    
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                            <button class="dropdown-item" type="button">Ficha de Insc.</button>
+                                                            <a href="./ficha-inscripcion">
+                                                                <button class="dropdown-item" type="button">Ficha de inscripción</button>
+                                                            </a>
+                                                            <a href="./ficha-inscripcion">
+                                                                <button class="dropdown-item" type="button">Revisar Documentación</button>
+                                                            </a>
+                                                            <button class="dropdown-item" type="button">Cancelar Inscripción</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>                                                                                      
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- PAGINADOR DE TABLA -->
+                            <div class="row">
+                                <div class="col-lg-12 my-2">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Siguiente</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!-- FIN PAGINADOR -->
+                        </section>
+                        <!-- FINALIZA TABLA DE SOLICITUDES DE INSCRIPCIÓN-->
+
+                        <!-- INICIA TABLA DE LISTA OFICIAL DE GRUPO-->
+                        <section class="container py-3 bg-grey">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h3>Lista Oficial de Grupo</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 overflow-auto table-responsive">
+                                    <table class="table table-hover table-striped table-sm bg-light">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Matricula</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Fecha de incorporación</th>
+                                                <th scope="col">Estado</th>
+                                                <th scope="col">Calificación</th>
+                                                <th scope="col">Constancia</th>
+                                                <th scope="col">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>316344483</td>
+                                                <td>Jennifer Morales Rosas</td>
+                                                <td>05-02-21</td>
+                                                <td>Activo</td>
+                                                <td>---------</td>
+                                                <td>Pendiente</td>
+                                                <td>
+                                                    <!-- BOTON ACCIONES -->
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                                        
+                                                            Opciones    
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                            <a href="./ficha-inscripcion">
+                                                                <button class="dropdown-item" type="button">Ficha de Inscripción</button>
+                                                            </a>
                                                             <button class="dropdown-item" type="button">Generar Constancia</button>
-                                                            <button class="dropdown-item" type="button">Revisar Doc.</button>
-                                                            <button class="dropdown-item" type="button">Cancelar Insc.</button>
+                                                            <a href="./ficha-inscripcion">
+                                                                <button class="dropdown-item" type="button">Revisar Documentación</button>
+                                                            </a>
+                                                            <button class="dropdown-item" type="button">Cancelar Inscripción</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>316344483</td>
+                                                <td>Luis Bautista Miranda</td>
+                                                <td>02-02-21</td>
+                                                <td>Activo</td>
+                                                <td>----------</td>
+                                                <td>Pendiente</td>
+                                                <td>
+                                                    <!-- BOTON ACCIONES -->
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                                        
+                                                            Opciones
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                            <a href="./ficha-inscripcion">
+                                                                <button class="dropdown-item" type="button">Ficha de Inscripción</button>
+                                                            </a>
+                                                            <button class="dropdown-item" type="button">Generar Constancia</button>
+                                                            <a href="./ficha-inscripcion">
+                                                                <button class="dropdown-item" type="button">Revisar Documentación</button>
+                                                            </a>
+                                                            <button class="dropdown-item" type="button">Cancelar Inscripción</button>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -440,7 +560,7 @@
                                 </div> 
                             </div>
                         </section>
-                        <!-- FIN TABLA ALUMNOS INSCRITOS-->
+                        <!-- FINALIZA TABLA DE LISTA OFICIAL DE GRUPO-->
 
                     </div>
                     <!--FIN contenido dinamico-->
@@ -448,6 +568,8 @@
                 </div>
             </div>
         </div>
+        <?php include "modal-horariopresencial-grupo.php";?>
+        <?php include "modal-horariovirtual-grupo.php";?>
         <!-- script_js -->
     </body>
 </html>
