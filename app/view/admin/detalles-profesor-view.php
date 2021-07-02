@@ -171,13 +171,12 @@ include("./view/includes/header.php");
                             </div>
                             <div class="col-sm-6">
                                 <div class="card">
-                                    <div class="card-body">
+                                    <div class="card-body" id="contenedorasignacion">
                                         <h5 class="card-title font-weight-bold">Asignar grupo</h5>
                                         <p class="card-text text-muted">Crear y asignar un grupo nuevo a este profesor.</p>
-                                        <select class="form-control" id="curso">
-                                            <option>2422 Curso Páginas Web</option>
-                                            <option>2523 Iniciación al Cómputo </option>
-                                            <option>2624 Excel Financiero</option>
+                                        <select class="form-control" id="cursolista">
+
+
                                         </select>
                                         <a href="./nueva-asignacion">
                                             <button type="button" class="btn btn-primary w-100 mt-4 mb-2 text-align-right">Crear</button>
@@ -186,37 +185,7 @@ include("./view/includes/header.php");
                                 </div>
                             </div>
                         </div>
-                        <!-- ACCESOS RAPIDOS admin -->
-                        <div class="row">
-                            <div class="col-lg-12 py-3">
-                                <h3>Accesos Rápidos Admin</h3>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title font-weight-bold">Cambiar Contraseña</h5>
-                                        <p class="card-text text-muted">En este apartado puede cambiar su contraseña actual.</p>
-                                        <a href="#" data-toggle="modal" data-target="#cambiopassword">
-                                            <button class="btn btn-primary w-100 aling-self-center mt-3">Cambiar</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title font-weight-bold">Cambiar Clave de Confirmación</h5>
-                                        <p class="card-text text-muted">En este apartado puede cambiar su clave de confirmación actual.</p>
-                                        <a href="#" data-toggle="modal" data-target="#cambioclaveconfirm">
-                                            <button class="btn btn-primary w-100 aling-self-center mt-3">Cambiar</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                            <!-- FIN ACCESOS RAPIDOS ADMIN -->
+
                     </section>
                     <!-- FIN DE SECCION ACCESOS RAPIDOS -->
 

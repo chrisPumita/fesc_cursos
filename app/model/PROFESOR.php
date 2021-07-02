@@ -230,8 +230,17 @@ class PROFESOR extends PERSONA implements I_PROFESOR
         prof.`email`, prof.`key_hash`, prof.`fecha_registro`, 
         prof.`firma_digital`, prof.`firma_digital_img`, 
         prof.`estatus` AS estatus_profesor, 
-        depto.`id_depto`, depto.`nombre` AS depto_name 
-        FROM `profesor` prof, `persona` per,`departamentos` depto 
+        depto.`id_depto`, depto.`nombre` AS depto_name,
+        prof.`id_profesor`, prof.`no_trabajador`, prof.`prefijo`, 
+        prof.`email`, prof.`key_hash`, prof.`fecha_registro`, 
+        prof.`firma_digital`, prof.`firma_digital_img`, 
+        prof.`estatus` AS estatus_profesor,
+        CASE WHEN admin.id_profesor_admin_fk IS NULL THEN 0
+    	ELSE admin.id_profesor_admin_fk
+        END AS admin
+      
+        FROM  `persona` per,`departamentos` depto,`profesor` prof 
+        LEFT JOIN administrador admin ON  prof.id_profesor 			=admin.`id_profesor_admin_fk`
         WHERE prof.`id_persona_fk`=per.`id_persona` 
         AND per.`estatus` = 1
         AND prof.`id_depto_fk`= depto.`id_depto` 

@@ -150,14 +150,16 @@ function consultaListaProfesoresA(){
                         edoCta="Inactiva";
                         colorBool = "red";
                     }
+                    $estado_admin= obj_result.admin>0? "<span class='badge badge-success'>admin</span>":"";
                     template += `<tr id_profesor =${"'"+obj_result.id_profesor+"' "}>
                                 <th scope="row">${cont}</th>
                                 <td>${obj_result.no_trabajador}</td>
-                                <td>${obj_result.app+" "+obj_result.apm+" "+obj_result.nombre}</td>
+                                <td>${obj_result.app+" "+obj_result.apm+" "+obj_result.nombre+" "+$estado_admin} </td>
                                 <td>${obj_result.depto_name}</td>
                                 <td>${obj_result.telefono}</td>
                                 <td>${obj_result.email}</td>
                                 <td>${obj_result.fecha_registro}</td>
+                                
                                 <td><a href="" data-toggle="tooltip" data-placement="left" title="Cuenta ${edoCta}">
                                     <img src="./assets/img/${img}" class="rounded float-left" alt="..." width="60"></a>
                                     <div class="blob ${colorBool}"></div>
