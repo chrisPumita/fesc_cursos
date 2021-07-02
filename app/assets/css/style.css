@@ -75,6 +75,47 @@ a:hover{
 .card {
     width: -webkit-fill-available !important;
 }
+
+.img_bg_cards{
+    max-height: 300px;
+    background-repeat: no-repeat;
+    background-size: 80px;
+    background-position-x: right;
+    background-position-y: center;
+}
+
+.img-icon-menu{
+    background-repeat: no-repeat !important;
+    background-size: 40px !important;
+    background-position-x: left !important;
+    background-position-y: center !important;
+    padding-left: 50px !important;
+}
+
+
+/*   HOVER EN MENUS DE PC*/
+.menu-teacher{
+    background: url(../img/icons/teacher3.svg);
+}
+.menu-teacher:hover{
+    background: url(../img/icons/teacher1.svg);
+}
+.menu-alumnos{
+    background: url(../img/icons/comunidad1.svg);
+}
+.menu-alumnos:hover{
+    background: url(../img/icons/comunidad3.svg);
+}
+.menu-cursos{
+    background: url(../img/icons/grado1.svg);
+}
+.menu-cursos:hover{
+    background: url(../img/icons/grado3.svg);
+}
+
+/*   HOVER EN MENUS DE PC*/
+
+
 .btn-search{
     right: 5px;
 }

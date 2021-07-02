@@ -53,9 +53,8 @@ include("./view/includes/header.php");
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="card">
-                                    <div class="card-body">
+                                    <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/grado3.svg);">
                                         <div class="mx-auto">
-                                            <i class="icon ion-md-rocket mr-1 position-absolute paleta"></i>
                                             <h6 class="text-muted"></i><STrong>Cursos</STrong></h6>
                                             <!-- esto se trae con AJAX-->
                                             <h3 class="font-weight-bold" id="countCursos"></h3>
@@ -66,9 +65,9 @@ include("./view/includes/header.php");
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="card">
-                                    <div class="card-body">
+                                    <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/grado3.svg);">
                                         <div class="mx-auto">
-                                            <i class="icon ion-md-checkmark mr-1 position-absolute paleta"></i>
+
                                             <h6 class="text-muted"><strong>Constancias</strong></h6>
                                             <!-- esto se trae con AJAX-->
                                             <h3 class="font-weight-bold" id="countConstancias"></h3>
