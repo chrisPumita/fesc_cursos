@@ -43,7 +43,7 @@
                             <div class="container bg-white">
                                 <div class="row align-items-center justify-content-center">
                                     <div class="col-lg-1">
-                                        <i class="icon ion-md-mail paleta ml-2"></i>
+                                        <img src="./assets/img/icons/mail4.svg" width="90px">
                                     </div>
                                     <div class="col-lg-5">
                                         <h4 class="mt-3">Envíar invitación de registro</h4>

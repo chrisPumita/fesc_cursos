@@ -92,25 +92,57 @@ a:hover{
     padding-left: 50px !important;
 }
 
+.img-icon-menu-principal{
+    background-repeat: no-repeat !important;
+    background-size: 28px !important;
+    background-position-x: left !important;
+    background-position-y: center !important;
+    padding-left: 50px !important;
+    margin-left: 3px;
+}
 
 /*   HOVER EN MENUS DE PC*/
+.menu-principal{
+    background: url(../img/icons/principal1.svg);
+}
+.menu-principal:hover{
+    background: url(../img/icons/principal3.svg);
+}
 .menu-teacher{
     background: url(../img/icons/teacher3.svg);
 }
 .menu-teacher:hover{
     background: url(../img/icons/teacher1.svg);
 }
-.menu-alumnos{
-    background: url(../img/icons/comunidad1.svg);
-}
-.menu-alumnos:hover{
-    background: url(../img/icons/comunidad3.svg);
-}
 .menu-cursos{
     background: url(../img/icons/grado1.svg);
 }
 .menu-cursos:hover{
     background: url(../img/icons/grado3.svg);
+}
+.menu-grupos{
+    background: url(../img/icons/group1.svg);
+}
+.menu-grupos:hover{
+    background: url(../img/icons/group3.svg);
+}
+.menu-alumnos{
+    background: url(../img/icons/comunidad1.svg);
+}
+.menu-alumnos:hover{
+    background: url(../img/icons/comunidad5.svg);
+}
+.menu-cuentas{
+    background: url(../img/icons/accounts1.svg);
+}
+.menu-cuentas:hover{
+    background: url(../img/icons/accounts3.svg);
+}
+.menu-servicio{
+    background: url(../img/icons/socialserv1.svg);
+}
+.menu-servicio:hover{
+    background: url(../img/icons/socialserv3.svg);
 }
 
 /*   HOVER EN MENUS DE PC*/

@@ -33,9 +33,7 @@ include("./view/includes/header.php");
                                         </div>
                                         <div class="col-lg-3">
                                             <a href="./lista-cursos">
-                                                <button class="btn btn-primary w-100 aling-self-center m-3">
-                                                    <i class="icon ion-md-cloud-upload mr-2 lead"></i>Ver Cursos
-                                                </button>
+                                                <button class="btn btn-primary w-100 aling-self-center m-3">Ver Cursos</button>
                                             </a>                            
                                         </div>
                                     </div>
@@ -53,7 +51,7 @@ include("./view/includes/header.php");
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="card">
-                                    <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/grado3.svg);">
+                                    <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/grado4.svg);">
                                         <div class="mx-auto">
                                             <h6 class="text-muted"></i><STrong>Cursos</STrong></h6>
                                             <!-- esto se trae con AJAX-->
@@ -65,7 +63,7 @@ include("./view/includes/header.php");
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="card">
-                                    <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/grado3.svg);">
+                                    <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/constancia4.svg);">
                                         <div class="mx-auto">
 
                                             <h6 class="text-muted"><strong>Constancias</strong></h6>
@@ -78,9 +76,8 @@ include("./view/includes/header.php");
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="card">
-                                    <div class="card-body">
+                                    <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/inscripciones4.svg);">
                                         <div class="mx-auto">
-                                            <i class="icon ion-md-stats mr-1 position-absolute paleta"></i>
                                             <h6 class="text-muted"><strong>Inscripciones</strong></h6>
                                             <!-- esto se trae con AJAX-->
                                             <h3 class="font-weight-bold" id="countInscripciones"></h3>
@@ -91,9 +88,8 @@ include("./view/includes/header.php");
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="card">
-                                    <div class="card-body">
+                                    <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/comunidad4.svg);">
                                         <div class="mx-auto">
-                                            <i class="icon ion-md-contacts mr-1 position-absolute paleta"></i>
                                             <h6 class="text-muted"><strong>Alumnos</strong></h6>
                                             <!-- esto se trae con AJAX-->
                                             <h3 class="font-weight-bold" id="countAlumnos"></h3>
@@ -139,7 +135,7 @@ include("./view/includes/header.php");
                             </div>
                             <!-- PAGINADOR DE TABLA -->
                             <div class="row">
-                                <div class="col-lg-12 my-2" id="tbl-container2Grupos>
+                                <div class="col-lg-12 my-2" id="tbl-container2Grupos">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination justify-content-center">
                                             <li class="page-item disabled">
@@ -306,7 +302,7 @@ include("./view/includes/header.php");
                                         <p class="card-text text-muted">Buscar alumno para ver su situacion actual dentro del sistema de inscripción de cursos. Ingresar numero de cuenta registrado por el alumno.</p>
                                         <form class="form-inline position-relative my-2 d-inline-block w-100">
                                             <input class="form-control mr-sm-2" type="search" placeholder="Buscar alumno" aria-label="Search">
-                                            <button class="btn btn-search position-relative posicion-btn" type="submit"><i class="icon ion-md-search"></i></button>
+                                            <button class="btn btn-search position-relative posicion-btn" type="submit"><img src="./assets/img/icons/buscar1.svg" width="24px"></i></button>
                                         </form>
                                     </div>
                                 </div>

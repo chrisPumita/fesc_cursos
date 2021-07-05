@@ -123,15 +123,15 @@
                                         <div class="bhoechie-tab-menu">
                                             <div class="list-group">
                                                 <a href="#" class="list-group-item active text-center">
-                                                    <img src="./assets/img/icons/folder.svg" class="card-img-top img-config" alt="">
+                                                    <img src="./assets/img/icons/depto3.svg" class="card-img-top img-config" alt="">
                                                     <h6>Departamentos</h6>
                                                 </a>
                                                 <a href="#" class="list-group-item text-center">
-                                                    <img src="./assets/img/icons/grado3.svg" class="card-img-top img-config" alt="">
+                                                    <img src="./assets/img/icons/uni3.svg" class="card-img-top img-config" alt="">
                                                     <h6>Universidades</h6>
                                                 </a>
                                                 <a href="#" class="list-group-item text-center">
-                                                    <img src="./assets/img/icons/comunidad3.svg" class="card-img-top img-config" alt="">
+                                                    <img src="./assets/img/icons/comunidad5.svg" class="card-img-top img-config" alt="">
                                                     <h6>Procedencias</h6>
                                                 </a>
                                                 <a href="#" class="list-group-item text-center">
@@ -139,7 +139,7 @@
                                                     <h6>Aulas</h6>
                                                 </a>
                                                 <a href="#" class="list-group-item text-center">
-                                                    <img src="./assets/img/icons/seleccion3.svg" class="card-img-top img-config" alt="">
+                                                    <img src="./assets/img/icons/doc1.svg" class="card-img-top img-config" alt="">
                                                     <h6>Documentos</h6>
                                                 </a>
                                                 <a href="#" class="list-group-item text-center">
@@ -158,7 +158,7 @@
                                             <!-- Deptos section -->
                                             <div class="bhoechie-tab-content active">
                                                 <div class="text-center">
-                                                    <img src="./assets/img/icons/folder2.svg" class="card-img-top img-config" alt="">
+                                                    <img src="./assets/img/icons/depto1.svg" class="card-img-top img-config" alt="">
                                                     <h2 style="margin-top: 0;color:#55518a">Departamentos</h2>
                                                     <p>
                                                         Departamentos disponibles del sistema
@@ -191,7 +191,7 @@
                                             <!-- Universidades section -->
                                             <div class="bhoechie-tab-content">
                                                 <div class="text-center">
-                                                    <img src="./assets/img/icons/grado1.svg" class="card-img-top img-config" alt="">
+                                                    <img src="./assets/img/icons/uni1.svg" class="card-img-top img-config" alt="">
                                                     <h2 style="margin-top: 0;color:#55518a">Universidades</h2>
                                                     <p>
                                                         Agregue o edite las Universidades
@@ -375,7 +375,7 @@
                                             <!-- Documentos section -->
                                             <div class="bhoechie-tab-content">
                                                 <div class="text-center">
-                                                    <img src="./assets/img/icons/seleccion1.svg" class="card-img-top img-config" alt="">
+                                                    <img src="./assets/img/icons/doc3.svg" class="card-img-top img-config" alt="">
                                                     <h2 style="margin-top: 0;color:#55518a">Tipo de Documentos</h2>
                                                     <p>
                                                         Agregue o edite las documentos que podra solicitar al momento de abrir un grupo

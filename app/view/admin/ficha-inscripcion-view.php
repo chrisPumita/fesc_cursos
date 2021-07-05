@@ -136,7 +136,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="media mb-3">
                                                         <div class="media-left media-middle">
-                                                            <img src="./assets/img/icons/user1.svg" class="mr-2 mt-0" width=40px alt="">
+                                                            <img src="./assets/img/icons/socialserv-active1.svg" class="mr-2 mt-0" width=40px alt="">
                                                         </div>
                                                         <div class="media-body">
                                                             <p class="mt-2">Este alumno tiene cuenta de Servicio Social</p>

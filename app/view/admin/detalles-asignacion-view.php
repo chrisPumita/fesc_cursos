@@ -35,9 +35,8 @@
                                 <div class="row py-3">
                                     <div class="col-sm-3">
                                         <div class="card">
-                                            <div class="card-body">
+                                            <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/solicitud4.svg);">
                                                 <div class="mx-auto">
-                                                    <i class="icon ion-md-rocket mr-1 position-absolute paleta"></i>
                                                     <h6 class="text-muted"><strong>Solicitudes</strong></h6>
                                                     <h3 class="font-weight-bold">3</h3>
                                                     <h6 class="text-warning">Pendientes por revisar</h6>
@@ -47,9 +46,8 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="card">
-                                            <div class="card-body">
+                                            <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/constancia4.svg);">
                                                 <div class="mx-auto">
-                                                    <i class="icon ion-md-checkmark mr-1 position-absolute paleta"></i>
                                                     <h6 class="text-muted"><strong>Constancias</strong></h6>
                                                     <h3 class="font-weight-bold">26</h3>
                                                     <h6 class="text-warning">Pendientes</h6>
@@ -59,9 +57,8 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="card">
-                                            <div class="card-body">
+                                            <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/inscripciones4.svg);">
                                                 <div class="mx-auto">
-                                                    <i class="icon ion-md-stats mr-1 position-absolute paleta"></i>
                                                     <h6 class="text-muted"><strong>Inscripciones</strong></h6>
                                                     <h3 class="font-weight-bold">17</h3>
                                                     <h6 class="text-success">Acreditadas</h6>
@@ -71,9 +68,8 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="card">
-                                            <div class="card-body">
+                                            <div class="card-body img_bg_cards" style="background-image: url(./assets/img/icons/check4.svg);">
                                                 <div class="mx-auto">
-                                                    <i class="icon ion-md-contacts mr-1 position-absolute paleta"></i>
                                                     <h6 class="text-muted"><strong>Estatus</strong></h6>
                                                     <h6 class="text-success">ACTIVO</h6>
                                                     <h6 class="text-success">Este curso esta activo</h6>
@@ -203,7 +199,7 @@
                                                 <p class="card-text py-1">Debe tener una resolución de 600px por 300px</p>
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <a href="#" class="btn btn-primary btn-block"><i class="icon ion-md-refresh"></i> Cambiar</a>
+                                                        <a href="#" class="btn btn-primary btn-block"><img src="./assets/img/icons/change1.svg" class="mr-1 mb-1" width="24px">Cambiar</a>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <a href="#"><button type="button" class="btn btn-warning btn-sec btn-block">Quitar</button></a>

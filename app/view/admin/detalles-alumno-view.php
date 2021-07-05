@@ -232,7 +232,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="media mb-3">
                                                         <div class="media-left media-middle">
-                                                            <img src="https://play-lh.googleusercontent.com/AeVwiUzhw9HVEg0s19qrGvyS40JuNBwzb94ZPaWiM529_gvC7RgOtObnsM2mgwT5CfY" class="mr-2 mt-0" width=40px alt="">
+                                                            <img src="./assets/img/icons/socialserv-active1.svg" class="mr-2 mt-0" width=40px alt="">
                                                         </div>
                                                         <div class="media-body">
                                                             <p class="mt-2">Este alumno tiene cuenta de Servicio Social</p>
@@ -240,7 +240,7 @@
                                                     </div>
                                                     <div class="media mb-3">
                                                         <div class="media-left media-middle">
-                                                            <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/calendar-check-o-512.png" class="mr-2 mt-0" width=40px alt="">
+                                                            <img src="./assets/img/icons/check-calendar1.svg" class="mr-2 mt-0" width=40px alt="">
                                                         </div>
                                                         <div class="media-body">
                                                             <p class="mt-2">Fecha de Inicio: 22 de Febrero de 2021</p>
@@ -248,7 +248,7 @@
                                                     </div>
                                                     <div class="media mb-3">
                                                         <div class="media-left media-middle">
-                                                            <img src="https://png.pngitem.com/pimgs/s/607-6079670_delete-symbol-png-event-vector-icon-transparent-png.png" class="mr-2 mt-0" width=40px alt="">
+                                                            <img src="./assets/img/icons/cross-calendar1.svg" class="mr-2 mt-0" width=40px alt="">
                                                         </div>
                                                         <div class="media-body">
                                                             <p class="mt-2">Fecha de Término: 22 de Agosto de 2021</p>
@@ -256,7 +256,7 @@
                                                     </div>
                                                     <div class="media mb-3">
                                                         <div class="media-left media-middle">
-                                                            <img src="https://image.flaticon.com/icons/png/512/42/42288.png" class="mr-2 mt-0" width=40px alt="">
+                                                            <img src="./assets/img/icons/calendar1.svg" class="mr-2 mt-0" width=40px alt="">
                                                         </div>
                                                         <div class="media-body">
                                                             <p class="mt-2">Fecha de Alta: 23 de Febrero de 2021</p>
