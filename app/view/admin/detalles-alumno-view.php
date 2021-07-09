@@ -1,3 +1,10 @@
+<?php
+    if (!isset($_POST['id_alumno'])){
+        header('Location: ./lista-alumnos');
+    }
+    $id_alumno = $_POST['id_alumno'];
+?>
+
 <!doctype html>
 <html lang="en">
     <?php
@@ -59,7 +66,8 @@
                                             <label class="col-form-label">Nombre(s): </label>
                                         </div>
                                         <div class="col-lg-9 mt-3 mb-1">
-                                            <input type="text" class="form-control" id="txt-nombre" name="nombre" placeholder="Nombre(s)" aria-label="Nombres">
+                                            <input type="text" class="form-control" id="nombreAlumno" name="nombreAlumno" placeholder="Nombre(s)" aria-label="Nombres">
+                                            <input type="text" class="form-control" id="idAlumno" name="idAlumno" placeholder="Nombre(s)" aria-label="Nombres" value="<?php echo $id_alumno;?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -90,15 +98,11 @@
                                         <div class="col-lg-3 mb-1 text-right">
                                             <label class="col-form-label">Sexo:</label>
                                         </div>
-                                        <div class="col-lg-9 mb-1">
-                                            <div class="custom-control custom-radio custom-control-inline mt-2">
-                                                <input type="radio" id="rbnHombre" name="sexo" class="custom-control-input" value="0" checked>
-                                                <label class="custom-control-label" for="rbnHombre">Hombre</label>
-                                            </div>
-                                            <div class="custom-control custom-radio custom-control-inline mt-2">
-                                                <input type="radio" id="rbnMujer" name="sexo" class="custom-control-input"  value="1">
-                                                <label class="custom-control-label" for="rbnMujer">Mujer</label>
-                                            </div>
+                                        <div class="col-lg-9 mb-1" >
+                                            <select class="form-control" id="sexo">
+                                                <option value="0">Hombre</option>
+                                                <option value="1">Mujer</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -106,7 +110,7 @@
                                             <label class="col-form-label">Correo Electrónico:</label>
                                         </div>
                                         <div class="col-lg-9 mb-1">
-                                            <input type="text" class="form-control" id="txt-correo" name="correo" placeholder="ejemplo@dominio.com" aria-label="Correo">
+                                            <input type="text" class="form-control" id="correoAlumno" name="correoAlumno" placeholder="ejemplo@dominio.com" aria-label="Correo">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -114,10 +118,8 @@
                                             <label class="col-form-label">Estado:</label>
                                         </div>
                                         <div class="col-lg-9 mb-1">
-                                            <select class="form-control" id="list-estado">
-                                                <option>Aguascalientes</option>
-                                                <option>Baja California</option>
-                                                <option>Baja California Sur</option>
+                                            <select class="form-control" name="estados" id="estados">
+                                                <!--AJAX-->
                                             </select>
                                         </div>
                                     </div>
@@ -126,10 +128,8 @@
                                             <label class="col-form-label">Municipio:</label>
                                         </div>
                                         <div class="col-lg-9 mb-1">
-                                            <select class="form-control" id="list-municipio">
-                                                <option>Cuautitlán</option>
-                                                <option>Cuautitlán Izcalli</option>
-                                                <option>Teoloyucan</option>
+                                            <select class="form-control" id="municipios">
+                                                <!--AJAX-->
                                             </select>
                                         </div>
                                     </div>
@@ -138,10 +138,8 @@
                                             <label class="col-form-label">Procedencia:</label>
                                         </div>
                                         <div class="col-lg-9 mb-1">
-                                            <select class="form-control" id="list-procedencia">
-                                                <option>Comunidad FESC</option>
-                                                <option>ExAlumno</option>
-                                                <option>Externo</option>
+                                            <select class="form-control" id="procedencia">
+                                                <!--AJAX-->
                                             </select>
                                         </div>
                                     </div>
@@ -150,10 +148,8 @@
                                             <label class="col-form-label">Universidad:</label>
                                         </div>
                                         <div class="col-lg-9 mb-1">
-                                            <select class="form-control" id="list-universidad">
-                                                <option>UNAM</option>
-                                                <option>IPN</option>
-                                                <option>UAM</option>
+                                            <select class="form-control" id="universidades">
+                                               <!--AJAX-->
                                             </select>
                                         </div>
                                     </div>
@@ -448,5 +444,13 @@
         </div>
         <?php include "modal-serviciosocial-alumno.php";?>
         <?php include "modal-ver-solicitudes.php"; ?>
+        <script>
+            let pagList = false;
+            let is_login = false;
+            let filtroAlumno = -1;
+        </script>
+        <!-- script_js -->
+        <script src="./ajax/alumno_ajax.js"></script>
+        <script src="./ajax/tools.js"></scriptsrc>
     </body>
 </html>

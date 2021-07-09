@@ -2,7 +2,7 @@
 
 interface I_ALUMNO
 {
-    public function consultarListaAlumnos();
+    public function consultarListaAlumnos($edoFiltro,$idAlumno);
     function consultaAlumno($id_alumno);
     public function filtrarListaAlumnos($tipo_filtro, $valor);
     function agregaAlumno();

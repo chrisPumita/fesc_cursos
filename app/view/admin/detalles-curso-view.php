@@ -491,7 +491,7 @@
     </body>
     <!-- script_js -->
     <script>
-        var lista = false;
+        var pagList = false;
         var filtro_curso = -1;
     </script>
 

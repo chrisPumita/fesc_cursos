@@ -88,7 +88,6 @@ function cargadatosProfesor(id_profesor){
                 obj_result.forEach(
                     (obj_result)=>
                     {
-
                         $("#abreviatura").html(` <option ${obj_result.prefijo =='Lic.' ? 'selected' : '' } > Lic.</option>
                                                         <option ${obj_result.prefijo =='Mto.' ? 'selected' : obj_result.prefijo =='Mta.'? 'selected':'' }>${obj_result.prefijo=='Mta.'?'Mta.':'Mto.'}</option>
                                                         <option ${obj_result.prefijo =='Dr.' ? 'selected' : obj_result.prefijo =='Dra.'? 'selected':'' }>${obj_result.prefijo=='Dra.'?'Dra.':'Dr.'}</option>`);

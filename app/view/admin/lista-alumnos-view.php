@@ -87,8 +87,10 @@
         </div>
     <script>
         let pagList = true;
+        let is_login  = false;
     </script>
     <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
     <script src="./ajax/alumno_ajax.js"></script>
+    <script src="./ajax/tools.js"></script>
     </body>
 </html>

@@ -4,6 +4,6 @@ require_once "./control/vistasControlador.php";
 //Star with Role admin, student, teach
 
 //Control SESSION dependiendo el rool en el que se logueo
-$rol = "student";
+$rol = "admin";
 $plantilla = new vistasControlador();
 $plantilla->obtener_plantilla_controlador($rol);

@@ -106,6 +106,7 @@
 <!--  Control de alumnos de ajax-->
 <script>
     let pagList = false;
+    let is_login = true;
 </script>
 <script src="./app/ajax/alumno_ajax.js"></script>
 <script src="./app/ajax/validar-form.js"></script>

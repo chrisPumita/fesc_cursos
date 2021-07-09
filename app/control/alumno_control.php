@@ -1,11 +1,11 @@
 <?php
 include_once "../model/ALUMNO.php";
 
-function consultaListaAlumnos()
+function consultaListaAlumnos($edoFiltro,$idAlumno)
 {
     include_once "../model/ALUMNO.php";
     $objAlumn = new ALUMNO();
-    $result = $objAlumn->consultarListaAlumnos();
+    $result = $objAlumn->consultarListaAlumnos($edoFiltro,$idAlumno);
     $json_data = json_encode($result);
     return $json_data;
 }

@@ -254,20 +254,24 @@ class ALUMNO extends  PERSONA implements I_ALUMNO
      * Inician Funciones de Interfaz
      *******************************************************************************/
 
-    public function consultarListaAlumnos()
+    public function consultarListaAlumnos($edoFiltro,$idAlumno)
     {
-
-        $this->connect();
-        $datos = $this->getData("SELECT al.`id_alumno`, 
+        $filtro = $edoFiltro > 0 ? " AND per.`estatus` = ".$edoFiltro : "";
+        $filtroIdAlumno = $idAlumno >= 0 ? " AND al.`id_alumno` = ".$idAlumno : "";
+        $query = "SELECT al.`id_alumno`, al.`id_municipio`, mun.`id_estado_fk`, mun.`municipio`,
         al.`matricula`, al.`id_persona`, al.`carrera_especialidad`, 
         al.`email`, al.`estatus` AS estatus_alumno, per.`id_persona`, 
         per.`nombre`, per.`app`, per.`apm`, per.`telefono`, 
-        per.`estatus` AS estatus_persona, tipproc.`id_tipo_procedencia`, 
+        per.`estatus` AS estatus_persona, per.`sexo`,tipproc.`id_tipo_procedencia`, 
         tipproc.`tipo_procedencia` AS nameproc FROM `alumno` al, 
-       `persona` per , `tipo_procedencia` tipproc 
+       `persona` per , `tipo_procedencia` tipproc , `municipios` mun
         WHERE al.`id_persona` = per.`id_persona` 
+        AND al.`id_municipio` = mun.`id_municipio`
         AND al.`id_tipo_procedencia_fk`= tipproc.`id_tipo_procedencia` 
-        ORDER BY per.`app`, per.`apm`,per.`nombre` ASC");
+        ".$filtro." ".$filtroIdAlumno."
+        ORDER BY per.`app`, per.`apm`,per.`nombre` ASC";
+        $this->connect();
+        $datos = $this->getData($query);
         $this->close();
         return $datos;
     }
