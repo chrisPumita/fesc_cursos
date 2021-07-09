@@ -12,7 +12,7 @@
                 <div id="content">
                     <!--Inicio contenido dinamico-->
                     <div class="componet-dinamico bg-grey">
-                        <h1>THIS IS THE HOME</h1>
+                        <h1>COLOCAR AQUI EL NUEVO CODIGO HTML5</h1>
                     </div>
                     <!--FIN contenido dinamico-->
                     <?php include("./view/includes/footer.php");?>

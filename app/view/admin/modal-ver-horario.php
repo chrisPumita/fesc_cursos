@@ -28,6 +28,7 @@
                                         <th scope="col" class="col-dia">Viernes</th>
                                         <th scope="col" class="col-dia">Sábado</th>
                                         <th scope="col" class="col-dia">Domingo</th>
+                                        <th scope="col col-accion" class="col-accion"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,6 +41,11 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <td>
+                                            <!-- BOTON ACCIONES -->
+                                            <button class="btn btn-primary" type="button">Modificar</button>
+                                            <button class="btn btn-outline-danger border-2" type="button">Eliminar</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>13:00</td>
@@ -50,6 +56,11 @@
                                         <td>B-32</td>
                                         <td></td>
                                         <td></td>
+                                        <td>
+                                            <!-- BOTON ACCIONES -->
+                                            <button class="btn btn-primary" type="button">Modificar</button>
+                                            <button class="btn btn-outline-danger" type="button">Eliminar</button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -76,6 +87,7 @@
                                         <th scope="col" class="col-dia">Viernes</th>
                                         <th scope="col" class="col-dia">Sábado</th>
                                         <th scope="col" class="col-dia">Domingo</th>
+                                        <th scope="col col-accion" class="col-accion"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -88,6 +100,11 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <td>
+                                            <!-- BOTON ACCIONES -->
+                                            <button class="btn btn-primary" type="button">Modificar</button>
+                                            <button class="btn btn-outline-danger" type="button">Eliminar</button>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>13:00</td>
@@ -98,12 +115,20 @@
                                         <td></td>
                                         <td>CLASSROOM</td>
                                         <td></td>
+                                        <td>
+                                            <!-- BOTON ACCIONES -->
+                                            <button class="btn btn-primary" type="button">Modificar</button>
+                                            <button class="btn btn-outline-danger" type="button">Eliminar</button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 <!-- FIN TABLA HORARIO VIRTUAL -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" data-dismiss="modal">Agregar</button>
             </div>
         </div>
     </div>
