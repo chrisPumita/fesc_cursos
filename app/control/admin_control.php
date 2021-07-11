@@ -28,3 +28,9 @@ function consultaAdministrador($id_admin){
     return $json_data;
 }
 
+function actualizaDatosAdmin($idAdmin,$cargo,$permisosA){
+    include_once "../model/ADMIN.php";
+    $objAdmin = new ADMIN();
+    return $objAdmin->actualiza_cuenta($idAdmin,$cargo,$permisosA);
+}
+

@@ -131,4 +131,11 @@ class ADMIN extends PROFESOR implements I_admin
         $this->close();
         return $datos;
     }
+    function  actualiza_cuenta($idAdmin,$cargo,$permisosA){
+        $sql = "UPDATE `administrador` SET `cargo`='".$cargo."' , `permisos`='".$permisosA."' WHERE `id_profesor_admin_fk`=".$idAdmin;
+        $this->connect();
+        $datos = $this->executeInstruction($sql);
+        $this->close();
+        return $datos;
+    }
 }

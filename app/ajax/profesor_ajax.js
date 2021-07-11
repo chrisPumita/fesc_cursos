@@ -18,12 +18,23 @@ function DatoscuentaAdmin(id_profesor){
             data: { id_profesor : id_profesor},
             type: "POST",
             success: function (response){
-                //console.log(response);
+
                 let obj_result = JSON.parse(response);
                 if (obj_result.length>0){
                 let template="";
                 obj_result.forEach(
                     (obj_result)=>{
+                        switch(obj_result.permisos){
+                            case "1":
+                                permisos="Bajos";
+                                break;
+                            case "2":
+                                permisos="Medios";
+                                break;
+                            case"3":
+                                permisos="Altos";
+                                break;
+                        }
                         template +=`
                         <div class="row">
                             <div class="col-lg-12">
@@ -40,6 +51,7 @@ function DatoscuentaAdmin(id_profesor){
                                                         <p class="mt-2">Este profesor tiene cuenta de adminsitrador</p>
                                                     </div>
                                                 </div>
+                                                
                                                 <div class="media mb-3">
                                                     <div class="media-left media-middle">
                                                         <img src="https://image.flaticon.com/icons/png/512/42/42288.png" class="mr-2 mt-0" width="40px" alt="">
@@ -48,14 +60,63 @@ function DatoscuentaAdmin(id_profesor){
                                                         <p class="mt-2">Cargo: ${obj_result.cargo}</p>
                                                     </div>
                                                 </div>
+                                                <div class="media mb-3">
+                                                    <div class="media-left media-middle">
+                                                        <img src="https://image.flaticon.com/icons/png/512/42/42288.png" class="mr-2 mt-0" width="40px" alt="">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mt-2">Nivel de permiso: ${permisos}</p>
+                                                    </div>
+                                                </div>
+                                                 <div class="media mb-3">
+                                                     <div class="container">
+                                                    <div class="spinner-grow ${obj_result.estatus==1 ? "bg-success":"bg-danger"}" role="status" style="width: 2rem; height: 2rem"></div>
+                                                    <span class="ml-3 mb-3 font-weight-bold">Cuenta administrador ${obj_result.estatus==1 ? "Activa":"Inactiva"}</span>
+                                                    <h6 class="mb-0 mt-3"><strong>Clave:</strong></h6>
+                                                    <p class="mb-0">${obj_result.clave_confirmacion}</p>
+                                                </div>
+                                                </div>
                                             </div>
                                             <div class="col-lg-6">
-                                                <div class="container">
-                                                    <div class="spinner-grow bg-success" role="status" style="width: 2rem; height: 2rem"></div>
-                                                    <span class="ml-3 mb-3 font-weight-bold">Cuenta administrador activa</span>
-                                                    <h6 class="mb-0 mt-3"><strong>Notas:</strong></h6>
-                                                    <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur voluptas cum, vel repudiandae quibusdam consectetur dolorem, blanditiis incidunt laborum provident eum aspernatur voluptatibus non obcaecati mollitia! Cum eveniet rerum consectetur.</p>
-                                                </div>
+                                            <h5><strong>Actualizar cuenta administrador</strong></h5>
+                                               <!--<form class="user needs-validation"  role="form" autocomplete="off" novalidate>-->
+                                                  <div class="form-group row">
+                                                    <div class="col-lg-3 mt-3 mb-1 text-right">
+                                                        <label class="col-form-label">Cargo: </label>
+                                                    </div>
+                                                   <div class="col-lg-8 mt-3 mb-1 ">
+                                                        <input type="text" class="form-control" value="${obj_result.cargo}" id="cargo" aria-label="Nombres">
+                                                    </div>
+                                                 </div>
+                                                 <div class="form-group row">
+                                                    <div class="col-lg-3 mt-3 mb-1 text-right">
+                                                        <label class="col-form-label">Permisos: </label>
+                                                    </div>
+                                                   <div class="col-lg-8 mt-3 mb-1 ">
+                                                        <select class="form-control" id="permiso" >
+                                                        
+                                                        <option value="1" ${obj_result.permisos==1 ? "selected":" "}>Bajos</option>
+                                                        <option value="2" ${obj_result.permisos==2 ? "selected":" "}>Medios</option>
+                                                        <option value="3" ${obj_result.permisos==3 ? "selected":" "}>Altos</option>
+                                                        </select>
+                                                    </div>
+                                                 </div>
+                                                 <div class="form-group row">
+                                                    <div class="col-lg-3 mt-3 mb-1 text-right">
+                                                        <label class="col-form-label">Estado cuenta: </label>
+                                                    </div>
+                                                   <div class="col-lg-8 mt-3 mb-1 " estatus="${obj_result.estatus}">
+                                                        <button class="btn ${obj_result.estatus==1 ? "btn-danger":"btn-success"} w-100 aling-self-center mt-2 mb-3 ml-5 estatus_administrador2" >${obj_result.estatus==1 ?"Deshabilitar": "Habilitar" }</button>
+                                                   
+                                                    </div>
+                                                 </div>
+                                                  <div class="form-group row">
+                                                        <div class="col-lg-8"></div>
+                                                        <div class="col-lg-3 text-align-right">
+                                                            <button class="btn btn-primary w-100 aling-self-center mt-2 mb-3 ml-5 actualiza_admin">Actualizar</button>
+                                                        </div>
+                                                    </div>
+                                                <!--</form>-->
                                             </div>
                                         </div>
                                     </div>
@@ -73,6 +134,45 @@ function DatoscuentaAdmin(id_profesor){
         }
     );
 }
+
+$(document).on("click",".estatus_administrador2", function (){
+    if(confirm("¿Estas seguro que deseas cambiar el estado de la cuenta?")){
+        // se obtienen los elementos html que tienen el estatus y el id
+        let id=$("#id_profe").val();
+        let estatus =$(this)[0].parentElement;
+        let status= $(estatus).attr("estatus");
+        let type =3;
+        $.post(
+            "./control/update-estatus.php",
+            {id,status,type},
+            function (responsive){
+                console.log(responsive);
+                DatoscuentaAdmin(id);
+            }
+        )
+    }
+});
+
+$(document).on("click",".actualiza_admin", function (){
+        // se obtienen los elementos html que tienen el estatus y el id
+        let id=$("#id_profe").val();
+        let cargo=$("#cargo").val();
+        let permiso=$("#permiso").val();
+
+        if(permiso!=null || cargo!="") {
+            $.post(
+                "./control/update-cuenta_admin.php",
+                {id, cargo, permiso},
+                function (responsive) {
+                    console.log(responsive);
+                    DatoscuentaAdmin(id);
+                }
+            )
+        }else{
+            alert("Por favor llene un campo para actualizar");
+        }
+});
+
 function cargadatosProfesor(id_profesor){
     $.ajax(
         {
@@ -114,7 +214,6 @@ function cargadatosProfesor(id_profesor){
             }
         }
     );
-
 }
 
 
@@ -230,6 +329,18 @@ $(document).on("click",".prof-estatus", function (){
         )
 
     }
+})
+
+$(document).on("click",".asignar-profesor",function () {
+    //Accedo al tr y el tr tiene un atributo de id
+    let id_prof = $("#id_profe").val();
+    let id_curso =$("#cursolista").val();
+
+    var url = './nueva-asignacion';
+    redirect_by_post(url, {
+        idProfesor: id_prof,
+        id_curso: id_curso
+    }, false);
 })
 
 function consultadepartamentos() {

@@ -175,12 +175,9 @@ include("./view/includes/header.php");
                                         <h5 class="card-title font-weight-bold">Asignar grupo</h5>
                                         <p class="card-text text-muted">Crear y asignar un grupo nuevo a este profesor.</p>
                                         <select class="form-control" id="cursolista">
-
-
+                                            <!--AJAX-->
                                         </select>
-                                        <a href="./nueva-asignacion">
-                                            <button type="button" class="btn btn-primary w-100 mt-4 mb-2 text-align-right">Crear</button>
-                                        </a>
+                                      <button type="button" class="btn btn-primary w-100 mt-4 mb-2 text-align-right asignar-profesor">Crear</button>
                                     </div>
                                 </div>
                             </div>
@@ -270,9 +267,11 @@ include("./view/includes/header.php");
     <!-- script_js -->
     <script>
         let pagList = false;
+        let pagListP = true;
     </script>
     <script src="./ajax/profesor_ajax.js"></script>
     <script src="./ajax/home_ajax.js"></script>
+    <script src="./ajax/cursos_ajax.js"></script>
     <script src="./ajax/tools.js"></script>
 
 </body>

@@ -492,6 +492,7 @@
     <!-- script_js -->
     <script>
         var pagList = false;
+        let pagListP = false;
         var filtro_curso = -1;
     </script>
 

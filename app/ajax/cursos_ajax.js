@@ -4,16 +4,22 @@
 let id_curso = 0;
 $(document).ready(function () {
     if (pagList)
-        ListaCursosRegistrados(filtro_curso);
+        ListaCursosRegistrados(filtro_curso,0);
 
     else {
-       id_curso = $("#id_curso").val();
-       cargaDatosCurso(id_curso);
+        if (pagListP){
+            ListaCursosRegistrados(-1,1);
+        }else{
+            id_curso = $("#id_curso").val();
+            cargaDatosCurso(id_curso);
+        }
+
     }
+
 });
 
 // 0 inactivos, 1 activos, -x todos
-function ListaCursosRegistrados(tipo) {
+function ListaCursosRegistrados(tipo,filtro) {
     $.ajax({
         url:"./control/list_cursos.php",
         data: {
@@ -26,6 +32,7 @@ function ListaCursosRegistrados(tipo) {
             let template="";
             let templateIMG="";
             let template2="";
+            let templatelista="";
             if(obj_result.length>0){
                 var cont=0;
                 obj_result.forEach((obj_result=>{
@@ -73,31 +80,49 @@ function ListaCursosRegistrados(tipo) {
                                         </div>
                                  </div>`;
                     template2+=`<li data-target="#carouselExampleIndicators" data-slide-to="${cont}" class="active"></li>`;
-
+                    templatelista+=`<option value="${obj_result.id_curso}">${obj_result.nombre_curso} </option> `;
 
                 }));
                 //se asigna al cuerpo de la tabla
-                $("#carruceles").html(templateIMG);
-                $("#indicadores").html(template2);
-                $("#tbl-cursos").html(template);
+                if(filtro==0) {
+                    $("#carruceles").html(templateIMG);
+                    $("#indicadores").html(template2);
+                    $("#tbl-cursos").html(template);
+                }else{
+                    // lista
+                    $("#cursolista").html(templatelista);
+                }
             }else{
-                $("#tbl-containerCursos").empty();
-                $("#tbl-container2Cursos").empty();
-                template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                if(filtro==0) {
+                    $("#tbl-containerCursos").empty();
+                    $("#tbl-container2Cursos").empty();
+                    template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
                                 <strong>Lo sentimos</strong> No hay cursos activos aun, porfavor Active uno.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>`;
-                $("#tbl-containerCursos").html(template);
-                $("#carusel_img").empty();
-                template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    $("#tbl-containerCursos").html(template);
+                    $("#carusel_img").empty();
+                    template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
                                  <strong>Lo sentimos</strong> No hay cursos activos aun, porfavor Active uno.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>`;
-                $("#carusel_img").html(template);
+                    $("#carusel_img").html(template);
+                }else{
+                    // lista desplegable porfesor
+                    $("#tbl-containerCursos").empty();
+                    $("#tbl-container2Cursos").empty();
+                    template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Lo sentimos</strong> No hay cursos activos aun, porfavor Active uno.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`;
+                    $("#tbl-containerCursos").html(template);
+                }
             }
         }
     })
