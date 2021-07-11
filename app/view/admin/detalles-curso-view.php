@@ -485,6 +485,8 @@
             </div>
             <?php include "modal-editar-tema.php";?>
         </div>
+        <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+
         <?php include_once "modal-detalles-curso-pdf.php"; ?>
         <?php include_once "modal-editar-detalles-curso.php";?>
 
@@ -495,8 +497,9 @@
         let pagListP = false;
         var filtro_curso = -1;
     </script>
-
+    <script src="./ajax/validar-form.js"></script>
     <script src="./ajax/tools.js"></script>
     <script src="./ajax/cursos_ajax.js"></script>
+    <script src="./ajax/curso_submit_ajax.js"></script>
     <!-- end script_js -->
 </html>

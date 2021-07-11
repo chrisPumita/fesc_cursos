@@ -57,7 +57,9 @@ function updateEstatusAlumno($id,$status){
     return $objAlum->updateEstatusAlumno($id,$status=="1"?"0":"1");
 }
 
-function updateAlumno()
+function updateAlumno($id_municipio, $id_universidad,$matricula,
+                      $nombre_uni,$idProcedencia, $carrera_especialidad,
+                      $email,$pw,$nombre,$app,$apm,$telefono,$sexo)
 {
     include_once "../model/ALUMNO.php";
     $objAlum = new ALUMNO();

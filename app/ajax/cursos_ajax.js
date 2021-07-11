@@ -162,6 +162,15 @@ function cargaDatosCurso(id_curso) {
                         //consulto los detalles de la acredsitacion del curso
                         acreditado = obj_result.id_profesor_admin_acredita != null ? true:false;
                         detallesAcreditacion(id_curso,acreditado);
+
+                        // cargar los datos al form
+                        $("#editarNombreCurso").val(obj_result.nombre_curso);
+                        $("#editarDescripcion").val(obj_result.descripcion);
+                        $("#editarObjetivo").val(obj_result.objetivo);
+                        $("#idCurso").val(obj_result.id_curso);
+                        $("#editarDirigido").val(obj_result.dirigido_a);
+                        $("#editarAntecedentes").val(obj_result.antecedentes);
+                        $("#idCurso").val(obj_result.id_curso);
                     }
                 );
 
