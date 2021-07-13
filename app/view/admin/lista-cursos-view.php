@@ -64,7 +64,7 @@
                                             <th scope="col">Autor</th>
                                             <th scope="col">Sesiones</th>
                                             <th scope="col">Modalidad</th>
-                                            <th scope="col">Costo</th>
+                                            <th scope="col">Temario</th>
                                             <th scope="col">Acciones</th>
                                         </tr>
                                         </thead>

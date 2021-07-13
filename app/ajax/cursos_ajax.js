@@ -47,7 +47,7 @@ function ListaCursosRegistrados(tipo,filtro) {
                                     <td>${obj_result.nombre+" "+obj_result.app+" "+obj_result.apm}</td>
                                     <td>${obj_result.fecha_creacion}</td>
                                     <td>${getTipoCurso(obj_result.tipo_curso)}</td>
-                                    <td><a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalPDF"><i class="icon ion-md-eye"></i> Ver</a></td>
+                                    <td><a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalPDF"><i class="bi bi-file-earmark-pdf"></i> Ver</a></td>
                                     
                                     <!-- BOTON ACCIONES -->
                                     <td>
@@ -56,10 +56,11 @@ function ListaCursosRegistrados(tipo,filtro) {
                                                 Opciones
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                <button class="dropdown-item detalle-curso" type="button">Ver Detalles</button>
                                                 <a href="./nueva-asignacion">
                                                     <button class="dropdown-item nuevo-grupo-curso" type="button">Nuevo grupo</button>
                                                 </a>
-                                                <button class="dropdown-item detalle-curso" type="button">Ver Detalles</button>
+           
                                                 <a href="#" data-toggle="modal" data-target="#histCurso">
                                                     <button class="dropdown-item historial-curso" type="button">Historial</button>
                                                 </a>                                                        
@@ -142,6 +143,7 @@ function cargaDatosCurso(id_curso) {
             success: function (response)
             {
                 let obj_result = JSON.parse(response);
+                console.log(obj_result);
                 obj_result.forEach(
                     (obj_result)=>
                     {
@@ -170,7 +172,9 @@ function cargaDatosCurso(id_curso) {
                         $("#idCurso").val(obj_result.id_curso);
                         $("#editarDirigido").val(obj_result.dirigido_a);
                         $("#editarAntecedentes").val(obj_result.antecedentes);
-                        $("#idCurso").val(obj_result.id_curso);
+                        $("#editarCosto").val(obj_result.costo_sugerido);
+                        $("#editarModalidad").val(obj_result.tipo_curso);
+                        $("#editarSesiones").val(obj_result.no_sesiones);
                     }
                 );
 

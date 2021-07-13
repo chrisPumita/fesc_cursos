@@ -511,24 +511,29 @@ class CURSO extends CONEXION_M implements I_CURSO
 
     //En el actualiza no se actualiza la verificacion del
     // profesor que acredita, esta sera acreditada por el admin en la clase admin
-    function actualizaCurso($curso)
+    function actualizaCurso()
     {
         $query = "UPDATE `curso` SET 
-                    `id_profesor_admin_acredita` = '".$this->getIdProfesorAdminAcredita()."', 
-                    `id_profesor_autor` = '".$this->getIdProfesorAutor()."', 
-                    `codigo` = '".$this->getCodigo()."', 
                     `nombre_curso` = '".$this->getNombreCurso()."', 
                     `dirigido_a` = '".$this->getDirigidoA()."', 
                     `objetivo` = '".$this->getObjetivo()."', 
                     `descripcion` = '".$this->getDescripcion()."', 
                     `no_sesiones` = '".$this->getNoSesiones()."', 
                     `antecedentes` = '".$this->getAntecedentes()."', 
-                    `aprobado` = '".$this->getAprobado()."', 
                     `costo_sugerido` = '".$this->getCostoSugerido()."', 
-                    `link_temario_pdf` = '".$this->getLinkTemarioPdf()."', 
-                    `fecha_acreditacion` = '".($this->getAprobado() == "1" ? date('Y-m-d H:i:s') : NULL)."', 
-                    `banner_img` = '".$this->getBannerImg()."', 
                     `tipo_curso` = '".$this->getTipoCurso()."' 
+                    WHERE `curso`.`id_curso` = '".$this->getIdCurso()."'";
+        $this->connect();
+        $response = $this->executeInstruction($query);
+        $this->close();
+        return $response;
+    }
+
+    function acreditaCurso()
+    {
+        $query = "UPDATE `curso` SET 
+                    `id_profesor_admin_acredita` = '".$this->getIdProfesorAdminAcredita()."', 
+                    `fecha_acreditacion` = '".($this->getAprobado() == "1" ? date('Y-m-d H:i:s') : NULL)."'
                     WHERE `curso`.`id_curso` = '".$this->getIdCurso()."'";
         $this->connect();
         $datos = $this->executeInstruction($query);

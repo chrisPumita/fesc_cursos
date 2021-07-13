@@ -43,28 +43,24 @@ function registraCurso( $id_profesor_autor, $codigo_curso, $nombre_curso, $dirig
     echo $curso->registraCurso() ? "Se registro un curso" : "No se pudo registrar el curso";
 }
 
-function actualizaCurso($id_curso, $id_profesor_admin_acredita, $id_profesor_autor, $codigo_curso, $nombre_curso,
-                        $dirigido_a, $objetivo_curso, $descripcion_curso, $no_sesiones, $antecedentes_curso,
-                        $aprobado, $costo_sugerido_curso, $link_temario_curso, $bannerImg_curso, $tipo_curso)
+
+function actualizaCurso($id_curso, $nombre_curso,
+                        $dirigido_a, $objetivo_curso,
+                        $descripcion_curso, $no_sesiones, $antecedentes_curso,
+                        $costo_sugerido_curso, $tipo_curso)
 {
     $curso = new CURSO();
     $curso ->setIdCurso($id_curso);
-    $curso ->setIdProfesorAdminAcredita($id_profesor_admin_acredita);
-    $curso ->setIdProfesorAutor($id_profesor_autor);
-    $curso ->setCodigo($codigo_curso);
     $curso ->setNombreCurso($nombre_curso);
     $curso ->setDirigidoA($dirigido_a);
     $curso ->setObjetivo($objetivo_curso);
     $curso ->setDescripcion($descripcion_curso);
     $curso ->setNoSesiones($no_sesiones);
     $curso ->setAntecedentes($antecedentes_curso);
-    $curso ->setAprobado($aprobado);
     $curso ->setCostoSugerido($costo_sugerido_curso);
-    $curso ->setLinkTemarioPdf($link_temario_curso);
-    $curso ->setBannerImg($bannerImg_curso);
     $curso ->setTipoCurso($tipo_curso);
 
-    echo $curso->actualizaCurso($curso) ? "Se actualizo un curso" : "No se pudo actualizar el curso";
+    echo $curso->actualizaCurso() ? "Se actualizo un curso" : "No se pudo actualizar el curso";
 }
 
 function agregarTema($id_curso_fk,$indice,$nombre,$resumen)

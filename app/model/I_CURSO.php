@@ -13,7 +13,7 @@ interface I_CURSO
 
     function registraCurso();
 
-    function actualizaCurso($curso);
+    function actualizaCurso();
 
     function agregaKeywordGrupo($keyword);
 

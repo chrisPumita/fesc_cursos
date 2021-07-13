@@ -12,7 +12,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="editarNombreCurso">Nombre del curso</label>
-                        <input type="text" class="form-control" name="idCurso" id="idCurso">
+                        <input type="hidden" class="form-control" name="idCurso" id="idCurso">
                         <input type="text" class="form-control" name="editarNombreCurso" id="editarNombreCurso" placeholder="Nombre del curso">
                     </div>
                     <div class="form-group">
@@ -54,8 +54,9 @@
                     <!-- button envio ajax-->
                     <input type="submit" class="btn btn-primary" id="btnEnviar" value="Guardar Cambios">
                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                        <div id="alerta"></div>
+                        <span id="alerta"></span>
                 </div>
+                <span id="mjeAjax"></span>
             </form>
         </div>
     </div>

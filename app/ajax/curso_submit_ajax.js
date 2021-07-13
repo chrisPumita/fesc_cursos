@@ -19,25 +19,37 @@ try {
         submitHandler: function (form) {
             $("#alerta").show();
             $("#alerta").html(
-                "<img src='https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif' class='loading_save'/><strong>Guardando información...</strong>"
+                "<img src='https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif' class='loading_save'/>" +
+                "<strong>Guardando cambios...</strong>"
             );
             setTimeout(function () {
                 $("#alerta").fadeOut("slow");
-            }, 5000);
+            }, 100);
             // ----- AJAX send php response
             $.ajax({
                 type: "POST",
                 url:"./control/update-curso.php",
                 data: {
-                    id: $("#idCurso").val(),
-                    nombreCurso: $("#editarNombreCurso").val()
+                    id_curso: $("#idCurso").val(),
+                    nombre_curso: $("#editarNombreCurso").val(),
+                    descripcion: $("#editarDescripcion").val(),
+                    objetivo: $("#editarObjetivo").val(),
+                    dirigido: $("#editarDirigido").val(),
+                    antecedentes: $("#editarAntecedentes").val(),
+                    modalidad: $("#editarModalidad").val(),
+                    no_sesiones: $("#editarSesiones").val(),
+                    costo: $("#editarCosto").val()
                 },
                 success: function (msg) {
                     console.log(msg);
-                    $("#alerta").html(msg);
-                    setTimeout(function () {
-                        $("#alerta").fadeOut("slow");
-                    }, 3000);
+
+                    let mjetemplate =`<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            <strong>Mensaje:  </strong> ${msg}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>`;
+                    $("#mjeAjax").html(mjetemplate);
                 },
             });
             //regresar a la anterior pagina
@@ -45,3 +57,8 @@ try {
         },
     });
 } catch (error) {}
+
+
+/*
+
+* */
