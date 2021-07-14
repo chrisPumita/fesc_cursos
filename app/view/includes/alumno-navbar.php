@@ -17,7 +17,7 @@
                     <a class="dropdown-item" href="#">Ofertados</a>
                     <a class="dropdown-item" href="#">Todos los Cursos</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Mis Cursos</a>
+                    <a class="dropdown-item" href="./home">Mis Cursos</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -28,11 +28,11 @@
                 Inscripciones
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Ficha de Inscripción</a>
+                    <a class="dropdown-item" href="./lista-fichasinscripcion">Ficha de Inscripción</a>
                     <a class="dropdown-item" href="#">Documentación</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Solicitudes</a>
-                    <a class="dropdown-item" href="#">Constancias</a>
+                    <a class="dropdown-item" href="./lista-constancias">Constancias</a>
                 </div>
             </li>
             <!-- Only Mobile -->

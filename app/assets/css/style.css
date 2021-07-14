@@ -354,6 +354,15 @@ a {
 .callout-primary {
     border-left-color: var(--primary);
 }
+.callout-success {
+    border-left-color: rgb(4, 170, 4) !important;
+}
+.callout-gray {
+    border-left-color: rgb(184, 184, 184) !important;
+}
+.callout-orange {
+    border-left-color: orange !important;
+}
 .callout-primary h4 {
     color: var(--primary);
 }
