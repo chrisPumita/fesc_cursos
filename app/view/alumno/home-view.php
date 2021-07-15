@@ -54,10 +54,10 @@
                                 <div class="col-lg-4">
                                     <div class="card" style="width: 18rem;">
                                         <img class="card-img-top" src="./assets/img/reposit-img/curso-excel.jpg" alt="">
-                                        <div class="card-body">
+                                        <div class="card-body" style="padding-left: 15px; padding-top: 0; padding-bottom: 0;">
                                             <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="callout callout-success">
+                                                <div class="col-xs-12">
+                                                    <div class="callout callout-success ">
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                 <h3><strong>Excel para contadores</strong></h3>
@@ -95,9 +95,9 @@
                                 <div class="col-lg-4">
                                     <div class="card" style="width: 18rem;">
                                         <img class="card-img-top" src="./assets/img/reposit-img/curso-excel.jpg" alt="">
-                                        <div class="card-body">
+                                        <div class="card-body" style="padding-left: 15px; padding-top: 0; padding-bottom: 0;">
                                             <div class="row">
-                                                <div class="col-lg-12">
+                                                <div class="col-xs-12">
                                                     <div class="callout callout-success">
                                                         <div class="row">
                                                             <div class="col-lg-12">
@@ -139,9 +139,9 @@
                                 <div class="col-lg-4">
                                     <div class="card" style="width: 18rem;">
                                         <img class="card-img-top" src="./assets/img/reposit-img/curso-excel.jpg" alt="">
-                                        <div class="card-body">
+                                        <div class="card-body" style="padding-left: 15px; padding-top: 0; padding-bottom: 0;">
                                             <div class="row">
-                                                <div class="col-lg-12">
+                                                <div class="col-xs-12">
                                                     <div class="callout callout-success">
                                                         <div class="row">
                                                             <div class="col-lg-12">
@@ -191,10 +191,10 @@
                                 <div class="col-lg-4">
                                     <div class="card" style="width: 18rem;">
                                         <img class="card-img-top" src="./assets/img/reposit-img/curso-excel.jpg" alt="">
-                                        <div class="card-body">
+                                        <div class="card-body" style="padding-left: 15px; padding-top: 0; padding-bottom: 0;">
                                             <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="callout callout-gray">
+                                                <div class="col-xs-12">
+                                                    <div class="callout callout-default">
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                 <h3><strong>Excel para contadores</strong></h3>
@@ -235,10 +235,10 @@
                                 <div class="col-lg-4">
                                     <div class="card" style="width: 18rem;">
                                         <img class="card-img-top" src="./assets/img/reposit-img/curso-excel.jpg" alt="">
-                                        <div class="card-body">
+                                        <div class="card-body" style="padding-left: 15px; padding-top: 0; padding-bottom: 0;">
                                             <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="callout callout-gray">
+                                                <div class="col-xs-12">
+                                                    <div class="callout callout-default">
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                 <h3><strong>Macros en Excel</strong></h3>
@@ -279,10 +279,10 @@
                                 <div class="col-lg-4">
                                     <div class="card" style="width: 18rem;">
                                         <img class="card-img-top" src="./assets/img/reposit-img/curso-excel.jpg" alt="">
-                                        <div class="card-body">
+                                        <div class="card-body" style="padding-left: 15px; padding-top: 0; padding-bottom: 0;">
                                             <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="callout callout-gray">
+                                                <div class="col-xs-12">
+                                                    <div class="callout callout-default">
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                 <h3><strong>Excel para contadores</strong></h3>
@@ -334,10 +334,10 @@
                                 <div class="col-lg-4">
                                     <div class="card" style="width: 18rem;">
                                         <img class="card-img-top" src="./assets/img/reposit-img/curso-excel.jpg" alt="">
-                                        <div class="card-body">
+                                        <div class="card-body" style="padding-left: 15px; padding-top: 0; padding-bottom: 0;">
                                             <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="callout callout-orange">
+                                                <div class="col-xs-12">
+                                                    <div class="callout callout-warning">
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                 <h3><strong>Macros en Excel</strong></h3>
@@ -418,37 +418,5 @@
             </div>
         </div>
         <!-- script_js -->
-        <script type="text/javascript">
-            window.onload = function() {
-                Particles.init({
-                    selector: '.background',
-                    color: ['#196398', '#CDAC12', '#efefef'],
-                    connectParticles: true,
-                    responsive: [{
-                        breakpoint: 800,
-                        options: {
-                            color: '#196398',
-                            maxParticles: 80,
-                            connectParticles: false
-                        }
-                    }]
-                });
-            };
-        </script>
-        <script src="./assets/js/jquery.min.js"></script>
-        <script src="./assets/js/jquery-migrate-3.0.1.min.js"></script>
-        <script src="./assets/js/popper.min.js"></script>
-        <script src="./assets/js/bootstrap.min.js"></script>
-        <script src="./assets/js/jquery.easing.1.3.js"></script>
-        <script src="./assets/js/jquery.waypoints.min.js"></script>
-        <script src="./assets/js/jquery.stellar.min.js"></script>
-        <script src="./assets/js/owl.carousel.min.js"></script>
-        <script src="./assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="./assets/js/jquery.animateNumber.min.js"></script>
-        <script src="./assets/js/bootstrap-datepicker.js"></script>
-        <script src="./assets/js/scrollax.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-        <script src="./assets/js/google-map.js"></script>
-        <script src="./assets/js/main.js"></script>
     </body>
 </html>

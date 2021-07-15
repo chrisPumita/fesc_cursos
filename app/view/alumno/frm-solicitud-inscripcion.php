@@ -144,7 +144,7 @@
                     <div class="card card00 m-2 border-0">
                         <div class="row text-center justify-content-center px-3">
                             <p class="prev text-primary"><span class="fa fa-long-arrow-left">Anterior</span></p id="back">
-                            <h3 class="mt-4">Detalles de la Solicitud</h3>
+                            <h2 class="mt-4"><strong>Detalles de la Solicitud</strong></h2>
                         </div>
                         <div class="d-flex flex-md-row px-3 mt-4 flex-column-reverse">
                             <div class="col-md-4">
@@ -260,9 +260,11 @@
                                         <div class="mt-1 mb-1">
                                             <div class="px-2 mt-12">
                                                 <div class="mt-1 mb-1">
-                                                    <h3><strong>Resumen</strong></h3>
+                                                    <h4><strong>Resumen</strong></h4>
                                                     <p>Estás haciendo la solicitud del curso Excel para Contadores.
                                                         Revisa muy bien los documentos solicitados.
+                                                    </p>
+                                                    <p>   
                                                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima ex earum harum cum provident.
                                                     </p>
                                                 </div>
@@ -292,16 +294,17 @@
                                             </div>
                                             <div class="px-2 mt-12">
                                                 <div class="row py-1 mt-1 mb-1">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-1">
                                                         <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                            <label class="form-check-label" for="terminos">He leído y acepto los términos y condiciones de la inscripción</label>
+                                                            <input type="checkbox" class="form-check-input ml-0" id="exampleCheck1">
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="row py-1 mt-1 mb-1">
-                                                    <div class="col-md-12">
-                                                        <a href="#">Términos y condiciones de la inscripción</a>
+                                                    <div class="col-md-11">
+                                                        <div class="form-check">
+                                                            <label class="form-check-label" for="terminos">He leído y acepto los términos y condiciones de la inscripción</label>
+                                                            
+                                                        </div>
+                                                        <a href="#"><span class="text-secondary">Términos y condiciones de la inscripción</span></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -314,11 +317,11 @@
                                 <div class="card2 ml-2">
                                     <div class="px-2 mt-12">
                                         <div class="row px-3 mt-2 mb-0 text-center">
-                                            <h2 class="col-12 text-primary"><strong>¡Bien hecho!</strong></h2>
+                                            <h3 class="col-12 text-primary"><strong>¡Bien hecho!</strong></h3>
                                         </div>
                                         <div class="row px-3 mt-0 mb-4 text-center">
                                             <div class="col-md-12">
-                                                <p class="font-weight-bold">Hemos enviado la solicitud para que sea revisada</p>
+                                                <p>Hemos enviado la solicitud para que sea revisada</p>
                                             </div>
                                         </div>
                                         <div class="row py-1 mt-1 mb-1">
@@ -333,12 +336,12 @@
                                         </div>
                                         <div class="row px-3 mt-2 mb-4 text-center">
                                             <div class="col-md-6">
-                                                <a href="#">Ficha de Inscripción
+                                                <a href="#"><span class="text-secondary">Ficha de Inscripción</span>
                                                     <img src="./assets/img/icons/download2.svg" alt="" width="170px">
                                                 </a>
                                             </div>
                                             <div class="col-md-6">
-                                                <a href="#">Ficha de Pago
+                                                <a href="#"><span class="text-secondary">Ficha de Pago</span>
                                                     <img src="./assets/img/icons/download2.svg" alt="" width="170px">
                                                 </a>
                                             </div>

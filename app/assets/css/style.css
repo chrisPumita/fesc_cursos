@@ -330,6 +330,7 @@ a {
     border-left-width: 5px;
     border-radius: 3px;
 }
+
 .callout h4 {
     margin-top: 0;
     margin-bottom: 5px;
@@ -345,7 +346,7 @@ a {
 }
 
 .callout-default {
-    border-left-color: #777;
+    border-left-color: #777 !important;
 }
 .callout-default h4 {
     color: #777;
@@ -353,15 +354,6 @@ a {
 
 .callout-primary {
     border-left-color: var(--primary);
-}
-.callout-success {
-    border-left-color: rgb(4, 170, 4) !important;
-}
-.callout-gray {
-    border-left-color: rgb(184, 184, 184) !important;
-}
-.callout-orange {
-    border-left-color: orange !important;
 }
 .callout-primary h4 {
     color: var(--primary);
@@ -373,7 +365,7 @@ a {
     color: var(--second);
 }
 .callout-success {
-    border-left-color: #5cb85c;
+    border-left-color: #5cb85c !important;
 }
 .callout-success h4 {
     color: #5cb85c;
@@ -387,7 +379,7 @@ a {
 }
 
 .callout-warning {
-    border-left-color: #f0ad4e;
+    border-left-color: #f0ad4e !important;
 }
 .callout-warning h4 {
     color: #f0ad4e;

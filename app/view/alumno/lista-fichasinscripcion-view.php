@@ -2,7 +2,7 @@
 <html lang="en">
     <?php
         //Abrir para agregar los includes
-        $tittle = "Mis Constancias";
+        $tittle = "Mis Inscripciones";
         include("./view/includes/header.php");
     ?>
     <body class="body-home">
