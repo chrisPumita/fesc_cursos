@@ -137,8 +137,8 @@
                                                                             <div class="card-body">
                                                                                 <h6><strong>Dirigido a: </strong> <span id="dirigido_a"></span></h6>
                                                                                 <h6><strong>Tipo: </strong> <span id="modalidad"></span></h6>
-                                                                                <h6><strong>Cupo: </strong>30</h6>
-                                                                                <h6><strong>Sesiones: </strong> 20</h6>
+                                                                                <h6><strong>Código: </strong><span id="codigoInfo"></span></h6>
+                                                                                <h6><strong>Sesiones: </strong><span id="sesionesInfo"></span></h6>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -297,29 +297,6 @@
                                                         </table>
                                                     </div>
                                                 </div>
-                                                <!-- para agregar en los horarios
-                                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                                        <li class="nav-item">
-                                                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="tab-content" id="pills-tabContent">
-                                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                                            <h1>HOLA</h1>
-                                                        </div>
-                                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                                            <h2>2</h2>
-                                                        </div>
-                                                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                                            <h3>3</h3>
-                                                        </div>
-                                                    </div> -->
                                             </div>
                                         </div>
                                     </div>

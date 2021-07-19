@@ -152,6 +152,8 @@ function cargaDatosCurso(id_curso) {
                         $("#nombreAutor").html(`${obj_result.nombre} ${obj_result.app} ${obj_result.apm}`);
                         $("#fechaCreacion").html(`${obj_result.fecha_creacion}`);
                         $("#dirigido_a").html(`${obj_result.dirigido_a}`);
+                        $("#codigoInfo").html(`${obj_result.codigo}`);
+                        $("#sesionesInfo").html(`${obj_result.no_sesiones}`);
                         $("#modalidad").html(getTipoCurso(obj_result.tipo_curso));
                         $("#objetivo").html(obj_result.objetivo);
                         $("#antecedentes").html(obj_result.antecedentes);
@@ -181,9 +183,42 @@ function cargaDatosCurso(id_curso) {
             }
         }
     );
-
 }
 
+
+function cargaTemario(idCurso) {
+    $.ajax(
+        {
+            url:"./control/list_cursos.php",
+            data: {
+                estado_filtro: -1,
+                idCurso : id_curso
+            },
+            type: "POST",
+            success: function (response)
+            {
+                let obj_result = JSON.parse(response);
+                console.log(obj_result);
+                obj_result.forEach(
+                    (obj_result)=>
+                    {
+                        $("#nombreCursoTitulo").html(`<h2 class="font-weight-bold mb-0">${obj_result.codigo} - ${obj_result.nombre_curso}</h2>`);
+                        $("#detallesCurso").html(`${obj_result.descripcion}`);
+                        $("#nombreAutor").html(`${obj_result.nombre} ${obj_result.app} ${obj_result.apm}`);
+                        $("#fechaCreacion").html(`${obj_result.fecha_creacion}`);
+                        $("#dirigido_a").html(`${obj_result.dirigido_a}`);
+                        $("#codigoInfo").html(`${obj_result.codigo}`);
+                        $("#sesionesInfo").html(`${obj_result.no_sesiones}`);
+                        $("#modalidad").html(getTipoCurso(obj_result.tipo_curso));
+                        $("#objetivo").html(obj_result.objetivo);
+                        $("#antecedentes").html(obj_result.antecedentes);
+                    }
+                );
+
+            }
+        }
+    );
+}
 
 function detallesAcreditacion(id_Curso,acreditado) {
     let tmplate;

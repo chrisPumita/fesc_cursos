@@ -41,8 +41,7 @@ try {
                     costo: $("#editarCosto").val()
                 },
                 success: function (msg) {
-                    console.log(msg);
-
+                    cargaDatosCurso(id_curso);
                     let mjetemplate =`<div class="alert alert-success alert-dismissible fade show" role="alert">
                                             <strong>Mensaje:  </strong> ${msg}
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">

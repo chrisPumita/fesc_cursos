@@ -313,7 +313,7 @@ class CURSO extends CONEXION_M implements I_CURSO
      */
     public function getListaTemas()
     {
-        return consultaTemas($this->getIdCurso());
+        return $this->consultaTemasCurso();
     }
 
     /**
@@ -571,12 +571,14 @@ class CURSO extends CONEXION_M implements I_CURSO
 
 
     /*
-     * Otras funciones
+     * Otras funciones temas
      * */
 
-    protected function consultaTemas(){
+    protected function consultaTemasCurso(){
         include_once "./TEMAS.php";
-        return TEMAS::class(consultaTemas($this->getIdCurso()));
+        $tema = new TEMAS();
+        $restult = $tema->consultaTemas($this->getIdCurso());
+        return $restult;
     }
 
 
