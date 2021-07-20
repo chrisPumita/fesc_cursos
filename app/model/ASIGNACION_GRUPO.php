@@ -580,5 +580,12 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
         return $obj_tipo->consultaProcedenciasAsig($this->getIdAsignacion());
     }
 
+    function listaprocedencias(){
+        include_once "TIPO_PROCEDENCIA.php";
+        $obj_tipo = new TIPO_PROCEDENCIA();
+        return $obj_tipo->consultaProcedencias();
+
+    }
+
 
 }

@@ -221,9 +221,19 @@ class PROFESOR extends PERSONA implements I_PROFESOR
     /*******************************************************************************
      * Inician Funciones de Interfaz
      *******************************************************************************/
-    public function getListaProfesores()
-    {
-        $query = "SELECT per.`id_persona`, 
+   function ListaProfesoresA($filtro){
+       switch ($filtro){
+           case "1":
+               $condicion=" AND prof.`estatus`=1 ";
+               break;
+           case "2":
+               $condicion=" AND prof.`estatus`=0 ";
+               break;
+           default:
+               $condicion="";
+               break;
+       }
+       $query = "SELECT per.`id_persona`, 
         per.`nombre`, per.`app`, per.`apm`, 
         per.`telefono`, per.`sexo`, per.`estatus` AS estatus_persona, 
         prof.`id_profesor`, prof.`no_trabajador`, prof.`prefijo`, 
@@ -238,19 +248,21 @@ class PROFESOR extends PERSONA implements I_PROFESOR
         CASE WHEN admin.id_profesor_admin_fk IS NULL THEN 0
     	ELSE admin.id_profesor_admin_fk
         END AS admin
-      
         FROM  `persona` per,`departamentos` depto,`profesor` prof 
-        LEFT JOIN administrador admin ON  prof.id_profesor 			=admin.`id_profesor_admin_fk`
+        LEFT JOIN administrador admin ON  prof.id_profesor =admin.`id_profesor_admin_fk`
         WHERE prof.`id_persona_fk`=per.`id_persona` 
         AND per.`estatus` = 1
-        AND prof.`id_depto_fk`= depto.`id_depto` 
+        AND prof.`id_depto_fk`= depto.`id_depto`
+        ".$condicion."
         ORDER BY `per`.`app`,`per`.`apm`,`per`.`nombre` ASC";
-        $this->connect();
-        $datos = $this-> getData($query);
-        $this->close();
-        return $datos;
-    }
-    public function getListaProfesoresActivos()
+       $this->connect();
+       $datos = $this-> getData($query);
+       $this->close();
+       return $datos;
+   }
+
+
+    public function getListaProfesoresNoAdmin()
     {
         $query = "SELECT DISTINCT per.`id_persona`, per.`nombre`, 
         per.`app`, per.`apm`, per.`telefono`, 
@@ -327,15 +339,11 @@ class PROFESOR extends PERSONA implements I_PROFESOR
     function modificaProfesor()
     {
         $query="UPDATE `profesor` 
-        SET `id_persona_fk`='".$this->getIdPersona()."',
+        SET 
         `id_depto_fk`='".$this->getIdDeptoFk()."',
         `no_trabajador`='".$this->getNoTrabajador()."',
         `prefijo`='".$this->getPrefijo()."',
-        `email`='".$this->getEmail()."',
-        `key_hash`='".$this->getKeyHash()."',
-        `firma_digital`='".$this->getFirmaDigital()."', 
-        `firma_digital_img`='".$this->getFirmaDigitalImg()."',
-        `estatus`='".$this->getEstatusProfesor()."' 
+        `email`='".$this->getEmail()."' 
         WHERE `id_profesor`=".$this->getIdProfesor();
         $this->connect();
         $datos = $this-> executeInstruction($query);

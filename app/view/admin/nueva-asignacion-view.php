@@ -1,3 +1,13 @@
+<?php
+if(isset($_POST['idProfesor']) && isset($_POST['id_curso'])){
+    $id_prof=$_POST['idProfesor'];
+    $id_curso=$_POST['id_curso'];
+}else{
+    $id_prof=0;
+    //$id_curso=$_POST['id_curso'];
+    $id_curso=0;
+}
+?>
 <!doctype html>
 <html lang="en">
     <?php
@@ -56,10 +66,10 @@
                                                         <label class="label" for="profesorAsig">Profesor asignado:</label>
                                                     </div>
                                                     <div class="col-sm-4 mb-3 mb-sm-0">
+                                                        <input type="hidden" id="id_prof" name="id_prof" value="<?php echo $id_prof ?>" >
+                                                        <input type="hidden" id="id_curso" name="id_curso" value="<?php echo $id_curso ?>" >
                                                         <select class="form-control" id="profesorAsig">
-                                                            <option>Dorotea Alvarez Soto</option>
-                                                            <option>Juan Manuel Perez Sanchez</option>
-                                                            <option>Adrian Uribe Peña</option>
+
                                                         </select>
                                                     </div>
                                                     <div class="col-sm-2 mb-3 mb-sm-0">
@@ -112,9 +122,7 @@
                                                     </div>
                                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                                         <select class="form-control" id="generacion">
-                                                            <option>2016</option>
-                                                            <option>2017</option>
-                                                            <option>2018</option>
+
                                                         </select>
                                                     </div>
                                                     <div class="col-sm-2 mb-3 mb-sm-0">
@@ -122,9 +130,7 @@
                                                     </div>
                                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                                         <select class="form-control" id="semestre">
-                                                            <option>2020-2</option>
-                                                            <option>2021-1</option>
-                                                            <option>2021-2</option>
+
                                                         </select>
                                                     </div>
                                                 </div>
@@ -201,73 +207,8 @@
                                                                         <th scope="col">% Descuento</th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="chkFesc">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>Comunidad FESC</td>
-                                                                        <td>
-                                                                            <input class="form-control" type="number" value="0" id="numFesc">
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="chkUnam">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>Comunidad UNAM</td>
-                                                                        <td>
-                                                                            <input class="form-control" type="number" value="0" id="numUnam">
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="chkExfesc">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>Ex-Alumnos FESC</td>
-                                                                        <td>
-                                                                            <input class="form-control" type="number" value="0" id="numExfesc">
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="chkExunam">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>Ex-Alumnos UNAM</td>
-                                                                        <td>
-                                                                            <input class="form-control" type="number" value="0" id="numExunam">
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="chkPerunam">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>Personal UNAM</td>
-                                                                        <td>
-                                                                            <input class="form-control" type="number" value="0" id="numPerunam">
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="form-check">
-                                                                                <input type="checkbox" class="form-check-input" id="chkExternos">
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>Externos</td>
-                                                                        <td>
-                                                                            <input class="form-control" type="number" value="0" id="numExternos">
-                                                                        </td>
-                                                                    </tr>
+                                                                <tbody id="procedencias">
+                                                                <!-- ajax-->
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -304,11 +245,12 @@
         </div>
         <?php include "modal-nuevo-grupo.php";?>
         <!-- script_js -->
-        <script>
+        <!--<script>
             $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4',
             locale: 'es-es',
             });
-        </script>
+        </script>-->
+        <script src="./ajax/asignacion_grupo.js"></script>
     </body>
 </html>

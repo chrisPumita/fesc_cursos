@@ -36,6 +36,8 @@ include("./view/includes/header.php");
                         <div class="row">
                             <div class="col-lg-12">
                                 <input type="hidden" id="id_profe" value="<?php echo $id_prof ?>">
+                                <input type="hidden" id="id_persona" name="id_persona" ">
+                                <<input type="hidden" id="estatus_cuenta" name="estatus_cuenta" ">
                                 <h2 class="font-weight-bold mb-0">Detalles del Profesor</h2>
                             </div>
                         </div>
@@ -48,8 +50,8 @@ include("./view/includes/header.php");
                                                 <h4>Editar los datos del profesor</h4>
                                                 Verifique su información, ya que ésta se utilizará para fines de Constancias y Enlace con los alumnos inscritos en los grupos que le sean asignados.
                                             </div>
-                                            <div class="col-lg-3 text-align-right">
-                                                <button class="btn btn-danger w-100 aling-self-center mt-3">DESACTIVAR CUENTA</button>
+                                            <div class="col-lg-3 text-align-right" id="Estatus_cuenta">
+
                                             </div>
                                         </div>
                                     </div>
@@ -61,8 +63,9 @@ include("./view/includes/header.php");
 
                     <!--INICIA FORMULARIO EDICION-->
                     <section class="container py-2 bg-grey">
-                        <div class="container py-2 bg-white">
-                            <form class="user needs-validation" id="frm-det-profesor" role="form" autocomplete="off" novalidate>
+                        <div class="container py-2 bg-white" id="Editar_prof">
+                            <span id="mjeAjax"></span>
+                            <form class="submit" id="frm-update-profesor" >
                                 <div class="form-group row">
                                     <div class="col-lg-3 mt-3 mb-1 text-right">
 
@@ -70,54 +73,56 @@ include("./view/includes/header.php");
 
                                     </div>
                                     <div class="col-lg-8 mt-3 mb-1 ">
-                                        <select class="form-control" id="abreviatura">
+                                        <select class="form-control" id="abreviatura" name="abreviatura">
 
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-3 mb-1 text-right">
-                                        <label class="col-form-label">Nombre(s): </label>
+                                        <label for="nombre" class="col-form-label">Nombre(s): </label>
                                     </div>
-                                    <div class="col-lg-8 mb-1" id="nombre">
-
+                                    <div class="col-lg-8 mb-1">
+                                        <input type="text" class="form-control"  id="nombre" name="nombre" aria-label="Nombres">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-3 mb-1 text-right">
-                                        <label class="col-form-label">Primer Apellido: </label>
+                                        <label for="app" class="col-form-label">Primer Apellido: </label>
                                     </div>
                                     <div class="col-lg-8 mb-1" id="primer_ap">
+                                        <input type="text" class="form-control" value="" id="app" name="app" aria-label="Primer Apellido">
                                        </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-3 mb-1 text-right" >
-                                        <label class="col-form-label">Segundo Apellido: </label>
+                                        <label for="apm" class="col-form-label">Segundo Apellido: </label>
                                     </div>
                                     <div class="col-lg-8 mb-1" id="segundo_ap">
+                                        <input type="text" class="form-control"  id="apm" name="apm" aria-label="Segundo Apellido">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-3 mb-1 text-right">
                                         <label class="col-form-label">No. de Trabajador: </label>
                                     </div>
-                                    <div class="col-lg-8 mb-1" id="n_trabajador">
-
+                                    <div class="col-lg-8 mb-1">
+                                        <input type="text" class="form-control"  id="n_trabajador" name="n_trabajador" aria-label="No. Trabajador">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-3 mb-1 text-right">
                                         <label class="col-form-label">Teléfono: </label>
                                     </div>
-                                    <div class="col-lg-8 mb-1" id="telefono">
-
+                                    <div class="col-lg-8 mb-1">
+                                        <input type="text" className="form-control" id="telefono" name="telefono" aria-label="Telefono">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-3 mb-1 text-right">
                                         <label class="col-form-label">Sexo:</label>
                                     </div>
-                                    <div class="col-lg-9 mb-1" id="sexo">
+                                    <div class="col-lg-9 mb-1" id="sexoc">
 
                                     </div>
                                 </div>
@@ -125,8 +130,8 @@ include("./view/includes/header.php");
                                     <div class="col-lg-3 mb-1 text-right" >
                                         <label class="col-form-label">Correo Electrónico: </label>
                                     </div>
-                                    <div class="col-lg-8 mb-1" id="correo">
-
+                                    <div class="col-lg-8 mb-1" >
+                                        <input type="text" class="form-control" id="correo" name="correo"  aria-label="Correo">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -134,19 +139,23 @@ include("./view/includes/header.php");
                                         <label class="col-form-label">Departamento: </label>
                                     </div>
                                     <div class="col-lg-8 mb-1">
-                                        <select class="form-control" id="depto">
+                                        <select class="form-control" id="depto" name="depto">
 
                                         </select>
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
                                     <div class="col-lg-8"></div>
                                     <div class="col-lg-3 text-align-right">
-                                        <button class="btn btn-primary w-100 aling-self-center mt-2 mb-3 ml-5">Actualizar</button>
+                                        <input type="submit" class="btn btn-primary" id="btnEnviar" value="Actualizar">
                                     </div>
                                 </div>
+
+
                             </form>
                         </div>
+                        <div class="container py-2 bg-white" id="alerta"></div>
                     </section>
                     <!-- FIN FORMULARIO EDICION-->
                     <section class="container py-2 bg-grey" id="detalles_cuenta">
@@ -169,17 +178,8 @@ include("./view/includes/header.php");
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="card">
-                                    <div class="card-body" id="contenedorasignacion">
-                                        <h5 class="card-title font-weight-bold">Asignar grupo</h5>
-                                        <p class="card-text text-muted">Crear y asignar un grupo nuevo a este profesor.</p>
-                                        <select class="form-control" id="cursolista">
-                                            <!--AJAX-->
-                                        </select>
-                                      <button type="button" class="btn btn-primary w-100 mt-4 mb-2 text-align-right asignar-profesor">Crear</button>
-                                    </div>
-                                </div>
+                            <div class="col-sm-6" id="contenedornuevaasignacion">
+
                             </div>
                         </div>
 
@@ -260,6 +260,8 @@ include("./view/includes/header.php");
             </div>
         </div>
     </div>
+    <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+
     <?php include "modal-cambiarpassword-admin.php"; ?>
     <?php include "modal-cambiarclaveconfir-admin.php"; ?>
     <?php include "modal-ver-horario.php"; ?>
@@ -269,10 +271,13 @@ include("./view/includes/header.php");
         let pagList = false;
         let pagListP = true;
     </script>
+
+    <script src="./ajax/validar-form.js"></script>
     <script src="./ajax/profesor_ajax.js"></script>
     <script src="./ajax/home_ajax.js"></script>
     <script src="./ajax/cursos_ajax.js"></script>
     <script src="./ajax/tools.js"></script>
+    <script src="./ajax/profesor_submit_ajax.js"></script>
 
 </body>
 

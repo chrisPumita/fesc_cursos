@@ -277,7 +277,7 @@ class ARCHIVO extends DOCS_SOLICITADOS_CURSO implements I_ARCHIVO
         /*if (empty($nombreArchivo)) {
             $ruta = "";
         }*/
-        if($archivo_ok = move_uploaded_file($Archivo, $ruta)){
+        if(move_uploaded_file($Archivo, $ruta)){
             return $ruta;
         }else{
             return false;

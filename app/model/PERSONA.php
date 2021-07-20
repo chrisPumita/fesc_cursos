@@ -158,7 +158,13 @@ class PERSONA extends CONEXION_M implements I_PERSONA
 
     function actualizaPersona()
     {
-        // TODO: Implement actualziaPersona() method.
+        $query ="UPDATE `persona` SET `nombre`='".$this->getNombre()."',`app`='".$this->getApp()."',
+        `apm`='".$this->getApm()."',`telefono`='".$this->getTelefono()."',`sexo`='".$this->getSexo()."' 
+        WHERE `id_persona`=".$this->getIdPersona();
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
     }
 
     function eliminarPersona()

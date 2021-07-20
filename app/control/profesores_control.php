@@ -1,10 +1,18 @@
 <?php
-
+/*
 function consultaListaProfesores()
 {
     include_once "../model/PROFESOR.php";
     $obj_prof = new PROFESOR();
     $result = $obj_prof -> getListaProfesores();
+    $json_data = json_encode($result);
+    return $json_data;
+}*/
+
+function listaprofesores($filtro){
+    include_once "../model/PROFESOR.php";
+    $obj_prof = new PROFESOR();
+    $result = $obj_prof -> ListaProfesoresA($filtro);
     $json_data = json_encode($result);
     return $json_data;
 }
@@ -13,7 +21,7 @@ function consultaListaProfesoresActivos()
 {
     include_once "../model/PROFESOR.php";
     $obj_prof = new PROFESOR();
-    $result = $obj_prof -> getListaProfesoresActivos();
+    $result = $obj_prof -> getListaProfesoresNoAdmin();
     $json_data = json_encode($result);
     return $json_data;
 }
@@ -67,20 +75,28 @@ function agregarProfesor($id_persona,$depto,$no_trab,$prefijo,$emal,$pw,$hash,$f
     echo $obj_prof -> agregaProfesor() ? "Se registro un profesor" : "no pudimos registrar al profesor";
 }
 */
-function modificarProfesor($id_prof,$id_persona,$depto,$no_trab,$prefijo,$emal,$hash,$firma,$ruta)
+function modificarProfesor($id_persona,$id_prof,$nombre_prof,$app,$apm,$n_trabajador,$telefono,$correo,$sexo,$abre,$depro)
 {
     include_once "../model/PROFESOR.php";
     $obj_prof = new PROFESOR();
     $obj_prof->setIdProfesor($id_prof);
+    $obj_prof->setIdDeptoFk($depro);
+    $obj_prof->setNoTrabajador($n_trabajador);
+    $obj_prof->setPrefijo($abre);
+    $obj_prof->setEmail($correo);
     $obj_prof->setIdPersona($id_persona);
-    $obj_prof->setIdDeptoFk($depto);
-    $obj_prof->setNoTrabajador($no_trab);
-    $obj_prof->setPrefijo($prefijo);
-    $obj_prof->setEmail($emal);;
-    $obj_prof->setKeyHash($hash);
-    $obj_prof->setFirmaDigital($firma);
-    $obj_prof->setFirmaDigitalImg($ruta);
-    echo $obj_prof -> modificaProfesor() ? "Se modifico un profesor" : "no pudimos modificar al profesor";
+    $obj_prof->setNombre($nombre_prof);
+    $obj_prof->setTelefono($telefono);
+    $obj_prof->setApp($app);
+    $obj_prof->setApm($apm);
+    $obj_prof->setSexo($sexo);
+    $result=$obj_prof->actualizaPersona();
+    if($result){
+        $res=$obj_prof->modificaProfesor();
+        return $res;
+    }else{
+        return false;
+    }
 
 }
 

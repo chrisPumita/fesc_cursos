@@ -3,9 +3,9 @@
 
 interface I_PROFESOR
 {
-    public function getListaProfesores();
+    public function ListaProfesoresA($filtro);
 
-    public function getListaProfesoresActivos();
+    public function getListaProfesoresNoAdmin();
 
     function updateEstatusProf($id_profesor, $estatus);
 

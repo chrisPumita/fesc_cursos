@@ -18,6 +18,8 @@ function consultaAula($id_aula){
     return $json_data;
 }
 
+
+
 function creaAula($edificio,$aula,$campus,$cupo,$estadoAula){
     include_once "../model/AULAS.php";
    $obj_aula=new AULAS();
@@ -217,6 +219,14 @@ function eliminaAsignacion($id_asignacion){
     $obj_asignacion= new ASIGNACION_GRUPO();
     return $obj_asignacion->eliminarasignacion($id_asignacion) ? "Se eliminó la asignacion de un grupo": "No pudimos eliminar la asignacion de un grupo";
 
+}
+
+function procedencias(){
+    include_once "../model/ASIGNACION_GRUPO.php";
+    $obj_asignacion = new ASIGNACION_GRUPO();
+    $datos=$obj_asignacion->listaprocedencias();
+    $result=json_encode($datos);
+    return $result;
 }
 
 

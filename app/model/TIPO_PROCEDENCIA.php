@@ -99,7 +99,15 @@ class TIPO_PROCEDENCIA extends CONEXION_M
         $this->close();
         return $result;
     }
-
+    function consultaProcedencias(){
+        $sql = "SELECT TP.id_tipo_procedencia, TP.tipo_procedencia 
+                FROM tipo_procedencia TP
+                ORDER BY TP.tipo_procedencia ASC";
+        $this->connect();
+        $result = $this->getData($sql);
+        $this->close();
+        return $result;
+    }
     function asignaProcAsig(){
         //INSERT INTO `asignacion_procedencia` (
         //`id_tipo_procedencia_fk`,

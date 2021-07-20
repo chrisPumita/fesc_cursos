@@ -79,7 +79,8 @@ class ADMIN extends PROFESOR implements I_admin
     public function getListaAdministradores($estatus_admin)
     {
         //CASE TODO
-        $filtro = $estatus_admin > 0 ? " AND prof.`estatus`=" . $estatus_admin : "";
+        $filtro = $estatus_admin > 0 ? " AND admin
+        .`estatus`=" . $estatus_admin : "";
         $this->connect();
         $datos = $this-> getData("SELECT 
         per.`id_persona`, per.`nombre`, per.`app`, per.`apm`, 

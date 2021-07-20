@@ -1,7 +1,7 @@
 //Activar el escucha
 $(document).ready(function () {
     if(pagList){
-        consultaListaProfesoresA();
+        consultaListaProfesores();
         validar_form();
     }else{
         id_profesor = $("#id_profe").val();
@@ -11,6 +11,27 @@ $(document).ready(function () {
     consultadepartamentos();
 });
 
+$(document).on("click",".desactivar_cuenta", function (){
+    if(confirm("¿Estas seguro que deseas cambiar el estado de la cuenta?")){
+        // se obtienen los elementos html que tienen el estatus y el id
+        let id=$("#id_profe").val();
+        let status=$("#estatus_cuenta").val();
+        let type =2;
+        /*console.log(id);
+        console.log(status);*/
+        $.post(
+            "./control/update-estatus.php",
+            {id,status,type},
+            function (responsive){
+                cargadatosProfesor(id);
+                DatoscuentaAdmin(id);
+                ListaCursosRegistrados(-1,1);
+                //location.reload();
+            }
+        )
+
+    }
+})
 function DatoscuentaAdmin(id_profesor){
     $.ajax(
         {
@@ -79,8 +100,7 @@ function DatoscuentaAdmin(id_profesor){
                                             </div>
                                             <div class="col-lg-6">
                                             <h5><strong>Actualizar cuenta administrador</strong></h5>
-                                               <!--<form class="user needs-validation"  role="form" autocomplete="off" novalidate>-->
-                                                  <div class="form-group row">
+                                             <div class="form-group row">
                                                     <div class="col-lg-3 mt-3 mb-1 text-right">
                                                         <label class="col-form-label">Cargo: </label>
                                                     </div>
@@ -101,7 +121,14 @@ function DatoscuentaAdmin(id_profesor){
                                                         </select>
                                                     </div>
                                                  </div>
-                                                 <div class="form-group row">
+                                                 
+                                                  <div class="form-group row">
+                                                        <div class="col-lg-8"></div>
+                                                        <div class="col-lg-3 text-align-right">
+                                                            <button class="btn btn-primary w-100 aling-self-center mt-2 mb-3 ml-5 actualiza_admin">Actualizar</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
                                                     <div class="col-lg-3 mt-3 mb-1 text-right">
                                                         <label class="col-form-label">Estado cuenta: </label>
                                                     </div>
@@ -110,13 +137,7 @@ function DatoscuentaAdmin(id_profesor){
                                                    
                                                     </div>
                                                  </div>
-                                                  <div class="form-group row">
-                                                        <div class="col-lg-8"></div>
-                                                        <div class="col-lg-3 text-align-right">
-                                                            <button class="btn btn-primary w-100 aling-self-center mt-2 mb-3 ml-5 actualiza_admin">Actualizar</button>
-                                                        </div>
-                                                    </div>
-                                                <!--</form>-->
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -125,6 +146,7 @@ function DatoscuentaAdmin(id_profesor){
                         </div>
                         `;
                         $("#detalles_cuenta").html(template);
+
                     }
                 )
                 }else{
@@ -188,25 +210,57 @@ function cargadatosProfesor(id_profesor){
                 obj_result.forEach(
                     (obj_result)=>
                     {
+                        $("#id_persona").val(obj_result.id_persona);
                         $("#abreviatura").html(` <option ${obj_result.prefijo =='Lic.' ? 'selected' : '' } > Lic.</option>
                                                         <option ${obj_result.prefijo =='Mto.' ? 'selected' : obj_result.prefijo =='Mta.'? 'selected':'' }>${obj_result.prefijo=='Mta.'?'Mta.':'Mto.'}</option>
                                                         <option ${obj_result.prefijo =='Dr.' ? 'selected' : obj_result.prefijo =='Dra.'? 'selected':'' }>${obj_result.prefijo=='Dra.'?'Dra.':'Dr.'}</option>`);
-                        $("#nombre").html(`<input type="text" className="form-control" value="${obj_result.nombre}" aria-label="Nombres">`);
-                        $("#primer_ap").html(`<input type="text" className="form-control" value="${obj_result.app}"  aria-label="Primer Apellido">`);
-                        $("#segundo_ap").html(`<input type="text" class="form-control" value="${obj_result.apm}" aria-label="Segundo Apellido">
-                                    `);
-                        $("#n_trabajador").html(`<input type="text" class="form-control" value="${obj_result.no_trabajador}" aria-label="No. Trabajador">`);
-                        $("#telefono").html(`<input type="text" className="form-control" value="${obj_result.telefono}" aria-label="Telefono">`);
-                        $("#sexo").html(`
+                        $("#nombre").val(obj_result.nombre);
+                        $("#app").val( obj_result.app);
+                        $("#apm").val( obj_result.apm);
+                        $("#n_trabajador").val(obj_result.no_trabajador);
+                        $("#telefono").val(obj_result.telefono);
+                        $("#sexoc").html(`
                                         <div class="custom-control custom-radio custom-control-inline mt-2">
-                                            <input type="radio" id="rbnHombre" name="sexo" class="custom-control-input" value="0"  ${obj_result.sexo==0?'checked':''}>
+                                            <input type="radio" id="rbn1" name="sexo" class="custom-control-input" value="0"  ${obj_result.sexo==0?'checked':''}>
                                             <label class="custom-control-label" for="rbnHombre">Hombre</label>
                                         </div>
                                         <div class="custom-control custom-radio custom-control-inline mt-2">
-                                            <input type="radio" id="rbnMujer" name="sexo" class="custom-control-input" value="1" ${obj_result.sexo==1? 'checked':''} >
+                                            <input type="radio" id="rbn2" name="sexo" class="custom-control-input" value="1" ${obj_result.sexo==1? 'checked':''} >
                                             <label class="custom-control-label" for="rbnMujer">Mujer</label>
                                         </div>`);
-                        $("#correo").html(`<input type="text" class="form-control" value="${obj_result.email}" aria-label="Correo">`);
+                        $("#correo").val(obj_result.email);
+                        $("#estatus_cuenta").val(obj_result.estatus_profesor);
+                        $("#Estatus_cuenta").html(` <button class="btn btn-${obj_result.estatus_profesor==1? "danger":"success"} danger w-100 aling-self-center mt-3 desactivar_cuenta">${obj_result.estatus_profesor==1? "DESACTIVAR":"ACTIVAR"}</button>`);
+                        if(obj_result.estatus_profesor==0){
+                            let templateasignacion="";
+                            $("#contenedornuevaasignacion").empty();
+                            templateasignacion =  `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Cuenta inactiva,</strong> por favor active la cuenta del profesor para asignar un grupo.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`;
+                            $("#contenedornuevaasignacion").html(templateasignacion);
+
+                        }else{
+                            let templateasignacion="";
+                            $("#contenedornuevaasignacion").empty();
+                            templateasignacion =  `<div class="card">
+                                <div class="card-body" id="contenedorasignacion">
+                                    <h5 class="card-title font-weight-bold">Asignar grupo</h5>
+                                    <p class="card-text text-muted">Crear y asignar un grupo nuevo a este
+                                        profesor.</p>
+                                    <select class="form-control" id="cursolista">
+                                        <!--AJAX-->
+                                    </select>
+                                    <button type="button"
+                                            class="btn btn-primary w-100 mt-4 mb-2 text-align-right asignar-profesor">Crear
+                                    </button>
+                                </div>
+                            </div>`;
+                            $("#contenedornuevaasignacion").html(templateasignacion);
+
+                        }
                         DatoscuentaAdmin(id_profesor);
                     }
                 );
@@ -217,11 +271,12 @@ function cargadatosProfesor(id_profesor){
 }
 
 
-function consultaListaProfesoresA(){
+function consultaListaProfesores(){
     $.ajax({
         url: "./control/list_profesores.php",
         data: {
-            tipo: 0
+            tipo: 0,
+            estatus: 0
         },
         type: "POST",
         success: function (response) {
@@ -303,7 +358,7 @@ $(document).on("click",".detalle-profesor",function () {
     redirect_by_post(url, {
         idProfesor: id
     }, false);
-})
+});
 
 $(document).on("click",".prof-estatus", function (){
     if(confirm("¿Estas seguro que deseas cambiar el estado de la cuenta?")){
@@ -324,7 +379,7 @@ $(document).on("click",".prof-estatus", function (){
             function (responsive){
                 console.log(responsive);
                 //actualizar lista prof
-                consultaListaProfesoresA();
+                consultaListaProfesores();
             }
         )
 
@@ -373,7 +428,7 @@ function validar_form() {
             //Cada cosa que configures la debes de terminar con una coma ,
             onfocusout: false,  //Si un objeto no cumple con la validación, tomara el foco
             rules: { //iniciamos sección de reglas
-                nombre_profesor: { //estas seras las reglas para el objeto que en su propiedad name tenga nameO
+                nombre: { //estas seras las reglas para el objeto que en su propiedad name tenga nameO
                     required: true, //indicamos que es requerido que contenga un valor
                     minlength: 3, //indicamos que debe de tener por lo menos 4 caracteres
                     maxlength: 20 //indicamos que debe de tener maximo 20 caracteres
@@ -484,7 +539,7 @@ function validar_form() {
 
                         $("#toast").html(toast);
                         $('.toast').toast('show');
-                        consultaListaProfesoresA();
+                        consultaListaProfesores();
                     },
                     error: function (xhr, textStatus, errorThrown) {
                         //called when there is an error
