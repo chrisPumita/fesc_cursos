@@ -16,7 +16,7 @@
                         <section class="container py-3 bg-grey">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h2><strong>Mis Solicitudes</strong></h2>
+                                    <h2><strong>Documentos por Subir</strong></h2>
                                 </div>
                             </div>
                             <div class="row">
