@@ -8,7 +8,7 @@ interface I_ASIG_GRUPO
     function consultaHorarioPresencial($id_asig);
     public function consultaAsignaciones($id);
     function crearasignacion();
-    function eliminarasignacion($id_asignacion);
+    function cambia_estatus($id_asignacion,$estatus);
     function modificarasignacion();
 
 }

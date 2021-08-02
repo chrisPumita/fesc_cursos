@@ -487,6 +487,7 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
         $filtro=$id>0? "AND pf.id_profesor = ".$id :"";
         $query = "SELECT asig.id_asignacion,
                            gp.grupo,
+                            gp.id_grupo,
                            crs.nombre_curso,
                            crs.tipo_curso,
                            asig.estatus,
@@ -503,7 +504,8 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
                            asig.fecha_fin_actas,
                            asig.cupo,
                            asig.costo_real,
-                           asig.notas
+                           asig.notas,
+                           gp.estatus as estatus_grupo
                     FROM asignacion_grupo asig, curso crs,
                          profesor pf, 
                          persona p,
@@ -565,9 +567,9 @@ class ASIGNACION_GRUPO extends CONEXION_M implements I_ASIG_GRUPO
         return $result;
     }
 
-    function eliminarasignacion($id_asignacion)
+    function cambia_estatus($id_asignacion,$estatus)
     {
-        $query="DELETE FROM `asignacion_grupo` WHERE `id_asignacion`=".$id_asignacion;
+        $query="UPDATE `grupo` SET `estatus`='".$estatus."' WHERE `id_grupo`=".$id_asignacion;
         $this->connect();
         $result = $this-> executeInstruction($query);
         $this->close();

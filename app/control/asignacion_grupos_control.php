@@ -214,10 +214,10 @@ function editaAsignacion($id_asignacion,$id_grupo,$id_prof,$generacion,$semestre
 
 }
 
-function eliminaAsignacion($id_asignacion){
+function Cambia_estatus_asignacion($id,$estatus_ap){
     include_once "../model/ASIGNACION_GRUPO.php";
     $obj_asignacion= new ASIGNACION_GRUPO();
-    return $obj_asignacion->eliminarasignacion($id_asignacion) ? "Se eliminó la asignacion de un grupo": "No pudimos eliminar la asignacion de un grupo";
+    return $obj_asignacion->cambia_estatus($id,$estatus_ap) ? "Se modificó el estatus de un grupo": "No pudimos modificar el estatus de un grupo";
 
 }
 

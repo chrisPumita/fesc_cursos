@@ -90,5 +90,7 @@
         <?php include "modal-ver-solicitudes.php";?>
         <?php include "modal-ver-horario.php";?>
         <!-- script_js -->
+        <script src="./ajax/tools.js"></script>
+        <script src="./ajax/grupos_ajax.js"></script>
     </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 
 include_once "I_GRUPO.php";
-include "CONEXION_M.php";
+include_once "CONEXION_M.php";
 
 class GRUPO extends CONEXION_M implements I_GRUPO
 {
