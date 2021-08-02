@@ -1,6 +1,9 @@
 
 $(document).ready(function () {
+    if(pagList){
         ListaGruposActivos(0);
+    }
+
 });
 
 

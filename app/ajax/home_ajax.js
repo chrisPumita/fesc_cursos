@@ -1,7 +1,6 @@
 // Activamos escucha
 $(document).ready(function () {
     if(pagList){
-        ListaGruposActivos(0);
         ListaCursosRegistrados(1);
         ListaArchivosPendientes();
         ListaPagosRecientes();
@@ -14,110 +13,6 @@ $(document).ready(function () {
     }
 
 });
-
-function ListaGruposActivos(id){
-    $.ajax({
-        url:"./control/list_grupos.php",
-        data: {idPr:id},
-        type: "POST",
-        success: function (response){
-            let obj_result=JSON.parse(response);
-            let template="";
-
-            if(obj_result.length>0) {
-                    var cont = 0;
-                    obj_result.forEach((obj_result => {
-                            if (obj_result.estatus == 1) {
-                                cont++;
-                                template += `<tr>
-                                <th scope="row">${cont}</th>
-                                    <td>${obj_result.grupo}</td>
-                                    <td>${obj_result.nombre_curso}</td>
-                                    <td>${obj_result.nombre + " " + obj_result.app + " " + obj_result.apm}</td>
-                                    <td>${obj_result.cupo}</td>
-                                    <td>${obj_result.fecha_inicio}</td>
-                                    <td>${getModalidad(obj_result.tipo_curso)}</td>
-                                    <td>${obj_result.notas}</td>
-                                    <!-- BOTON ACCIONES -->
-                                    <td>
-                                         <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Opciones
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                        <a href="#" data-toggle="modal" data-target="#verHorario">
-                                                            <button class="dropdown-item" type="button">Ver Horario</button>
-                                                        </a>
-                                                        <button class="dropdown-item" type="button">Editar grupo</button>
-                                                        <a href="#" data-toggle="modal" data-target="#verSolicitudes">
-                                                            <button class="dropdown-item" type="button">Ver solicitudes</button>
-                                                        </a>
-                                                        <button class="dropdown-item" type="button">Terminar grupo</button>
-                                                    </div>
-                                                </div>
-                                    </td>
-                               </tr>`;
-                            }
-
-                    }));
-                    //se asigna al cuerpo de la tabla
-                    if(cont>0){
-                        $("#tbl-grupos").html(template);
-                    }else{
-                        if(id){
-                            $("#tbl-containerGrupos").empty();
-                            $("#tbl-container2Grupos").empty();
-                            template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Lo sentimos</strong> No hay grupos registrados para este profesor.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>`;
-                            $("#tbl-containerGrupos").html(template);
-                        }else {
-                            $("#tbl-containerGrupos").empty();
-                            $("#tbl-container2Grupos").empty();
-                            template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Lo sentimos</strong> No hay grupos activos aun, porfavor Active uno.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>`;
-                            $("#tbl-containerGrupos").html(template);
-                        }
-                    }
-
-                } else {
-                if(id){
-                    $("#tbl-containerGrupos").empty();
-                    $("#tbl-container2Grupos").empty();
-                    template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Lo sentimos</strong> No hay grupos registrados para este profesor.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>`;
-                    $("#tbl-containerGrupos").html(template);
-                }else {
-                    $("#tbl-containerGrupos").empty();
-                    $("#tbl-container2Grupos").empty();
-                    template = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Lo sentimos</strong> No hay grupos activos aun, porfavor Active uno.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>`;
-                    $("#tbl-containerGrupos").html(template);
-                }
-                }
-        }
-
-    })
-
-}
-
-
-
 
 function ListaArchivosPendientes(){
     $.ajax({

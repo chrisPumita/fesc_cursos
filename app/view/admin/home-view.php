@@ -388,6 +388,7 @@ include("./view/includes/header.php");
     var filtro_curso = 1;
 </script>
 <script src="./ajax/cursos_ajax.js"></script>
+<script src="./ajax/grupos_ajax.js"></script>
 <script src="./ajax/home_ajax.js"></script>
 <script src="./ajax/tools.js"></script>
 <?php include "modal-nuevo-profesor.php";?>
