@@ -52,6 +52,7 @@
                                                 <th scope="col">Fecha de inicio</th>
                                                 <th scope="col">Tipo</th>
                                                 <th scope="col">Notas</th>
+                                                <th scope="col">Estatus</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>

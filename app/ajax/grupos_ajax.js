@@ -3,7 +3,6 @@ $(document).ready(function () {
     if(pagList){
         ListaGruposActivos(0);
     }
-
 });
 
 
@@ -19,6 +18,7 @@ function ListaGruposActivos(id){
                 var cont = 0;
                 obj_result.forEach((obj_result => {
                         cont++;
+                   let estado_grupo= obj_result.estatus_grupo>0? "<span class='badge badge-success'>Activo</span>":"<span class='badge badge-danger'>Terminado</span>";
                         template += `<tr id_grupo="${obj_result.id_grupo}">
                                 <th scope="row">${cont}</th>
                                     <td>${obj_result.grupo}</td>
@@ -28,6 +28,7 @@ function ListaGruposActivos(id){
                                     <td>${obj_result.fecha_inicio}</td>
                                     <td>${getModalidad(obj_result.tipo_curso)}</td>
                                     <td>${obj_result.notas}</td>
+                                    <td>${estado_grupo}</td>
                                     <!-- BOTON ACCIONES -->
                                     <td>
                                          <div class="dropdown">

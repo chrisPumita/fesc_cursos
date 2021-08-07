@@ -275,6 +275,7 @@ include("./view/includes/header.php");
     <script src="./ajax/validar-form.js"></script>
     <script src="./ajax/profesor_ajax.js"></script>
     <script src="./ajax/home_ajax.js"></script>
+    <script src="./ajax/grupos_ajax.js"></script>
     <script src="./ajax/cursos_ajax.js"></script>
     <script src="./ajax/tools.js"></script>
     <script src="./ajax/profesor_submit_ajax.js"></script>

@@ -4,6 +4,8 @@ window.onload=function() {
     consultaProfesoresActivos(id_profesor);
     listas_desplegables();
     procedenciasList();
+    const fecha = new Date();
+    $("#fecha-creacion").val(fecha.toLocaleDateString());
 }
 
 function procedenciasList(){
