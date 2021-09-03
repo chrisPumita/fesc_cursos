@@ -1,4 +1,12 @@
-<!doctype html>
+<?php
+/*
+ * session_start();
+ * if (!isset($_SESSION['id_persona'])){
+    header('Location: ./home.php');
+}
+$id_prof = $_SESSION['id_persona'];*/
+$id_prof = 9;
+?><!doctype html>
 <html lang="en">
     <?php
         //Abrir para agregar los includes
@@ -133,7 +141,12 @@
                             </div>
                             <div class="row py-2">
                                 <div class="col-lg-12">
-                                    <h2><strong>Lic. Marco Antonio Solis Olivares</strong></h2>
+                                    <input type="hidden" id="id_profe" value="<?php echo $id_prof ?>">
+                                    <input type="hidden" id="id_persona" name="id_persona" ">
+                                    <input type="hidden" id="estatus_cuenta" name="estatus_cuenta" ">
+                                    <div class="col-lg-12" id="nombre_persona">
+
+                                    </div>
                                 </div>
                             </div>
                             <div class="row py-1">
@@ -163,103 +176,97 @@
                         <!-- FIN ENCABEZADO DETALLES USUARIO BIENVENIDA -->
                         <!--INICIA FORMULARIO EDICION-->
                         <section class="container py-2 bg-grey">
-                            <div class="container py-2 bg-white">
-                                <form class="user needs-validation" id="frm-det-profesor" role="form" autocomplete="off" novalidate>
+                            <div class="container py-2 bg-white" id="Editar_prof">
+                                <span id="mjeAjax"></span>
+                                <form class="submit" id="frm-update-profesor" >
                                     <div class="form-group row">
                                         <div class="col-lg-3 mt-3 mb-1 text-right">
-                                            <label class="col-form-label">Abreviación:</label>
+
+                                            <label class="col-form-label">Abreviación: </label>
+
                                         </div>
                                         <div class="col-lg-8 mt-3 mb-1 ">
-                                            <select class="form-control" id="list-abreviatura">
-                                                <option>Lic.</option>
-                                                <option>Mto.</option>
-                                                <option>Dr.</option>
+                                            <select class="form-control" id="abreviatura" name="abreviatura">
+
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-3 mb-1 text-right">
-                                            <label class="col-form-label">Nombre(s):</label>
+                                            <label for="nombre" class="col-form-label">Nombre(s): </label>
                                         </div>
                                         <div class="col-lg-8 mb-1">
-                                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre(s)" aria-label="Nombres">
+                                            <input type="text" class="form-control"  id="nombre" name="nombre" aria-label="Nombres">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-3 mb-1 text-right">
-                                            <label class="col-form-label">Primer Apellido:</label>
+                                            <label for="app" class="col-form-label">Primer Apellido: </label>
                                         </div>
-                                        <div class="col-lg-8 mb-1">
-                                            <input type="text" class="form-control" id="primerap" name="primerap" placeholder="Primer Apellido" aria-label="Primer Apellido">
+                                        <div class="col-lg-8 mb-1" id="primer_ap">
+                                            <input type="text" class="form-control" value="" id="app" name="app" aria-label="Primer Apellido">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 mb-1 text-right" >
+                                            <label for="apm" class="col-form-label">Segundo Apellido: </label>
+                                        </div>
+                                        <div class="col-lg-8 mb-1" id="segundo_ap">
+                                            <input type="text" class="form-control"  id="apm" name="apm" aria-label="Segundo Apellido">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-3 mb-1 text-right">
-                                            <label class="col-form-label">Segundo Apellido:</label>
+                                            <label class="col-form-label">No. de Trabajador: </label>
                                         </div>
                                         <div class="col-lg-8 mb-1">
-                                            <input type="text" class="form-control" id="segundoap" name="segudoap" placeholder="Segundo Apellido" aria-label="Segundo Apellido">
+                                            <input type="text" class="form-control"  id="n_trabajador" name="n_trabajador" aria-label="No. Trabajador">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-3 mb-1 text-right">
-                                            <label class="col-form-label">No. de Trabajador:</label>
+                                            <label class="col-form-label">Teléfono: </label>
                                         </div>
                                         <div class="col-lg-8 mb-1">
-                                            <input type="text" class="form-control" id="numtrab" name="numtrab" placeholder="Número de Trabajador" aria-label="No. Trabajador">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-lg-3 mb-1 text-right">
-                                            <label class="col-form-label">Teléfono:</label>
-                                        </div>
-                                        <div class="col-lg-8 mb-1">
-                                            <input type="text" class="form-control" id="tel" name="tel" placeholder="5555555555" aria-label="Telefono">
+                                            <input type="text" class="form-control" id="telefono" name="telefono" aria-label="Telefono">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-3 mb-1 text-right">
                                             <label class="col-form-label">Sexo:</label>
                                         </div>
-                                        <div class="col-lg-9 mb-1">
-                                            <div class="custom-control custom-radio custom-control-inline mt-2">
-                                                <input type="radio" id="rbnHombre" name="sexo" class="custom-control-input" value="0" checked>
-                                                <label class="custom-control-label" for="rbnHombre">Hombre</label>
-                                            </div>
-                                            <div class="custom-control custom-radio custom-control-inline mt-2">
-                                                <input type="radio" id="rbnMujer" name="sexo" class="custom-control-input" value="1">
-                                                <label class="custom-control-label" for="rbnMujer">Mujer</label>
-                                            </div>
+                                        <div class="col-lg-9 mb-1" id="sexoc">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-3 mb-1 text-right" >
+                                            <label class="col-form-label">Correo Electrónico: </label>
+                                        </div>
+                                        <div class="col-lg-8 mb-1" >
+                                            <input type="text" class="form-control" id="correo" name="correo"  aria-label="Correo">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-3 mb-1 text-right">
-                                            <label class="col-form-label">Correo Electrónico:</label>
+                                            <label class="col-form-label">Departamento: </label>
                                         </div>
                                         <div class="col-lg-8 mb-1">
-                                            <input type="text" class="form-control" id="correo" name="correo" placeholder="ejemplo@dominio.com" aria-label="Correo">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-lg-3 mb-1 text-right">
-                                            <label class="col-form-label">Departamento:</label>
-                                        </div>
-                                        <div class="col-lg-8 mb-1">
-                                            <select class="form-control" id="list-depto">
-                                                <option>Informática</option>
-                                                <option>Matemáticas</option>
-                                                <option>Cómputo</option>
+                                            <select class="form-control" id="depto" name="depto">
+
                                             </select>
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
                                         <div class="col-lg-8"></div>
                                         <div class="col-lg-3 text-align-right">
-                                            <button class="btn btn-primary w-100 aling-self-center mt-2 mb-3 ml-5">Modificar mis datos</button>
+                                            <input type="submit" class="btn btn-primary" id="btnEnviar" value="Actualizar Datos">
                                         </div>
                                     </div>
                                 </form>
                             </div>
+                            <div class="container py-2 bg-white" id="alerta"></div>
                         </section>
                         <!-- FIN FORMULARIO EDICION-->                        
                         <!-- SECCION DE ACCESOS RAPIDOS -->
@@ -320,8 +327,11 @@
                         </section>
                         <!-- FIN DE SECCION ACCESOS RAPIDOS -->
                     </div>
+                    <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+
                     <!--FIN contenido dinamico-->
                     <?php include("./view/includes/footer.php"); ?>
+
                 </div>
             </div>
             <?php include "modal-cambiarpassword-admin.php"; ?>
@@ -331,5 +341,10 @@
             <?php include "modal-generadorllave-admin.php"; ?>
             <?php include "modal-firmadigital-admin.php"; ?>
         </div>
+        <script>
+            let pagList = false;
+        </script>
+        <script src="./ajax/validar-form.js"></script>
+        <script src="./ajax/profesor_ajax.js"></script>
     </body>
 </html>

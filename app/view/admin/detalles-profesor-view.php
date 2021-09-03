@@ -37,7 +37,7 @@ include("./view/includes/header.php");
                             <div class="col-lg-12">
                                 <input type="hidden" id="id_profe" value="<?php echo $id_prof ?>">
                                 <input type="hidden" id="id_persona" name="id_persona" ">
-                                <<input type="hidden" id="estatus_cuenta" name="estatus_cuenta" ">
+                                <input type="hidden" id="estatus_cuenta" name="estatus_cuenta" ">
                                 <h2 class="font-weight-bold mb-0">Detalles del Profesor</h2>
                             </div>
                         </div>
@@ -151,8 +151,6 @@ include("./view/includes/header.php");
                                         <input type="submit" class="btn btn-primary" id="btnEnviar" value="Actualizar">
                                     </div>
                                 </div>
-
-
                             </form>
                         </div>
                         <div class="container py-2 bg-white" id="alerta"></div>

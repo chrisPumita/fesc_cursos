@@ -6,7 +6,6 @@ $(document).ready(function () {
     }else{
         id_profesor = $("#id_profe").val();
         cargadatosProfesor(id_profesor);
-
     }
     consultadepartamentos();
 });
@@ -206,10 +205,12 @@ function cargadatosProfesor(id_profesor){
             type: "POST",
             success: function (response)
             {
+                console.log(response);
                 let obj_result = JSON.parse(response);
                 obj_result.forEach(
                     (obj_result)=>
                     {
+                        $("#nombre_persona").html(   `<h2><strong>${ obj_result.prefijo+" "+obj_result.nombre+" "+obj_result.app+" "+obj_result.apm} </strong></h2>`);
                         $("#id_persona").val(obj_result.id_persona);
                         $("#abreviatura").html(` <option ${obj_result.prefijo =='Lic.' ? 'selected' : '' } > Lic.</option>
                                                         <option ${obj_result.prefijo =='Mto.' ? 'selected' : obj_result.prefijo =='Mta.'? 'selected':'' }>${obj_result.prefijo=='Mta.'?'Mta.':'Mto.'}</option>
