@@ -29,6 +29,7 @@ function ListaCursosRegistrados(tipo,filtro) {
         type: "POST",
         success: function (response){
             let obj_result=JSON.parse(response);
+            console.log(obj_result);
             let template="";
             let templateIMG="";
             let template2="";
@@ -74,8 +75,8 @@ function ListaCursosRegistrados(tipo,filtro) {
                                             <div class="overlay"></div>
                                             <div class="carousel-caption d-md-block">
                                                 <h5>${obj_result.nombre_curso}</h5>
-                                                <a href="#">
-                                                    <button type="button" class="btn btn-primary btn-sm">Mas Detalles</button>
+                                                <a class="detalle-curso" href="#">
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="redirectDetallesCurso(${obj_result.id_curso});">Mas Detalles</button>
                                                 </a>
                                             </div>
                                         </div>
@@ -286,3 +287,11 @@ $(document).on("click",".detalle-curso",function () {
     }, false);
 })
 
+function redirectDetallesCurso(idCurso)
+{
+    alert("OK");
+    var url = './detalles-curso';
+    redirect_by_post(url, {
+        id_curso: idCurso
+    }, false);
+}

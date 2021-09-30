@@ -1,4 +1,4 @@
-
+// RCGS
 window.onload=function() {
     id_profesor = $("#id_prof").val();
     consultaProfesoresActivos(id_profesor);
@@ -69,7 +69,6 @@ function consultaProfesoresActivos(id_profesor) {
         },
         type: "POST",
         success: function (response) {
-            //console.log(response);
             let obj_result = JSON.parse(response);
             let template = "";
             if (obj_result.length>0) {
@@ -86,6 +85,7 @@ function consultaProfesoresActivos(id_profesor) {
         }
     });
 }
+
 
 function listas_desplegables(){
     var fecha = new Date();
@@ -114,7 +114,6 @@ function listas_desplegables(){
                 template2 += `<option value="${msg2}" >${msg2}</option>`;
             }
         }
-
         ano++
     }
     $("#generacion").html(template);

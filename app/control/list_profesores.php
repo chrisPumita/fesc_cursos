@@ -1,4 +1,6 @@
 <?php
+# D E L E T E   -   C O D E
+# RCGS
 $filtro=$_POST['tipo'];
 
 switch ($filtro){

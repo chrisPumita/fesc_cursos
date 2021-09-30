@@ -1,7 +1,6 @@
 //Activar el escucha
 $(document).ready(function () {
     if(pagList){
-        consultaListaProfesores();
         validar_form();
     }else{
         id_profesor = $("#id_profe").val();
@@ -271,84 +270,6 @@ function cargadatosProfesor(id_profesor){
     );
 }
 
-
-function consultaListaProfesores(){
-    $.ajax({
-        url: "./control/list_profesores.php",
-        data: {
-            tipo: 0,
-            estatus: 0
-        },
-        type: "POST",
-        success: function (response) {
-            //Convertir a JSNON el response que viene del servidor
-            let obj_result = JSON.parse(response);
-            let template = "";
-            if (obj_result.length>0)
-            {
-                var cont = 0;
-                obj_result.forEach((obj_result=>{
-                    cont++;
-                    let estatus;
-                    let img;
-                    let edoCta;
-                    let colorBool;
-                    if(obj_result.estatus_profesor==1){
-                        estatus="Inhabilitar";
-                        img="prof_activo.png";
-                        edoCta="Activa";
-                        colorBool = "green";
-                    }else{
-                        estatus="Habilitar";
-                        img="prof_inactivo.png";
-                        edoCta="Inactiva";
-                        colorBool = "red";
-                    }
-                    $estado_admin= obj_result.admin>0? "<span class='badge badge-success'>admin</span>":"";
-                    template += `<tr id_profesor =${"'"+obj_result.id_profesor+"' "}>
-                                <th scope="row">${cont}</th>
-                                <td>${obj_result.no_trabajador}</td>
-                                <td>${obj_result.app+" "+obj_result.apm+" "+obj_result.nombre+" "+$estado_admin} </td>
-                                <td>${obj_result.depto_name}</td>
-                                <td>${obj_result.telefono}</td>
-                                <td>${obj_result.email}</td>
-                                <td>${obj_result.fecha_registro}</td>
-                                
-                                <td><a href="" data-toggle="tooltip" data-placement="left" title="Cuenta ${edoCta}">
-                                    <img src="./assets/img/${img}" class="rounded float-left" alt="..." width="60"></a>
-                                    <div class="blob ${colorBool}"></div>
-                                </td>
-                                <td>
-                                    <div class="dropdown" value_estatus="${obj_result.estatus_profesor}">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Opciones
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                           
-                                                <button class="dropdown-item detalle-profesor" type="button">Ver Detalles</button>
-                                          
-                                            <button class="dropdown-item prof-estatus" type="button">${estatus}</button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>`;
-                }));
-                //asignó a mi obj de html
-                $("#tbl-prof").html(template);
-            }
-            else{
-                $("#tbl-container").empty();
-                template =  `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Lo sentimos,</strong> por el momento no hay registros de profesores, por favor registre uno.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>`;
-                $("#tbl-container").html(template);
-            }
-        }
-    });
-}
 //escucha que se acciona al dar clic al boton
 $(document).on("click",".detalle-profesor",function () {
     //Accedo al tr y el tr tiene un atributo de id

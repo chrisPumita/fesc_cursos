@@ -10,7 +10,7 @@
         //Abrir para agregar los includes
         $tittle = "Detalle del curso";
         include("./view/includes/header.php");
-        ?>
+    ?>
 
     <body class="body-home">
         <div class="d-flex">

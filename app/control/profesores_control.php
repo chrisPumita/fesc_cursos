@@ -121,6 +121,7 @@ function crearCuentaProfesor($nombre,$app,$apm,$telefono,$sexo,$id_depto,
     $obj_prof->setNoTrabajador($no_trabajador);
     $obj_prof->setPrefijo($prefijo);
     $obj_prof->setEmail($email);
+    //Generar la Clave y enviar mail
     $obj_prof->setPw(md5("0000"));
     $obj_prof->setKeyHash("00000000000");
     $obj_prof->setFirmaDigital("00000000000");

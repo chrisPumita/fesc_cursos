@@ -117,7 +117,11 @@
         <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
         <?php include "modal-asignaciones-profesor.php";?>
         <?php include "modal-nuevo-profesor.php";?>
+        <!-- ACEPTADOS script_js -->
+        <script src="./ajax_response/profesores.js"></script>
         <!-- script_js -->
+
+
         <script src="./ajax/profesor_ajax.js"></script>
         <script src="./ajax/validar-form.js"></script>
         <script src="./ajax/tools.js"></script>
